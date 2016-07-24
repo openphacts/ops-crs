@@ -1,0 +1,114 @@
+﻿cscutil is a utility to run operations on compounds database
+
+Usage:
+	cscutil /command=<command> [<options>]
+
+Where
+===========================================================
+
+<command> is one of the following:
+
+Export operations
+-----------------
+
+	exp-ops
+		Run the whole export consisting of data sources export, SDF file export
+		and VoID export
+					
+	exp-ops-dsn
+		Run data source export
+					
+	exp-ops-map
+		Run SDF export
+					
+	exp-ops-void
+		Run VoID export
+					
+Check operations
+----------------
+
+	check-all-present /folder=<folder>
+		Checks if all files expected are present
+					
+	check-all-validate /folder=<folder>
+		Check TTL syntax of all files
+					
+	check-void /folder=<folder> /base=<base>
+		Check VoID consistency
+					
+	compare-exports /folder1=<folder> /folder2=<folder>
+		Compare two export folders and does line-by-line comparison...
+
+Other operations
+----------------
+
+	provoke-updates
+		This is to provoke databases updates using EF
+
+Options
+===========================================================
+
+	/date=<date-in-parseable-format>
+		Use specified date instead of current
+
+	/dsn_ids=<guid1,guid2,guid3>
+		List of data source ids (Guids)
+
+	/exp_ids=<num1,num2,num3>
+		List of export IDs if we are running recovery of previously failed
+		exports
+
+	/compress
+		Compress output files
+
+	/upload-url=<uri>
+		Destination folder in URI format (currently only ftp:// and file:// are
+		supported)
+
+	/download-url=<uri>
+		Prefix where all files can be downloaded from. Default is
+		http://ops.rsc.org/
+
+	/username=<login>
+		User name if required for FTP
+
+	/password=<password>
+		Password if required for FTP
+
+	/base=<base>
+		This is the root URI for where the export is to be found.
+		If the file for the VoID is at
+		e:\tmp\rdf\20151225\download\20151225\void_2015-12-25.ttl
+		then <base> should be set to:
+		http://ops.rsc.org/download/20151225/
+
+	/folder=<folder>
+		Folder where an RDF export is to be checked
+
+	/folder1=<folder>
+	/folder2=<folder>
+		Folders for comparing RDF exports.
+
+Examples
+===========================================================
+
+cscutil.exe /command=exp-ops
+	Export everything and produce respective VoID
+
+cscutil.exe /command=exp-ops-dsn
+	Export all datasources data
+
+cscutil.exe /command=exp-ops-dsn /exp_ids=73834460-e542-46d1-8aa5-b034ea2bf34a
+	Export particular datasource
+
+cscutil.exe /command=exp-ops-dsn /exp_ids=37,38,39,40
+	Recover previously failed exports
+
+cscutil.exe /command=exp-ops-map
+	Export SDF files with OPS to CS mapping
+
+cscutil.exe /command=exp-ops-void /exp_ids=37,38,39,40
+	Export VoID file for specified datasource exports
+
+cscutil.exe /command=check-void /folder=D:\RDF-2015.11.04\20151104\ /base=http://ops.rsc.org/download/20151104/
+	Check VoID file in the export.

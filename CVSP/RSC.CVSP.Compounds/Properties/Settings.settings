@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ChemValidatorLib.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ChemValidatorLib_com_chemspider_www_BatchNames1_BatchNames" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.chemspider.com/BatchNames.asmx</Value>
+    </Setting>
+    <Setting Name="ChemValidatorLib_com_chemspider_www_InChIWS_InChI" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.chemspider.com/InChI.asmx</Value>
+    </Setting>
+    <Setting Name="ChemValidatorLib_com_chemspider_www_MassSpecAPI_MassSpecAPI" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.chemspider.com/MassSpecAPI.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

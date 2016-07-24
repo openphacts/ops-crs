@@ -1,0 +1,5 @@
+Untitled Document-1
+  ChemDraw07021510572D
+
+  0  0  0  0  0  0  0  0  0  0999 V2000
+M  END

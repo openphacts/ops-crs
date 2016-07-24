@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{044EF0A4-A269-4963-B114-D2A7CFC98105}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CVSPWorker</RootNamespace>
+    <AssemblyName>CVSPWorker</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'VT-Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\VT-Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Extras.CommonServiceLocator">
+      <HintPath>..\packages\Autofac.Extras.CommonServiceLocator.3.2.0\lib\net40\Autofac.Extras.CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="bingo-dotnet, Version=1.1.5589.31745, Culture=neutral, PublicKeyToken=6a31cb7055c16a21, processorArchitecture=MSIL">
+      <HintPath>..\packages\Indigo.Toolkit.1.2.1\lib\net40\bingo-dotnet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemImageNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Toolkit.1.1.2\lib\net45\ChemImageNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Utilities.1.0.13\lib\net45\ChemSpider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider.Data.Database, Version=2.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Database.Objects.1.0.11\lib\net45\ChemSpider.Data.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Database">
+      <HintPath>..\packages\ChemSpider.Databases.1.0.4\lib\net45\ChemSpider.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Formats, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Formats.1.1.2\lib\net45\ChemSpider.Formats.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Formats.Accelrys, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Formats.1.1.2\lib\net45\ChemSpider.Formats.Accelrys.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Formats.ChemDraw, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Formats.1.1.2\lib\net45\ChemSpider.Formats.ChemDraw.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Interoperability, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Utilities.1.0.13\lib\net45\ChemSpider.Interoperability.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider.Molecules, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Molecules.1.1.1\lib\net45\ChemSpider.Molecules.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Utilities.Web.1.0.3\lib\net45\ChemSpider.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.ObjectModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.ObjectModel.1.0.10\lib\net45\ChemSpider.ObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider.Utilities, Version=2.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Utilities.1.0.13\lib\net45\ChemSpider.Utilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider.Utilities.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Utilities.Web.1.0.3\lib\net45\ChemSpider.Utilities.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.BulkInsert">
+      <HintPath>..\packages\EntityFramework.BulkInsert-ef6.6.0.2.8\lib\Net45\EntityFramework.BulkInsert.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Extended">
+      <HintPath>..\packages\EntityFramework.Extended.6.1.0.168\lib\net45\EntityFramework.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.MappingAPI, Version=6.1.0.9, Culture=neutral, PublicKeyToken=7ee2e825d201459e, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.MappingAPI.6.1.0.9\lib\net45\EntityFramework.MappingAPI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtUtilsNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Toolkit.1.1.2\lib\net45\ExtUtilsNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.4.369, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ICSharpCode.SharpZipLib.dll.0.85.4.369\lib\net20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="InChINet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Toolkit.1.1.2\lib\net45\InChINet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="indigo-dotnet, Version=1.1.5589.31742, Culture=neutral, PublicKeyToken=ca8e3320bc4499e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Indigo.Toolkit.1.2.1\lib\net40\indigo-dotnet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="indigo-inchi-dotnet, Version=1.1.5589.31744, Culture=neutral, PublicKeyToken=6a31cb7055c16a21, processorArchitecture=MSIL">
+      <HintPath>..\packages\Indigo.Toolkit.1.2.1\lib\net40\indigo-inchi-dotnet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="indigo-renderer-dotnet, Version=1.1.5589.31744, Culture=neutral, PublicKeyToken=09f0421d14bc0b92, processorArchitecture=MSIL">
+      <HintPath>..\packages\Indigo.Toolkit.1.2.1\lib\net40\indigo-renderer-dotnet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OpenBabelNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Toolkit.1.1.2\lib\net45\OpenBabelNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OpenEyeNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Toolkit.1.1.2\lib\net45\OpenEyeNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RSC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.1.0.23\lib\net45\RSC.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RSC.Compounds.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.Compounds.Core.1.0.45\lib\net45\RSC.Compounds.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RSC.Compounds.EntityFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.Compounds.EntityFramework.1.0.84\lib\net45\RSC.Compounds.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RSC.Compounds.Search, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.Compounds.Search.1.0.11\lib\net45\RSC.Compounds.Search.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RSC.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.Logging.Core.1.0.11\lib\net45\RSC.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RSC.Logging.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.Logging.Core.1.0.11\lib\net45\RSC.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RSC.Logging.EntityFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.Logging.EntityFramework.1.0.9\lib\net45\RSC.Logging.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RSC.Properties.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.Properties.Core.1.0.18\lib\net45\RSC.Properties.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RSC.Properties.EntityFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.Properties.EntityFramework.1.0.42\lib\net45\RSC.Properties.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RSC.Search, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.Search.1.0.3\lib\net45\RSC.Search.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Serialization" />
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="XmlDiffPatch, Version=1.0.8.28, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\XMLDiffPatch.1.0.8.28\lib\net\XmlDiffPatch.dll</HintPath>
+    </Reference>
+    <Reference Include="XmlDiffPatch.View">
+      <HintPath>..\packages\XMLDiffPatch.1.0.8.28\lib\net\XmlDiffPatch.View.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\DeleteDepositionCommand.cs" />
+    <Compile Include="Commands\ExportCommand.cs" />
+    <Compile Include="Commands\NewDepositionCommand.cs" />
+    <Compile Include="Commands\DeleteFromGCNCommand.cs" />
+    <Compile Include="Commands\Upload2GCNCommand.cs" />
+    <Compile Include="Commands\PrepareCommand.cs" />
+    <Compile Include="Commands\ProcessCommand.cs" />
+    <Compile Include="Commands\IWorkerCommand.cs" />
+    <Compile Include="Commands\UploadCommand.cs" />
+    <Compile Include="Models\SearchModels.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+      <TransformOnBuild>true</TransformOnBuild>
+    </None>
+    <None Include="App.Debug.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App.Release.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App.VT-Debug.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\SlowCheetah\SlowCheetah.Transforms.targets" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RSC.CVSP.Compounds.ChemSpiderProperties\RSC.CVSP.Compounds.ChemSpiderProperties.csproj">
+      <Project>{225d3bdd-b1e1-451a-99c4-442e15c9c2d6}</Project>
+      <Name>RSC.CVSP.Compounds.ChemSpiderProperties</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.CVSP.Compounds.Core\RSC.CVSP.Compounds.Core.csproj">
+      <Project>{accd3311-a14d-4317-b859-1401b904e837}</Project>
+      <Name>RSC.CVSP.Compounds.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.CVSP.Compounds.ParentChild\RSC.CVSP.Compounds.ParentChild.csproj">
+      <Project>{10a01b87-4bb2-4e12-96e9-7aaa90344025}</Project>
+      <Name>RSC.CVSP.Compounds.ParentChild</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.CVSP.Compounds\RSC.CVSP.Compounds.csproj">
+      <Project>{0a4bde97-64af-45a0-a861-f410e4e48935}</Project>
+      <Name>RSC.CVSP.Compounds</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.CVSP.Core\RSC.CVSP.Core.csproj">
+      <Project>{2a546298-8df8-4c18-bafe-0341dea45aec}</Project>
+      <Name>RSC.CVSP.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.CVSP.EntityFramework\RSC.CVSP.EntityFramework.csproj">
+      <Project>{36d95f7c-4d56-40cd-9178-853c741baeae}</Project>
+      <Name>RSC.CVSP.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.CVSP.Search\RSC.CVSP.Search.csproj">
+      <Project>{dc311ab0-eac5-4807-a8cc-b299ee338547}</Project>
+      <Name>RSC.CVSP.Search</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.CVSP.Utils\RSC.CVSP.Utils.csproj">
+      <Project>{00754394-63de-4937-bfa2-aee20a79a946}</Project>
+      <Name>RSC.CVSP.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.Process.EntityFramework\RSC.Process.EntityFramework.csproj">
+      <Project>{ae18986c-891b-42e2-9c4e-10f44253df97}</Project>
+      <Name>RSC.Process.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.Process\RSC.Process.csproj">
+      <Project>{9e953bbc-516b-4d12-a22d-c0fbbf9ee9f1}</Project>
+      <Name>RSC.Process</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="README.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>IF NOT EXIST "$(SolutionDir)bin" mkdir "$(SolutionDir)bin"
+copy /Y "$(TargetPath)" "$(SolutionDir)bin"</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Label="SlowCheetah">
+    <SlowCheetahToolsPath>$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\SlowCheetah.2.5.15\tools\))</SlowCheetahToolsPath>
+    <SlowCheetah_EnableImportFromNuGet Condition=" '$(SlowCheetah_EnableImportFromNuGet)'=='' ">true</SlowCheetah_EnableImportFromNuGet>
+    <SlowCheetah_NuGetImportPath Condition=" '$(SlowCheetah_NuGetImportPath)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\Properties\SlowCheetah\SlowCheetah.Transforms.targets ))</SlowCheetah_NuGetImportPath>
+    <SlowCheetahTargets Condition=" '$(SlowCheetah_EnableImportFromNuGet)'=='true' and Exists('$(SlowCheetah_NuGetImportPath)') ">$(SlowCheetah_NuGetImportPath)</SlowCheetahTargets>
+  </PropertyGroup>
+  <Import Project="$(SlowCheetahTargets)" Condition="Exists('$(SlowCheetahTargets)')" Label="SlowCheetah" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

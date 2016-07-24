@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlRoles>
+  <XmlRole>
+    <Name>Administrator</Name>
+    <Users>
+      <User>admin</User>
+      <User>alex</User>
+    </Users>
+  </XmlRole>
+  <XmlRole>
+    <Name>Guest</Name>
+    <Users>
+    </Users>
+  </XmlRole>
+  <XmlRole>
+    <Name>Tester</Name>
+    <Users>
+    </Users>
+  </XmlRole>
+</XmlRoles>

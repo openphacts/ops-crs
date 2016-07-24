@@ -1,0 +1,19 @@
+﻿div.loading-progress {
+    padding: .5em;
+    font-weight: bolder;
+}
+
+div.loading-progress span.scroll-progress {
+    width: 15px;
+    height: 15px;
+    background: url(images/busy.gif) top left no-repeat;
+    margin: 0 auto;
+    padding-left: 20px;
+}
+
+span.loading-spinner {
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: url(images/busy.gif) top left no-repeat;
+}

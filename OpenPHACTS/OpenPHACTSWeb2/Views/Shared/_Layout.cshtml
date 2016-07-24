@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "~/Views/Shared/_RSCLayout.cshtml";
+}
+
+@section css {
+    @Styles.Render(RSC.Compounds.CompoundsIntegration.ToolkitCSS)
+    @Styles.Render(RSC.Compounds.CompoundsIntegration.CSS)
+    @Styles.Render(RSC.Datasources.DatasourcesIntegration.CSS)
+    @Styles.Render(RSC.Compounds.CompoundsIntegration.UICSS)
+
+    @RenderSection("css", required: false)
+}
+
+@section featured {
+    <div class="toolbar">
+        <div id="simpleSearch"></div>
+    </div>
+    <div class="content">
+        @RenderBody()
+    </div>
+}
+
+@section scripts {
+    @Scripts.Render(RSC.Compounds.CompoundsIntegration.ToolkitScript)
+    @Scripts.Render(RSC.Compounds.CompoundsIntegration.Script)
+    @Scripts.Render(RSC.Datasources.DatasourcesIntegration.Script)
+    @Scripts.Render(RSC.Compounds.CompoundsIntegration.UIScript)
+
+    <script type="text/javascript">
+        //  use local data provider...
+        $.Compounds.store.baseDataUrl = '@Url.Content("~/")';
+        $.Substances.store.baseDataUrl = '@Url.Content("~/")';
+    </script>
+
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if ($.support.bootstrap())
+                $('[data-toggle="tooltip"]').bootstrapTooltip();
+        });
+    </script>
+}

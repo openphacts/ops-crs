@@ -1,0 +1,26 @@
+﻿@model int
+
+@{
+    ViewBag.Title = "Compounds' Datasources";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="datasources"></div>
+
+@section scripts {
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#datasources').datasources_tileview({
+            count: @Model,
+            imageSize: 175,
+            itemsProviderUrl: '@Url.Content("~/api/datasources")',
+            tooltipFields: [
+                { name: 'Name', title: 'Name' }
+            ],
+            onClick: function (event, id) {
+                window.location = '@ChemSpider.Datasources.DatasourcesIntegration.Url' + 'datasources/' + id;
+            }
+        });
+    });
+</script>
+}

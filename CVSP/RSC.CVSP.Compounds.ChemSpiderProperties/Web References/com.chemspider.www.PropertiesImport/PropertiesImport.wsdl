@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.chemspider.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.chemspider.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;Please send all feedback to development-at-chemspider-dot-com&lt;/h3&gt;&lt;i&gt;NOTE: Some operations require a "Security Token". To obtain a token please complete the &lt;a href="/Register.aspx"&gt;registration&lt;/a&gt; process. Security Token is listed at &lt;a href="/UserProfile.aspx"&gt;Profile&lt;/a&gt; page.&lt;/i&gt;</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.chemspider.com/">
+      <s:element name="RetrieveByInChIKeyList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inchi_keys" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RetrieveByInChIKeyListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveByInChIKeyListResult" type="tns:ArrayOfPropertiesInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPropertiesInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PropertiesInfo" type="tns:PropertiesInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PropertiesInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CSID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="InChIKey" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ALogP" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="XLogP" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="AverageMass" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Density" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="DensityError" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="IndexOfRefraction" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="IndexOfRefractionError" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="MolarRefactivity" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="MolarRefactivityError" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="MolarVolume" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="MolarVolumeError" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="MonoisotopicMass" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="NominalMass" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Parachor" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ParachorError" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Polarizability" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PolarizabilityError" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="SurfaceTension" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="SurfaceTensionError" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="FP" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="FPError" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Enthalpy" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="EnthalpyError" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="BP" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="BPError" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="VP" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="VPError" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="LogP" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="LogPError" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="RuleOf5" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="RuleOf5HDonors" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="RuleOf5HAcceptors" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="RuleOf5FRB" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="RuleOf5MW" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="RuleOf5PSA" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="LogD1" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="LogD2" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="BCF1" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="BCF2" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="KOC1" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="KOC2" nillable="true" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RetrieveByInChIKeyListSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveByInChIKeyList" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveByInChIKeyListSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveByInChIKeyListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PropertiesSoap">
+    <wsdl:operation name="RetrieveByInChIKeyList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For internal use only. Maps a list of InChIKeys to a list of PropertiesInfo.</wsdl:documentation>
+      <wsdl:input message="tns:RetrieveByInChIKeyListSoapIn" />
+      <wsdl:output message="tns:RetrieveByInChIKeyListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="PropertiesHttpGet" />
+  <wsdl:portType name="PropertiesHttpPost" />
+  <wsdl:binding name="PropertiesSoap" type="tns:PropertiesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrieveByInChIKeyList">
+      <soap:operation soapAction="http://www.chemspider.com/RetrieveByInChIKeyList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PropertiesSoap12" type="tns:PropertiesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrieveByInChIKeyList">
+      <soap12:operation soapAction="http://www.chemspider.com/RetrieveByInChIKeyList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PropertiesHttpGet" type="tns:PropertiesHttpGet">
+    <http:binding verb="GET" />
+  </wsdl:binding>
+  <wsdl:binding name="PropertiesHttpPost" type="tns:PropertiesHttpPost">
+    <http:binding verb="POST" />
+  </wsdl:binding>
+  <wsdl:service name="Properties">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">&lt;h3&gt;Please send all feedback to development-at-chemspider-dot-com&lt;/h3&gt;&lt;i&gt;NOTE: Some operations require a "Security Token". To obtain a token please complete the &lt;a href="/Register.aspx"&gt;registration&lt;/a&gt; process. Security Token is listed at &lt;a href="/UserProfile.aspx"&gt;Profile&lt;/a&gt; page.&lt;/i&gt;</wsdl:documentation>
+    <wsdl:port name="PropertiesSoap" binding="tns:PropertiesSoap">
+      <soap:address location="http://www.chemspider.com/PropertiesImport.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PropertiesSoap12" binding="tns:PropertiesSoap12">
+      <soap12:address location="http://www.chemspider.com/PropertiesImport.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PropertiesHttpGet" binding="tns:PropertiesHttpGet">
+      <http:address location="http://www.chemspider.com/PropertiesImport.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PropertiesHttpPost" binding="tns:PropertiesHttpPost">
+      <http:address location="http://www.chemspider.com/PropertiesImport.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

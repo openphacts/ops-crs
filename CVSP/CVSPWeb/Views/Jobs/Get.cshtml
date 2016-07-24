@@ -1,0 +1,42 @@
+﻿@model Guid
+
+@{
+    ViewBag.Title = "Job's details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-default">
+    <div id="header" class="panel-heading">
+        Job Details
+        <div id="toolbar" class="pull-right">
+            <a id="restartJobBtn" class="btn btn-default btn-xs" href="#" role="button"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Restart</a>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div id="job"></div>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#job').job_info({
+                id: '@Model',
+                onDisplay: function (stats) {
+                    if (stats.Status == 'Processing' || stats.Status == 'New') {
+                        setTimeout(function () {
+                            $('#job').job_info('reload');
+                        }, 30000);
+                    }
+                }
+            });
+
+            $('#restartJobBtn').click(function () {
+                $.Jobs.store.restartJob('@Model', function () {
+                    $('#job').job_info('reload');
+                });
+                return false;
+            });
+        });
+    </script>
+}

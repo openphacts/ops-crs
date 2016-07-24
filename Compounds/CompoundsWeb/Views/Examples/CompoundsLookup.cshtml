@@ -1,0 +1,93 @@
+﻿@model string
+@{
+    ViewBag.Title = "ChemSpider Compounds | Compounds Lookup";
+    Layout = "~/Views/Shared/_DemoLayout.cshtml";
+}
+
+<hgroup class="title">
+    <h3>Compounds Lookup</h3>
+</hgroup>
+
+<hgroup class="content">
+    <div id="compoundslookupcontainer"></div>
+    <button id="getSelectedCompoundIDBtn">Get selected Compound ID</button>    <button id="getDrawnMolBtn">Get drawn Mol</button>    <br/>    <div id="whatnowdialog" title="What would you like to do?" style="display: none">
+        <ul>
+            <li ><a id="getCompoundCompoundIDLink" target="_blank">Get compound ID</a></li>
+            <li ><a id="getCompoundNameLink" target="_blank">Get compound name</a></li>
+            <li ><a id="getCompoundMFLink" target="_blank">Get compound molecular formula</a></li>
+        </ul>
+    </div>
+
+    This is the simplest way to invoke RSC compound lookup widget...
+
+    <pre class="brush: js;">
+        $("#compoundslookupcontainer").compoundslookup();
+    </pre>
+
+    ... and if you do that this is how to retrieve a compound selected from its results...
+
+    <pre class="brush: js;">
+        $("#getSelectedCompoundIDBtn").click(function () {
+                alert("Compound ID selected was: "+$('#compoundslookupcontainer').compoundslookup("getCompoundID"));
+            });
+    </pre>
+
+    ... and how to retrieve the mol drawn in a structure search...
+
+    <pre class="brush: js;">
+        $("#getDrawnMolBtn").click(function () {
+                alert("Mol drawn in structure editor was: "+$('#compoundslookupcontainer').compoundslookup("getDrawnMol"));
+            });
+    </pre>
+ 
+    This is a more advanced way of invoking it where the successcallback and failcallback are automatically called when a returned compound is selected, or no results are found respectively...
+
+    <pre class="brush: js;">
+        $("#compoundslookupcontainer").compoundslookup({
+            buttontitle: "RSC compounds lookup",
+            successcallback: function () { 
+                var compoundID =  $('#compoundslookupcontainer').compoundslookup("getCompoundID");
+                alert("Selected compound: " + compoundID);
+                },
+            failcallback: function () { 
+                    var drawnmol = $('#compoundslookupcontainer').compoundslookup("getDrawnMol");
+                    if(drawnmol==null) {
+                        alert('Nothing was found!' );
+                    } else {
+                        alert('Nothing was found but this mol was drawn:' + drawnmol);
+                    } 
+                }
+        });
+    </pre>
+
+</hgroup>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#compoundslookupcontainer").compoundslookup({
+                buttontitle: "RSC compounds lookup",
+                successcallback: function () {
+                    var compoundID = $('#compoundslookupcontainer').compoundslookup("getCompoundID");
+                    alert("Selected compound: " + compoundID);
+                },
+                failcallback: function () {
+                    var drawnmol = $('#compoundslookupcontainer').compoundslookup("getDrawnMol");
+                    if (drawnmol == null) {
+                        alert('Nothing was found!');
+                    } else {
+                        alert('Nothing was found but this mol was drawn:' + drawnmol);
+                    }
+                }
+            });
+
+            $("#getSelectedCompoundIDBtn").click(function () {
+                alert("Compound ID selected was: "+$('#compoundslookupcontainer').compoundslookup("getCompoundID"));
+            });
+            
+            $("#getDrawnMolBtn").click(function () {
+                alert("Mol drawn in structure editor was: " + $('#compoundslookupcontainer').compoundslookup("getDrawnMol"));
+            });
+        });
+    </script>
+}

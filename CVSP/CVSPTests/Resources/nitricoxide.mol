@@ -1,0 +1,42 @@
+WPM00085
+ addWPLinks.groovy
+
+  2  1  0  0  0  0            999 V2000
+   11.2521   -6.3311    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+   12.0770   -6.3215    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  3  0  0  0  0
+M  END
+> <WPM>
+WPM00085
+
+> <http://www.wikipathways.org/index.php/Pathway:WP2447>
+Amyotrophic lateral sclerosis (ALS) (Homo sapiens)
+
+> <http://www.wikipathways.org/index.php/Pathway:WP2197>
+Endothelin Pathways (Homo sapiens)
+
+> <http://www.wikipathways.org/index.php/Pathway:WP176>
+Folate Metabolism (Homo sapiens)
+
+> <http://www.wikipathways.org/index.php/Pathway:WP15>
+Selenium Pathway (Homo sapiens)
+
+> <http://www.wikipathways.org/index.php/Pathway:WP1995>
+Effects of Nitric Oxide (Homo sapiens)
+
+> <http://www.wikipathways.org/index.php/Pathway:WP1533>
+Vitamin B12 Metabolism (Homo sapiens)
+
+> <http://www.wikipathways.org/index.php/Pathway:WP2059>
+Alzheimers Disease (Homo sapiens)
+
+> <Label0>
+NO
+
+> <Label1>
+Nitric oxide
+
+> <http://semanticscience.org/resource/CHEMINF_000408>
+HMDB03378
+
+$$$$

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="submitSDF4Processing">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sdf_text" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="std_type" type="tns:CVSP_Processing_Type" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="CVSP_Processing_Type">
+        <s:restriction base="s:string">
+          <s:enumeration value="None" />
+          <s:enumeration value="RulesOnly" />
+          <s:enumeration value="InChIOnly" />
+          <s:enumeration value="RulesAndInChI" />
+          <s:enumeration value="LayoutOnly" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="submitSDF4ProcessingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="submitSDF4ProcessingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isSubmissionProcessed_WS_CVSP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dep_guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isSubmissionProcessed_WS_CVSPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isSubmissionProcessed_WS_CVSPResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getValidationLogs_WS_CVSP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dep_guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getValidationLogs_WS_CVSPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getValidationLogs_WS_CVSPResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getStandardizedStructure_WS_CVSP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dep_guid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStandardizedStructure_WS_CVSPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getStandardizedStructure_WS_CVSPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="submitSDF4ProcessingSoapIn">
+    <wsdl:part name="parameters" element="tns:submitSDF4Processing" />
+  </wsdl:message>
+  <wsdl:message name="submitSDF4ProcessingSoapOut">
+    <wsdl:part name="parameters" element="tns:submitSDF4ProcessingResponse" />
+  </wsdl:message>
+  <wsdl:message name="isSubmissionProcessed_WS_CVSPSoapIn">
+    <wsdl:part name="parameters" element="tns:isSubmissionProcessed_WS_CVSP" />
+  </wsdl:message>
+  <wsdl:message name="isSubmissionProcessed_WS_CVSPSoapOut">
+    <wsdl:part name="parameters" element="tns:isSubmissionProcessed_WS_CVSPResponse" />
+  </wsdl:message>
+  <wsdl:message name="getValidationLogs_WS_CVSPSoapIn">
+    <wsdl:part name="parameters" element="tns:getValidationLogs_WS_CVSP" />
+  </wsdl:message>
+  <wsdl:message name="getValidationLogs_WS_CVSPSoapOut">
+    <wsdl:part name="parameters" element="tns:getValidationLogs_WS_CVSPResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStandardizedStructure_WS_CVSPSoapIn">
+    <wsdl:part name="parameters" element="tns:getStandardizedStructure_WS_CVSP" />
+  </wsdl:message>
+  <wsdl:message name="getStandardizedStructure_WS_CVSPSoapOut">
+    <wsdl:part name="parameters" element="tns:getStandardizedStructure_WS_CVSPResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ChemicalValidationSoap">
+    <wsdl:operation name="submitSDF4Processing">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Accepts a SDF record for validation and standardization. Returns deposition guid</wsdl:documentation>
+      <wsdl:input message="tns:submitSDF4ProcessingSoapIn" />
+      <wsdl:output message="tns:submitSDF4ProcessingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isSubmissionProcessed_WS_CVSP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Accepts deposition guid and checks if it is processed</wsdl:documentation>
+      <wsdl:input message="tns:isSubmissionProcessed_WS_CVSPSoapIn" />
+      <wsdl:output message="tns:isSubmissionProcessed_WS_CVSPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getValidationLogs_WS_CVSP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Accepts deposition guid and returns logs</wsdl:documentation>
+      <wsdl:input message="tns:getValidationLogs_WS_CVSPSoapIn" />
+      <wsdl:output message="tns:getValidationLogs_WS_CVSPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStandardizedStructure_WS_CVSP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Accepts deposition guid and returns standardized structure</wsdl:documentation>
+      <wsdl:input message="tns:getStandardizedStructure_WS_CVSPSoapIn" />
+      <wsdl:output message="tns:getStandardizedStructure_WS_CVSPSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ChemicalValidationSoap" type="tns:ChemicalValidationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="submitSDF4Processing">
+      <soap:operation soapAction="http://tempuri.org/submitSDF4Processing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isSubmissionProcessed_WS_CVSP">
+      <soap:operation soapAction="http://tempuri.org/isSubmissionProcessed_WS_CVSP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getValidationLogs_WS_CVSP">
+      <soap:operation soapAction="http://tempuri.org/getValidationLogs_WS_CVSP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStandardizedStructure_WS_CVSP">
+      <soap:operation soapAction="http://tempuri.org/getStandardizedStructure_WS_CVSP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ChemicalValidationSoap12" type="tns:ChemicalValidationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="submitSDF4Processing">
+      <soap12:operation soapAction="http://tempuri.org/submitSDF4Processing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isSubmissionProcessed_WS_CVSP">
+      <soap12:operation soapAction="http://tempuri.org/isSubmissionProcessed_WS_CVSP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getValidationLogs_WS_CVSP">
+      <soap12:operation soapAction="http://tempuri.org/getValidationLogs_WS_CVSP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStandardizedStructure_WS_CVSP">
+      <soap12:operation soapAction="http://tempuri.org/getStandardizedStructure_WS_CVSP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ChemicalValidation">
+    <wsdl:port name="ChemicalValidationSoap" binding="tns:ChemicalValidationSoap">
+      <soap:address location="http://localhost:8010/ChemValidatorWebSite/ChemicalValidation.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ChemicalValidationSoap12" binding="tns:ChemicalValidationSoap12">
+      <soap12:address location="http://localhost:8010/ChemValidatorWebSite/ChemicalValidation.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

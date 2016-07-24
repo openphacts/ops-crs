@@ -1,0 +1,118 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_FlexLayout.cshtml";
+}
+
+@section css {
+    <style>
+        .debug {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            text-align: right;
+            margin: 5px;
+            color: gray;
+        }
+    </style>
+}
+
+<div id="manager1" data-layout-manager="horizontal" data-layout="manager">
+    <div id="area1" data-layout="infobox tabs" data-size="25%">
+        <div class="panel panel-default">
+            <div class="panel-heading" style="position: relative;">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="active">
+                        <a class="help" href="#general-tab" role="tab" data-toggle="tab">General Info</a>
+                    </li>
+                    <li>
+                        <a class="details" href="#details-tab" role="tab" data-toggle="tab">Details</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel-body tab-content">
+                <div class="tab-pane .fade active" id="general-tab">General info...</div>
+                <div class="tab-pane .fade" id="details-tab">Details...</div>
+            </div>
+        </div>
+    </div>
+    <div id="manager4" data-layout="manager" data-size="25%" data-layout-manager="vertical">
+        <div id="area7" data-layout="infobox" data-size="50%"></div>
+        <div id="area8" data-layout="infobox tabs" data-size="50%">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="active">
+                            <a class="all" href="#synonyms-tab" role="tab" data-toggle="tab">Synonyms</a>
+                        </li>
+                        <li>
+                            <a class="genomes" href="#datasources-tab" role="tab" data-toggle="tab">Datasources</a>
+                        </li>
+                        <li>
+                            <a class="reads" href="#articles-tab" role="tab" data-toggle="tab">Articles</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-body tab-content">
+                    <div class="tab-pane .fade active" id="synonyms-tab">Synonyms list...</div>
+                    <div class="tab-pane .fade" id="datasources-tab">Datasources...</div>
+                    <div class="tab-pane .fade" id="articles-tab">Articles...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="area3" data-layout="infobox panel" data-size="30%">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="title">Some panel</div>
+            </div>
+            <div class="panel-body">
+                Panel's content...
+            </div>
+        </div>
+    </div>
+    <div id="manager2" data-layout="manager" data-size="20%" data-layout-manager="vertical">
+        <div id="area4" data-layout="infobox" data-size="50"></div>
+        <div id="manager3" data-layout="manager" data-layout-manager="horizontal" data-size="*">
+            <div id="area5" data-layout="infobox" data-size="40%"></div>
+            <div id="area6" data-layout="infobox" data-size="60%"></div>
+        </div>
+        <div id="area9" data-layout="infobox" data-size="50"></div>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.tab-pane').append(
+                $(document.createElement('div')).addClass('debug')
+            );
+
+            $('.chemspider-content').on({
+                'area-create': function (event, params) {
+                    $(params.infobox).on({
+                        'area-resize': function (event, params) {
+                            $('.debug', this).text(_trace(params));
+                        },
+                        'infobox-drag': function (event, params) {
+                            $('.debug', this).text(_trace(params));
+                        }
+                    })
+                }
+            });
+
+            $('div[data-layout~="infobox"]').on({
+                'area-resize': function (event, params) {
+                    $('.debug', this).text(_trace(params));
+                },
+                'infobox-drag': function (event, params) {
+                    $('.debug', this).text(_trace(params));
+                }
+            });
+        });
+
+        function _trace(params) {
+            return 't:' + params.rect.top + '; l:' + params.rect.left + '; b:' + params.rect.bottom + '; r:' + params.rect.right;
+        }
+    </script>
+}

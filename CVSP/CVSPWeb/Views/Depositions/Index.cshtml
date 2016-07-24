@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Depositions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="depositions"></div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#depositions').depositions_gridview({
+                columns: [
+                    { name: 'Id', title: 'ID', format: function (value) { return $(document.createElement('a')).attr({ href: '@Url.Content("~/depositions/")' + value }).text(value); } },
+                    { name: 'DateSubmitted', title: 'Date', format: function (value) { return (new Date(value)).toLocaleDateString(); } },
+                    { name: 'DatasourceId', title: 'Datasource', format: DatasourceFormat },
+                    { name: 'UserId', title: 'Depositor', format: DepositorDisplayNameFormat },
+                    {
+                        name: 'DepositionFiles', title: 'File Name', format: function (files) {
+                            if (files.length > 0) {
+                                return files[0].Name;
+                            }
+                        }
+                    },
+                    { name: 'Status', title: 'Status' }
+                    //{ name: 'Status', title: 'Status', format: DepositionStatusFormat }
+                ],
+                onClick: function (event, datasource) {
+                    window.location = '@Url.Content("~/depositions/")' + datasource.Id;
+                }
+            });
+
+            $('li.depositions').addClass('active');
+        });
+</script>
+}

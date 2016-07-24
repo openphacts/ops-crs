@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>ChemSpider.Layout</id>
+    <version>1.0.14</version>
+    <title>ChemSpider Layout</title>
+    <authors>Royal Society of Chemistry</authors>
+    <owners>Royal Society of Chemistry</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>CSS and JS files necessary for general application layout</description>
+    <language>en-US</language>
+    <tags>ChemSpider</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="SyntaxHighlighter.NuGet" version="3.0.83.01" />
+        <dependency id="jQuery.UI.Combined" version="1.11.1" />
+        <dependency id="bootstrap" version="3.2.0" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RSC.Compounds.DataExport.DataExport" Collapsed="true">
+    <Position X="6.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARQAAAAGAjAAAAIAAYAIRAQAgAAAAAACAEQAAAABEKA=</HashCode>
+      <FileName>Export\DataExport\DataExport.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RSC.Compounds.DataExport.OpsDataExport" Collapsed="true">
+    <Position X="8.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAQAAAAACAAADAAAAAAABAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Export\DataExport\OpsDataExport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSC.Compounds.DataExport.OpsDataSourceExport" Collapsed="true">
+    <Position X="4" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Export\DataExport\OpsDataSourceExport.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RSC.Compounds.DataExport.OpsSdfMapExport" Collapsed="true">
+    <Position X="6.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Export\DataExport\OpsSdfMapExport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSC.Compounds.DataExport.OpsVoidExport" Collapsed="true">
+    <Position X="8.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Export\DataExport\OpsVoidExport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSC.Compounds.DataExport.ChemSpiderLinksetDataExportFile" Collapsed="true">
+    <Position X="2.5" Y="8" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Export\DataExportFiles\ChemSpiderLinksetDataExportFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSC.Compounds.DataExport.DataExportFile" Collapsed="true">
+    <Position X="12" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQACAAAEABAgAAAAAAAABAgAgEAAAAAAAAAACgBAAEA=</HashCode>
+      <FileName>Export\DataExportFiles\DataExportFile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RSC.Compounds.DataExport.DataSourceDataExportFile" Collapsed="true">
+    <Position X="9.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Export\DataExportFiles\DataSourceDataExportFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSC.Compounds.DataExport.DataSourceListDataExportFile" Collapsed="true">
+    <Position X="17.75" Y="6.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAgAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Export\DataExportFiles\DataSourceListDataExportFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSC.Compounds.DataExport.ExactLinksetDataExportFile" Collapsed="true">
+    <Position X="11.75" Y="9.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Export\DataExportFiles\ExactLinksetDataExportFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSC.Compounds.DataExport.IssuesDataExportFile" Collapsed="true">
+    <Position X="8.25" Y="8" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAggAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Export\DataExportFiles\IssuesDataExportFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSC.Compounds.DataExport.LinksetDataExportFile" Collapsed="true">
+    <Position X="13.25" Y="8" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAIBAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Export\DataExportFiles\LinksetDataExportFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSC.Compounds.DataExport.OpsSdfMapDataExportFile" Collapsed="true">
+    <Position X="21" Y="6.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Export\DataExportFiles\OpsSdfMapDataExportFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSC.Compounds.DataExport.ParentChildLinksetDataExportFile" Collapsed="true">
+    <Position X="5.25" Y="8" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAgAAAAABAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Export\DataExportFiles\ParentChildLinksetDataExportFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSC.Compounds.DataExport.PropertiesDataExportFile" Collapsed="true">
+    <Position X="10.25" Y="8" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AggAAAAAAAAAAAgABAAABAAAAAAAgAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Export\DataExportFiles\PropertiesDataExportFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSC.Compounds.DataExport.RelatedLinksetDataExportFile" Collapsed="true">
+    <Position X="14.25" Y="9.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Export\DataExportFiles\RelatedLinksetDataExportFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSC.Compounds.DataExport.SynonymsDataExportFile" Collapsed="true">
+    <Position X="15.5" Y="8" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAggAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Export\DataExportFiles\SynonymsDataExportFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RSC.Compounds.DataExport.VoidDataExportFile" Collapsed="true">
+    <Position X="18" Y="8" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IAwAAAIQAAAAAAAAEIKABgCAAEIBEBgAEAAAAABCAAA=</HashCode>
+      <FileName>Export\DataExportFiles\VoidDataExportFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="RSC.Compounds.DataExport.IDataExport">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ARQAAAAGAhAAAAIAAYAABAQAgAAAAAACAEAAAAABAKA=</HashCode>
+      <FileName>Models\IDataExport.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RSC.Compounds.DataExport.IDataExportFile">
+    <Position X="8" Y="9.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AQACAAAEABAgAAAAAAAABAgAgAAAAAAAAAAACgBAAEA=</HashCode>
+      <FileName>Models\IDataExportFile.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RSC.Compounds.DataExport.IDataSourceExport">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\IDataSourceExport.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

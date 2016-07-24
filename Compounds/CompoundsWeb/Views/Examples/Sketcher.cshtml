@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "ChemSpider Compounds | Chemdoodle Sketcher";
+    Layout = "~/Views/Shared/_DemoLayout.cshtml";
+}
+
+<h2>ChemDoodle Sketcher</h2>
+
+<div id="sketcher" class="thumbnail">
+</div>
+
+<button id="getMolButton">Get MOL</button>
+<button id="getSmilesButton">Get SMILES</button>
+<button id="convertButton">Convert</button>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sketcher").sketcher({
+                options: {
+                    oneMolecule: true
+                }
+            });
+
+            $('#getMolButton').click(function () {
+                alert($('#sketcher').sketcher('molecule'));
+            });
+
+            $('#getSmilesButton').click(function () {
+                alert($('#sketcher').sketcher('smiles'));
+            });
+
+            $('#convertButton').click(function () {
+                $.ajax({
+                    type: 'POST',
+                    //dataType: "json",
+                    //url: 'http://parts.chemspider.com/JSON.ashx',
+                    //url: 'http://api.dev.rsc-us.org/compounds/v1/api/compounds/777/mol/test',
+                    url: 'http://api.dev.rsc-us.org/compounds/v1/api/compounds/mol/convert',
+                    data: {
+                        Direction: 'Name2Smiles',
+                        Text: 'aspirin'
+                    }
+                })
+                .done(function (data) {
+                    alert(data);
+                })
+                .fail(function (xhr, error, thrownError) {
+                    alert('faild')
+                });
+            });
+        });
+    </script>
+}

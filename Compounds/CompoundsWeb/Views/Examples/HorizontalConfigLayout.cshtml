@@ -1,0 +1,166 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_FlexLayout.cshtml";
+}
+
+@section css {
+}
+
+<div id="layoutManager">
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var config = {
+                layout: {
+                    //layoutType:'horizontal',
+                    items: [
+                    {
+                        id: 'tabs1',
+                        size: '25%',
+                        allowMaximize: true,
+                        class: 'navigation',
+                        toggler: 'east',
+                        tabs: {
+                            items: [{
+                                active: false,
+                                title: 'List',
+                                name: 'list',
+                                allowClose: true,
+                                view: {
+                                    name: 'areastats'
+                                }
+                            }, {
+                                active: true,
+                                title: 'Chart',
+                                name: 'chart',
+                                allowClose: true,
+                                view: {
+                                    name: 'areastats'
+                                }
+                            }]
+                        }
+                    },
+                    {
+                        size: '30%',
+                        layout: {
+                            layoutType: 'vertical',
+                            items: [{
+                                size: '30%',
+                                title: 'Some Panel',
+                                name: 'some_name',
+                                class: 'genomes',
+                                allowMaximize: true,
+                                toggler: 'south',
+                                layout: {
+                                    border: 'between',
+                                    overflow: 'hidden',
+                                    layoutType: 'horizontal',
+                                    allowResize: true,
+                                    items: [{
+                                        size: '50%',
+                                        overflow: 'hidden',
+                                        view: {
+                                            name: 'areastats'
+                                        }
+                                    }, {
+                                        size: '50%',
+                                        overflow: 'hidden',
+                                        view: {
+                                            name: 'areastats'
+                                        }
+                                    }]
+                                }
+                            }, {
+                                size: '40%',
+                                title: 'Some Details',
+                                name: 'details',
+                                class: 'details',
+                                allowMaximize: true,
+                                view: {
+                                    name: 'areastats'
+                                }
+                            }, {
+                                size: '30%',
+                                title: 'Some Other Details',
+                                name: 'otherDetails',
+                                allowMaximize: true,
+                                toggler: 'north',
+                                view: {
+                                    name: 'areastats'
+                                }
+                            }]
+                        }
+                    },
+                    {
+                        size: '45%',
+                        allowMaximize: true,
+                        toggler: 'west',
+                        tabs: {
+                            items: [{
+                                title: 'Tab 1',
+                                name: 'tab1',
+                                view: {
+                                    name: 'areastats'
+                                }
+                            }, {
+                                active: true,
+                                title: 'Tab 2',
+                                name: 'tab2',
+                                layout: {
+                                    border: 'between',
+                                    overflow: 'hidden',
+                                    layoutType: 'vertical',
+                                    allowResize: true,
+                                    items: [{
+                                        size: '50',
+                                        view: {
+                                            name: 'areastats'
+                                        }
+                                    }, {
+                                        size: '*',
+                                        layout: {
+                                            border: 'between',
+                                            overflow: 'hidden',
+                                            layoutType: 'horizontal',
+                                            allowResize: true,
+                                            items: [{
+                                                size: '50%',
+                                                view: {
+                                                    name: 'areastats'
+                                                }
+                                            }, {
+                                                size: '50%',
+                                                view: {
+                                                    name: 'areastats'
+                                                }
+                                            }]
+                                        }
+                                    }, {
+                                        size: '50',
+                                        view: {
+                                            name: 'areastats'
+                                        }
+                                    }]
+                                }
+                            }, {
+                                title: 'Tab 3',
+                                name: 'tab3',
+                                view: {
+                                    name: 'customlayout'
+                                }
+                            }]
+                        }
+                    }]
+                }
+            };
+
+            $('#layoutManager').layoutmanager({
+                type: 'horizontal',
+                saveState: false,
+                config: config
+            });
+        });
+    </script>
+}

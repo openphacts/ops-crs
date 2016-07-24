@@ -1,0 +1,65 @@
+﻿.cs-widget-scroller {
+}
+
+.cs-widget-scroller.als-container {
+    position: relative;
+    width: 100%;
+    margin: 0px auto;
+    z-index: 0;
+}
+
+.cs-widget-scroller .als-viewport {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.cs-widget-scroller .als-wrapper {
+    position: relative;
+    list-style: none;
+    padding: 0;
+}
+
+.cs-widget-scroller .als-item {
+    position: relative;
+    display: block;
+    text-align: center;
+    float: left;
+
+    margin: 0px 5px;
+    padding: 4px 0px;
+}
+
+.cs-widget-scroller .als-item img {
+    display: block;
+    margin: 0 auto;
+    vertical-align: middle;
+} 
+
+.cs-widget-scroller .als-prev, .als-next {
+    position: absolute;
+    cursor: pointer;
+}
+
+.cs-widget-scroller .als-prev {
+    left: 0;
+}
+
+.cs-widget-scroller .als-next {
+    right: 0;
+}
+
+.cs-widget-scroller .als-item a {
+    /*padding: 0;*/
+    margin: 0;
+}
+
+.cs-widget-scroller .als-item span.number {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: #D3D3D3;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 80%;
+}

@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "~/Views/Shared/_RSCLayout.cshtml";
+}
+
+@section css {
+    <link href="@ChemSpider.Compounds.CompoundsIntegration.ToolkitCSS" rel="stylesheet" />
+    <link href="@ChemSpider.Compounds.CompoundsIntegration.CSS" rel="stylesheet" />
+
+    @RenderSection("css", required: false)
+}
+
+@section featured {
+    <div class="toolbar">
+        <div id="simpleSearch"></div>
+    </div>
+    <div class="content">
+        @RenderBody()
+    </div>
+}
+
+@section scripts {
+    <script src="@ChemSpider.Compounds.CompoundsIntegration.ToolkitScript"></script>
+    <script src="@ChemSpider.Compounds.CompoundsIntegration.Script"></script>
+
+    <script type="text/javascript">
+        //  use local data provider...
+        $.Compounds.store.baseDataUrl = '';
+        $.Substances.store.baseDataUrl = '';
+    </script>
+
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //if ($.support.bootstrap())
+            //    $('[data-toggle="tooltip"]').bootstrapTooltip();
+        });
+    </script>
+}

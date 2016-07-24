@@ -1,0 +1,103 @@
+﻿@{
+    ViewBag.Title = "ChemSpider Compounds | JSmol";
+    Layout = "~/Views/Shared/_DemoLayout.cshtml";
+}
+
+<hgroup class="title">
+    <h3>JSMol</h3>
+</hgroup>
+
+<hgroup class="content">
+    <p>
+        Main widget to display structure in 3D format using JSMol
+    </p>
+
+    <hr />
+    <h4>JSMol by SMILES</h4>
+    <div id="molecule3d"></div>
+
+    <div style="margin-top: 2em; margin-bottom: 2em;">
+        Enter SMILES and click Load button:
+        <input type="text" />
+        <button id="loadBtn">Load</button>
+    </div>
+
+    Code example how to display structure using jQuery...
+
+    <pre class="brush: js;">
+        $("#molecule3d").jsmol({
+            width: 300,
+            height: 300,
+            smiles: 'CC(=O)OC1=CC=CC=C1C(=O)O',
+            type: 'JSMol'
+        });
+    </pre>
+
+    ... and change it dynamically later
+
+    <pre class="brush: js;">
+        $('#molecule3d').jsmol("setSMILES", "CC(=O)");
+    </pre>
+
+    <hr />
+    <h4>JSMol by MOL</h4>
+
+    There are two options how you can init JSMol widget by MOL. First one by the URL that returns MOL file like this
+
+    <pre class="brush: xml;">
+        &lt;div data-type="jsmol" data-jsmol-type="JSMol"
+            data-mol-url="https://parts.api.rsc.org/compounds/v1/api/compounds/325/mol?dimension=3d"&gt;
+        &lt;/div&gt;
+    </pre>
+    <div id="jsmolByUrl" data-type="jsmol" data-jsmol-type="JSMol" data-mol-url="https://parts.api.rsc.org/compounds/v1/api/compounds/325/mol?dimension=3d"></div>
+
+    or directly adding MOL to the document like this
+
+    <pre class="brush: xml;">
+&lt;div data-type="jsmol" data-width="300" data-height="300" data-jsmol-type="JSMol"&gt;
+&lt;input type="hidden" class="mol-file" value="
+
+
+  3  2  0  0000  0  0  0  0  0999 V2000
+    2.3010   -0.6673    0.0000 O   0  0  0  0  0  0  0  0  0  0  0
+    1.1505    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0
+    0.0000   -0.6673    0.0000 C   0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0
+  2  3  1  0
+M  END
+" /&gt;
+&lt;/div&gt;
+    </pre>
+
+    <div id="jsmolByMol" data-type="jsmol" data-width="300" data-height="300" data-jsmol-type="JSMol">
+        <input type="hidden" class="mol-file" value="
+
+
+  3  2  0  0000  0  0  0  0  0999 V2000
+    2.3010   -0.6673    0.0000 O   0  0  0  0  0  0  0  0  0  0  0
+    1.1505    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0
+    0.0000   -0.6673    0.0000 C   0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0
+  2  3  1  0
+M  END
+" />
+    </div>
+</hgroup>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#molecule3d").jsmol({
+                width: 300,
+                height: 300,
+                smiles: 'CC(=O)OC1=CC=CC=C1C(=O)O',
+                type: 'JSMol'
+            });
+
+            $('#loadBtn').click(function () {
+                var smiles = $('input').val();
+                $('#molecule3d').jsmol("setSMILES", smiles);
+            });
+        });
+    </script>
+}

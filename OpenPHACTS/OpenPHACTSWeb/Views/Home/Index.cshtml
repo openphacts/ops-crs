@@ -1,0 +1,83 @@
+﻿@model int
+
+@{
+    ViewBag.Title = "OpenPHACTS";
+}
+
+@Html.Partial("_HomeSearchPartial")
+
+<div id="compoundsStats" class="general-stats well">
+    @Html.ActionLink(@Model.ToString(), "Index", "Compounds", null, new { @class = "compounds-count" }) compounds loaded!
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(document)
+                .on('SimpleSearch', function (e, params) {
+                    $.Compounds.store.simpleSearchWithOptions({
+                        searchOptions: {
+                            QueryText: params.value
+                        },
+                        //resultOptions: {
+                        //    Limit: searchOptions.getHitsLimit()
+                        //},
+                        scopeOptions: {
+                            RealOnly: true
+                        }
+                    }, function (rid) {
+                        window.location = '@Url.Content("~/Search/Results/")' + rid;
+                    });
+                })
+                .on('ExactStructureSearch', function (e, params) {
+                    $.Compounds.store.exactStructureSearchWithOptions({
+                        searchOptions: {
+                            Molecule: params.mol,
+                            MatchType: params.matchType
+                        },
+                        //resultOptions: {
+                        //    Limit: searchOptions.getHitsLimit()
+                        //},
+                        scopeOptions: {
+                            RealOnly: true
+                        }
+                    }, function (rid) {
+                        window.location = '@Url.Content("~/Search/Results/")' + rid;
+                    });
+                })
+                .on('SubStructureSearch', function (e, params) {
+                    $.Compounds.store.substructureSearchWithOptions({
+                        searchOptions: {
+                            Molecule: params.mol,
+                            MatchTautomers: true
+                        },
+                        //resultOptions: {
+                        //    Limit: searchOptions.getHitsLimit()
+                        //},
+                        scopeOptions: {
+                            RealOnly: true
+                        }
+                    }, function (rid) {
+                        window.location = '@Url.Content("~/Search/Results/")' + rid;
+                    });
+                })
+                .on('SimilarityStructureSearch', function (e, params) {
+                    $.Compounds.store.similarityStructureSearchWithOptions({
+                        searchOptions: {
+                            Molecule: params.mol,
+                            Threshold: params.threshold,
+                            SimilarityType: params.type
+                        },
+                        //resultOptions: {
+                        //    Limit: searchOptions.getHitsLimit()
+                        //},
+                        scopeOptions: {
+                            RealOnly: true
+                        }
+                    }, function (rid) {
+                        window.location = '@Url.Content("~/Search/Results/")' + rid;
+                    });
+                });
+        });
+    </script>
+}

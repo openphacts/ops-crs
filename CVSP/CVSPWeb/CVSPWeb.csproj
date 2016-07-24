@@ -1,0 +1,711 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6E4B941F-05B1-4CCE-9C42-63CF808A59EA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CVSPWeb</RootNamespace>
+    <AssemblyName>CVSPWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Extras.CommonServiceLocator">
+      <HintPath>..\packages\Autofac.Extras.CommonServiceLocator.3.2.0\lib\net40\Autofac.Extras.CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=3.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.3.3.4\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi">
+      <HintPath>..\packages\Autofac.WebApi2.3.4.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="bingo-dotnet, Version=1.1.5589.31745, Culture=neutral, PublicKeyToken=6a31cb7055c16a21, processorArchitecture=MSIL">
+      <HintPath>..\packages\Indigo.Toolkit.1.2.1\lib\net40\bingo-dotnet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemImageNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Toolkit.1.1.2\lib\net45\ChemImageNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Utilities.1.0.13\lib\net45\ChemSpider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider.Compounds.Client">
+      <HintPath>..\packages\ChemSpider.Compounds.Client.1.0.8\lib\net45\ChemSpider.Compounds.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Compounds.Core">
+      <HintPath>..\packages\ChemSpider.Compounds.Core.1.0.1\lib\net45\ChemSpider.Compounds.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Data.Database, Version=2.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Database.Objects.1.0.11\lib\net45\ChemSpider.Data.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Database, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Databases.1.0.4\lib\net45\ChemSpider.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Datasources.Client">
+      <HintPath>..\packages\ChemSpider.Datasources.Client.1.0.0\lib\net45\ChemSpider.Datasources.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Formats, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Formats.1.1.2\lib\net45\ChemSpider.Formats.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Formats.Accelrys, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Formats.1.1.2\lib\net45\ChemSpider.Formats.Accelrys.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Formats.ChemDraw, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Formats.1.1.2\lib\net45\ChemSpider.Formats.ChemDraw.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Interoperability, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Utilities.1.0.13\lib\net45\ChemSpider.Interoperability.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider.Molecules, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Molecules.1.1.1\lib\net45\ChemSpider.Molecules.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Utilities.Web.1.0.3\lib\net45\ChemSpider.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.ObjectModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.ObjectModel.1.0.10\lib\net45\ChemSpider.ObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider.Profile.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Profile.1.0.20\lib\net45\ChemSpider.Profile.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Profile.RSCID, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Profile.1.0.20\lib\net45\ChemSpider.Profile.RSCID.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Search, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Search.1.0.11\lib\net45\ChemSpider.Search.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider.Security, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Security.1.0.3\lib\net45\ChemSpider.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider.Utilities, Version=2.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Utilities.1.0.13\lib\net45\ChemSpider.Utilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider.Utilities.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Utilities.Web.1.0.3\lib\net45\ChemSpider.Utilities.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah.Contrib.WebApi, Version=1.0.10.25, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elmah.Contrib.WebApi.1.0.10.25\lib\net45\Elmah.Contrib.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah.Mvc, Version=2.1.2.1389, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elmah.MVC.2.1.2\lib\net40\Elmah.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.BulkInsert">
+      <HintPath>..\packages\EntityFramework.BulkInsert-ef6.6.0.2.8\lib\Net45\EntityFramework.BulkInsert.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Extended">
+      <HintPath>..\packages\EntityFramework.Extended.6.1.0.168\lib\net45\EntityFramework.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.MappingAPI, Version=6.1.0.9, Culture=neutral, PublicKeyToken=7ee2e825d201459e, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.MappingAPI.6.1.0.9\lib\net45\EntityFramework.MappingAPI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtUtilsNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Toolkit.1.1.2\lib\net45\ExtUtilsNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.4.369, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ICSharpCode.SharpZipLib.dll.0.85.4.369\lib\net20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="InChINet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Toolkit.1.1.2\lib\net45\InChINet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="indigo-dotnet, Version=1.1.5589.31742, Culture=neutral, PublicKeyToken=ca8e3320bc4499e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Indigo.Toolkit.1.2.1\lib\net40\indigo-dotnet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="indigo-inchi-dotnet, Version=1.1.5589.31744, Culture=neutral, PublicKeyToken=6a31cb7055c16a21, processorArchitecture=MSIL">
+      <HintPath>..\packages\Indigo.Toolkit.1.2.1\lib\net40\indigo-inchi-dotnet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="indigo-renderer-dotnet, Version=1.1.5589.31744, Culture=neutral, PublicKeyToken=09f0421d14bc0b92, processorArchitecture=MSIL">
+      <HintPath>..\packages\Indigo.Toolkit.1.2.1\lib\net40\indigo-renderer-dotnet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OpenBabelNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Toolkit.1.1.2\lib\net45\OpenBabelNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OpenEyeNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Toolkit.1.1.2\lib\net45\OpenEyeNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="RSC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.1.0.23\lib\net45\RSC.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RSC.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.Logging.Core.1.0.11\lib\net45\RSC.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RSC.Logging.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.Logging.Core.1.0.11\lib\net45\RSC.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RSC.Logging.EntityFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.Logging.EntityFramework.1.0.9\lib\net45\RSC.Logging.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RSC.Properties.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.Properties.Core.1.0.18\lib\net45\RSC.Properties.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RSC.Properties.EntityFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.Properties.EntityFramework.1.0.42\lib\net45\RSC.Properties.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RSC.Search, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.Search.1.0.3\lib\net45\RSC.Search.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RSC.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\RSC.Web.1.0.1\lib\net45\RSC.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Cors">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="WebApiContrib.Formatting.Jsonp, Version=3.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebApiContrib.Formatting.Jsonp.3.0.2\lib\net45\WebApiContrib.Formatting.Jsonp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="XmlDiffPatch, Version=1.0.8.28, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\XMLDiffPatch.1.0.8.28\lib\net\XmlDiffPatch.dll</HintPath>
+    </Reference>
+    <Reference Include="XmlDiffPatch.View, Version=1.0.1493.40755, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\XMLDiffPatch.1.0.8.28\lib\net\XmlDiffPatch.View.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ChunksController.cs" />
+    <Compile Include="Controllers\DepositionsController.cs" />
+    <Compile Include="Controllers\ExamplesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JobsController.cs" />
+    <Compile Include="Controllers\OperationsController.cs" />
+    <Compile Include="Controllers\RecordsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\DepositionModels.cs" />
+    <Compile Include="Models\FieldAnnotation.cs" />
+    <Compile Include="Models\SearchModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebAPI\AnnotationsController.cs" />
+    <Compile Include="WebAPI\ChunksController.cs" />
+    <Compile Include="WebAPI\DepositionsController.cs" />
+    <Compile Include="WebAPI\JobsController.cs" />
+    <Compile Include="WebAPI\LoggerController.cs" />
+    <Compile Include="WebAPI\ProfilesController.cs" />
+    <Compile Include="WebAPI\PropertiesController.cs" />
+    <Compile Include="WebAPI\RecordsController.cs" />
+    <Compile Include="WebAPI\SearchesController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Profile.xml" />
+    <Content Include="App_Data\Roles.xml" />
+    <Content Include="App_Data\Users.xml" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\chemspider-layout.css" />
+    <Content Include="Content\css\home-search-tabs.css" />
+    <Content Include="Content\css\images\chemspider-header-bg.jpg" />
+    <Content Include="Content\css\jquery-ui-tune.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\css\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Widgets\css\chunks.chunk.info.css" />
+    <Content Include="Widgets\css\depositions.deposition.status.css" />
+    <Content Include="Widgets\css\depositions.deposition.info.css" />
+    <Content Include="Widgets\css\depositions.deposition.progress.css" />
+    <Content Include="Widgets\css\depositions.deposition.stats.css" />
+    <Content Include="Widgets\css\depositions.depositions.gridview.css" />
+    <Content Include="Widgets\css\jobs.job.info.css" />
+    <Content Include="Widgets\css\records.records.gridview.css" />
+    <Content Include="Widgets\css\records.record.info.css" />
+    <Content Include="Widgets\css\ui.jobs.filter.css" />
+    <Content Include="Widgets\css\ui.records.filter.css" />
+    <Content Include="Widgets\js\Annotations\New\jquery.annotations.add.js" />
+    <Content Include="Widgets\js\Annotations\jquery.annotations.store.js" />
+    <Content Include="Widgets\js\Annotations\View\jquery.annotations.gridview.js" />
+    <Content Include="Widgets\js\Chunks\jquery.chunks.store.js" />
+    <Content Include="Widgets\js\Chunks\View\jquery.chunks.gridview.js" />
+    <Content Include="Widgets\js\Chunks\View\jquery.chunk.info.js" />
+    <Content Include="Widgets\js\Depositions\jquery.depositions.store.js" />
+    <Content Include="Widgets\js\Depositions\New\jquery.deposition.new.js" />
+    <Content Include="Widgets\js\Depositions\View\jquery.deposition.progress.js" />
+    <Content Include="Widgets\js\Depositions\View\jquery.deposition.stats.js" />
+    <Content Include="Widgets\js\Depositions\View\jquery.deposition.status.js" />
+    <Content Include="Widgets\js\Depositions\View\jquery.depositions.gridview.js" />
+    <Content Include="Widgets\js\Jobs\jquery.jobs.store.js" />
+    <Content Include="Widgets\js\Jobs\View\jquery.deposition.jobs.info.js" />
+    <Content Include="Widgets\js\Jobs\View\jquery.job.info.js" />
+    <Content Include="Widgets\js\Jobs\View\jquery.jobs.gridview.js" />
+    <Content Include="Widgets\js\jquery.search.store.js" />
+    <Content Include="Widgets\js\Logger\jquery.logger.store.js" />
+    <Content Include="Widgets\js\Profiles\jquery.profile.update.js" />
+    <Content Include="Widgets\js\Profiles\jquery.profiles.store.js" />
+    <Content Include="Widgets\js\Profiles\jquery.profile.view.js" />
+    <Content Include="Widgets\js\Properties\jquery.properties.store.js" />
+    <Content Include="Widgets\js\Records\jquery.records.store.js" />
+    <Content Include="Widgets\js\Records\View\jquery.chemspider.synonyms.gridview.js" />
+    <Content Include="Widgets\js\Records\View\jquery.chemspider.properties.gridview.js" />
+    <Content Include="Widgets\js\Logger\View\jquery.issues.shortview.js" />
+    <Content Include="Widgets\js\Properties\View\jquery.properties.gridview.js" />
+    <Content Include="Widgets\js\Records\View\jquery.fields.gridview.js" />
+    <Content Include="Widgets\js\Logger\View\jquery.issues.gridview.js" />
+    <Content Include="Widgets\js\Records\View\jquery.record.info.js" />
+    <Content Include="Widgets\js\Records\View\jquery.records.gridview.js" />
+    <Content Include="Widgets\js\UI\jquery.deposition.toolbar.js" />
+    <Content Include="Widgets\js\UI\jquery.jobs.filter.js" />
+    <Content Include="Widgets\js\UI\jquery.records.filter.js" />
+    <Content Include="Content\test.json" />
+    <None Include="Properties\PublishProfiles\chemdata-web-00.pubxml" />
+    <None Include="Properties\PublishProfiles\Alex.pubxml" />
+    <None Include="Properties\PublishProfiles\WEBHUB.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="images\rsc-logo.png" />
+    <Content Include="images\website-logo.png" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shAutoloader.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushAppleScript.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushAS3.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushBash.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushColdFusion.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushCpp.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushCSharp.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushCss.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushDelphi.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushDiff.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushErlang.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushGroovy.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushJava.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushJavaFX.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushJScript.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushPerl.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushPhp.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushPlain.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushPowerShell.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushPython.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushRuby.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushSass.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushScala.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushSql.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushVb.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushXml.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shCore.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shLegacy.js" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCore.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreDefault.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreDjango.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreEclipse.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreEmacs.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreFadeToGrey.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreMDUltra.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreMidnight.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreRDark.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeDefault.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeDjango.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeEclipse.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeEmacs.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeFadeToGrey.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeMDUltra.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeMidnight.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeRDark.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_RSCLayout.cshtml" />
+    <Content Include="Views\Shared\_RSCDemoLayout.cshtml" />
+    <Content Include="Views\Home\_HomeSearchPartial.cshtml" />
+    <Content Include="Views\Depositions\Submit.cshtml" />
+    <Content Include="Views\Home\CVSPProfile.cshtml" />
+    <Content Include="Widgets\css\depositions.deposition.new.css" />
+    <Content Include="Views\Operations\Index.cshtml" />
+    <Content Include="Views\Depositions\Index.cshtml" />
+    <Content Include="Views\Depositions\Get.cshtml" />
+    <Content Include="Widgets\js\Depositions\View\jquery.deposition.info.js" />
+    <Content Include="Views\Records\Get.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Depositions\GetDepositionChunks.cshtml" />
+    <Content Include="Views\Depositions\GetDepositionJobs.cshtml" />
+    <Content Include="Views\Jobs\Get.cshtml" />
+    <Content Include="Views\Chunks\Get.cshtml" />
+    <Content Include="Views\Depositions\GetDepositionAnnotations.cshtml" />
+    <Content Include="Views\Examples\Index.cshtml" />
+    <Content Include="Views\Shared\_DemoLayout.cshtml" />
+    <Content Include="Views\Examples\RecordInfo.cshtml" />
+    <Content Include="Views\Examples\DepositionInfo.cshtml" />
+    <Content Include="Views\Examples\RecordProperties.cshtml" />
+    <Content Include="Views\Examples\RecordIssues.cshtml" />
+    <Content Include="Views\Examples\RecordFields.cshtml" />
+    <Content Include="Views\Examples\RecordList.cshtml" />
+    <Content Include="Views\Examples\DepositionList.cshtml" />
+    <None Include="Web.chemdata-web-00.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.VT-Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.WEBHUB.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RSC.CVSP.Client\RSC.CVSP.Client.csproj">
+      <Project>{6f802b8a-b11d-45d0-9a25-5d968f704b4b}</Project>
+      <Name>RSC.CVSP.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.CVSP.Compounds.ChemSpiderProperties\RSC.CVSP.Compounds.ChemSpiderProperties.csproj">
+      <Project>{225d3bdd-b1e1-451a-99c4-442e15c9c2d6}</Project>
+      <Name>RSC.CVSP.Compounds.ChemSpiderProperties</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.CVSP.Compounds.Core\RSC.CVSP.Compounds.Core.csproj">
+      <Project>{accd3311-a14d-4317-b859-1401b904e837}</Project>
+      <Name>RSC.CVSP.Compounds.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.CVSP.Compounds.ParentChild\RSC.CVSP.Compounds.ParentChild.csproj">
+      <Project>{10a01b87-4bb2-4e12-96e9-7aaa90344025}</Project>
+      <Name>RSC.CVSP.Compounds.ParentChild</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.CVSP.Compounds\RSC.CVSP.Compounds.csproj">
+      <Project>{0a4bde97-64af-45a0-a861-f410e4e48935}</Project>
+      <Name>RSC.CVSP.Compounds</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.CVSP.Core\RSC.CVSP.Core.csproj">
+      <Project>{2a546298-8df8-4c18-bafe-0341dea45aec}</Project>
+      <Name>RSC.CVSP.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.CVSP.EntityFramework\RSC.CVSP.EntityFramework.csproj">
+      <Project>{36d95f7c-4d56-40cd-9178-853c741baeae}</Project>
+      <Name>RSC.CVSP.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.CVSP.Search\RSC.CVSP.Search.csproj">
+      <Project>{dc311ab0-eac5-4807-a8cc-b299ee338547}</Project>
+      <Name>RSC.CVSP.Search</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.CVSP.Utils\RSC.CVSP.Utils.csproj">
+      <Project>{00754394-63de-4937-bfa2-aee20a79a946}</Project>
+      <Name>RSC.CVSP.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.Process.EntityFramework\RSC.Process.EntityFramework.csproj">
+      <Project>{ae18986c-891b-42e2-9c4e-10f44253df97}</Project>
+      <Name>RSC.Process.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.Process\RSC.Process.csproj">
+      <Project>{9e953bbc-516b-4d12-a22d-c0fbbf9ee9f1}</Project>
+      <Name>RSC.Process</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'VT-Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51357</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51357/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,22 @@
+/*
+ * $Id: layout.infobox.panel.css 8812 2015-04-07 20:51:33Z kate $ ::2B6A7A!
+ * Copyright (c) 2005 Dr. Vahan Simonyan and Dr. Raja Mazumder.
+ * This software is protected by U.S. Copyright Law and International
+ * Treaties. Unauthorized use, duplication, reverse engineering, any
+ * form of redistribution, use in part or as a whole, other than by
+ * prior, express, written and signed agreement is subject to penalties.
+ * If you have received this file in error, please notify copyright
+ * holder and destroy this and any other copies. All rights reserved.
+ */
+.layout-infobox-panel .panel-heading {
+    background-color: #fdfdfd;
+}
+
+.layout-infobox-panel .panel-heading .title {
+    min-height: 36px;
+    padding-top: 5px;
+}
+
+.layout-infobox-panel .panel-body {
+    position: relative;
+}

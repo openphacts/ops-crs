@@ -1,0 +1,51 @@
+﻿@model Guid
+
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading clearfix">
+        Profile Settings
+        <button id="editProfileBtn" type="button" class="btn btn-default btn-xs pull-right">
+            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit
+        </button>
+    </div>
+    <div class="panel-body">
+        <div id="userProfile"></div>
+        <div id="updateUserProfile"></div>
+    </div>
+</div>
+<div></div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('li.profile').addClass('active');
+
+            $('#userProfile').profile_info({
+                id: '@Model'
+            });
+
+            $('#updateUserProfile').profile_update({
+                id: '@Model',
+                onSave: function () {
+                    $('#updateUserProfile').hide();
+                    $('#userProfile').profile_info('reload').show();
+                },
+                onCancel: function () {
+                    $('#updateUserProfile').hide();
+                    $('#userProfile').show();
+                }
+            }).hide();
+
+            $('#editProfileBtn').click(function () {
+                $('#userProfile').hide();
+                $('#updateUserProfile').profile_update('reload').show();
+
+                return false;
+            });
+        });
+    </script>
+}

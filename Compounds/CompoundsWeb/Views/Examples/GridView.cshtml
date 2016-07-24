@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "ChemSpider Compounds | Grid View";
+    Layout = "~/Views/Shared/_DemoLayout.cshtml";
+}
+
+<hgroup class="title">
+    <h3>Compounds grid view</h3>
+</hgroup>
+
+<hgroup class="content">
+    <div id="view"></div>
+
+    <hr />
+
+    Code example how to put widget on page...
+
+    <pre class="brush: js;">
+        $('#view').compounds_tileview({
+            imageSize: 175,
+            tooltipSize: 250,
+            countProviderUrl: '/api/compounds/count',
+            itemsProviderUrl: '/api/compounds/ids',
+            onClick: function (event, cmp) {
+                alert('You clicked on compound with ID: ' + cmp.Id);
+            }
+        });
+    </pre>
+
+</hgroup>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#view').compounds_gridview({
+                imageSize: 175,
+                tooltipSize: 250,
+                countProviderUrl: '/api/compounds/count',
+                itemsProviderUrl: '/api/compounds/ids',
+                onClick: function (event, cmp) {
+                    alert('You clicked on compound with ID: ' + cmp.Id);
+                },
+                columns: [
+                    { name: 'Id', title: 'ID' },
+                    { name: 'Structure', title: 'Structure' },
+                ],
+                tooltipFields: false
+            });
+        });
+    </script>
+}

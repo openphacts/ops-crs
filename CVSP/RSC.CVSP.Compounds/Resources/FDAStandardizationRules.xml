@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- These normalizations are keyed to the IDs in ChemicalAnalyser.-->
+<rules>
+  <!-- START OF INCHI normalization (modified)-->
+  <!-- 1.1-->
+  <rule id="1.1" category="INCHI" type="SMIRKS" value="[*:1][H+:2]>>[*+:1][H:2]" description="XH+ -> X+-H, X - any atom except H"/>
+
+  <!-- 1.2-->
+  <rule id="1.2" category="INCHI" type="SMIRKS" value="[*:1][H-:2]>>[*-:1][H:2]" description="XH- -> X--H, X - any atom except H"/>
+
+  <!-- 1.3-->
+  <rule id="1.3" category="INCHI" type="SMIRKS" value="[N-,P-,As-,Sb-,O-,S-,Se-,Te-:1][C:2]=[N+,P+,As+,Sb+,O+,S+,Se+,Te+:3]>>[N,P,As,Sb,O,S,Se,Te:1]=[C:2][N,P,As,Sb,O,S,Se,Te:3]" description="Example: *-C(O-)=O+H => *-CO2H"/>
+
+  <!-- 1.4-->
+  <rule id="1.4" category="INCHI" type="SMIRKS" value="[O-,S-,Se-,Te-:1][S&amp;D4,Se&amp;D4,Te&amp;D4:2][O-,S-,Se-,Te-:3]>>[O,S,Se,Te:1]=[S&amp;D4,Se&amp;D4,Te&amp;D4:2]=[O,S,Se,Te:3]" description=""/>
+
+  <!-- 1.5-->
+  <rule id="1.5" category="INCHI" type="SMIRKS" value="[O-,S-,Se-,Te-:1][P+;D4:2][O-,S-,Se-,Te-:3]>>[O,S,Se,Te:1]=[P;D5:2][O-,S-,Se-,Te-:3]" description=""/>
+
+  <!-- 1.6-->
+  <rule id="1.6" category="INCHI" type="SMIRKS" value="[F-,Cl-,Br-,I-,At-:1]=[O:2]>>[F,Cl,Br,I,At:1][O-:2]" description=""/>
+
+  <!-- 1.7.1-->
+  <rule id="1.7.1" category="INCHI" type="SMIRKS" value="[S-;v7:1]=[O:2]>>[S:1][O-:2]" description="applic. if valence of X > 6"/>
+
+  <!-- 1.7.2-->
+  <rule id="1.7.2" category="INCHI" type="SMIRKS" value="[Se-;v7:1]=[S,O:2]>>[Se:1][S-,O-:2]" description="applic. if valence of X > 6"/>
+
+  <!-- 1.7.3-->
+  <rule id="1.7.3" category="INCHI" type="SMIRKS" value="[Te-;v7:1]=[Se,S,O:2]>>[Te:1][Se-,S-,O-:2]" description="applic. if valence of X > 6"/>
+
+  <!-- 1.8.1-->
+  <rule id="1.8.1" category="INCHI" type="SMIRKS" value="[*:1][C+,S+:2]([N:3][*:4])[N:5]([H:6])[*:7]>>[*:1][C,S:2]([N:3][*:4])=[N+:5]([H:6])[*:7]" description=""/>
+
+  <!-- 1.8.2-->
+  <rule id="1.8.2" category="INCHI" type="SMIRKS" value="[*:1][P+:2]([*:7])([N:3][*:4])[N:5]([H:6])[*:7]>>[*:1][P:2]([*:7])([N:3][*:4])=[N+:5]([H:6])[*:7]" description=""/>
+
+  <!-- 2.1-->
+  <!-- against iupac
+  <rule id="2.1.1" category="INCHI" type="SMIRKS" value="[*:1][N+,P+,As+,Sb+:2]([O-,S-,Se-,Te-:3])=[O,S,Se,Te:4]>>[*:1][N,P,As,Sb:2](=[O,S,Se,Te:3])=[O,S,Se,Te:4]" description=""/>
+  -->
+  <rule id="2.1.2" category="INCHI" type="SMIRKS" value="[C;v2:1][N,P,As:2]=[O,S,Se,Te:3]>>[C:1]#[N,P,As:2]=[O,S,Se,Te:3]" description=""/>
+
+  <!-- 2.1.2-->
+  <rule id="2.1.2.1" category="INCHI" type="SMIRKS" value="[C;v2:1][N,P,As:2]=[O,S,Se,Te:3]>>[C:1]#[N,P,As:2]=[O,S,Se,Te:3]" description=""/>
+
+  <!-- 2.1.3-->
+  <rule id="2.1.3" category="INCHI" type="SMIRKS" value="[O,S,Se,Te:1]=[O+,S+,Se+,Te+:2][C-;v3:3]>>[O,S,Se,Te:1]=[O,S,Se,Te:2]=[C:3]" description=""/>
+
+  <!-- 2.1.4-->
+  <!-- against UIPAC, e.g. NO2
+  <rule id="2.1.4.1" category="INCHI" type="SMIRKS" value="[O-,S-,Se-,Te-:1][N+&amp;v4&amp;D3,P+&amp;v4&amp;D3,As+&amp;v4&amp;D3,Sb+&amp;v4&amp;D3:2]>>[O,S,Se,Te:1]=[N,P,As,Sb:2]" description=""/>
+  <rule id="2.1.4.2" category="INCHI" type="SMIRKS" value="[O-,S-,Se-,Te-:1][N+&amp;v4&amp;D2,P+&amp;v4&amp;D2,As+&amp;v4&amp;D2,Sb+&amp;v4&amp;D2:2]>>[O,S,Se,Te:1]=[N,P,As,Sb:2]" description=""/>
+  -->
+
+  <!-- 2.1.5-->
+  <rule id="2.1.5" category="INCHI" type="SMIRKS" value="[O-,S-,Se-,Te-:1][O+&amp;v3,S+&amp;v3,Se+&amp;v3,Te+&amp;v3:2]>>[O,S,Se,Te:1]=[O,S,Se,Te:2]" description=""/>
+
+  <!-- 2.1.6-->
+  <rule id="2.1.6" category="INCHI" type="SMIRKS" value="[O-,S-,Se-,Te-:1][O,S,Se,Te:2][C+;v3]>>[O,S,Se,Te:1]=[O,S,Se,Te:2]=[C]" description=""/>
+
+  <!-- 2.1.7 against IUPAC
+  <rule id="2.1.7" category="INCHI" type="SMIRKS" value="[N-,P-,As-,Sb-:1]=[N+&amp;v4,P+&amp;v4,As+&amp;v4,Sb+&amp;v4:2]>>[N,P,As,Sb:1]#[N,P,As,Sb:2]" description=""/>
+  -->
+  <!-- 2.1.8-->
+  <rule id="2.1.8" category="INCHI" type="SMIRKS" value="[N-,P-,As-,Sb-:1]=[O+&amp;v3,S+&amp;v3,Se+&amp;v3,Te+&amp;v3:2]>>[N,P,As,Sb:1]#[O,S,Se,Te:2]" description=""/>
+
+  <!-- 2.1.9-->
+  <rule id="2.1.9" category="INCHI" type="SMIRKS" value="[N-,P-,As-,Sb-:1]=[C+;v3:2]>>[N,P,As,Sb:1]#[C:2]" description=""/>
+
+  <!-- 2.1.10-->
+  <rule id="2.1.10" category="INCHI" type="SMIRKS" value="[P+&amp;X4,As+&amp;X4,Sb+&amp;X4:1][O-,S-,Se-,Te-:2]>>[P,As,Sb:1]=[O,S,Se,Te:2]" description=""/>
+
+  <!-- 2.2.1-->
+  <rule id="2.2.1" category="INCHI" type="SMIRKS" value="[N+&amp;v4,P+&amp;v4,As+&amp;v4,Sb+&amp;v4:1][C-;v3:2]>>[N,P,As,Sb:1]=[C:2]" description=""/>
+
+  <!-- 2.2.2-->
+  <rule id="2.2.2" category="INCHI" type="SMIRKS" value="[N+&amp;v4,P+&amp;v4,As+&amp;v4,Sb+&amp;v4:1]=[C-;v3:2]>>[N,P,As,Sb:1]#[C:2]" description=""/>
+
+  <!-- 2.2.3-->
+  <rule id="2.2.3" category="INCHI" type="SMIRKS" value="[N+&amp;v4,P+&amp;v4,As+&amp;v4,Sb+&amp;v4:1][N-&amp;v2,P-&amp;v2,As-&amp;v2,Sb-&amp;v2:2]>>[N,P,As,Sb:1]=[N,P,As,Sb:2]" description=""/>
+
+  <!-- 2.2.4-->
+  <rule id="2.2.4" category="INCHI" type="SMIRKS" value="[O+&amp;v3,S+&amp;v3,Se+&amp;v3,Te+&amp;v3:1][C-&amp;v3:2]>>[O,S,Se,Te:1]=[C:2]" description=""/>
+
+  <!-- 2.2.5-->
+  <rule id="2.2.5" category="INCHI" type="SMIRKS" value="[O+&amp;v3,S+&amp;v3,Se+&amp;v3,Te+&amp;v3:1]=[C-&amp;v3:2]>>[O,S,Se,Te:1]#[C:2]" description=""/>
+
+  <!-- 2.2.6-->
+  <rule id="2.2.6" category="INCHI" type="SMIRKS" value="[O+&amp;v3,S+&amp;v3,Se+&amp;v3,Te+&amp;v3:1][N-&amp;v2,P-&amp;v2,As-&amp;v2:2]>>[O,S,Se,Te:1]=[N,P,As:2]" description=""/>
+
+  <!-- 2.3.1-->
+  <rule id="2.3.1" category="INCHI" type="SMIRKS" value="[N-&amp;v2,P-&amp;v2,As-&amp;v2,Sb-&amp;v2:1][O:2][C+&amp;v3:3]>>[N,P,As,Sb:1]=[O:2]=[C:3]" description=""/>
+
+  <!-- 2.3.2-->
+  <rule id="2.3.2" category="INCHI" type="SMIRKS" value="[C-&amp;v3:1][N,P,As,Sb:2]([*:3])[C+&amp;v3:4]>>[C:1]=[N,P,As,Sb:2]([*:3])=[C:4]" description=""/>
+
+  <!-- 2.3.3.1-->
+  <rule id="2.3.3.1" category="INCHI" type="SMIRKS" value="[C-&amp;v3:1][N,P,As,Sb:2]=[C+&amp;v3:3]>>[C:1]=[N,P,As,Sb:2]#[C:3]" description=""/>
+  <rule id="2.3.3.2" category="INCHI" type="SMIRKS" value="[C;v4:1]=[N,P,As,Sb:2][C;v2:3]>>[C:1]=[N,P,As,Sb:2]#[C:3]" description=""/>
+
+
+  <!-- 3 salt disconnections-->
+  <!-- inorganic salts are not treated
+  <rule id="3.1.1" category="INCHI" type="SMIRKS" value="[{M_+0}:1][F,Cl,Br,I:2]>>[{M_+1}:1].[F-,Cl-,Br-,I-:2]" description="metal salts disconnection"/>
+  <rule id="3.1.2" category="INCHI" type="SMIRKS" value="[{M_+1}:1][F,Cl,Br,I:2]>>[{M_+2}:1].[F-,Cl-,Br-,I-:2]" description="metal salts disconnection"/>
+  <rule id="3.1.3" category="INCHI" type="SMIRKS" value="[{M_+2}:1][F,Cl,Br,I:2]>>[{M_+3}:1].[F-,Cl-,Br-,I-:2]" description="metal salts disconnection"/>
+  <rule id="3.1.4" category="INCHI" type="SMIRKS" value="[{M_+3}:1][F,Cl,Br,I:2]>>[{M_+4}:1].[F-,Cl-,Br-,I-:2]" description="metal salts disconnection"/>
+  <rule id="3.1.5" category="INCHI" type="SMIRKS" value="[{M_+5}:1][F,Cl,Br,I:2]>>[{M_+6}:1].[F-,Cl-,Br-,I-:2]" description="metal salts disconnection"/>
+  <rule id="3.1.6" category="INCHI" type="SMIRKS" value="[{M_+6}:1][F,Cl,Br,I:2]>>[{M_+7}:1].[F-,Cl-,Br-,I-:2]" description="metal salts disconnection"/>
+  -->
+  <rule id="3.2.1" category="INCHI" type="SMIRKS" value="[{M_+0}:1][O:2][C,c:3](=[*:4])[*:5]>>[{M_+1}:1].[O:2][C,c:3](=[*:4])[*:5]" description="metal salts disconnection"/>
+  <rule id="3.2.2" category="INCHI" type="SMIRKS" value="[{M_+1}:1][O:2][C,c:3](=[*:4])[*:5]>>[{M_+2}:1].[O:2][C,c:3](=[*:4])[*:5]" description="metal salts disconnection"/>
+  <rule id="3.2.3" category="INCHI" type="SMIRKS" value="[{M_+2}:1][O:2][C,c:3](=[*:4])[*:5]>>[{M_+3}:1].[O:2][C,c:3](=[*:4])[*:5]" description="metal salts disconnection"/>
+  <rule id="3.2.4" category="INCHI" type="SMIRKS" value="[{M_+3}:1][O:2][C,c:3](=[*:4])[*:5]>>[{M_+4}:1].[O:2][C,c:3](=[*:4])[*:5]" description="metal salts disconnection"/>
+  <rule id="3.2.5" category="INCHI" type="SMIRKS" value="[{M_+4}:1][O:2][C,c:3](=[*:4])[*:5]>>[{M_+5}:1].[O:2][C,c:3](=[*:4])[*:5]" description="metal salts disconnection"/>
+  <rule id="3.2.6" category="INCHI" type="SMIRKS" value="[{M_+5}:1][O:2][C,c:3](=[*:4])[*:5]>>[{M_+6}:1].[O:2][C,c:3](=[*:4])[*:5]" description="metal salts disconnection"/>
+  <rule id="3.2.7" category="INCHI" type="SMIRKS" value="[{M_+6}:1][O:2][C,c:3](=[*:4])[*:5]>>[{M_+7}:1].[O:2][C,c:3](=[*:4])[*:5]" description="metal salts disconnection"/>
+
+  <rule id="3.3.1" category="INCHI" type="SMIRKS" value="[{M_+0}:1][O:2][C:3]#[*:4]>>[{M_+1}:1].[O:2][C:3]#[*:4]" description="metal salts disconnection"/>
+  <rule id="3.3.2" category="INCHI" type="SMIRKS" value="[{M_+1}:1][O:2][C:3]#[*:4]>>[{M_+2}:1].[O:2][C:3]#[*:4]" description="metal salts disconnection"/>
+  <rule id="3.3.3" category="INCHI" type="SMIRKS" value="[{M_+2}:1][O:2][C:3]#[*:4]>>[{M_+3}:1].[O:2][C:3]#[*:4]" description="metal salts disconnection"/>
+  <rule id="3.3.4" category="INCHI" type="SMIRKS" value="[{M_+3}:1][O:2][C:3]#[*:4]>>[{M_+4}:1].[O:2][C:3]#[*:4]" description="metal salts disconnection"/>
+  <rule id="3.3.5" category="INCHI" type="SMIRKS" value="[{M_+4}:1][O:2][C:3]#[*:4]>>[{M_+5}:1].[O:2][C:3]#[*:4]" description="metal salts disconnection"/>
+  <rule id="3.3.6" category="INCHI" type="SMIRKS" value="[{M_+5}:1][O:2][C:3]#[*:4]>>[{M_+6}:1].[O:2][C:3]#[*:4]" description="metal salts disconnection"/>
+  <rule id="3.3.7" category="INCHI" type="SMIRKS" value="[{M_+6}:1][O:2][C:3]#[*:4]>>[{M_+7}:1].[O:2][C:3]#[*:4]" description="metal salts disconnection"/>
+
+  <rule id="3.4" category="INCHI" type="SMIRKS" value="[H:1][NH3:2][{Hal}:3]>>[NH3:2].[H:1][{Hal_-1}:3]" description="metal salts disconnection"/>
+  <!-- END OF INCHI normalization-->
+
+  <!--Our rules-->
+  <!-- disconnecting specific salts-->
+
+  <!--
+  <rule id="3.5.1" category="" type="SMIRKS" value="[C,c:1][O:2][S,P:3]>>[C,c:1][OH:2].[S,P:3][OH]" description="deetherification"/>
+  -->
+
+  <!-- disconnecting Carbon-Metal  -->
+
+  <rule id="3.1.1" category="" type="SMIRKS" value="[C,c:1][{M_+0}:2]>>[C,c:1].[{M_+1}:2]" description="metal carbon disconnection"/>
+  <rule id="3.1.2" category="" type="SMIRKS" value="[C,c:1][{M_+1}:2]>>[C,c:1].[{M_+2}:2]" description="metal carbon disconnection"/>
+  <rule id="3.1.3" category="" type="SMIRKS" value="[C,c:1][{M_+2}:2]>>[C,c:1].[{M_+3}:2]" description="metal carbon disconnection"/>
+  <rule id="3.1.4" category="" type="SMIRKS" value="[C,c:1][{M_+3}:2]>>[C,c:1].[{M_+4}:2]" description="metal carbon disconnection"/>
+  <rule id="3.1.5" category="" type="SMIRKS" value="[C,c:1][{M_+4}:2]>>[C,c:1].[{M_+5}:2]" description="metal carbon disconnection"/>
+  <rule id="3.1.6" category="" type="SMIRKS" value="[C,c:1][{M_+5}:2]>>[C,c:1].[{M_+6}:2]" description="metal carbon disconnection"/>
+  -->
+
+  <!-- C-O-Me disconnected: C-O-Me => C-OH + MeOH or C-S-Me => CSH + MeOH-->
+
+  <rule id="10.1.1" category="" type="SMIRKS" value="[C,c:1][O,S,Se,Te:2][{M_+0}:3]>>[C,c:1][O-,S-,Se-,Te-:2].[{M_+1}:3]" description="carbon-metal-O/S/Se/Te disconnection"/>
+  <rule id="10.1.2" category="" type="SMIRKS" value="[C,c:1][O,S,Se,Te:2][{M_+1}:3]>>[C,c:1][O-,S-,Se-,Te-:2].[{M_+2}:3]" description="carbon-metal-O/S/Se/Te disconnection"/>
+  <rule id="10.1.3" category="" type="SMIRKS" value="[C,c:1][O,S,Se,Te:2][{M_+2}:3]>>[C,c:1][O-,S-,Se-,Te-:2].[{M_+3}:3]" description="carbon-metal-O/S/Se/Te disconnection"/>
+  <rule id="10.1.4" category="" type="SMIRKS" value="[C,c:1][O,S,Se,Te:2][{M_+3}:3]>>[C,c:1][O-,S-,Se-,Te-:2].[{M_+4}:3]" description="carbon-metal-O/S/Se/Te disconnection"/>
+  <rule id="10.1.5" category="" type="SMIRKS" value="[C,c:1][O,S,Se,Te:2][{M_+4}:3]>>[C,c:1][O-,S-,Se-,Te-:2].[{M_+5}:3]" description="carbon-metal-O/S/Se/Te disconnection"/>
+  <rule id="10.1.6" category="" type="SMIRKS" value="[C,c:1][O,S,Se,Te:2][{M_+5}:3]>>[C,c:1][O-,S-,Se-,Te-:2].[{M_+6}:3]" description="carbon-metal-O/S/Se/Te disconnection"/>
+
+
+
+  <rule id="100_5.a.i" category="" type="SMIRKS" value="[*:1][N,P,As,Sb:2](=[O,S,Se,Te:3])=[O,S,Se,Te:4]>>[*:1][N+,P+,As+,Sb+:2]([O-,S-,Se-,Te-:3])=[O,S,Se,Te:4]"
+        description="nitro group"/>
+
+
+  <rule id="100_5.a.ii" category="" type="SMIRKS" value="[N:1](=[O:2])([O-:3])(=[O:4])>>[N+:1](=[O:2])([O-:3])([O-:4])"
+        description=""/>
+
+  <rule id="100_5.b.i" category="" type="SMIRKS" value="[n:1]=[O:2]>>[n+:1][O-:2]"
+        description="Example: N-Oxide pyridine" />
+
+
+  <rule id="100_5.d.i" category=""  type="SMIRKS" value="[H,*:1][N:2]=[N:3]#[N:4]>>[H,*:1][N:2]=[N+:3]=[N-:4]"
+        description="" />
+
+  <rule id="100_5.e.i" category="" type="SMIRKS" value="[N:1]#[N:2]=[C:3]>>[N-:1]=[N+:2]=[C:3]"
+        description="diazouracil" />
+
+  <rule id="100_5.e.ii" category="" type="SMIRKS" value="[*:1][N:2]([H:3])[N;X2:4]=[*;!O:5]>>[*:1][N:2]=[N:4][*:5][H:3]"
+        description="azides trans isomers" />
+
+  <rule id="100_5.g.i-3" category="" type="SMIRKS" value="[!O:1][S;X3:2](=[O:3])[!O:4]>>[!O:1][S+;X3:2]([O-:3])[!O:4]"
+        description="sulfoxide group" />
+  <rule id="100_8.i" category="" type="SMIRKS" value="[N:1]([H:2])([H:3])[H:4].[H:5][{Hal}:6]>>[N+:1]([H:2])([H:3])([H:4])[H:5].[{Hal_-1}:6]"
+        description="ammonium chloride" />
+  <rule id="100_8.ii" category="" type="SMIRKS" value="[N+0;H3:1].[C:3](=[O:4])[O:5][H:6]>>[N+1;H4:1].[C:3](=[O:4])[O-:5]"
+        description="ammonuum lactate" />
+  <rule id="100_9.i" category="" type="SMIRKS" value="[H:2][N+:1]([C,H:3])([C:4])[C:5].[{Hal_-1}:6]>>[N:1]([C,H:3])([C:4])[C:5].[H:2][{Hal}:6]"
+        description="threeethylamine hydrochloride" />
+  <rule id="100_9.ii" category="" type="SMIRKS" value="[H:1][N+:3]=[C:2].[O:8][S:4]([O-:7])(=[O:5])=[O:6]>>[H:1][O:7][S:4]([O:8])(=[O:5])=[O:6].[C:2]=[N:3]"
+        description="aminoguanidine sulfate" />
+
+  <!-- nonmetals to metals-->
+  <!-- 
+  <rule id="100_9.b-1" category="" type="SMIRKS" value="[C,c:1][{TM^Hg},Al:2]([{NMExcOFN}:3])[{NMExcOFN}:4]>>[C,c:1][{TM^Hg_+2},Al++:2].[{NMExcOFN_-1}:3].[{NMExcOFN_-1}:4]" 
+        description="" />
+  <rule id="100_9.b-2" category="" type="SMIRKS" value="[C,c:1][{TM^Hg},Al:2][{NMExcOFN}:3]>>[C,c:1][{TM^Hg_+1},Al+:2].[{NMExcOFN_-1}:3]" 
+        description="" />
+  -->
+
+  <!-- rule adjusted to avoid (HO)C=C(OH) cases -->
+  <!-- <rule id="20.b.i" category="" type="SMIRKS" value="[H:1][O,S,Se,Te:2][C:3]([H,*:7])=[C:4]([!OH:6])[H,*:5]>>[H:1][C:4]([!OH:6])([H,*:5])[C:3]([H,*:7])=[O,S,Se,Te:2]" description="" /> -->
+  <rule id="100_20.b.i" category="" type="SMIRKS" value="[H:1][O:2][C:3]([H,*:4])=[C:5]([H,*;!O:6])[H,*;!O:7]>>[O:2]=[C:3]([H,*:4])[C:5]([H,*:6])([H:1])[H,*:7]"
+        description="" />
+  <rule id="100_20.b.ii" category="" type="SMIRKS" value="[H:1][S:2][C:3]([H,*:4])=[C:5]([H,*;!S:6])[H,*;!S:7]>>[S:2]=[C:3]([H,*:4])[C:5]([H,*;!S:6])([H:1])[H,*;!S:7]"
+        description="" />
+  <rule id="100_20.b.iii" category="" type="SMIRKS" value="[H:1][Se:2][C:3]([H,*:4])=[C:5]([H,*;!Se:6])[H,*;!Se:7]>>[Se:2]=[C:3]([H,*:4])[C:5]([H,*;!Se:6])([H:1])[H,*;!Se:7]"
+        description="" />
+  <rule id="100_20.b.iv" category="" type="SMIRKS" value="[H:1][Te:2][C:3]([H,*:4])=[C:5]([H,*;!Te:6])[H,*;!Te:7]>>[Te:2]=[C:3]([H,*:4])[C:5]([H,*;!Te:6])([H:1])[H,*;!Te:7]"
+        description="" />
+  <rule id ="100_20.c" category="" type="SMIRKS" value="[*:1][C:2]([O:3][H:4])=[N:5][H:6]>>[*:1][C:2](=[O:3])[N:5]([H:4])[H:6]"
+        description="amide-imid tautomers" />
+  <rule id="100_20.d.i.1" category="" type="SMIRKS" value="[O:1]=[C:2]1[C:3]=[C:4][C:5]=[C:6][CH2:7]1>>[OH:1][C:2]1=[C:3][C:4]=[C:5][C:6]=[C:7]1"
+        description="phenols" />
+  <rule id="100_20.d.i.2" category="" type="SMIRKS" value="[O:1]=[C:2]1[C:3]=[C:4][CH2:5][C:6]=[C:7]1>>[OH:1][C:2]1=[C:3][C:4]=[C:5][C:6]=[C:7]1"
+        description="phenols" />
+  <rule id="100_nitroso_oxime" category="" type="SMIRKS" value="[*:1][C:2]([H:3])[N;X2:4]=[O:5]>>[*:1][C:2]=[N;X2:4][O:5][H:3]"
+        description="Nitroso-oxime tautomerism" />
+
+  <rule id="100_20.f.i" category="" type="SMIRKS" value="[*:5][N;!R:1]=[C:2]([NH2:4])[NH;!R:3][*:6]>>[*:5][NH;!R:1][C:2](=[NH:4])[NH;!R:3][*:6]"
+        description="substituted gunaidine - shift double bond to the least substituted nitrogen" />
+  <rule id="100_20.f.iii" category="" type="SMIRKS" value="[NH;R:1][C;R:2]([N;R:3])=[N;!R:4][*:5]>>[N;R:1]=[C;R:2]([N;R:3])[NH;!R:4][*:5]"
+        description="" />
+
+  <rule id="100_20.g.i.1" category="" type="SMIRKS" value="[H:6][n:4]1[n:3][n:2][c:1]([*:7])[n:5]1>>[H:6][N:2]1[N:3]=[N:4][N:5]=[C:1]1[*:7]"
+        description="In tetrazoles, the hydrogen is placed at the one position on the tetrazole ring" />
+  <rule id="100_20.h" category="" type="SMIRKS" value="[H:1][O:8][N:7]1[C:2]([H,*:11])=[C:3]([H,*:10])[C:4]([H,*:13])=[C:5]([H,*:12])[C:6]1=[S:9]>>[H:1][S:9][C:6]1=[N+:7]([O-:8])[C:2]([H,*:11])=[C:3]([H,*:10])[C:4]([H,*:13])=[C:5]1[H,*:12]"
+        description="pyrithione" />
+  <rule id="100_20.i" category="" type="SMIRKS" value="[O-:1][S:2](=[S:3])(=[O:4])[O-:5]>>[O-:1][S:2]([S-:3])(=[O:4])=[O:5]"
+        description="" />
+  <rule id="100_20.j.i.1" category="" type="SMIRKS" value="[H:1][S:2][c:3]1[n:8][c:7]([H,*:13])[n:6][c:5]2[c:4]1[n:11][c:10]([H,*:12])[n:9]2>>[H:1][N:8]1[C:7]([H,*:13])=[N:6][C:5]2=[C:4]([N:11]=[C:10]([H,*:12])[N:9]2)[C:3]1=[S:2]"
+        description="thiopurine" />
+  <rule id="100_20.j.i.2" category="" type="SMIRKS" value="[H:1][n:8]1[c:7]([H,*:9])[n:6][c:5]2[c:4]1[C:12](=[S:13])[N:11][C:10]([H,*:2])=[N:3]2>>[H:1][N:8]1[C:7]([H,*:9])=[N:6][C:5]2=[C:4]1[N:3]=[C:10]([H,*:2])[N:11][C:12]2=[S:13]"
+        description="thiopurine" />
+  <rule id="100_20.j.ii-1" category="" type="SMIRKS" value="[H:1][S:9][C:6]1=[N:5][C:4]([H,*:12])=[C:3]([H,*:11])[C:8](=[O:10])[N:7]1[H:2]>>[H:1][N:5]1[C:4]([H,*:12])=[C:3]([H,*:11])[C:8](=[O:10])[N:7]([H:2])[C:6]1=[S:9]"
+        description="thiouracil" />
+  <rule id="100_20.j.ii-2" category="" type="SMIRKS" value="[H:2][O:10][C:8]1=[N:7][C:6](=[S:9])[N:5]([H:1])[C:4]([H,*:12])=[C:3]1[H,*:11]>>[H:1][N:5]1[C:4]([H,*:12])=[C:3]([H,*:11])[C:8](=[O:10])[N:7]([H:2])[C:6]1=[S:9]"
+        description="thiouracil" />
+  <rule id="100_20.j.ii-3" category="" type="SMIRKS" value="[H:2][O:3][c:4]1[n:5][c:6]([S:7][H:1])[n:8][c:9]([H,*:10])[c:11]1[H,*:12]>>[H:1][N:8]1[C:9]([H,*:10])=[C:11]([H,*:12])[C:4](=[O:3])[N:5]([H:2])[C:6]1=[S:7]"
+        description="thiouracil" />
+  <rule id="100_20.k" category="" type="SMIRKS" value="[H:23][C:13]1([H,*:25])[C:12](=[O:24])[C:11]([H,*:26])[C:10]2([H,*:27])[C:9]([H,*:28])([H,*:29])[C:8]3([H,*:30])[C:17]([H:21])([C:18](=[O:19])[c:1]4[c:6]([c:5]([H,*:33])[c:4]([H,*:34])[c:3]([H,*:35])[c:2]4[H,*:36])[C:7]3([H,*:32])[H,*:31])[C:16](=[O:20])[C:15]2([H,*:37])[C:14]1=[O:22]>>[H:23][O:24][C:12]1=[C:13]([H,*:25])[C:14](=[O:22])[C:15]2([H,*:37])[C:16]([O:20][H:21])=[C:17]3[C:18](=[O:19])[C:1]4=[C:6]([C:5]([H,*:33])=[C:4]([H,*:34])[C:3]([H,*:35])=[C:2]4[H,*:36])[C:7]([H,*:32])([H,*:31])[C:8]3([H,*:30])[C:9]([H,*:29])([H,*:28])[C:10]2([H,*:27])[C:11]1[H,*:26]"
+        description="tetracycline" />
+  <rule id= "100_20.l" category="" type="SMIRKS" value="[H:19][C:15]1([H,*:20])[C:14](=[O:21])[C:13]([H,*:22])[C:12]2([H,*:23])[C:11]([H,*:24])([H,*:25])[c:10]3[c:9]([H,*:26])[c:8]4[c:7]([H,*:27])[c:6]([H,*:28])[c:5]([H,*:29])[c:4]([H,*:30])[c:3]4[c:2]([H,*:31])[c:1]3[C:18](=[O:32])[C:17]2([H,*:34])[C:16]1=[O:33]>>[H:19][O:21][C:14]1=[C:15]([H,*:20])[C:16](=[O:33])[C:17]2([H,*:34])[C:18](=[O:32])[C:1]3=[C:2]([H,*:31])[C:3]4=[C:4]([H,*:30])[C:5]([H,*:29])=[C:6]([H,*:28])[C:7]([H,*:27])=[C:8]4[C:9]([H,*:26])=[C:10]3[C:11]([H,*:25])([H,*:24])[C:12]2([H,*:23])[C:13]1[H,*:22]"
+        description="chelocardin" />
+  <rule id="100_20.m" category="" type="SMIRKS" value="[H:2][O:15][c:14]1[c:13]2[C:11](=[O:12])[C:10]3=[C:5]([C:4](=[O:24])[c:3]2[c:18]([O:19][H:1])[c:17]2[c:16]1[c:23]([H,*:36])[c:22]([H,*:35])[c:21]([H,*:34])[c:20]2[H,*:33])[C:6]([H,*:25])([H,*:32])[C:7]([H,*:30])([H,*:31])[C:8]([H,*:28])([H,*:29])[C:9]3([H,*:26])[H,*:27]>>[H:2][O:12][C:11]1=[C:10]2[C:5](=[C:4]([O:24][H:1])[C:3]3=[C:13]1[C:14](=[O:15])[C:16]1=[C:17]([C:20]([H,*:33])=[C:21]([H,*:34])[C:22]([H,*:35])=[C:23]1[H,*:36])[C:18]3=[O:19])[C:6]([H,*:25])([H,*:32])[C:7]([H,*:30])([H,*:31])[C:8]([H,*:28])([H,*:29])[C:9]2([H,*:26])[H,*:27]"
+        description="annamycin" />
+  <rule id="100_20.n.i" category="" type="SMIRKS" value="[H,*:6][c:2]1[n:1][n-:5][n:4][n:3]1>>[H,*:6][C:2]1=[N:1][N:5]=[N:4][N-:3]1"
+        description="tetrazole anion"/>
+  <rule id="100_20.n.ii" category="" type="SMIRKS" value="[H:1][N:6]([H,*:7])[C:3]([O-:2])=[N:5][H,*:4]>>[H:1][N:6]([H,*:7])[C:3](=[O:2])[N-:5][H,*:4]"
+        description="phenobarbitol"/>
+  <rule id="100_20.p.i" category="" type="SMIRKS" value="[H:17][O:16][C:14](=[O:15])[c:1]1[c:6]([H,*:26])[c:5]([H,*:25])[c:4]([H,*:24])[c:3]([H,*:23])[c:2]1[C:7]([H,*:27])=[C:8]1[C:9]([H,*:21])=[C:10]([H,*:22])[C:11](=[O:18])[C:12]([H,*:20])=[C:13]1[H,*:19]>>[H:17][O:18][C:11]1=[C:10]([H,*:22])[C:9]([H,*:21])=[C:8]([C:13]([H,*:19])=[C:12]1[H,*:20])[C:7]1([H,*:27])[O:16][C:14](=[O:15])[C:1]2=[C:6]([H,*:26])[C:5]([H,*:25])=[C:4]([H,*:24])[C:3]([H,*:23])=[C:2]12"
+        description="phenophthalein"/>
+  <rule id="100_20.p.ii" category="" type="SMIRKS" value="[O-:17][c:11]1[c:10]([H,*:21])[c:9]([H,*:22])[c:8]([c:13]([H,*:19])[c:12]1[H,*:20])[C:7]1([H,*:18])[O:16][C:14](=[O:15])[c:1]2[c:2]([H,*:26])[c:3]([H,*:25])[c:4]([H,*:24])[c:5]([H,*:23])[c:6]12>>[O-:16][C:14](=[O:15])[C:1]1=[C:2]([H,*:26])[C:3]([H,*:25])=[C:4]([H,*:24])[C:5]([H,*:23])=[C:6]1[C:7]([H,*:18])=[C:8]1[C:13]([H,*:19])=[C:12]([H,*:20])[C:11](=[O:17])[C:10]([H,*:21])=[C:9]1[H,*:22]"
+        description="phenopthalein sodium"/>
+  <rule id="100_ynol_ketene" category="" type="SMIRKS" value="[*:1][C:2]#[C:3][O:4][H:5]>>[*:1][C:2]([H:5])=[C:3]=[O:4]"
+        description="ynol-ketene" />
+
+</rules>

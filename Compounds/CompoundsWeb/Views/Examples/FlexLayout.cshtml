@@ -1,0 +1,154 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_FlexLayout.cshtml";
+}
+
+@section css {
+    <style>
+        .debug {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            text-align: right;
+            margin: 5px;
+            color: gray;
+        }
+    </style>
+}
+
+<div id="manager1" data-layout-manager="flex" data-layout="manager">
+    <div id="infobox1" data-layout="infobox tabs" data-top="0" data-left="30%" data-right="90%" data-bottom="40%">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="active">
+                        <a class="all" href="#synonyms-tab" role="tab" data-toggle="tab">Synonyms</a>
+                    </li>
+                    <li>
+                        <a class="genomes" href="#datasources-tab" role="tab" data-toggle="tab">Datasources</a>
+                    </li>
+                    <li>
+                        <a class="reads" href="#articles-tab" role="tab" data-toggle="tab">Articles</a>
+                    </li>
+                    <li>
+                        <a class="annotations" href="#pattents-tab" role="tab" data-toggle="tab">Pattents</a>
+                    </li>
+                    <li>
+                        <a class="files" href="#description-tab" role="tab" data-toggle="tab">Description</a>
+                    </li>
+                    <li>
+                        <a class="images" href="#vendors-tab" role="tab" data-toggle="tab">Vendors</a>
+                    </li>
+                    <li>
+                        <a class="computations" href="#properties-tab" role="tab" data-toggle="tab">Properties</a>
+                    </li>
+                    <li>
+                        <a class="data-loading" href="#wiki-tab" role="tab" data-toggle="tab">Wiki</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel-body tab-content">
+                <div class="tab-pane .fade active" id="synonyms-tab">Synonyms list...</div>
+                <div class="tab-pane .fade" id="datasources-tab">Datasources...</div>
+                <div class="tab-pane .fade" id="articles-tab">Articles...</div>
+                <div class="tab-pane .fade" id="pattents-tab">Pattents...</div>
+                <div class="tab-pane .fade" id="description-tab">Description...</div>
+                <div class="tab-pane .fade" id="vendors-tab">Vendors...</div>
+                <div class="tab-pane .fade" id="properties-tab">Properties...</div>
+                <div class="tab-pane .fade" id="wiki-tab">Wiki...</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="infobox2" data-layout="infobox tabs" data-top="0" data-left="0" data-right="30%" data-bottom="100%">
+        <div class="panel panel-default">
+            <div class="panel-heading" style="position: relative;">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="active">
+                        <a class="help" href="#general-tab" role="tab" data-toggle="tab">General Info</a>
+                    </li>
+                    <li>
+                        <a class="details" href="#details-tab" role="tab" data-toggle="tab">Details</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel-body tab-content">
+                <div class="tab-pane .fade active" id="general-tab">General info...</div>
+                <div class="tab-pane .fade" id="details-tab">Details...</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="infobox3" data-layout="infobox tabs" data-top="40%" data-left="30%" data-right="90%" data-bottom="100%">
+        <div class="panel panel-default">
+            <div class="panel-heading" style="position: relative;">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="active">
+                        <a id="west-home-tab" class="home" href="#spectra-tab" role="tab" data-toggle="tab">Spectra</a>
+                    </li>
+                    <li>
+                        <a id="west-help-tab" class="help" href="#cifs-tab" role="tab" data-toggle="tab">CIFs</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel-body tab-content">
+                <div class="tab-pane .fade active" id="spectra-tab">
+                    <div id="manager2" data-layout="manager" data-layout-manager="horizontal">
+                        <div id="area1" class="panel panel-default" data-layout="infobox" data-size="40%">area 1</div>
+                        <div id="area2" class="panel panel-default" data-layout="infobox" data-size="20%">area 2</div>
+                        <div id="manager4" data-layout="manager" data-layout-manager="vertical" data-size="40%">
+                            <div id="area7" class="panel panel-default" data-layout="infobox" data-size="40%">area 7</div>
+                            <div id="area8" class="panel panel-default" data-layout="infobox" data-size="60%">area 8</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane .fade" id="cifs-tab">
+                    <div id="manager3" data-layout="manager" data-layout-manager="horizontal">
+                        <div id="area4" class="panel panel-default" data-layout="infobox" data-size="40%">area 4</div>
+                        <div id="area5" class="panel panel-default" data-layout="infobox" data-size="30%">area 5</div>
+                        <div id="area6" class="panel panel-default" data-layout="infobox" data-size="30%">area 6</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.tab-pane').append(
+                $(document.createElement('div')).addClass('debug')
+            );
+
+            $('.chemspider-content ').on({
+                'area-create': function (event, params) {
+                    $(params.infobox).on({
+                        'area-resize': function (event, params) {
+                            $('.debug', this).text(_trace(params));
+                        },
+                        'area-drag': function (event, params) {
+                            $('.debug', this).text(_trace(params));
+                        }
+                    })
+                }
+            });
+
+            $('div[data-layout~="infobox"]').on({
+                'area-resize': function (event, params) {
+                    $('.debug', this).text(_trace(params));
+                },
+                'area-drag': function (event, params) {
+                    $('.debug', this).text(_trace(params));
+                }
+            });
+        });
+
+        function _trace(params) {
+            return 't:' + params.rect.top + '; l:' + params.rect.left + '; b:' + params.rect.bottom + '; r:' + params.rect.right;
+            //return 't:' + params.oThis.options.top + '; l:' + params.oThis.options.left + '; b:' + params.oThis.options.bottom + '; r:' + params.oThis.options.right;
+        }
+
+    </script>
+}

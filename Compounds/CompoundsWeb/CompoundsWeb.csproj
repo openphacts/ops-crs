@@ -1,0 +1,2696 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0BAA2891-8280-429C-827F-399C5D4BFB26}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CompoundsWeb</RootNamespace>
+    <AssemblyName>CompoundsWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>App_Data\CompoundsWeb.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\CompoundsWeb.xml</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Extras.CommonServiceLocator">
+      <HintPath>..\packages\Autofac.Extras.CommonServiceLocator.3.2.0\lib\net40\Autofac.Extras.CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=3.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.Mvc5.3.3.4\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=3.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.3.4.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="bingo-dotnet, Version=1.1.5589.31745, Culture=neutral, PublicKeyToken=6a31cb7055c16a21, processorArchitecture=MSIL">
+      <HintPath>..\packages\Indigo.Toolkit.1.2.1\lib\net40\bingo-dotnet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemImageNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Toolkit.1.1.2\lib\net45\ChemImageNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Utilities.1.0.13\lib\net45\ChemSpider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider.Data.Database, Version=2.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Database.Objects.1.0.11\lib\net45\ChemSpider.Data.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Database, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Databases.1.0.4\lib\net45\ChemSpider.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Datasources.Client">
+      <HintPath>..\packages\ChemSpider.Datasources.Client.1.0.0\lib\net45\ChemSpider.Datasources.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Formats, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Formats.1.1.2\lib\net45\ChemSpider.Formats.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Formats.Accelrys, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Formats.1.1.2\lib\net45\ChemSpider.Formats.Accelrys.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Formats.ChemDraw, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Formats.1.1.2\lib\net45\ChemSpider.Formats.ChemDraw.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Interoperability, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Utilities.1.0.13\lib\net45\ChemSpider.Interoperability.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider.Molecules, Version=1.0.0.29773, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Molecules.1.1.3\lib\net45\ChemSpider.Molecules.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Utilities.Web.1.0.3\lib\net45\ChemSpider.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.ObjectModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.ObjectModel.1.0.10\lib\net45\ChemSpider.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Parts.Client, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Parts.2.0.0\lib\net40\ChemSpider.Parts.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Parts.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Parts.2.0.0\lib\net40\ChemSpider.Parts.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Profile.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Profile.1.0.20\lib\net45\ChemSpider.Profile.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Profile.RSCID, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Profile.1.0.20\lib\net45\ChemSpider.Profile.RSCID.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Search, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Search.1.0.11\lib\net45\ChemSpider.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Security, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Security.1.0.3\lib\net45\ChemSpider.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Services.REST, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Services.1.0.6\lib\net45\ChemSpider.Services.REST.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Utilities, Version=2.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Utilities.1.0.13\lib\net45\ChemSpider.Utilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider.Utilities.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Utilities.Web.1.0.3\lib\net45\ChemSpider.Utilities.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah.Contrib.WebApi, Version=1.0.10.25, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elmah.Contrib.WebApi.1.0.10.25\lib\net45\Elmah.Contrib.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah.Mvc, Version=2.1.2.1389, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Elmah.Mvc.2.1.2\lib\net40\Elmah.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtUtilsNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Toolkit.1.1.2\lib\net45\ExtUtilsNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.4.369, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ICSharpCode.SharpZipLib.dll.0.85.4.369\lib\net20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="InChINet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Toolkit.1.1.2\lib\net45\InChINet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="indigo-dotnet, Version=1.1.5589.31742, Culture=neutral, PublicKeyToken=ca8e3320bc4499e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Indigo.Toolkit.1.2.1\lib\net40\indigo-dotnet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="indigo-inchi-dotnet, Version=1.1.5589.31744, Culture=neutral, PublicKeyToken=6a31cb7055c16a21, processorArchitecture=MSIL">
+      <HintPath>..\packages\Indigo.Toolkit.1.2.1\lib\net40\indigo-inchi-dotnet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="indigo-renderer-dotnet, Version=1.1.5589.31744, Culture=neutral, PublicKeyToken=09f0421d14bc0b92, processorArchitecture=MSIL">
+      <HintPath>..\packages\Indigo.Toolkit.1.2.1\lib\net40\indigo-renderer-dotnet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OpenBabelNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Toolkit.1.1.2\lib\net45\OpenBabelNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OpenEyeNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Toolkit.1.1.2\lib\net45\OpenEyeNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="RSC.Search, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.Search.1.0.3\lib\net45\RSC.Search.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="WebApiContrib.Formatting.Jsonp, Version=3.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebApiContrib.Formatting.Jsonp.3.0.2\lib\net45\WebApiContrib.Formatting.Jsonp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="XmlDiffPatch, Version=1.0.8.28, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\XMLDiffPatch.1.0.8.28\lib\net\XmlDiffPatch.dll</HintPath>
+    </Reference>
+    <Reference Include="XmlDiffPatch.View, Version=1.0.1493.40755, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\XMLDiffPatch.1.0.8.28\lib\net\XmlDiffPatch.View.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\CompoundsController.cs" />
+    <Compile Include="Controllers\DatasourcesController.cs" />
+    <Compile Include="Controllers\ErrorsController.cs" />
+    <Compile Include="Controllers\ExamplesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\SubstancesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CompoundsModels.cs" />
+    <Compile Include="Models\DatasourcesModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="WebAPI\TransformController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\chemspider-flex-layout.css" />
+    <Content Include="Content\css\chemspider-layout.css" />
+    <Content Include="Content\css\home-search-tabs.css" />
+    <Content Include="Content\css\images\chemspider-header-bg.jpg" />
+    <Content Include="Content\css\jquery-ui-tune.css" />
+    <Content Include="Content\RAVE\functional-group.css" />
+    <Content Include="Content\RAVE\images\expand-collapse.png" />
+    <Content Include="Content\RAVE\images\publishing-logo.png" />
+    <Content Include="Content\RAVE\images\royal-society-of-chemistry-logo.png" />
+    <Content Include="Content\RAVE\images\site-header-bg.jpg" />
+    <Content Include="Content\RAVE\jquery.functional.group.js" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\busy.gif" />
+    <Content Include="Images\empty.png" />
+    <Content Include="Images\error-logo.png" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\logo-cs7.png" />
+    <Content Include="Images\not-found.jpg" />
+    <Content Include="Images\rsc-logo.png" />
+    <Content Include="Images\rsc_logo2.png" />
+    <Content Include="Images\website-logo.png" />
+    <Content Include="Images\Website-logo.psd" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Widgets\3rd\bootstrap.filestyle.js" />
+    <Content Include="Widgets\3rd\hoverIntent\jquery.hoverIntent.js" />
+    <Content Include="Widgets\3rd\hoverIntent\jquery.hoverIntent.min.js" />
+    <Content Include="Widgets\3rd\javascript.class.js" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\Abbreviation.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\ADC.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\AtomTag.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\Bio.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\CustomTemplate.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\data\bio.xml" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\data\mol1.mol.txt" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\data\mol2.mol.txt" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\data\mol3.mol.txt" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\data\rxn1.rxn.txt" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\data\rxn2.rxn.txt" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\data\sdf1.sdf.txt" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\data\sdf2.sdf.txt" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\data\sdf3.sdf.txt" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\data\sdf4.sdf.txt" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\data\sdf5.sdf.txt" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\Demo.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\ImageColumn.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\add.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\addcodingregion.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\animator.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\annadd.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\anndel.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\anndelall.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\annedit.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\antibody.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\arrow.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\benzene.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\bold.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\boldhash.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\bracket.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\butane.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\cancel.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\center.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\chain.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\chainadd.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\chaindel.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\chargen.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\chargep.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\chart.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\chembl.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\chemene.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\chemspider.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\cleanup.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\collapse.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\copy.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\copychemdraw.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\copyprod.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\curve.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\cut.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\del.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\delocalized.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\demo.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\dev.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\dlgclose.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\dlgclose.jpg" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\dlgheader-blue.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\dlgheader-green.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\dlgheader-red.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\dlgheader-yellow.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\dlgheader.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\double.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\doublearomatic.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\down.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\dropdown.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\dummy.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\either.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\ellipse.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\eraser.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\expand.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\find.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\fliph.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\flipv.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\fullscreen.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\fullscreen2.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\gene.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\hbg-blue.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\hbg-green.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\hbg-red.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\hbg-yellow.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\hbg.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\hbg.jpg" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\hbk.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\header-bg.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\header-bgblue.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\header-bggreen.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\header-bgred.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\header-bgyellow.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\helix.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\helpbottom.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\heptane.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\hexane.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\information.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\insertafter.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\insertafterv.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\insertbefore.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\jsdraw.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\jsdraw2.jpg" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\lasso.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\leading.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\matrix.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\movedown.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\moveup.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\n2s.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\name2s.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\new.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\octane.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\open.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\paste.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\pastechemdraw.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\pen.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\pentane.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\pivot.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\plasmid.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\plate-blue.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\plate-corner.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\plate-cyan.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\plate-gray.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\plate-green.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\plate-purple.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\plate-red.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\plate-white.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\plate-yellow.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\plus.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\prop.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\propane.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\props.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\protein.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\pubchem.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\Question.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\rectangle.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\redo.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\rna.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\rotate.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\rxn.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\rxnmap.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\rxnmap2.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\save.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\scilligence-qr.jpg" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\searchreset.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\select.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\selectall.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\selfrag.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\sep.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\seq.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\sgroup.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\signal.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\single.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\singlearomatic.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\singledouble.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\sortasc.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\sortdsc.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\splash.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\spot-blowingdown.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\spot-blowingup.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\spot-circle.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\spot-crescentdown.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\spot-crescentup.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\spot-halfellipsedown.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\spot-halfellipseup.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\spot-hellipse.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\spot-vellipse.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\stop.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\symbol.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\template.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\templates.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\test.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\text.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\tick.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\tlc.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\tlcnumber.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\tlctemplate.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\toolbar-bg.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\toolbarbk-blue.jpg" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\toolbarbk-green.jpg" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\toolbarbk-red.jpg" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\toolbarbk-yellow.jpg" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\toolbarbk.jpg" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\triple.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\undo.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\unknown.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\unlock.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\up.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\vbk.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\warning.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\wiggly.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\zoomin.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\zoomout.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\index.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\JSDrawClipboard.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\JSDrawClipboard.jar" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\N2S.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\Oligonucleotide.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\plugin.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\plugins\jmol.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\plugins\pubchem.gif" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\popup.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\Query.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\ReactionMap.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\RGroup.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\Scilligence.JSDraw2.Pro.js" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\SDFGrid.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\SDFList.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\SDFList_filter.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\SdfViewer.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\SeqEditor.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\Service.aspx" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\SGroup.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\Shapes.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\Size.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\Spreadsheet.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\TLC.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\Viewer.htm" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\about.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\antibody.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\arrow.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\back.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\benzene.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\bold.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\boldhash.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\bracket.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\btncir.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\btncir0.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\btncir1.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\btnrec.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\btnrec0.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\btnrec1.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\butane.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\button.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\button2.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\buttonbg.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\buttonbg2.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\buttongreen.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\buttongreen2.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\center.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\chain.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\chargen.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\chargep.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\chemspider.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\cleanup.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\copy.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\copychemdraw.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\copyprod.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\curve.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\cut.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\delocalized.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\double.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\down.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\dummy.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\e-Br.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\e-C.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\e-Cl.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\e-F.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\e-H.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\e-more.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\e-N.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\e-O.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\e-P.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\e-S.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\Edit-Icon-off_0044_Vector-Smart-Object.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\either.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\ellipse.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\eraser.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\find.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\fliph.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\flipv.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\fullscreen.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\fullscreen2.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\gene.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\h.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\handle.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\handle2.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\helix.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\heptane.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\hexane.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\inkblue.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\inkclear.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\inkclearall.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\inkgreen.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\inkred.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\lasso.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\n2s.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\new.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\octane.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\open.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\paste.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\pastechemdraw.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\pentane.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\plus.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\propane.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\protein.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\pubchem.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\rectangle.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\redo.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\rna.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\rotate.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\rxn.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\rxnmap.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\rxnmap2.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\save.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\select.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\selectall.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\selfrag.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\seq.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\sgroup.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\single.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\spot-blowingdown.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\spot-blowingup.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\spot-circle.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\spot-crescentdown.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\spot-crescentup.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\spot-halfellipsedown.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\spot-halfellipseup.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\spot-hellipse.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\spot-vellipse.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\symbol.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\template.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\templates.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\text.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\tlc.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\tlcnumber.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\tlctemplate.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\triple.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\undo.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\unknown.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\up.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\wiggly.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\zoomin.png" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\zoomout.png" />
+    <Content Include="Widgets\3rd\timespan-1.2.js" />
+    <Content Include="Widgets\css\compound.structureeditor.sketcher.css" />
+    <Content Include="Widgets\css\compound.compoundslookup.css" />
+    <Content Include="Widgets\css\datasource.lookup.css" />
+    <Content Include="Widgets\css\images\arrow-down-32.png" />
+    <Content Include="Widgets\css\images\arrow-left-32.png" />
+    <Content Include="Widgets\css\images\arrow-right-32.png" />
+    <Content Include="Widgets\css\images\arrow-up-32.png" />
+    <Content Include="Widgets\css\layout.area.css" />
+    <Content Include="Widgets\css\layout.infobox.css" />
+    <Content Include="Widgets\css\layout.infobox.panel.css" />
+    <Content Include="Widgets\css\layout.infobox.tabs.css" />
+    <Content Include="Widgets\css\layout.manager.css" />
+    <Content Include="Widgets\css\toolkit.data.lookup.css" />
+    <Content Include="Widgets\css\toolkit.editor.base.css" />
+    <Content Include="Widgets\css\toolkit.pageview.css" />
+    <Content Include="Widgets\css\toolkit.update.form.css" />
+    <Content Include="Widgets\css\toolkit.generalinfo.update.css" />
+    <Content Include="Widgets\css\toolkit.filter.dialog.css" />
+    <Content Include="Widgets\css\ui.view.collapse.css" />
+    <Content Include="Widgets\css\ui.view.searchoptions.css" />
+    <Content Include="Widgets\js\Compounds\NMR\jquery.nmrfeatures.js" />
+    <Content Include="Widgets\js\Compounds\Search\jquery.compoundslookup.js" />
+    <Content Include="Widgets\js\Compounds\View\jquery.synonyms.js" />
+    <Content Include="Widgets\js\Layout\jquery.areastats.js" />
+    <Content Include="Widgets\js\Layout\jquery.customlayout.js" />
+    <Content Include="Widgets\js\Layout\jquery.layout.area.js" />
+    <Content Include="Widgets\js\Layout\jquery.layout.manager.js" />
+    <Content Include="Widgets\js\Layout\jquery.layout.infobox.js" />
+    <Content Include="Widgets\js\Layout\jquery.layout.panel.js" />
+    <Content Include="Widgets\js\Layout\jquery.layout.tabs.js" />
+    <Content Include="Widgets\js\Toolkit\jquery.zeroclipboard.js" />
+    <Content Include="Widgets\js\Toolkit\Update\jquery.form.js" />
+    <Content Include="Widgets\js\Toolkit\Update\jquery.generalinfo.update.js" />
+    <Content Include="Widgets\js\Toolkit\jquery.filter.dialog.js" />
+    <Content Include="Widgets\js\UI\Models\javascript.searchoptions.js" />
+    <Content Include="Widgets\js\Toolkit\Editor\jquery.editor.base.js" />
+    <Content Include="Widgets\3rd\jquery.livequery.js" />
+    <Content Include="Widgets\3rd\jquery.storageapi.js" />
+    <Content Include="Widgets\js\Toolkit\Lookup\jquery.data.lookup.js" />
+    <Content Include="Widgets\js\Toolkit\View\jquery.pageview.js" />
+    <Content Include="Widgets\js\Toolkit\View\jquery.xsltransform.js" />
+    <Content Include="Widgets\js\UI\View\jquery.collapse.js" />
+    <Content Include="Widgets\js\UI\View\jquery.searchoptions.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <None Include="Properties\PublishProfiles\chemdata-web-00.pubxml" />
+    <None Include="Properties\PublishProfiles\WebHub WebDeploy.pubxml" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shAutoloader.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushAppleScript.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushAS3.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushBash.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushColdFusion.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushCpp.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushCSharp.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushCss.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushDelphi.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushDiff.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushErlang.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushGroovy.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushJava.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushJavaFX.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushJScript.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushPerl.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushPhp.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushPlain.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushPowerShell.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushPython.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushRuby.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushSass.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushScala.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushSql.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushVb.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shBrushXml.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shCore.js" />
+    <Content Include="Scripts\SyntaxHighlighter\scripts\shLegacy.js" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCore.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreDefault.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreDjango.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreEclipse.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreEmacs.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreFadeToGrey.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreMDUltra.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreMidnight.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shCoreRDark.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeDefault.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeDjango.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeEclipse.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeEmacs.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeFadeToGrey.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeMDUltra.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeMidnight.css" />
+    <Content Include="Scripts\SyntaxHighlighter\styles\shThemeRDark.css" />
+    <Content Include="Widgets\3rd\chemdoodle\6.0.0\ChemDoodleWeb.css" />
+    <Content Include="Widgets\3rd\chemdoodle\6.0.0\ChemDoodleWeb.js" />
+    <Content Include="Widgets\3rd\chemdoodle\6.0.0\uis\ChemDoodleWeb-uis.js" />
+    <Content Include="Widgets\3rd\chemdoodle\6.0.0\uis\images\animated-overlay.gif" />
+    <Content Include="Widgets\3rd\chemdoodle\6.0.0\uis\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Widgets\3rd\chemdoodle\6.0.0\uis\images\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="Widgets\3rd\chemdoodle\6.0.0\uis\images\ui-bg_flat_55_c0402a_40x100.png" />
+    <Content Include="Widgets\3rd\chemdoodle\6.0.0\uis\images\ui-bg_flat_55_eeeeee_40x100.png" />
+    <Content Include="Widgets\3rd\chemdoodle\6.0.0\uis\images\ui-bg_glass_100_f8f8f8_1x400.png" />
+    <Content Include="Widgets\3rd\chemdoodle\6.0.0\uis\images\ui-bg_glass_35_dddddd_1x400.png" />
+    <Content Include="Widgets\3rd\chemdoodle\6.0.0\uis\images\ui-bg_glass_60_eeeeee_1x400.png" />
+    <Content Include="Widgets\3rd\chemdoodle\6.0.0\uis\images\ui-bg_inset-hard_75_999999_1x100.png" />
+    <Content Include="Widgets\3rd\chemdoodle\6.0.0\uis\images\ui-bg_inset-soft_50_c9c9c9_1x100.png" />
+    <Content Include="Widgets\3rd\chemdoodle\6.0.0\uis\images\ui-icons_3383bb_256x240.png" />
+    <Content Include="Widgets\3rd\chemdoodle\6.0.0\uis\images\ui-icons_454545_256x240.png" />
+    <Content Include="Widgets\3rd\chemdoodle\6.0.0\uis\images\ui-icons_70b2e1_256x240.png" />
+    <Content Include="Widgets\3rd\chemdoodle\6.0.0\uis\images\ui-icons_999999_256x240.png" />
+    <Content Include="Widgets\3rd\chemdoodle\6.0.0\uis\images\ui-icons_fbc856_256x240.png" />
+    <Content Include="Widgets\3rd\chemdoodle\6.0.0\uis\jquery-ui-1.10.3.custom.css" />
+    <Content Include="Widgets\3rd\jquery.flexigrid.js" />
+    <Content Include="Widgets\3rd\jsmol\cover.htm" />
+    <Content Include="Widgets\3rd\jsmol\data\1crn.pdb" />
+    <Content Include="Widgets\3rd\jsmol\data\1crn_surf.png" />
+    <Content Include="Widgets\3rd\jsmol\data\1crn_surf_map.png" />
+    <Content Include="Widgets\3rd\jsmol\data\1fss.png" />
+    <Content Include="Widgets\3rd\jsmol\data\1hxw.png" />
+    <Content Include="Widgets\3rd\jsmol\data\2bxaH.pdb" />
+    <Content Include="Widgets\3rd\jsmol\data\Al2O3.png" />
+    <Content Include="Widgets\3rd\jsmol\data\bob.png" />
+    <Content Include="Widgets\3rd\jsmol\data\browse.png" />
+    <Content Include="Widgets\3rd\jsmol\data\chairflip.png" />
+    <Content Include="Widgets\3rd\jsmol\data\filled.png" />
+    <Content Include="Widgets\3rd\jsmol\data\Sr2Nb2O7_working.gif" />
+    <Content Include="Widgets\3rd\jsmol\data\Sr2Nb2O7_working.png" />
+    <Content Include="Widgets\3rd\jsmol\data\Sr2Nb2O7_working2.gif" />
+    <Content Include="Widgets\3rd\jsmol\data\Sr2Nb2O7_working2.png" />
+    <Content Include="Widgets\3rd\jsmol\data\t.png" />
+    <Content Include="Widgets\3rd\jsmol\data\vasp.xml" />
+    <Content Include="Widgets\3rd\jsmol\data\vib.xml" />
+    <Content Include="Widgets\3rd\jsmol\data\virus.png" />
+    <Content Include="Widgets\3rd\jsmol\ext_rcsb.htm" />
+    <Content Include="Widgets\3rd\jsmol\flot\excanvas.js" />
+    <Content Include="Widgets\3rd\jsmol\flot\jmol-flot.png" />
+    <Content Include="Widgets\3rd\jsmol\flot\jquery.flot2.js" />
+    <Content Include="Widgets\3rd\jsmol\flot\jquery.js" />
+    <Content Include="Widgets\3rd\jsmol\flot\json2.js" />
+    <Content Include="Widgets\3rd\jsmol\flot\NEWS.txt" />
+    <Content Include="Widgets\3rd\jsmol\flot\README.txt" />
+    <Content Include="Widgets\3rd\jsmol\flot\showobj.js" />
+    <Content Include="Widgets\3rd\jsmol\images.htm" />
+    <Content Include="Widgets\3rd\jsmol\inline_old.htm" />
+    <Content Include="Widgets\3rd\jsmol\j2s\core\core.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\core\corebinary.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\core\corebio.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\core\coreconsole.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\core\corejmoljsv.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\core\corejsv.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\core\corejsvdialog.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\core\corejsvexport.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\core\corejsvmenu.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\core\coremenu.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\core\coremin.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\core\coreprop.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\core\corepymol.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\core\corescript.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\core\corescript2.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\core\coresmiles.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\core\corestate.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\core\coresurface.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\core\coresym.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\core\coretext.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\core\corezip.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\core\package.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\img\play_make_live.jpg" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\api\BytePoster.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\api\EventManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\api\FontManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\api\GenericColor.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\api\GenericFileInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\api\GenericMenuInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\api\GenericMouseInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\api\GenericPlatform.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\api\HTMLElement.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\api\HTMLWindowEvent.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\api\JSInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\api\JSONEncodable.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\api\PlatformViewer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\api\SwingController.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\api\ZInputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\awt\BorderLayout.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\awt\Color.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\awt\Component.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\awt\Dimension.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\awt\event\ActionEvent.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\awt\event\ActionListener.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\awt\event\Event.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\awt\event\WindowEvent.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\awt\event\WindowListener.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\awt\Font.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\awt\LayoutManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\export\PDFCreator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\export\PDFObject.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\J2SIgnoreImport.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\J2SRequireImport.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\AbstractTableModel.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\Cell.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\ColumnSelectionModel.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\Document.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\FlowLayout.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\Grid.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\GridBagConstraints.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\GridBagLayout.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\Insets.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\JButton.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\JCheckBox.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\JComboBox.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\JComponent.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\JContainer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\JContentPane.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\JDialog.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\JEditorPane.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\JLabel.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\JPanel.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\JScrollPane.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\JSplitPane.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\JTable.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\JTextField.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\JTextPane.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\ListSelectionModel.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\SwingConstants.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\TableCellRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\swing\TableColumn.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\A4.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\AjaxURLConnection.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\AjaxURLStreamHandler.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\AjaxURLStreamHandlerFactory.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\AU.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\Base64.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\BC.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\BS.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\CU.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\DF.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\Encoding.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\List.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\M3.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\M4.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\OC.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\P3.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\P3i.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\P4.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\PT.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\SB.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\T3.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\T3d.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\T3i.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\T4.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\V3.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\javajs\util\V3d.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\awt\Event.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\awt\event\InputEvent.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\awt\event\KeyEvent.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\awt\event\MouseEvent.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\awt\event\MouseWheelEvent.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\error.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\BufferedInputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\BufferedOutputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\BufferedReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\BufferedWriter.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\ByteArrayInputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\ByteArrayOutputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\CharArrayReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\CharArrayWriter.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\CharConversionException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\Closeable.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\DataInput.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\DataInputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\DataOutput.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\EOFException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\Externalizable.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\FileInputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\FileNotFoundException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\FileOutputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\FilterInputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\FilterOutputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\Flushable.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\InputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\InputStreamReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\InterruptedIOException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\InvalidClassException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\InvalidObjectException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\IOException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\NotActiveException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\NotSerializableException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\ObjectStreamException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\ObjectStreamField.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\OptionalDataException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\OutputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\PushbackInputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\Reader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\SequenceInputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\Serializable.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\StreamCorruptedException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\StringBufferInputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\StringReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\StringWriter.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\SyncFailedException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\UnsupportedEncodingException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\UTFDataFormatException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\WriteAbortedException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\io\Writer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\AbstractMethodError.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\AbstractStringBuilder.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\annotation\Annotation.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\annotation\AnnotationFormatError.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\annotation\AnnotationTypeMismatchException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\annotation\Documented.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\annotation\ElementType.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\annotation\IncompleteAnnotationException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\annotation\Inherited.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\annotation\Retention.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\annotation\RetentionPolicy.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\annotation\Target.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Appendable.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\ArithmeticException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\ArrayIndexOutOfBoundsException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\ArrayStoreException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\AssertionError.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Boolean.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Byte.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Character.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\CharSequence.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Class.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\ClassCastException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\ClassCircularityError.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\ClassExt.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\ClassFormatError.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\ClassLoader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\ClassLoaderProgressMonitor.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\ClassNotFoundException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Cloneable.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\CloneNotSupportedException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Comparable.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Console.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Double.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Encoding.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Enum.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Error.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Exception.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\ExceptionInInitializerError.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Float.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\IllegalAccessError.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\IllegalAccessException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\IllegalArgumentException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\IllegalMonitorStateException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\IllegalStateException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\IllegalThreadStateException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\IncompatibleClassChangeError.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\IndexOutOfBoundsException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\InstantiationError.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\InstantiationException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Integer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\InternalError.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\InterruptedException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Iterable.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\LinkageError.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Long.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\NegativeArraySizeException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\NoClassDefFoundError.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\NoSuchFieldError.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\NoSuchFieldException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\NoSuchMethodError.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\NoSuchMethodException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\NullPointerException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Number.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\NumberFormatException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\OutOfMemoryError.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Readable.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\reflect.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\reflect\AccessibleObject.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\reflect\AnnotatedElement.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\reflect\Array.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\reflect\Constructor.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\reflect\Field.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\reflect\GenericDeclaration.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\reflect\GenericSignatureFormatError.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\reflect\InvocationHandler.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\reflect\InvocationTargetException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\reflect\MalformedParameterizedTypeException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\reflect\Member.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\reflect\Method.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\reflect\Modifier.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\reflect\Proxy.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\reflect\ReflectPermission.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\reflect\TypeVariable.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\reflect\UndeclaredThrowableException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Runnable.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\RuntimeException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\SecurityException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Short.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\StackOverflowError.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\StackTraceElement.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\StrictMath.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\String.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\StringBuffer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\StringBuilder.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\StringBuilder.z.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\StringIndexOutOfBoundsException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Thread.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\ThreadDeath.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\ThreadGroup.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Throwable.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\TypeNotPresentException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\UnknownError.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\UnsatisfiedLinkError.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\UnsupportedClassVersionError.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\UnsupportedOperationException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\VerifyError.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\VirtualMachineError.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\lang\Void.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\net\MalformedURLException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\net\Parts.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\net\URL.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\net\URLConnection.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\net\URLDecoder.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\net\URLEncoder.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\net\URLStreamHandler.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\net\URLStreamHandlerFactory.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\text\Annotation.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\text\MessageFormat.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\AbstractCollection.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\AbstractList.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\AbstractMap.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\AbstractQueue.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\AbstractSequentialList.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\AbstractSet.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\ArrayList.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\Arrays.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\BitSet.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\Collection.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\Collections.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\Comparator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\ConcurrentModificationException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\Date.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\Dictionary.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\DuplicateFormatFlagsException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\EmptyStackException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\Enumeration.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\EventListener.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\EventListenerProxy.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\EventObject.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\FormatFlagsConversionMismatchException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\FormatterClosedException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\HashMap.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\HashSet.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\Hashtable.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\IdentityHashMap.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\IllegalFormatCodePointException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\IllegalFormatConversionException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\IllegalFormatException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\IllegalFormatFlagsException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\IllegalFormatPrecisionException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\IllegalFormatWidthException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\InputMismatchException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\InvalidPropertiesFormatException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\Iterator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\LinkedHashMap.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\LinkedHashSet.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\LinkedList.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\List.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\ListIterator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\ListResourceBundle.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\Locale.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\Map.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\MapEntry.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\MissingFormatArgumentException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\MissingFormatWidthException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\MissingResourceException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\NoSuchElementException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\Observable.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\Observer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\Properties.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\Queue.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\Random.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\RandomAccess.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\regex\Matcher.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\regex\MatchResult.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\regex\Pattern.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\regex\PatternSyntaxException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\ResourceBundle.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\Set.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\SortedMap.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\SortedSet.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\Stack.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\StringTokenizer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\TooManyListenersException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\TreeMap.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\TreeSet.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\UnknownFormatConversionException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\UnknownFormatFlagsException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\Vector.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\WeakHashMap.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\zip\CheckedInputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\zip\Checksum.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\zip\CRC32.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\zip\Deflater.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\zip\DeflaterOutputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\zip\GZIPInputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\zip\Inflater.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\zip\InflaterInputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\zip\ZipConstants.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\zip\ZipConstants64.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\zip\ZipEntry.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\zip\ZipException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\zip\ZipInputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\zip\ZipOutputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\java\util\zip\ZStreamRef.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\AnnotationData.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\AppletFrame.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\ExportInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\JSVAbstractMenu.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\JSVAppInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\JSVAppletInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\JSVExporter.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\JSVFileDropper.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\JSVFileHelper.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\JSVGraphics.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\JSVMainPanel.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\JSVPanel.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\JSVPdfWriter.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\JSVPopupMenu.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\JSVPrintDialog.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\JSVTree.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\JSVTreeNode.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\JSVTreePath.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\JSVViewPanel.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\JSVZipInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\JSVZipReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\PanelListener.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\PlatformDialog.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\ScriptInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\SourceReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\VisibleInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\api\XYScaleConverter.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\appletjs\JSVApplet.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\appletjs\JSVAppletPro.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\app\JSVApp.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\app\JSVAppPro.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\Annotation.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\ColoredAnnotation.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\ColorParameters.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\CoordComparator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\Coordinate.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\ExportType.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\GraphSet.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\ImageView.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\Integral.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\IntegralComparator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\IntegralData.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\JDXSpectrum.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\JSVersion.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\JSVFileManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\JSViewer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\Measurement.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\MeasurementData.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\PanelData.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\PanelNode.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\Parameters.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\PDFWriter.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\PeakData.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\PeakInfo.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\PeakPick.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\PeakPickEvent.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\PlotWidget.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\PrintLayout.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\RepaintManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\ScaleData.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\ScriptToken.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\ScriptTokenizer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\SubSpecChangeEvent.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\TODO.txt" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\ViewData.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\Visible.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\common\ZoomEvent.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\dialog\DialogManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\dialog\DialogParams.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\dialog\IntegrationDialog.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\dialog\JSVDialog.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\dialog\MeasurementsDialog.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\dialog\OverlayLegendDialog.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\dialog\PeakListDialog.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\dialog\ViewsDialog.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\exception\JDXSourceException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\exception\JSpecViewException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\exception\LDRNotFoundException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\exception\ScalesIncompatibleException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\exception\SourceTypeUnsupportedException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\exception\SVGException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\exception\TabularDataSetException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\export\AMLExporter.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\export\CMLExporter.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\export\Exporter.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\export\ExportInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\export\FormContext.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\export\FormExporter.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\export\JDXCompressor.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\export\JDXExporter.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\export\SVGExporter.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\export\XMLExporter.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\js2d\DialogTableModel.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\js2d\Display.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\js2d\Image.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\js2d\JsDialog.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\js2d\JsDialogManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\js2d\JsFile.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\js2d\JsFileHelper.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\js2d\JsFont.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\js2d\JsG2D.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\js2d\JsPanel.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\js2d\JsParameters.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\js2d\JsPlatform.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\js2d\JsPopup.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\js2d\JsViewPanel.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\js2d\Mouse.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\popup\JSVGenericPopup.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\popup\JSVPopupResourceBundle.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\popup\PopupResource.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\source\AnIMLReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\source\CMLReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\source\FileReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\source\JDXDataObject.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\source\JDXDecompressor.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\source\JDXHeader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\source\JDXSource.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\source\JDXSourceStreamTokenizer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\source\JSVXmlReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\source\JSVZipFileSequentialReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\source\JSVZipUtil.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\source\XMLReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\tree\SimpleTree.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\tree\SimpleTreeEnumeration.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\tree\SimpleTreeModel.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\tree\SimpleTreeNode.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\tree\SimpleTreePath.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\util\JSVEscape.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\util\JSVTxt.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\A4.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\AjaxURLConnection.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\AjaxURLStreamHandler.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\AjaxURLStreamHandlerFactory.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\AU.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\Base64.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\BC.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\BS.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\CU.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\DF.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\Encoding.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\List.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\M3.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\M4.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\OC.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\P3.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\P3i.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\P4.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\PT.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\SB.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\T3.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\T3d.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\T3i.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\T4.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\V3.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JU\V3d.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JZ\Adler32.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JZ\Checksum.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JZ\CRC32.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JZ\Deflate.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JZ\Deflater.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JZ\DeflaterOutputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JZ\GZIPException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JZ\GZIPHeader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JZ\GZIPInputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JZ\GZIPOutputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JZ\InfBlocks.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JZ\InfCodes.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JZ\Inflate.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JZ\Inflater.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JZ\InflaterInputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JZ\InfTree.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JZ\JZlib.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JZ\StaticTree.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JZ\Tree.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JZ\ZStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JZ\ZStreamException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\cif\CifReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\cif\MMCifReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\cif\MSCifReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\cif\MSReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\molxyz\Mol3DReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\molxyz\MolReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\molxyz\XyzReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\more\BinaryDcdReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\more\BinaryReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\more\ForceFieldReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\more\GromacsReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\more\JcampdxReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\more\MdCrdReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\more\MdTopReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\more\Mol2Reader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\more\TlsDataOnlyReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\pdb\P2nReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\pdb\PdbReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\pdb\PqrReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\pymol\JmolObject.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\pymol\PickleReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\pymol\PyMOL.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\pymol\PyMOLGroup.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\pymol\PyMOLReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\pymol\PyMOLScene.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\AdfReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\BasisFunctionReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\CsfReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\DgridReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\GamessReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\GamessUKReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\GamessUSReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\GaussianReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\GaussianWfnReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\GenNBOReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\JaguarReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\MoldenReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\MopacGraphfReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\MopacSlaterReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\MOReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\NWChemReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\OdysseyReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\PsiReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\QchemReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\SlaterReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\SpartanArchive.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\SpartanInputReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\SpartanReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\SpartanSmolReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\quantum\WebMOReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\simple\AlchemyReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\simple\AmpacReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\simple\CubeReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\simple\FoldingXyzReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\simple\GhemicalMMReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\simple\HyperChemReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\simple\JmeReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\simple\JSONReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\simple\MopacArchiveReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\simple\MopacReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\simple\ZMatrixReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xml\JmolXmlHandler.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xml\XmlArgusReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xml\XmlChem3dReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xml\XmlCmlReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xml\XmlHandler.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xml\XmlMagResReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xml\XmlMolproReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xml\XmlOdysseyReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xml\XmlQEReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xml\XmlReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xml\XmlVaspReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xml\XmlXsdReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xtal\AbinitReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xtal\AimsReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xtal\CastepReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xtal\CrystalReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xtal\DmolReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xtal\EspressoReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xtal\GulpReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xtal\JanaReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xtal\MagresReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xtal\ShelxReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xtal\SiestaReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xtal\VaspOutcarReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xtal\VaspPoscarReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xtal\Wien2kReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\readers\xtal\XcrysdenReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\smarter\Atom.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\smarter\AtomIterator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\smarter\AtomSetCollection.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\smarter\AtomSetCollectionReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\smarter\AtomSetObject.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\smarter\Bond.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\smarter\BondIterator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\smarter\MMCifInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\smarter\MSCifInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\smarter\MSInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\smarter\Resolver.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\smarter\SmarterJmolAdapter.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\smarter\Structure.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\adapter\smarter\StructureIterator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\AtomIndexIterator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\DSSPInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\Interface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolAbstractButton.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolAdapter.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolAdapterAtomIterator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolAdapterBondIterator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolAdapterStructureIterator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolAppAPI.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolAppConsoleInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolAppletInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolBioResolver.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolCallbackListener.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolDataManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolDialogInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolDocument.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolDomReaderInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolEnvCalc.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolFilesReaderInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolGestureServerInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolGraphicsInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolImageEncoder.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolJSpecView.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolLineReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolMeasurementClient.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolModulationSet.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolMovieCreatorInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolNavigatorInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolNMRInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolParallelProcessor.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolPatternMatcher.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolPdfCreatorInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolPropertyManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolRendererInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolRepaintManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolSceneGenerator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolScriptEditorInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolScriptEvaluator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolScriptFunction.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolScriptManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolSelectionListener.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolStatusListener.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolSyncInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolTouchSimulatorInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolViewer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JmolZipUtility.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\JSVInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\MepCalculationInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\MinimizerInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\MOCalculationInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\PymolAtomReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\QuantumPlaneCalculationInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\SmilesMatcherInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\SymmetryInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\Triangulator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\api\VolumeDataInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\appletjs\Jmol.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\atomdata\AtomData.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\atomdata\AtomDataServer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\atomdata\RadiusData.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\awtjs2d\Display.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\awtjs2d\Image.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\awtjs2d\JSFile.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\awtjs2d\JSFont.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\awtjs2d\JSModelKitPopup.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\awtjs2d\JSmolPopup.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\awtjs2d\JSPopup.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\awtjs2d\Mouse.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\awtjs2d\Platform.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\awtjs\Image.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\awtjs\JSFont.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\awtjs\Platform.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\bspt\Bspf.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\bspt\Bspt.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\bspt\CubeIterator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\bspt\Element.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\bspt\Leaf.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\bspt\Node.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\consolejs\AppletConsole.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\console\GenericConsole.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\console\GenericTextArea.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\constant\EnumAnimationMode.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\constant\EnumAxesMode.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\constant\EnumCallback.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\constant\EnumFileStatus.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\constant\EnumHBondType.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\constant\EnumPalette.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\constant\EnumQuantumShell.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\constant\EnumStereoMode.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\constant\EnumStructure.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\constant\EnumVdw.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\constant\StaticConstants.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\dssx\Bridge.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\dssx\DSSP.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\exportjs\CartesianExporter.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\exportjs\Export3D.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\exportjs\Exporter.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\exportjs\JSExporter.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\exportjs\UseTable.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\g3d\CircleRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\g3d\CylinderRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\g3d\G3DRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\g3d\Graphics3D.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\g3d\HermiteRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\g3d\ImageRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\g3d\LineRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\g3d\Pixelator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\g3d\PixelatorShaded.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\g3d\Platform3D.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\g3d\SphereRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\g3d\TextRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\g3d\TextSorter.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\g3d\TextString.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\g3d\TriangleRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\geodesic\EnvelopeCalculation.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\i18n\GT.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\i18n\Language.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\i18n\Resource.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\image\AviCreator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\image\CRCEncoder.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\image\GifEncoder.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\image\ImageEncoder.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\image\Jpg64Encoder.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\image\JpgEncoder.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\image\package.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\image\PdfEncoder.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\image\PngEncoder.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\image\PpmEncoder.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\io2\ArrayDataReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\io2\BinaryDocument.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\io2\CompoundDocDirEntry.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\io2\CompoundDocHeader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\io2\CompoundDocument.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\io2\DOMReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\io2\FilesReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\io2\JmolZipInputStream.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\io2\KfDocument.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\io2\ListDataReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\io2\StringDataReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\io2\ZipData.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\io2\ZipUtil.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\io\CifDataReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\io\DataReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\io\FileReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\io\JmolBinary.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\io\LimitedLineReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\io\XmlUtil.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\api\MeshDataServer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\api\VertexDataServer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\calc\MarchingCubes.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\calc\MarchingSquares.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\data\JvxlCoder.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\data\JvxlData.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\data\MeshData.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\data\VolumeData.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\ApbsReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\AtomDataReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\AtomPropertyMapper.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\CastepDensityReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\CubeReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\DelPhiBinaryReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\Dns6BinaryReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\EfvetReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\IsoFxyReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\IsoFxyzReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\IsoIntersectReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\IsoMepReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\IsoMlpReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\IsoMOReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\IsoPlaneReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\IsoShapeReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\IsoSolventReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\JaguarReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\JvxlReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\JvxlXmlReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\KinemageReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\MapFileReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\MrcBinaryReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\MsmsReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\NffReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\ObjReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\Parameters.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\PltFormattedReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\PmeshReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\PolygonFileReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\PyMOLMeshReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\SurfaceFileReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\SurfaceGenerator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\SurfaceReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\UhbdReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\VolumeDataReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\VolumeFileReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\XmlReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\XplorReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\jvxl\readers\XsfReader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\minimize\forcefield\AtomType.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\minimize\forcefield\Calculation.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\minimize\forcefield\Calculations.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\minimize\forcefield\CalculationsMMFF.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\minimize\forcefield\CalculationsUFF.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\minimize\forcefield\data\MMFF94-smarts.txt" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\minimize\forcefield\data\mmff94.par.txt" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\minimize\forcefield\data\UFF.txt" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\minimize\forcefield\FFParam.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\minimize\forcefield\ForceField.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\minimize\forcefield\ForceFieldMMFF.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\minimize\forcefield\ForceFieldUFF.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\minimize\MinAngle.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\minimize\MinAtom.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\minimize\MinBond.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\minimize\MinimizationThread.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\minimize\Minimizer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\minimize\MinObject.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\minimize\MinPosition.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\minimize\MinTorsion.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\minimize\Util.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelkit\images\atoms.png" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelkit\images\bonds.png" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelkit\images\dotdotdot.png" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelkit\images\undoButton.gif" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelkit\ModelKitPopupResourceBundle.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelsetbio\AlphaMonomer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelsetbio\AlphaPolymer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelsetbio\AminoMonomer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelsetbio\AminoPolymer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelsetbio\BioModel.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelsetbio\BioPolymer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelsetbio\CarbohydrateMonomer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelsetbio\CarbohydratePolymer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelsetbio\Helix.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelsetbio\Monomer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelsetbio\NucleicMonomer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelsetbio\NucleicPolymer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelsetbio\PhosphorusMonomer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelsetbio\PhosphorusPolymer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelsetbio\ProteinStructure.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelsetbio\Resolver.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelsetbio\Sheet.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelsetbio\Turn.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\Atom.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\AtomCollection.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\AtomIteratorWithinModel.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\AtomIteratorWithinModelSet.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\Bond.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\BondCollection.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\BondIterator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\BondIteratorSelected.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\BondSet.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\Chain.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\Group.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\HBond.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\LabelToken.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\Measurement.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\MeasurementData.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\MeasurementPending.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\Model.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\ModelCollection.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\ModelLoader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\ModelSet.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\Object2d.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\Orientation.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\StateScript.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\Text.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\modelset\TickInfo.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\navigate\Navigator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\parallel\ScriptParallelProcessor.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\parallel\ScriptProcess.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\parallel\ScriptProcessRunnable.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\popup\GenericPopup.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\popup\JmolAbstractMenu.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\popup\MainPopupResourceBundle.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\popup\PopupResource.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\quantum\atomicLipophilicity.txt" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\quantum\MepCalculation.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\quantum\MlpCalculation.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\quantum\MOCalculation.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\quantum\NciCalculation.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\quantum\NMRCalculation.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\quantum\nmr_data.txt" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\quantum\QMAtom.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\quantum\QuantumCalculation.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\quantum\SlaterData.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\renderbio\BackboneRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\renderbio\BioShapeRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\renderbio\CartoonRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\renderbio\MeshRibbonRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\renderbio\RibbonsRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\renderbio\RocketsRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\renderbio\StrandsRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\renderbio\TraceRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\rendercgo\CGORenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\renderspecial\DipolesRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\renderspecial\DotsRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\renderspecial\DrawRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\renderspecial\EllipsoidsRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\renderspecial\GeoSurfaceRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\renderspecial\PolyhedraRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\renderspecial\VectorsRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\rendersurface\ContactRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\rendersurface\IsosurfaceRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\rendersurface\LcaoCartoonRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\rendersurface\MolecularOrbitalRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\rendersurface\Plot3DRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\rendersurface\PmeshRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\render\AxesRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\render\BallsRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\render\BbcageRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\render\CageRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\render\EchoRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\render\FontLineShapeRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\render\FrankRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\render\HalosRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\render\HoverRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\render\LabelsRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\render\MeasuresRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\render\MeshRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\render\RepaintManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\render\ShapeRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\render\StarsRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\render\SticksRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\render\TextRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\render\UccageRenderer.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\scriptext\ScriptExt.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\script\CommandWatcherThread.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\script\ContextToken.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\script\FileLoadThread.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\script\JmolScriptExtension.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\script\ScriptCompilationTokenParser.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\script\ScriptCompiler.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\script\ScriptContext.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\script\ScriptDelayThread.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\script\ScriptEvaluator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\script\ScriptException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\script\ScriptFlowContext.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\script\ScriptFunction.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\script\ScriptInterruption.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\script\ScriptManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\script\ScriptMathProcessor.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\script\ScriptQueueThread.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\script\SV.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\script\T.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapebio\Backbone.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapebio\BioShape.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapebio\BioShapeCollection.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapebio\Cartoon.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapebio\MeshRibbon.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapebio\Ribbons.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapebio\Rockets.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapebio\Strands.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapebio\Trace.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapecgo\CGO.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapecgo\CGOMesh.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapespecial\Dipole.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapespecial\Dipoles.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapespecial\Dots.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapespecial\Draw.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapespecial\DrawMesh.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapespecial\Ellipsoid.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapespecial\Ellipsoids.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapespecial\GeoSurface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapespecial\Polyhedra.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapespecial\Polyhedron.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapespecial\Vectors.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapesurface\Contact.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapesurface\Isosurface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapesurface\IsosurfaceMesh.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapesurface\LcaoCartoon.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapesurface\MolecularOrbital.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapesurface\Plot3D.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shapesurface\Pmesh.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shape\AtomShape.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shape\Axes.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shape\Balls.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shape\Bbcage.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shape\Echo.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shape\FontLineShape.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shape\FontShape.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shape\Frank.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shape\Halos.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shape\Hover.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shape\Labels.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shape\Measures.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shape\Mesh.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shape\MeshCollection.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shape\Object2dShape.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shape\Shape.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shape\Stars.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shape\Sticks.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shape\TextShape.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\shape\Uccage.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\smiles\InvalidSmilesException.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\smiles\SmilesAromatic.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\smiles\SmilesAtom.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\smiles\SmilesBond.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\smiles\SmilesGenerator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\smiles\SmilesMatcher.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\smiles\SmilesMeasure.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\smiles\SmilesParser.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\smiles\SmilesSearch.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\smiles\VTemp.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\symmetry\HallInfo.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\symmetry\HallRotation.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\symmetry\HallRotationTerm.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\symmetry\HallTranslation.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\symmetry\PointGroup.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\symmetry\SpaceGroup.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\symmetry\Symmetry.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\symmetry\SymmetryInfo.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\symmetry\SymmetryOperation.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\symmetry\UnitCell.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\thread\AnimationThread.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\thread\HoverWatcherThread.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\thread\JmolThread.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\thread\MoveThread.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\thread\MoveToThread.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\thread\SpinThread.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\thread\TimeoutThread.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\thread\VibrationThread.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\BoxInfo.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\BSUtil.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\C.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\ColorEncoder.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\CommandHistory.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\ContactPair.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\DefaultLogger.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\Eigen.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\EigenSort.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\Elements.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\Escape.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\GData.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\GenericApplet.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\Geodesic.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\Hermite.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\Int2IntHash.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\JmolEdge.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\JmolMolecule.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\JmolNode.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\Logger.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\LoggerInterface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\Measure.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\MeshSurface.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\Modulation.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\ModulationSet.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\Normix.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\Parser.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\PatternMatcher.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\Point3fi.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\Quaternion.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\Rectangle.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\Rgb16.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\Shader.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\SimpleUnitCell.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\TempArray.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\Tensor.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\TriangleData.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\Txt.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\util\Vibration.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\ActionManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\AnimationManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\binding\Binding.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\binding\DragBinding.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\binding\JmolBinding.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\binding\PfaatBinding.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\binding\RasmolBinding.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\ColorManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\DataManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\FileManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\GlobalSettings.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\JC.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\JmolStateCreator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\JSpecView.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\ModelManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\MouseState.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\OutputManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\OutputManagerJS.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\PropertyManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\SelectionManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\ShapeManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\StateCreator.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\StateManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\StatusManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\TransformManager.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\TransformManager10.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\TransformManager11.js" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\viewer\Viewer.js" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet0.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet0_Console.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet0_Image.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet0_Minimize.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet0_Navigate.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet0_Parallel.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet0_Popup.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet0_ReadersCif.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet0_ReadersMolXyz.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet0_ReadersMore.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet0_ReadersPdb.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet0_ReadersPyMOL.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet0_ReadersQuantum.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet0_ReadersSimple.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet0_ReadersXml.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet0_ReadersXtal.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet0_ScriptExt.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet0_ShapeBio.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet0_ShapeSpecial.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet0_ShapeSurface.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet0_Smiles.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet0_Symmetry.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned0.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned0_Console.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned0_Image.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned0_Minimize.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned0_MultiTouch.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned0_Navigate.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned0_Parallel.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned0_Popup.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned0_ReadersCif.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned0_ReadersMolXyz.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned0_ReadersMore.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned0_ReadersPdb.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned0_ReadersPyMOL.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned0_ReadersQuantum.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned0_ReadersSimple.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned0_ReadersXml.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned0_ReadersXtal.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned0_ScriptExt.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned0_ShapeBio.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned0_ShapeSpecial.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned0_ShapeSurface.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned0_Smiles.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned0_Symmetry.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JSpecViewApplet.jar" />
+    <Content Include="Widgets\3rd\jsmol\java\JSpecViewAppletSigned.jar" />
+    <Content Include="Widgets\3rd\jsmol\jmetest.htm" />
+    <Content Include="Widgets\3rd\jsmol\jmol-flot-energy.htm" />
+    <Content Include="Widgets\3rd\jsmol\jmol-flot.htm" />
+    <Content Include="Widgets\3rd\jsmol\jquery\jquery-1.10.2.js" />
+    <Content Include="Widgets\3rd\jsmol\jquery\jquery.js" />
+    <Content Include="Widgets\3rd\jsmol\jquery\jquery.min.js" />
+    <Content Include="Widgets\3rd\jsmol\jsmetest.htm" />
+    <Content Include="Widgets\3rd\jsmol\jsmetest2.htm" />
+    <Content Include="Widgets\3rd\jsmol\jsme\JSME.html" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\1C15A1A024189E270A6513D985485620.cache.html" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\1CBED0BD4F10A7FD6F2AE4634E465C8A.cache.html" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\396F806CD63ABD414BFBB9D57429F05B.cache.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\40BAF81124143A595056A9CCA0E9DBBA.cache.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\47B4299F6E46D39617E7C2AB1D7761B7.cache.html" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\4841BDE9DC293BA35F7762B4D8EFD236.cache.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\66D909A4197C901D662662119DC4D7F3.cache.html" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\6FC39CD95CB6FB23BF90B51A5811E400.cache.html" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\7131F603DA44C389B1C8A6617DB26BF7.cache.html" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\988AD97DCE8B05AAE8C8A932B3246E76.cache.html" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\9D486DD7CA4842BA763BEE0E2A8B5365.cache.html" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\ADC882069785E50ED8EFABA647C3C4D2.cache.html" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\clear.cache.gif" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\D38C64163F754E376C6611987A49281D.cache.html" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\DF7764EEC1903CD03C9545B354D8D8E4.cache.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\F516027947B6C21A454D134C57C6E647.cache.html" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\F85E05D748B7FC8A0461059CF928DF5F.cache.html" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\chrome.css" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\chrome_rtl.css" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\button\menu-button-arrow-disabled.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\button\menu-button-arrow.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\button\split-button-arrow-active.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\button\split-button-arrow-disabled.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\button\split-button-arrow-focus.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\button\split-button-arrow-hover.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\button\split-button-arrow.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\combobox\arrow-down-disabled.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\combobox\arrow-down.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\combobox\ellipsis-disabled.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\combobox\ellipsis.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\corner.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\corner_ie6.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\fastree\selectionBar.gif" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\fastree\treeClosed.gif" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\fastree\treeLoading.gif" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\fastree\treeOpen.gif" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\glasspanel\blue_ridge.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\hborder.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\hborder_ie6.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\ie6\corner_dialog_topleft.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\ie6\corner_dialog_topright.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\ie6\hborder_blue_shadow.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\ie6\hborder_gray_shadow.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\ie6\vborder_blue_shadow.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\ie6\vborder_gray_shadow.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\scrolltable\bg_header_gradient.gif" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\splitPanelThumb.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\valuespinner\bg_textbox.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\vborder.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\images\vborder_ie6.png" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\mosaic.css" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\gwt\chrome\mosaic_rtl.css" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\hosted.html" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\jsa.css" />
+    <Content Include="Widgets\3rd\jsmol\jsme\jsme\jsme.nocache.js" />
+    <Content Include="Widgets\3rd\jsmol\jsme\license.txt" />
+    <Content Include="Widgets\3rd\jsmol\jsme\release_notes.txt" />
+    <Content Include="Widgets\3rd\jsmol\jsmol.htm" />
+    <Content Include="Widgets\3rd\jsmol\JSmol.lite.js" />
+    <Content Include="Widgets\3rd\jsmol\JSmol.lite.nojq.js" />
+    <Content Include="Widgets\3rd\jsmol\JSmol.min.js" />
+    <Content Include="Widgets\3rd\jsmol\JSmol.min.nojq.js" />
+    <Content Include="Widgets\3rd\jsmol\jsv.htm" />
+    <Content Include="Widgets\3rd\jsmol\jsvtest.htm" />
+    <Content Include="Widgets\3rd\jsmol\jsv_mol.htm" />
+    <Content Include="Widgets\3rd\jsmol\jsv_predict.htm" />
+    <Content Include="Widgets\3rd\jsmol\js\core.js" />
+    <Content Include="Widgets\3rd\jsmol\js\core2.js" />
+    <Content Include="Widgets\3rd\jsmol\js\corebinary.js" />
+    <Content Include="Widgets\3rd\jsmol\js\corebio.js" />
+    <Content Include="Widgets\3rd\jsmol\js\coreconsole.js" />
+    <Content Include="Widgets\3rd\jsmol\js\corejmoljsv.js" />
+    <Content Include="Widgets\3rd\jsmol\js\corejsv.js" />
+    <Content Include="Widgets\3rd\jsmol\js\corejsvdialog.js" />
+    <Content Include="Widgets\3rd\jsmol\js\corejsvexport.js" />
+    <Content Include="Widgets\3rd\jsmol\js\corejsvmenu.js" />
+    <Content Include="Widgets\3rd\jsmol\js\coremenu.js" />
+    <Content Include="Widgets\3rd\jsmol\js\coremin.js" />
+    <Content Include="Widgets\3rd\jsmol\js\coreprop.js" />
+    <Content Include="Widgets\3rd\jsmol\js\corepymol.js" />
+    <Content Include="Widgets\3rd\jsmol\js\corescript.js" />
+    <Content Include="Widgets\3rd\jsmol\js\corescript2.js" />
+    <Content Include="Widgets\3rd\jsmol\js\coresmiles.js" />
+    <Content Include="Widgets\3rd\jsmol\js\corestate.js" />
+    <Content Include="Widgets\3rd\jsmol\js\coresurface.js" />
+    <Content Include="Widgets\3rd\jsmol\js\coresym.js" />
+    <Content Include="Widgets\3rd\jsmol\js\coretext.js" />
+    <Content Include="Widgets\3rd\jsmol\js\corezip.js" />
+    <Content Include="Widgets\3rd\jsmol\js\core\corebottom.js" />
+    <Content Include="Widgets\3rd\jsmol\js\core\corebottom2.js" />
+    <Content Include="Widgets\3rd\jsmol\js\core\coretop.js" />
+    <Content Include="Widgets\3rd\jsmol\js\core\coretop2.js" />
+    <Content Include="Widgets\3rd\jsmol\js\ext\rcsb\rcsbFunctions.js" />
+    <Content Include="Widgets\3rd\jsmol\js\j2sjmol.js" />
+    <Content Include="Widgets\3rd\jsmol\js\Jmol2.js" />
+    <Content Include="Widgets\3rd\jsmol\js\JSmol.full.js" />
+    <Content Include="Widgets\3rd\jsmol\js\JSmol.full.lite.js" />
+    <Content Include="Widgets\3rd\jsmol\js\JSmol.full.lite.nojq.js" />
+    <Content Include="Widgets\3rd\jsmol\js\JSmol.js" />
+    <Content Include="Widgets\3rd\jsmol\js\JSmol.nojq.js" />
+    <Content Include="Widgets\3rd\jsmol\js\JSmolApi.js" />
+    <Content Include="Widgets\3rd\jsmol\js\JSmolApplet.js" />
+    <Content Include="Widgets\3rd\jsmol\js\JSmolConsole.js" />
+    <Content Include="Widgets\3rd\jsmol\js\JSmolControls.js" />
+    <Content Include="Widgets\3rd\jsmol\js\JSmolCore.js" />
+    <Content Include="Widgets\3rd\jsmol\js\JSmolDebugOff.js" />
+    <Content Include="Widgets\3rd\jsmol\js\JSmolGLmol.js" />
+    <Content Include="Widgets\3rd\jsmol\js\JSmolJavaExt.js" />
+    <Content Include="Widgets\3rd\jsmol\js\JSmolJME.js" />
+    <Content Include="Widgets\3rd\jsmol\js\JSmoljQueryExt.js" />
+    <Content Include="Widgets\3rd\jsmol\js\JSmolJSV.js" />
+    <Content Include="Widgets\3rd\jsmol\js\JSmolMenu.js" />
+    <Content Include="Widgets\3rd\jsmol\js\JSmolTest.js" />
+    <Content Include="Widgets\3rd\jsmol\js\JSmolThree.js" />
+    <Content Include="Widgets\3rd\jsmol\js\JSmolTM.js" />
+    <Content Include="Widgets\3rd\jsmol\lite.htm" />
+    <Content Include="Widgets\3rd\jsmol\lite2.htm" />
+    <Content Include="Widgets\3rd\jsmol\lite3.htm" />
+    <Content Include="Widgets\3rd\jsmol\lite4.htm" />
+    <Content Include="Widgets\3rd\jsmol\lite5.htm" />
+    <Content Include="Widgets\3rd\jsmol\liteNCI.htm" />
+    <Content Include="Widgets\3rd\jsmol\nano.htm" />
+    <Content Include="Widgets\3rd\jsmol\php\jsmol.php" />
+    <Content Include="Widgets\3rd\jsmol\README-DOWNLOAD.TXT" />
+    <Content Include="Widgets\3rd\jsmol\README.TXT" />
+    <Content Include="Widgets\3rd\jsmol\resize.htm" />
+    <Content Include="Widgets\3rd\jsmol\simple.htm" />
+    <Content Include="Widgets\3rd\jsmol\simple1.htm" />
+    <Content Include="Widgets\3rd\jsmol\simple2.htm" />
+    <Content Include="Widgets\3rd\jsmol\simplej.htm" />
+    <Content Include="Widgets\3rd\jsmol\simpleOpt.htm" />
+    <Content Include="Widgets\3rd\jsmol\simple_old.htm" />
+    <Content Include="Widgets\3rd\jsmol\supersimple.htm" />
+    <Content Include="Widgets\3rd\jsmol\sync2.htm" />
+    <Content Include="Widgets\3rd\jsmol\t.htm" />
+    <Content Include="Widgets\3rd\jsmol\t1.htm" />
+    <Content Include="Widgets\3rd\jsmol\t2.htm" />
+    <Content Include="Widgets\3rd\jsmol\t3.htm" />
+    <Content Include="Widgets\3rd\jsmol\t3b.htm" />
+    <Content Include="Widgets\3rd\jsmol\t4.htm" />
+    <Content Include="Widgets\3rd\jsmol\test.htm" />
+    <Content Include="Widgets\3rd\jsmol\test2.htm" />
+    <Content Include="Widgets\3rd\jsmol\testEPFL.htm" />
+    <Content Include="Widgets\3rd\jsmol\testjsv.htm" />
+    <Content Include="Widgets\3rd\jsmol\testjsv_mol.htm" />
+    <Content Include="Widgets\3rd\jsmol\testjsv_predict.htm" />
+    <Content Include="Widgets\3rd\jsmol\vibrate.htm" />
+    <Content Include="Widgets\css\3rd.flexigrid.css" />
+    <Content Include="Widgets\css\compound.view.similarities.css" />
+    <Content Include="Widgets\css\images\flexgrid\bg.gif" />
+    <Content Include="Widgets\css\images\flexgrid\btn-sprite.gif" />
+    <Content Include="Widgets\css\images\flexgrid\ddn.png" />
+    <Content Include="Widgets\css\images\flexgrid\dn.png" />
+    <Content Include="Widgets\css\images\flexgrid\fhbg.gif" />
+    <Content Include="Widgets\css\images\flexgrid\first.gif" />
+    <Content Include="Widgets\css\images\flexgrid\hl.png" />
+    <Content Include="Widgets\css\images\flexgrid\last.gif" />
+    <Content Include="Widgets\css\images\flexgrid\line.gif" />
+    <Content Include="Widgets\css\images\flexgrid\load.gif" />
+    <Content Include="Widgets\css\images\flexgrid\load.png" />
+    <Content Include="Widgets\css\images\flexgrid\magnifier.png" />
+    <Content Include="Widgets\css\images\flexgrid\next.gif" />
+    <Content Include="Widgets\css\images\flexgrid\prev.gif" />
+    <Content Include="Widgets\css\images\flexgrid\up.png" />
+    <Content Include="Widgets\css\images\flexgrid\uup.png" />
+    <Content Include="Widgets\css\images\flexgrid\wbg.gif" />
+    <Content Include="Widgets\js\Compounds\ChemDoodle\jquery.base.js" />
+    <Content Include="Widgets\js\Compounds\ChemDoodle\jquery.base.molecule.js" />
+    <Content Include="Widgets\js\Compounds\ChemDoodle\jquery.chemdoodle.rotator.js" />
+    <Content Include="Widgets\js\Compounds\ChemDoodle\jquery.chemdoodle.transform.js" />
+    <Content Include="Widgets\js\Compounds\ChemDoodle\jquery.chemdoodle.viewer.js" />
+    <Content Include="Widgets\js\Compounds\ChemDoodle\jquery.chemdoodle2d.js" />
+    <Content Include="Widgets\js\Compounds\ChemDoodle\jquery.chemdoodle3d.js" />
+    <Content Include="Widgets\js\Compounds\StructureEditor\jquery.sketcher.js" />
+    <Content Include="Widgets\js\Compounds\Molecule\jquery.jsmol.js" />
+    <Content Include="Widgets\js\Compounds\View\jquery.compounds.gridview.js" />
+    <Content Include="Widgets\js\Compounds\View\jquery.similarities.js" />
+    <Content Include="Widgets\js\Compounds\jquery.substances.store.js" />
+    <Content Include="Widgets\js\Compounds\Molecule\jquery.substance2d.js" />
+    <Content Include="Widgets\js\Compounds\View\jquery.substances.tileview.js" />
+    <Content Include="Widgets\js\Compounds\View\jquery.substance.info.js" />
+    <Content Include="Widgets\js\Compounds\View\jquery.substance.tile.js" />
+    <Content Include="Widgets\js\Compounds\View\jquery.substances.scroller.js" />
+    <Content Include="Widgets\3rd\filesaver\blob.js" />
+    <Content Include="Widgets\3rd\filesaver\filesaver.js" />
+    <Content Include="Widgets\css\images\busy.gif" />
+    <Content Include="Widgets\css\toolkit.gridview.css" />
+    <Content Include="Widgets\css\toolkit.progress.css" />
+    <Content Include="Widgets\css\toolkit.scroller.css" />
+    <Content Include="Widgets\css\toolkit.tile.css" />
+    <Content Include="Widgets\css\toolkit.tileview.css" />
+    <Content Include="Widgets\js\Toolkit\jquery.base.js" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\classes.txt" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\clock.gif" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\EditorApplet.html" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\hourglass.gif" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-com_ozten.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-core.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-editor-opts.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-editor.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-Jama.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-jas.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-javax_vecmath.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-nu.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-org.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-org_3pq.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-org_apache.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-org_jaxen.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-org_openscience.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-org_openscience_cdk.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-org_openscience_cdk_config.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-org_openscience_cdk_controller.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-org_openscience_cdk_dict.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-org_openscience_cdk_io.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-org_openscience_cdk_io_cml.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-org_openscience_cdk_iupac.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-org_openscience_cdk_math.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-org_openscience_cdk_nonotify.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-org_openscience_cdk_structgen.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-org_openscience_cdk_tools.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-org_w3c.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-org_xmlcml.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-others.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-resources.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-templates.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\jchempaint-applet-viewer-opts.jar" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\klok.gif" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\lib-licenses.txt" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\ViewerApplet.html" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\ViewerAppletSmall.html" />
+    <Content Include="Widgets\3rd\jquery.als-1.3.min.js" />
+    <Content Include="Widgets\3rd\jquery.alsEN-1.3.js" />
+    <Content Include="Widgets\3rd\jquery.blockui.js" />
+    <Content Include="Widgets\3rd\jquery.cookie.js" />
+    <Content Include="Widgets\3rd\jquery.lightbox.js" />
+    <Content Include="Widgets\3rd\jsdraw\dojo.1.8.0.js" />
+    <Content Include="Widgets\3rd\jsdraw\dojo.js" />
+    <Content Include="Widgets\css\3rd.blockui.css" />
+    <Content Include="Widgets\css\3rd.lightbox.css" />
+    <Content Include="Widgets\css\toolkit.generalinfo.css" />
+    <Content Include="Widgets\css\compound.view.tileview.css" />
+    <Content Include="Widgets\css\compound.structureeditor.css" />
+    <Content Include="Widgets\css\compound.structureoptions.css" />
+    <Content Include="Widgets\css\images\busy-small.gif" />
+    <Content Include="Widgets\css\images\check24.png" />
+    <Content Include="Widgets\css\images\lightbox\close.png" />
+    <Content Include="Widgets\css\images\lightbox\loading.gif" />
+    <Content Include="Widgets\css\images\lightbox\next.png" />
+    <Content Include="Widgets\css\images\powered-by-gga.png" />
+    <Content Include="Widgets\css\images\lightbox\prev.png" />
+    <Content Include="Widgets\css\images\reload-small.png" />
+    <Content Include="Widgets\css\images\reload-small2.png" />
+    <Content Include="Widgets\css\images\search-icon.png" />
+    <Content Include="Widgets\css\images\thin-left-arrow.png" />
+    <Content Include="Widgets\css\images\thin-right-arrow.png" />
+    <Content Include="Widgets\css\toolkit.watermark.css" />
+    <Content Include="Widgets\js\Compounds\jquery.base.js" />
+    <Content Include="Widgets\js\Toolkit\jquery.base.store.js" />
+    <Content Include="Widgets\js\Toolkit\jquery.chemspider.store.js" />
+    <Content Include="Widgets\js\Compounds\View\jquery.compound.info.js" />
+    <Content Include="Widgets\js\Compounds\View\jquery.compounds.scroller.js" />
+    <Content Include="Widgets\js\Compounds\jquery.compounds.store.js" />
+    <Content Include="Widgets\js\Compounds\Molecule\jquery.molecule2d.js" />
+    <Content Include="Widgets\js\Compounds\Search\jquery.compounds.gridresults.js" />
+    <Content Include="Widgets\js\Compounds\Search\jquery.compounds.tileresults.js" />
+    <Content Include="Widgets\js\Compounds\StructureEditor\jquery.jchempaint.js" />
+    <Content Include="Widgets\js\Compounds\StructureEditor\jquery.jsdraw.js" />
+    <Content Include="Widgets\js\Compounds\StructureEditor\jquery.structureeditor.js" />
+    <Content Include="Widgets\js\Compounds\StructureEditor\jquery.structureoptions.js" />
+    <Content Include="Widgets\js\Toolkit\View\jquery.scroller.js" />
+    <Content Include="Widgets\js\Toolkit\jquery.message.js" />
+    <Content Include="Widgets\js\Toolkit\jquery.progress.js" />
+    <Content Include="Widgets\js\Toolkit\jquery.resolve.js" />
+    <Content Include="Widgets\js\Toolkit\jquery.scripts.js" />
+    <Content Include="Widgets\js\Toolkit\jquery.utils.js" />
+    <Content Include="Widgets\js\Toolkit\jquery.watermark.js" />
+    <Content Include="Widgets\js\Toolkit\prototype.utils.js" />
+    <Content Include="Widgets\js\Compounds\View\jquery.compounds.tileview.js" />
+    <Content Include="Widgets\js\Toolkit\View\jquery.generalinfo.js" />
+    <Content Include="Widgets\js\Toolkit\View\jquery.gridview.js" />
+    <Content Include="Widgets\js\Toolkit\View\jquery.tile.js" />
+    <Content Include="Widgets\js\Toolkit\View\jquery.tileview.js" />
+    <Content Include="Widgets\js\Compounds\View\jquery.compound.tile.js" />
+    <None Include="Properties\PublishProfiles\Lehin local deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\WebBeta.pubxml" />
+    <None Include="Properties\PublishProfiles\WebHub.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.chemdata-web-00.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\css\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\big.mol" />
+    <Content Include="Widgets\3rd\jchempaint\3.1.3\lgpl.license" />
+    <Content Include="Views\Search\Results.cshtml" />
+    <Content Include="Views\Compounds\Get.cshtml" />
+    <Content Include="Views\Substances\Get.cshtml" />
+    <Content Include="Views\Compounds\Index.cshtml" />
+    <Content Include="Widgets\css\compound.molecule.molecule2d.css" />
+    <Content Include="Views\Substances\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Widgets\3rd\jsmol\data\1bna_surface.pse" />
+    <Content Include="Widgets\3rd\jsmol\data\1cbs.cif" />
+    <Content Include="Widgets\3rd\jsmol\data\1cbs_2fofc.map" />
+    <Content Include="Widgets\3rd\jsmol\data\1crn.pdb.gz" />
+    <Content Include="Widgets\3rd\jsmol\data\1fss.pse" />
+    <Content Include="Widgets\3rd\jsmol\data\1hxw.pngj" />
+    <Content Include="Widgets\3rd\jsmol\data\1m19.pdb.gz" />
+    <Content Include="Widgets\3rd\jsmol\data\3hz7.pdb.gz" />
+    <Content Include="Widgets\3rd\jsmol\data\aceticacid.spartan" />
+    <Content Include="Widgets\3rd\jsmol\data\acetophenone.jdx" />
+    <Content Include="Widgets\3rd\jsmol\data\aquation20.jdx" />
+    <Content Include="Widgets\3rd\jsmol\data\bbPlane.pse" />
+    <Content Include="Widgets\3rd\jsmol\data\benzene.c3xml" />
+    <Content Include="Widgets\3rd\jsmol\data\benzenevib.spardir\Document" />
+    <Content Include="Widgets\3rd\jsmol\data\benzenevib.spardir\M0001\archive" />
+    <Content Include="Widgets\3rd\jsmol\data\benzenevib.spardir\M0001\Calculations" />
+    <Content Include="Widgets\3rd\jsmol\data\benzenevib.spardir\M0001\Commands" />
+    <Content Include="Widgets\3rd\jsmol\data\benzenevib.spardir\M0001\Geometry" />
+    <Content Include="Widgets\3rd\jsmol\data\benzenevib.spardir\M0001\input" />
+    <Content Include="Widgets\3rd\jsmol\data\benzenevib.spardir\M0001\log" />
+    <Content Include="Widgets\3rd\jsmol\data\benzenevib.spardir\M0001\Molecule" />
+    <Content Include="Widgets\3rd\jsmol\data\benzenevib.spardir\M0001\output" />
+    <Content Include="Widgets\3rd\jsmol\data\benzenevib.spardir\M0001\parchive" />
+    <Content Include="Widgets\3rd\jsmol\data\benzenevib.spardir\M0001\proparc" />
+    <Content Include="Widgets\3rd\jsmol\data\benzenevib.spardir\M0001\ret_code" />
+    <Content Include="Widgets\3rd\jsmol\data\benzenevib.spardir\M0001\voutput" />
+    <Content Include="Widgets\3rd\jsmol\data\benzenevib.spardir\M0001\_spartan" />
+    <Content Include="Widgets\3rd\jsmol\data\benzenevib.spardir\output" />
+    <Content Include="Widgets\3rd\jsmol\data\benzenevib.spardir\sheet" />
+    <Content Include="Widgets\3rd\jsmol\data\benzenevib.spardir\SpreadSheet\SheetData" />
+    <Content Include="Widgets\3rd\jsmol\data\benzenevib.spardir\_locked" />
+    <Content Include="Widgets\3rd\jsmol\data\benzenevib.spardir\_spartandir" />
+    <Content Include="Views\Examples\Index.cshtml" />
+    <Content Include="Views\Examples\JSMol.cshtml" />
+    <Content Include="Views\Examples\Crystal.cshtml" />
+    <Content Include="Views\Shared\_DemoLayout.cshtml" />
+    <Content Include="Views\Examples\Molecule2D.cshtml" />
+    <Content Include="Views\Examples\Sketcher.cshtml" />
+    <Content Include="Views\Home\_HomeSearchPartial.cshtml" />
+    <Content Include="Views\Examples\StructureEditor.cshtml" />
+    <Content Include="Views\Examples\CompoundsLookup.cshtml" />
+    <Content Include="Views\Examples\FlexLayout.cshtml" />
+    <Content Include="Views\Search\Settings.cshtml" />
+    <Content Include="Views\Shared\_RSCFlexLayout.cshtml" />
+    <Content Include="Views\Shared\_FlexLayout.cshtml" />
+    <Content Include="Views\Compounds\Flex.cshtml" />
+    <Content Include="Views\Examples\HorizontalLayout.cshtml" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\img\Thumbs.db" />
+    <Content Include="Widgets\3rd\jsdraw\JSDraw3.1.9\w8\Thumbs.db" />
+    <Content Include="Views\Examples\FunctionalGroup.cshtml" />
+    <Content Include="Views\Examples\JSDraw.cshtml" />
+    <Content Include="Views\Examples\JChemPaint.cshtml" />
+    <Content Include="Views\Examples\ChemdoodleRotator.cshtml" />
+    <Content Include="Views\Examples\ChemDoodle2D.cshtml" />
+    <Content Include="Views\Examples\ChemDoodleTransform.cshtml" />
+    <Content Include="Views\Examples\ChemDoodleViewer.cshtml" />
+    <Content Include="Views\Errors\NotFound.cshtml" />
+    <Content Include="Views\Examples\ConfigLayout.cshtml" />
+    <Content Include="Views\Examples\FlexConfigLayout.cshtml" />
+    <Content Include="Views\Compounds\FlexConfig.cshtml" />
+    <Content Include="Views\Datasources\Index.cshtml" />
+    <Content Include="Views\Datasources\Compounds.cshtml" />
+    <Content Include="Views\Shared\_RSCLayout.cshtml" />
+    <Content Include="Views\Shared\_RSCDemoLayout.cshtml" />
+    <Content Include="Views\Examples\HorizontalConfigLayout.cshtml" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
+    <Content Include="Views\Examples\GeneralInfo.cshtml" />
+    <Content Include="Views\Examples\TileView.cshtml" />
+    <Content Include="Views\Examples\GridView.cshtml" />
+    <None Include="Widgets\3rd\jsmol\data\Bisphenol.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Widgets\3rd\jsmol\data\c60af.mol" />
+    <Content Include="Widgets\3rd\jsmol\data\c6h6.smol" />
+    <Content Include="Widgets\3rd\jsmol\data\caffeine.jvxl" />
+    <Content Include="Widgets\3rd\jsmol\data\caffeine.mol" />
+    <Content Include="Widgets\3rd\jsmol\data\caffeine.vdw.jvxl" />
+    <Content Include="Widgets\3rd\jsmol\data\ch3cl.smol" />
+    <Content Include="Widgets\3rd\jsmol\data\cl2o.gamess" />
+    <Content Include="Widgets\3rd\jsmol\data\co2.smol" />
+    <Content Include="Widgets\3rd\jsmol\data\croconic_new%281%29.magres" />
+    <Content Include="Widgets\3rd\jsmol\data\croconic_new.magres" />
+    <Content Include="Widgets\3rd\jsmol\data\Crspectra.jdx" />
+    <Content Include="Widgets\3rd\jsmol\data\CuO2CCHF2.magres" />
+    <Content Include="Widgets\3rd\jsmol\data\cx1.jdx" />
+    <Content Include="Widgets\3rd\jsmol\data\cyclflip2.jmol" />
+    <Content Include="Widgets\3rd\jsmol\data\cyclflip2.spt" />
+    <Content Include="Widgets\3rd\jsmol\data\cyclohexaneFlip.jmol" />
+    <Content Include="Widgets\3rd\jsmol\data\cyclohexane_movie.xyz" />
+    <Content Include="Widgets\3rd\jsmol\data\dna.pse" />
+    <Content Include="Widgets\3rd\jsmol\data\estron.cml" />
+    <Content Include="Widgets\3rd\jsmol\data\exo.xyz" />
+    <Content Include="Widgets\3rd\jsmol\data\flexfit.spt" />
+    <Content Include="Widgets\3rd\jsmol\data\k04041.cif" />
+    <Content Include="Widgets\3rd\jsmol\data\lobe1.jvxl" />
+    <Content Include="Widgets\3rd\jsmol\data\lobe2.jvxl" />
+    <Content Include="Widgets\3rd\jsmol\data\methanol.spartan.bin" />
+    <Content Include="Widgets\3rd\jsmol\data\n-butane_M0001.jxyz" />
+    <Content Include="Widgets\3rd\jsmol\data\n.mol" />
+    <Content Include="Widgets\3rd\jsmol\data\no2_nbo.log.gz" />
+    <Content Include="Widgets\3rd\jsmol\data\pimentoGCMS2.dx" />
+    <Content Include="Widgets\3rd\jsmol\data\quartz.cif" />
+    <Content Include="Widgets\3rd\jsmol\data\rabe.phonon" />
+    <Content Include="Widgets\3rd\jsmol\data\rabe.spt" />
+    <Content Include="Widgets\3rd\jsmol\data\rabe0.spt" />
+    <Content Include="Widgets\3rd\jsmol\data\rabe1.spt" />
+    <Content Include="Widgets\3rd\jsmol\data\rabe2.spt" />
+    <Content Include="Widgets\3rd\jsmol\data\sage.pmesh" />
+    <Content Include="Widgets\3rd\jsmol\data\sample78-1hnmr.jdx" />
+    <Content Include="Widgets\3rd\jsmol\data\sample78-cosy.jdx.gz" />
+    <Content Include="Widgets\3rd\jsmol\data\square_planar.spartan" />
+    <Content Include="Widgets\3rd\jsmol\data\sr2.cif" />
+    <Content Include="Widgets\3rd\jsmol\data\t-butene.xyz" />
+    <Content Include="Widgets\3rd\jsmol\data\t.jdx" />
+    <Content Include="Widgets\3rd\jsmol\data\t.jvxl.gz" />
+    <Content Include="Widgets\3rd\jsmol\data\t2d.jdx" />
+    <Content Include="Widgets\3rd\jsmol\data\t3.pngj" />
+    <Content Include="Widgets\3rd\jsmol\data\t6.jdx" />
+    <Content Include="Widgets\3rd\jsmol\data\test.molden" />
+    <Content Include="Widgets\3rd\jsmol\data\test.spt" />
+    <Content Include="Widgets\3rd\jsmol\data\vinylpyrr.jdx" />
+    <Content Include="Widgets\3rd\jsmol\data\water.xodydata" />
+    <Content Include="Widgets\3rd\jsmol\data\water.xyz.gz" />
+    <Content Include="Widgets\3rd\jsmol\flot\TODO" />
+    <Content Include="Widgets\3rd\jsmol\idioma\ar.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\bs.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\ca%40valencia.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\ca.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\cs.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\da.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\de.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\el.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\en_GB.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\es.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\et.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\eu.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\fi.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\fr.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\fy.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\hu.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\hy.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\id.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\it.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\ja.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\jv.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\ko.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\ms.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\nb.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\nl.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\oc.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\pl.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\pt.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\pt_BR.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\ru.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\sl.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\sv.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\ta.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\te.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\tr.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\ug.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\uk.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\uz.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\zh_CN.po" />
+    <Content Include="Widgets\3rd\jsmol\idioma\zh_TW.po" />
+    <Content Include="Widgets\3rd\jsmol\j2s\Jmol.properties" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\export\resources\animl_nmr.vm" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\export\resources\animl_tmp.vm" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\export\resources\cml_nmr.vm" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\export\resources\cml_tmp.vm" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\export\resources\plot.vm" />
+    <Content Include="Widgets\3rd\jsmol\j2s\JSV\export\resources\plot_ink.vm" />
+    <Content Include="Widgets\3rd\jsmol\j2s\J\Jmol.properties" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolApplet.jnlp" />
+    <Content Include="Widgets\3rd\jsmol\java\JmolAppletSigned.jnlp" />
+    <Content Include="Widgets\3rd\jsmol\java\JSpecViewApplet.jnlp" />
+    <Content Include="Widgets\3rd\jsmol\java\JSpecViewAppletSigned.jnlp" />
+    <Content Include="Widgets\3rd\jsmol\spt\ext\rcsb\gotoLigand.spt" />
+    <Content Include="Widgets\3rd\jsmol\spt\ext\xtal\plott.spt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RSC.Compounds.Client\RSC.Compounds.Client.csproj">
+      <Project>{c43ead77-9c0d-4e86-b63d-1b681df0ddc8}</Project>
+      <Name>RSC.Compounds.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.Compounds.Core\RSC.Compounds.Core.csproj">
+      <Project>{77414748-c36f-4821-b2fe-7755a4cb2692}</Project>
+      <Name>RSC.Compounds.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.Compounds.Search\RSC.Compounds.Search.csproj">
+      <Project>{b4240688-0f41-4a07-959c-ac1902b8486a}</Project>
+      <Name>RSC.Compounds.Search</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.Compounds.WebApi\RSC.Compounds.WebApi.csproj">
+      <Project>{5f3b305f-a615-48c6-9cfb-58bffec1c641}</Project>
+      <Name>RSC.Compounds.WebApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>10000</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:47207/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,241 @@
+﻿@model Guid
+
+@{
+    ViewBag.Title = "Flex";
+    Layout = "~/Views/Shared/_FlexLayout.cshtml";
+}
+
+@section css {
+    <style>
+        #similarities {
+            max-height: 99%;
+            overflow: auto;
+        }
+
+        .cs-widget-generalinfo {
+            height: 100%;
+            margin: 0;
+        }
+
+            .cs-widget-generalinfo .properties {
+                height: 100%;
+                overflow: auto;
+            }
+
+        .tab-pane {
+            padding: 5px;
+        }
+
+        .cs-widget-pageview-header {
+            display: none;
+        }
+    </style>
+}
+
+<div data-layout-manager="horizontal" data-layout="manager">
+    <div data-layout-manager="vertical" data-layout="manager" data-size="60%">
+        <div data-layout="infobox tabs" data-size="50%" data-allow-maximize="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="position: relative;">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="active">
+                            <a class="help" href="#general-tab" role="tab" data-toggle="tab">General Info</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-body tab-content">
+                    <div class="tab-pane .fade active" id="general-tab">
+                        <div id="compound"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div data-layout="infobox tabs" data-size="50%" data-allow-maximize="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" style="position: relative;">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="active">
+                            <a class="help" href="#substances-tab" role="tab" data-toggle="tab">Substances <span class="substances-badge badge"></span></a>
+                        </li>
+                        <li>
+                            <a class="details" href="#parents-tab" role="tab" data-toggle="tab">Parents <span class="parents-badge badge"></span></a>
+                        </li>
+                        <li>
+                            <a class="details" href="#children-tab" role="tab" data-toggle="tab">Children <span class="children-badge badge"></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="panel-body tab-content">
+                    <div class="tab-pane .fade active" id="substances-tab">
+                        <div id="substances"></div>
+                    </div>
+                    <div class="tab-pane .fade" id="parents-tab">
+                        <div id="parents"></div>
+                    </div>
+                    <div class="tab-pane .fade" id="children-tab">
+                        <div id="children"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-layout="infobox tabs" data-size="40%" data-allow-maximize="true">
+        <div class="panel panel-default">
+            <div class="panel-heading" style="position: relative;">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="active">
+                        <a class="help" href="#similarities-tab" role="tab" data-toggle="tab">Similar Compounds <span class="similarities-badge badge"></span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel-body tab-content">
+                <div class="tab-pane .fade active" id="similarities-tab">
+                    <div id="similarities"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#compound').compoundinfo({
+                id: @Model,
+                imgSize: 250,
+                properties: [
+                    { name: 'COMPOUND_ID', title: 'ID' },
+                    { name: 'IsVirtual', title: 'Virtual', format: function(virtual) { return virtual ? 'Yes' : 'No'; } },
+                    { name: 'CompoundTypes', title: 'Type', format: buildCompoundTypesProperty },
+                    { name: 'MolecularFormula', title: 'Molecular Formula', format: function (value) { return value.molecularFormula(); } },
+                    { name: 'Indigo_MonoisotopicMass', title: 'Monoisotopic Mass', format: function (value) { return value.toFixed(6) + ' Da'; } },
+                    { name: 'Indigo_MolecularWeight', title: 'Molecular Weight', format: function (value) { return value.toFixed(6) + ' Da'; } },
+                    { name: 'INDIGO_CANONICAL_SMILES', title: 'SMILES', format: buildSMILESProperty },
+                    { name: 'NON_STD_INCHI', title: 'Non Std. InChI', format: buildInChIProperty },
+                    { name: 'NON_STD_INCHI_KEY', title: 'Non Std. InChIKey', format: buildInChIKeyProperty },
+                    { name: 'STD_INCHI', title: 'Std. InChI', format: buildInChIProperty },
+                    { name: 'STD_INCHI_KEY', title: 'Std. InChIKey', format: buildInChIKeyProperty },
+                    { name: 'STD_INCHI_KEY', title: 'ChemSpider ID', format: buildChemSpiderIDProperty },
+                    //{ name: 'SubstanceID', title: 'Substance ID', format: function(id) { return $(document.createElement('a')).attr({ href: '/Substances/' + id }).text(id); } }
+                ]
+            });
+
+            //  show compound's substances...
+            $('#substances-tab').loadProgress();
+            $.Compounds.store.getCompoundSubstances(@Model, function (substances) {
+                $('.substances-badge').text(substances.length);
+
+                if(substances.length == 0) {
+                    //$('.substances-panel').css({display: 'none'});
+                }
+                else
+                {
+                    $('#substances').scroller({
+                        items: substances,
+                        size: 200,
+                        drawCell: substanceTile
+                    });
+                }
+
+                $('#substances-tab').hideProgress();
+            });
+
+            //  show compound's children...
+            $('.children-panel').loadProgress();
+            $.Compounds.store.getChildren(@Model, function (compounds) {
+                $('.children-badge').text(compounds.length);
+
+                if(compounds.length == 0) {
+                    //$('.children-panel').css({display: 'none'});
+                }
+                else
+                {
+                    $('#children').scroller({
+                        items: compounds,
+                        size: 200,
+                        drawCell: compoundTile
+                    });
+
+                }
+
+                $('.children-panel').hideProgress();
+            });
+
+            //  show compound's parents...
+            $('.parents-panel').loadProgress();
+            $.Compounds.store.getParents(@Model, function (compounds) {
+                $('.parents-badge').text(compounds.length);
+
+                if(compounds.length == 0) {
+                    $('.parents-panel').css({ display: 'none' });
+                }
+                else
+                {
+                    $('#parents').scroller({
+                        items: compounds,
+                        size: 200,
+                        drawCell: compoundTile
+                    });
+                }
+
+                $('.parents-panel').hideProgress();
+            });
+
+            @*//  show compound's similarities...
+                $('#similarities').similarities({
+                    id: @Model,
+                    imgSize: 75,
+                    title: 'Similarities',
+                    columns: [
+                        { name: 'COMPOUND_ID', title: 'ID', format: function (value) { return $(document.createElement('a')).attr({ href: '@Url.Content("~/Compounds/")' + value }).text(value) } },
+                        { name: 'Structure', title: 'Structure' },
+                        { name: 'MolecularFormula', title: 'Molecular Formula', format: function (value) { return value.molecularFormula(); } },
+                        { name: 'Indigo_MolecularWeight', title: 'Molecular Weight', format: function (value) { return parseFloat(value).toFixed(3); } },
+                        { name: 'COMPOUND_ID', title: 'Score', format: function (id, widget) { return widget.getScore(id); } },
+                    ],
+                    tooltipFields: [
+                        { name: 'COMPOUND_ID', title: 'ID' },
+                        { name: 'MolecularFormula', title: 'Molecular Formula', format: function (value) { return value.molecularFormula(); } },
+                        { name: 'IsVirtual', title: 'Virtual', format: function (virtual) { return virtual ? 'Yes' : 'No'; } },
+                    ],
+                    onClick: function (event, id) {
+                        window.location = '@Url.Content("~/Compounds/")' + id;
+                    },
+                    onResultsReady: function (e, widget) {
+                        $('.similarities-badge').text(widget.similarities.length);
+                        //if (widget.similarities.length == 0) {
+                        //    $('#similarities').hide();
+                        //}
+                    }
+                });*@
+        });
+
+        function compoundTile(compound) {
+            return $(document.createElement('div'))
+                        .compoundtile({
+                            item: compound,
+                            width: 200,
+                            properties: [
+                                { name: 'COMPOUND_ID', title: 'ID', format: function (value) { return $(document.createElement('a')).attr({ href: '@Url.Content("~/Compounds/")' + value }).text(value) } },
+                                { name: 'IsVirtual', title: 'Virtual', format: function (virtual) { return virtual ? 'Yes' : 'No'; } },
+                                { name: 'MolecularFormula', title: 'Molecular Formula', format: function (value) { return value.molecularFormula(); } },
+                                { name: 'CompoundTypes', title: 'Type', format: buildCompoundTypesProperty }
+                            ]
+                        });
+        }
+
+        function substanceTile(substance) {
+            return $(document.createElement('div'))
+                        .compoundtile({
+                            item: substance,
+                            width: 200,
+                            properties: [
+                                { name: 'SUBSTANCE_ID', title: 'ID', format: function (value) { return $(document.createElement('a')).attr({ href: '@Url.Content("~/Substances/")' + value }).text(value) } },
+                        { name: 'DEPOSITOR_DATA_SOURCE_NAME', title: 'Datasource' },
+                        { name: 'DEPOSITOR_SUBSTANCE_REGID', title: 'Reg. ID' }
+                            ]
+                        });
+        }
+    </script>
+}

@@ -1,0 +1,42 @@
+﻿@model CVSPWeb.Models.NewDepositionModel
+
+@{
+    ViewBag.Title = "Submit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-offset-2 col-sm-8">
+        <div class="panel panel-default">
+            <div id="header" class="panel-heading">
+                Submit new deposition
+            </div>
+            <div class="panel-body">
+                <div class="" id="submittion"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('li.submit').addClass('active');
+
+            $('#submittion').deposition_new({
+                properties: {
+                    Datasource: ['@Model.DataSourceId'],
+                    Validate: true,
+                    Standardize: true,
+                    PropertiesCalculation: true,
+                    ParentsGeneration: true,
+                    Public: true
+                },
+                onSave: function (event, guid) {
+                    window.location = '@Url.Content("~/depositions/")' + guid;
+                }
+            });
+        });
+    </script>
+}

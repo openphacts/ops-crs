@@ -1,0 +1,19 @@
+1370
+  Mrv0541 02231215242D          
+
+  1  0  0  0  0  0            999 V2000
+    2.0000    0.0000    0.0000 Al  0  0  0  0  0 15  0  0  0  0  0  0
+M  END
+> <CSID>
+
+
+> <CHEMSPIDER_SMILES>
+[Al]
+
+> <CHEMSPIDER_INCHI>
+InChI=1S/Al
+
+> <CHEMSPIDER_INCHI_KEY>
+XAGFODPZIPBFFR-UHFFFAOYSA-N
+
+$$$$

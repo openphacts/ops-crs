@@ -1,0 +1,7 @@
+﻿.cvsp-deposition-status {
+}
+
+.cvsp-deposition-status .deposition-progress {
+    font-style: italic;
+    color: #551A8B;
+}

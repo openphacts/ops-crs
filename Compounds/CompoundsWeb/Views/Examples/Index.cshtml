@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DemoLayout.cshtml";
+}
+
+<h2>Structure</h2>
+<ul>
+     <li>@Html.ActionLink("Molecule2D", "Molecule2D")</li>
+     <li>@Html.ActionLink("JSMol", "JSMol")</li>
+</ul>
+
+<h2>Structure editors</h2>
+<ul>
+    <li>@Html.ActionLink("JSDraw", "JSDraw")</li>
+    <li>@Html.ActionLink("Structure Editor", "StructureEditor")</li>
+</ul>
+
+<h2>ChemDoodle widgets</h2>
+<ul>
+    <li>@Html.ActionLink("Transform", "ChemDoodleTransform")</li>
+    <li>@Html.ActionLink("Viewer", "ChemDoodleViewer")</li>
+</ul>
+
+<h2>Compounds widgets</h2>
+<ul>
+    <li>@Html.ActionLink("General compound's information", "GeneralInfo")</li>
+    <li>@Html.ActionLink("Tile View", "TileView")</li>
+    <li>@Html.ActionLink("Grid View", "GridView")</li>
+</ul>

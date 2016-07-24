@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rules>
+	<moleculerules>
+	<!-- The SMARTS tests below are complementary to set of validations that CVSP does by default -->
+		
+		<Warning message="Contains cyclobutane" description="[CX4;H2;r4]1[CX4;H2;r4][CX4;H2;r4][CX4;H2;r4]1">
+			<test name="SMARTStest" param="[CX4;H2;r4]1[CX4;H2;r4][CX4;H2;r4][CX4;H2;r4]1"/>
+		</Warning>
+		
+		<Warning message="Contains ethane" description="[CX4;H3][CX4;H3]">
+			<test name="SMARTStest" param="[CX4;H3][CX4;H3]"/>
+		</Warning>
+		
+		<Warning message="Contains S with no explicit bonds" description="[S;D0].[*]">
+			<test name="SMARTStest" param="[S;D0].[*]"/>
+		</Warning>
+		<Warning message="Contains B with no explicit bonds" description="[B;D0].[*]">
+			<test name="SMARTStest" param="[B;D0].[*]"/>
+		</Warning>
+
+		<Warning message="Contains methane" description="[CX4;H4]">
+			<test name="SMARTStest" param="[CX4;H4]"/>
+		</Warning>
+
+		<Warning message="Contains silica chain" description="[Si]~[Si]~[Si]~[Si]~[Si]~[Si]~[Si]">
+			<test name="SMARTStest" param="[Si]~[Si]~[Si]~[Si]~[Si]~[Si]~[Si]"/>
+		</Warning>
+
+		<Warning message="Contains oxygen chain" description="[#8]~[#8]~[#8]~[#8]">
+			<test name="SMARTStest" param="[#8]~[#8]~[#8]~[#8]"/>
+		</Warning>
+
+		<Warning message="Contains adjacent atoms with like charges" description="[-,--]~[-,--] or [+,++]~[+,++]">
+			<or>
+				<test name="SMARTStest" param="[-,--]~[-,--]"/>
+				<test name="SMARTStest" param="[+,++]~[+,++]"/>
+			</or>
+		</Warning>
+
+		<!-- Information -->
+
+		<Information message="Contains ethyne" description="[CH]#[CH]">
+			<test name="SMARTStest" param="[CH]#[CH]"/>
+		</Information>
+		<Information message="Contains catenanitrogen" description="[#7]~[#7]~[#7]~[#7]~[#7]">
+			<test name="SMARTStest" param="[#7]~[#7]~[#7]~[#7]~[#7]"/>
+		</Information>
+		<Information message="Contains enol function" description="[O,S,Se,Te;H]-[#6X3]=[#6]">
+			<test name="SMARTStest" param="[O,S,Se,Te;H]-[#6X3]=[#6]"/>
+		</Information>
+		<Information message="Contains N=C-OH tautomer of a carbonyl compound" description="[O,S,Se,Te;H]-C=N">
+			<test name="SMARTStest" param="[O,S,Se,Te;H]-C=N"/>
+		</Information>
+		<Information message="Contains nitroso form of oxime" description="[CH2]-[N;X2;v3]=[O]">
+			<test name="SMARTStest" param="[CH2]-[N;X2;v3]=[O]"/>
+		</Information>
+		<Information message="Contains non-1H tetrazole" description="C1=[N,n]-[N,n;H]-[N,n]=[N,n]-C1">
+			<test name="SMARTStest" param="C1=[N,n]-[N,n;H]-[N,n]=[N,n]-C1"/>
+		</Information>
+		<Information message="Contains thione-hydroxylamine form of pyrithione" description="S=C1-N(O)-C=C-C=C-C1">
+			<test name="SMARTStest" param="S=C1-N(O)-C=C-C=C-C1"/>
+		</Information>
+		<Information message="Contains wrong form of thiosulfate" description="S(=O)(=S)(-[O-])(-[O-])">
+			<test name="SMARTStest" param="S(=O)(=S)(-[O-])(-[O-])"/>
+		</Information>
+		<Information message="Contains pentavalent nitro nitrogen" description="[#7&#x26;v5]=O">
+			<test name="SMARTStest" param="[#7&#x26;v5]=O"/>
+		</Information>
+
+		<Information message="Contains pentavalent azido nitrogen" description="N#N=N">
+			<test name="SMARTStest" param="N#N=N"/>
+		</Information>
+		<Information message="Contains pentavalent diazo nitrogen" description="[N&#x26;v5]#N">
+			<test name="SMARTStest" param="[N&#x26;v5]#N"/>
+		</Information>
+
+		<Information message="Contains covalent metal-nitrogen bond" description="[{M}][#7]">
+			<test name="SMARTStest" param="[{M}][#7]"/>
+		</Information>
+		<Information message="Contains covalent metal-oxygen bond" description="[{M}][#8]">
+			<test name="SMARTStest" param="[{M}][#8]"/>
+		</Information>
+		<Information message="Contains covalent metal-fluorine bond" description="[{M}][F]">
+			<test name="SMARTStest" param="[{M}][F]"/>
+		</Information>
+		<Information message="Contains non-metal–transition metal bond" description="[{TM^Hg}][{NM}]">
+			<test name="SMARTStest" param="[{TM^Hg}][{NM}]"/>
+		</Information>
+		<Information message="Contains aluminium–non-metal bond" description="[Al][{NM}]">
+			<test name="SMARTStest" param="[Al][{NM}]"/>
+		</Information>
+
+		<Information message="Contains ionic pnictogen halide bond" description="[{Hal};-] and [{Pn};+,++,+++]">
+			<and>
+				<test name="SMARTStest" param="[{Hal};-]"/>
+				<test name="SMARTStest" param="[{Pn};+,++,+++]"/>
+			</and>
+		</Information>
+
+		<Information message="Contains ammonia where ammonium expected" description="[N;H3&#x26;X3] and [O,F,Cl,Br;H]">
+			<and>
+				<test name="SMARTStest" param="[N;H3&#x26;X3]"/>
+				<test name="SMARTStest" param="[O,F,Cl,Br;H]"/>
+			</and>
+		</Information>
+		<Information message="Contains nitrogenous base in acid form" description="[N+;H] and [-,--,---]">
+			<and>
+				<test name="SMARTStest" param="[N+;H]"/>
+				<test name="SMARTStest" param="[-,--,---]"/>
+			</and>
+		</Information>
+
+		<Information message="Carbon metal sigma bond drawn ionically" description="[C;-,--,---] and [{M};+,++,+++,++++]">
+			<and>
+				<test name="SMARTStest" param="[C;-,--,---]"/>
+				<test name="SMARTStest" param="[{M};+,++,+++,++++]"/>
+			</and>
+		</Information>
+		<Information message="Mercury to carbon or sulfur bond drawn ionically" description="[C,S;-,--,---] and [Hg;+,++]">
+			<and>
+				<test name="SMARTStest" param="[C,S;-,--,---]"/>
+				<test name="SMARTStest" param="[Hg;+,++]"/>
+			</and>
+		</Information>
+
+	</moleculerules>
+</rules>

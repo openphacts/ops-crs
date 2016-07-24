@@ -1,0 +1,1056 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AC1615A2-648D-4B38-9122-2A606551160F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CVSPTests</RootNamespace>
+    <AssemblyName>ChemValidatorTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'VT-Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\VT-Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Extras.CommonServiceLocator">
+      <HintPath>..\packages\Autofac.Extras.CommonServiceLocator.3.2.0\lib\net40\Autofac.Extras.CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="bingo-dotnet, Version=1.1.5589.31745, Culture=neutral, PublicKeyToken=6a31cb7055c16a21, processorArchitecture=MSIL">
+      <HintPath>..\packages\Indigo.Toolkit.1.2.1\lib\net40\bingo-dotnet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemImageNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Toolkit.1.1.2\lib\net45\ChemImageNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Utilities.1.0.13\lib\net45\ChemSpider.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider.Constants, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Constants.1.0.2\lib\net45\ChemSpider.Constants.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Data.Database, Version=2.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Database.Objects.1.0.11\lib\net45\ChemSpider.Data.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Database, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Databases.1.0.4\lib\net45\ChemSpider.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Formats, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Formats.1.1.2\lib\net45\ChemSpider.Formats.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Formats.Accelrys, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Formats.1.1.2\lib\net45\ChemSpider.Formats.Accelrys.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Formats.ChemDraw, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Formats.1.1.2\lib\net45\ChemSpider.Formats.ChemDraw.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Interoperability, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Utilities.1.0.13\lib\net45\ChemSpider.Interoperability.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider.Molecules, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Molecules.1.1.1\lib\net45\ChemSpider.Molecules.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Utilities.Web.1.0.3\lib\net45\ChemSpider.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.ObjectModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.ObjectModel.1.0.10\lib\net45\ChemSpider.ObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider.Profile.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Profile.1.0.20\lib\net45\ChemSpider.Profile.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Profile.RSCID, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Profile.1.0.20\lib\net45\ChemSpider.Profile.RSCID.dll</HintPath>
+    </Reference>
+    <Reference Include="ChemSpider.Search, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Search.1.0.11\lib\net45\ChemSpider.Search.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider.Security, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Security.1.0.3\lib\net45\ChemSpider.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider.Utilities, Version=2.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Utilities.1.0.13\lib\net45\ChemSpider.Utilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ChemSpider.Utilities.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ChemSpider.Utilities.Web.1.0.3\lib\net45\ChemSpider.Utilities.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.BulkInsert">
+      <HintPath>..\packages\EntityFramework.BulkInsert-ef6.6.0.2.8\lib\Net45\EntityFramework.BulkInsert.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Extended">
+      <HintPath>..\packages\EntityFramework.Extended.6.1.0.168\lib\net45\EntityFramework.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.MappingAPI, Version=6.1.0.9, Culture=neutral, PublicKeyToken=7ee2e825d201459e, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.MappingAPI.6.1.0.9\lib\net45\EntityFramework.MappingAPI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtUtilsNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Toolkit.1.1.2\lib\net45\ExtUtilsNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\ICSharpCode.SharpZipLib.dll.0.85.4.369\lib\net20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.AWT.WinForms, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.AWT.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Beans, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Beans.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Charsets, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Charsets.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Corba, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Corba.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Jdbc, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Jdbc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Management, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Media, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Misc, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Misc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Naming, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Naming.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Remoting, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Remoting.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Security, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.SwingAWT, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.XML.API.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Bind, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.XML.Bind.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Crypto, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.XML.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Parse, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.XML.Parse.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.RelaxNG, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.XML.RelaxNG.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Transform, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.XML.Transform.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.WebServices, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.XML.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.XPath, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.OpenJDK.XML.XPath.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Reflection.Emit, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.Reflection.Emit.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Reflection.Emit.PdbWriter, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.Reflection.Emit.PdbWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime.JNI, Version=0.42.1.113, Culture=neutral, PublicKeyToken=d25ce09139c726a9, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\IKVM.Custom.1.0.2\lib\net20\IKVM.Runtime.JNI.dll</HintPath>
+    </Reference>
+    <Reference Include="InChINet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Toolkit.1.1.2\lib\net45\InChINet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="indigo-dotnet, Version=1.1.5589.31742, Culture=neutral, PublicKeyToken=ca8e3320bc4499e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Indigo.Toolkit.1.2.1\lib\net40\indigo-dotnet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="indigo-inchi-dotnet, Version=1.1.5589.31744, Culture=neutral, PublicKeyToken=6a31cb7055c16a21, processorArchitecture=MSIL">
+      <HintPath>..\packages\Indigo.Toolkit.1.2.1\lib\net40\indigo-inchi-dotnet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="indigo-renderer-dotnet, Version=1.1.5589.31744, Culture=neutral, PublicKeyToken=09f0421d14bc0b92, processorArchitecture=MSIL">
+      <HintPath>..\packages\Indigo.Toolkit.1.2.1\lib\net40\indigo-renderer-dotnet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OpenBabelNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Toolkit.1.1.2\lib\net45\OpenBabelNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OpenEyeNet, Version=1.1.0.0, Culture=neutral, PublicKeyToken=21089ca69f156643, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChemSpider.Toolkit.1.1.2\lib\net45\OpenEyeNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RSC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.1.0.23\lib\net45\RSC.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RSC.Compounds.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.Compounds.Core.1.0.45\lib\net45\RSC.Compounds.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RSC.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.Logging.Core.1.0.11\lib\net45\RSC.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RSC.Logging.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.Logging.Core.1.0.11\lib\net45\RSC.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RSC.Properties.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.Properties.Core.1.0.18\lib\net45\RSC.Properties.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RSC.Properties.EntityFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSC.Properties.EntityFramework.1.0.42\lib\net45\RSC.Properties.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="XmlDiffPatch">
+      <HintPath>..\packages\XMLDiffPatch.1.0.8.28\lib\net\XmlDiffPatch.dll</HintPath>
+    </Reference>
+    <Reference Include="XmlDiffPatch.View">
+      <HintPath>..\packages\XMLDiffPatch.1.0.8.28\lib\net\XmlDiffPatch.View.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Operations.cs" />
+    <Compile Include="StandardizationByCodes.cs" />
+    <Compile Include="CVSPStoreTests.cs" />
+    <Compile Include="CVSPTestBase.cs" />
+    <Compile Include="CheminformaticsInChI.cs" />
+    <Compile Include="ParentChild.cs" />
+    <Compile Include="ValidationByCodes.cs" />
+    <Compile Include="_Obsolete_ProcessSDFRecord.cs" />
+    <Compile Include="CheminformaticsIndigoErrors.cs" />
+    <Compile Include="CheminformaticsIndigo.cs" />
+    <Compile Include="StandardizationLayout.cs" />
+    <Compile Include="CheminformaticsN2S.cs" />
+    <Compile Include="ValidationSmiles.cs" />
+    <Compile Include="StandardizationMetals.cs" />
+    <Compile Include="StandardizationParents.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="CheminformaticsReactions.cs" />
+    <Compile Include="CheminformaticsCdx.cs" />
+    <Compile Include="Cheminformatics.cs" />
+    <Compile Include="CheminformaticsHexagons.cs" />
+    <Compile Include="Service References\CVSPWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="StandardizationFragments.cs" />
+    <Compile Include="StandardizationPartialIonization.cs" />
+    <Compile Include="StandardizationTautomers.cs" />
+    <Compile Include="StandardizationStereo.cs" />
+    <Compile Include="CheminformaticsIndigoReaction.cs" />
+    <Compile Include="CheminformaticsOpenEye.cs" />
+    <Compile Include="ParsingTests.cs" />
+    <Compile Include="StandardizationIsotope.cs" />
+    <Compile Include="CheminformaticsSmarts.cs" />
+    <Compile Include="StandardizationHexagons.cs" />
+    <Compile Include="ValidationSmartsPattern.cs" />
+    <Compile Include="ValidationDrugBank.cs" />
+    <Compile Include="ValidationStereo.cs" />
+    <Compile Include="ReactionValidation.cs" />
+    <Compile Include="ValidationIndigoByCodes.cs" />
+    <Compile Include="ValidationTests.cs" />
+    <Compile Include="CheminformaticsCompoundEnumerator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StandardizationTests.cs" />
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CheminformaticsSdf.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Debug.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App.Release.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="App.VT-Debug.config">
+      <DependentUpon>App.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="Properties\SlowCheetah\SlowCheetah.Transforms.targets" />
+    <None Include="Resources\OPS1136544.txt" />
+    <None Include="Resources\OPS1136548.txt" />
+    <None Include="Resources\azabicycloheptene.mol" />
+    <None Include="Resources\failingNAD.mol" />
+    <None Include="Resources\heme.mol" />
+    <None Include="Resources\nitricoxide.mol" />
+    <None Include="Resources\octahedralPtComplex.txt" />
+    <None Include="Resources\stereoIsotopeDMolecule.txt" />
+    <None Include="Resources\stereoIsotopeMolecule.txt" />
+    <None Include="Resources\hairycyclohexane.txt" />
+    <None Include="Resources\stereocentresOther.txt" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+      <TransformOnBuild>true</TransformOnBuild>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\101_2Mos.cdx" />
+    <None Include="Resources\1_calix.cdx" />
+    <None Include="Resources\5e_badhydrazone.txt" />
+    <None Include="Resources\5e_gooddiazo.txt" />
+    <None Include="Resources\9770_1mos.cdx" />
+    <None Include="Resources\allelements.cdx" />
+    <None Include="Resources\aromaticMarkush.cdx" />
+    <None Include="Resources\arrownoboundingbox.cdx" />
+    <None Include="Resources\artwork.cdx" />
+    <None Include="Resources\atoms.cdx" />
+    <None Include="Resources\benzene.cdx" />
+    <None Include="Resources\bigGeneric.CDX" />
+    <None Include="Resources\boatsugar.cdx" />
+    <None Include="Resources\bracketsN.cdx" />
+    <None Include="Resources\bracketsxbracketsy.cdx" />
+    <None Include="Resources\c1cc14394h.cdx" />
+    <None Include="Resources\cavitand.cdx" />
+    <None Include="Resources\ch4.chm" />
+    <None Include="Resources\chairglucose.cdx" />
+    <None Include="Resources\charge6.CDX" />
+    <None Include="Resources\charge8.CDX" />
+    <None Include="Resources\CM022728.cdx" />
+    <None Include="Resources\commonMistakes.cdx" />
+    <None Include="Resources\Cpcyclohexane.cdx" />
+    <None Include="Resources\cssp.rxn" />
+    <None Include="Resources\cyclobutaneethanemethane.cdx" />
+    <None Include="Resources\cyclohexyl_acetate.cdx" />
+    <None Include="Resources\dashedbondacrossbracket.cdx" />
+    <None Include="Resources\dashystereo.cdx" />
+    <None Include="Resources\disconnectedlithiummapping.cdx" />
+    <None Include="Resources\disentangly.cdx" />
+    <None Include="Resources\doublebondPh.cdx" />
+    <None Include="Resources\floatingplus.cdx" />
+    <None Include="Resources\genericnickname.cdx" />
+    <None Include="Resources\germole.cdx" />
+    <None Include="Resources\graphictest.cdx" />
+    <None Include="Resources\haworth.cdx" />
+    <None Include="Resources\hexaTHPcyclohexane.cdx" />
+    <None Include="Resources\hypervalentmolecules.cdx" />
+    <None Include="Resources\invisiblemolecule.cdx" />
+    <None Include="Resources\justAbbreviations.cdx" />
+    <None Include="Resources\longrepeats.cdx" />
+    <None Include="Resources\longUnknownAbbrev.cdx" />
+    <None Include="Resources\lostAnomericStereo.cdx" />
+    <None Include="Resources\lostAnomericStereo2.cdx" />
+    <None Include="Resources\multiplemolecules.cdx" />
+    <None Include="Resources\murucin.cdx" />
+    <None Include="Resources\nEquals0.cdx" />
+    <None Include="Resources\nequals3.cdx" />
+    <None Include="Resources\nitrile.cdx" />
+    <None Include="Resources\NodeContainsFragmentContainsNodeType7.cdx" />
+    <None Include="Resources\NodeType10.cdx" />
+    <None Include="Resources\NodeType1ChemSketch.cdx" />
+    <None Include="Resources\node_type1.cdx" />
+    <None Include="Resources\nofragments.cdx" />
+    <None Include="Resources\nojirimycin.cdx" />
+    <None Include="Resources\OO_OCO_OCCO.cdx" />
+    <None Include="Resources\OTfstrayplus.cdx" />
+    <None Include="Resources\papilistatin.cdx" />
+    <None Include="Resources\paraxylene.cdx" />
+    <None Include="Resources\perfluoroalkyl.cdx" />
+    <None Include="Resources\phenylacetate.cdx" />
+    <None Include="Resources\PhH.cdx" />
+    <None Include="Resources\PMPTol.cdx" />
+    <None Include="Resources\PPh2and3.cdx" />
+    <None Include="Resources\proximity.cdx" />
+    <None Include="Resources\Rcyclohexane.cdx" />
+    <None Include="Resources\reactionpartitioning.cdx" />
+    <None Include="Resources\reactionWithAbbreviations.cdx" />
+    <None Include="Resources\Rgroup.mol" />
+    <None Include="Resources\righthandedchair.cdx" />
+    <None Include="Resources\ringcontraction.cdx" />
+    <None Include="Resources\RnOH.cdx" />
+    <None Include="Resources\Scheme5.cdx" />
+    <None Include="Resources\selenacalixtriazines.cdx" />
+    <None Include="Resources\stretchedbondcdx.cdx" />
+    <None Include="Resources\task128.cdx" />
+    <None Include="Resources\tetrahydropyranyl.cdx" />
+    <None Include="Resources\the32.cdx" />
+    <None Include="Resources\triplybondedgold.mol" />
+    <None Include="Resources\twomarkush.cdx" />
+    <None Include="Resources\underthearrow.cdx" />
+    <None Include="Resources\unfusedhexagonfusedrings.cdx" />
+    <None Include="Resources\UninterpretableFirst.cdx" />
+    <None Include="Resources\unlabelledbrackets.cdx" />
+    <None Include="Resources\unusualText.cdx" />
+    <None Include="Resources\wrongwaybonds.cdx" />
+    <None Include="Service References\CVSPWebService\ChemicalValidation.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9312824.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\benzene.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChEBI_53227.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clashymol.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\congestedsdf.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crossedbondsdf.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\entangledsdf.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fragmentsMol.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PartiallyDigestedSdf.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R1group.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RBenzene.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\utf8containingsdf.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Test References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5ai_pentavalentnitro.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5aii_nitrate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5b_pyridineOneOxide.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5g_sulfoxide.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hemeAsMol.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calciumHydroxideAsMol.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\benzene3D.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5ai_tervalentnitro.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5aii_tervalentnitrate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5b_pyridineoxide.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5g_tricoordinatesulfoxide.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5d_badazide.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5d_goodazide.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20b_badAcetophenone.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20b_goodAcetophenone.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20b_distractor.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bismuth.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7_badNaOAc.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7_badNaOAcNeutral.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7_goodNaOAc.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8i_badAmmoniumChloride.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8i_badAmmoniumLactate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8i_goodAmmoniumChloride.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8i_goodAmmoniumLactate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8iii_badQuaternaryAmmonium.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8iii_goodQuaternaryAmmonium.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9i_badNEt3HCl.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9i_goodNEt3HCl.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9ii_badAminoguanidineSulfate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9ii_goodAminoguanidineSulfate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20c_badPhenobarbital.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20c_goodPhenobarbital.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20e_badBenzaldoxime.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20e_goodBenzaldoxime.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20g_badTetrazole.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\20g_goodTetrazole.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fixedValenceMol.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adjacentcharges.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nonadjacentcharges.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\19bi_goodthimerosal.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\19bii_badthimerosal.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5f_badbenzoylcyanide.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5f_badtbutylisocyanide.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5f_goodbenzoylcyanide.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5f_goodtbutylisocyanide.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\badphosphoruschloride.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goodphosphoruschloride.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\19i_badtrimethyltinchloride.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\19i_goodtrimethyltinchloride.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nonperspectivehexagon.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\perspectivehexagon.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boat.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pubchemMol.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excellentGenerics.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1-methylphenylhydrazine.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cyclohexylcompound.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wonkyCN.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\missingexpectedstereo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noexpectedstereo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chargesInAtomBlock.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\neutralJSDraw.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\JSDrawIsotopes.txt.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goodness40405.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goodness126388.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multiplebenzene.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aluminiumForInChI.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ammoniaFalsePositive.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FeNbond.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nameAndSynonymsMol.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backslashN.sdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FOOOOF.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pentahydropentazole.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\divinyl_benzene.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chairglucose.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\14i_badSodiumSulfosalicylate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\19i_goodSodiumSulfosalicylate.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\polymerFromWikipathways.txt" />
+    <None Include="Resources\pseudoatomMolecule.txt" />
+    <None Include="Resources\validationError.txt" />
+    <None Include="Resources\stereosulfoxo.txt" />
+    <None Include="Resources\molHeaderLineMissing.txt" />
+    <None Include="Resources\st114mol.txt" />
+    <None Include="Resources\multipleregids.txt" />
+    <None Include="Resources\multicomponentStrippableH.txt" />
+    <None Include="Resources\standardizationTestSdf.txt" />
+    <None Include="Resources\v2000Ablock.txt" />
+    <None Include="Resources\PF6anion.txt" />
+    <None Include="Resources\unknownstereo2.txt" />
+    <None Include="Resources\partiallyionizedpelargonicacid.txt" />
+    <None Include="Resources\oppositebondsmismatch.txt" />
+    <None Include="Resources\implicithydrogen.txt" />
+    <None Include="Resources\substitutedatommolecule.txt" />
+    <None Include="Resources\twowaters.txt" />
+    <None Include="Resources\noproblemsmolecule.txt" />
+    <None Include="Resources\radical_two.txt" />
+    <None Include="Resources\radical_three.txt" />
+    <None Include="Resources\radical_one.txt" />
+    <None Include="Resources\v3000example.txt" />
+    <None Include="Resources\iodine124.txt" />
+    <None Include="Resources\mercaptotetrahydropyrimidinol.txt" />
+    <None Include="Resources\stereobondatdoublebond_2.txt" />
+    <None Include="Resources\stereobondbetweenstereocentres_false1.txt" />
+    <None Include="Resources\stereobondatdoublebond_phosphate.txt" />
+    <None Include="Resources\stereobondatdoublebond_allene.txt" />
+    <None Include="Resources\stereobondatdoublebond.txt" />
+    <None Include="Resources\twostereobondsoneinwardoneoutward.txt" />
+    <None Include="Resources\ringstereo_present.txt" />
+    <None Include="Resources\ringstereo_absent.txt" />
+    <None Include="Resources\tshapedmolecule_2.txt" />
+    <None Include="Resources\tshapedmolecule.txt" />
+    <None Include="Resources\nonoppositebondsmatch.txt" />
+    <None Include="Resources\relativestereo.txt" />
+    <None Include="Resources\stereobondbetweenstereocentres_true.txt" />
+    <None Include="Resources\stereobondbetweenstereocentres_false.txt" />
+    <None Include="Resources\toosmallangle.txt" />
+    <None Include="Resources\onebonduponebonddown.txt" />
+    <None Include="Resources\oppositebondmismatch.txt" />
+    <None Include="Resources\tenradicalcentres.txt" />
+    <None Include="Resources\moleculeWithInChIProps.txt" />
+    <None Include="Resources\inorganicresidues2.txt" />
+    <None Include="Resources\tritiatedmolecule.txt" />
+    <None Include="Resources\mystery.txt" />
+    <None Include="Resources\sodiumcarboxylicacid.txt" />
+    <None Include="Resources\ironporphyrin.txt" />
+    <None Include="Resources\stereoinversion.txt" />
+    <None Include="Resources\fusedrings.txt" />
+    <None Include="Resources\nonstereohydrogens5.txt" />
+    <None Include="Resources\nonstereohydrogens4.txt" />
+    <None Include="Resources\nonstereohydrogens3.txt" />
+    <None Include="Resources\nonstereohydrogens2.txt" />
+    <None Include="Resources\inorganicresidues.txt" />
+    <None Include="Resources\ambiguousSp3Stereo.txt" />
+    <None Include="Resources\flatsugar.txt" />
+    <None Include="Resources\20ki_tetracycline.txt" />
+    <None Include="Resources\doublebond.txt" />
+    <None Include="Resources\eitherbond_molecule.txt" />
+    <None Include="Resources\doublebondadjacenttowavysinglebond.txt" />
+    <None Include="Resources\bondType4molecule.txt" />
+    <None Include="Resources\bondType4molecule1.txt" />
+    <None Include="Resources\doublebondwithattachedeitherbond.txt" />
+    <None Include="Resources\CHEMBL50821_stereobondadjacenttodoublebond.txt" />
+    <None Include="Resources\CHEMBL12760_doublebondadjacenttoupbond.txt" />
+    <None Include="Resources\duplicatemolecules1.txt" />
+    <None Include="Resources\duplicatemolecules2.txt" />
+    <None Include="Resources\benzyllithium_bonded.txt" />
+    <None Include="Resources\benzyllithium_free.txt" />
+    <None Include="Resources\benzyllithium_freeneutral.txt" />
+    <None Include="Resources\empty.txt" />
+    <None Include="Resources\enol.txt" />
+    <None Include="Resources\bromoiodopropene_crossed.txt" />
+    <None Include="Resources\bromoiodopropene_crossedonly.txt" />
+    <None Include="Resources\bromoiodopropene_flat.txt" />
+    <None Include="Resources\bromoiodopropene_wavy.txt" />
+    <None Include="Resources\doublebondwithattachedwavybond.txt" />
+    <None Include="Resources\fourstereobondsatcentre.txt" />
+    <None Include="Resources\fourstereobondsatcentre_counterexample.txt" />
+    <None Include="Resources\badallene.txt" />
+    <None Include="Resources\badallene2.txt" />
+    <None Include="Resources\badallene3.txt" />
+    <None Include="Resources\chloronium.txt" />
+    <None Include="Resources\chiralflagset.txt" />
+    <None Include="Resources\electron.txt" />
+    <None Include="Resources\bentacetonitrile.txt" />
+    <None Include="Resources\borazine_nonunique.txt" />
+    <None Include="Resources\dodgyiodine.txt" />
+    <None Include="Resources\deuteratedmolecule.txt" />
+    <None Include="Resources\degeneratestereocenters.txt" />
+    <None Include="Resources\fixedvalence.txt" />
+    <None Include="Resources\epoxystereo.txt" />
+    <None Include="Resources\cistranseither.txt" />
+    <None Include="Resources\benzeneWithWrongSynonyms.txt" />
+    <None Include="Resources\benzeneWithProperties.txt" />
+    <None Include="Resources\benzeneUninterpretableLine.txt" />
+    <None Include="Resources\benzenePeculiarCoordinates.txt" />
+    <None Include="Resources\CHEMBL50821.txt" />
+    <None Include="Resources\attachmentPointsMolecule.txt" />
+    <Content Include="Resources\fourvalentN.txt" />
+    <None Include="Resources\v2000relativestereo.txt" />
+    <None Include="Resources\partialIonization_sulfateThiol.txt" />
+    <None Include="Resources\partialIonization_sulfateSulfonate.txt" />
+    <None Include="Resources\partialIonization_sulfateMethyl.txt" />
+    <None Include="Resources\partialIonization_sodiumSulfateThiol.txt" />
+    <None Include="Resources\partialIonization_amineAmide.txt" />
+    <None Include="Resources\iodine123.txt" />
+    <None Include="Resources\pentavalentmol.txt" />
+    <None Include="Resources\layoutfail.txt" />
+    <None Include="Resources\rifampin.txt" />
+    <None Include="Resources\freeMetal_And_CarboxylicAcid.txt" />
+    <None Include="Resources\metalNonMetalBond.mol" />
+    <None Include="Resources\PtCarboxylateDisconnection.txt" />
+    <None Include="Resources\notInChemSpider.txt" />
+    <None Include="Resources\G2-42_completely_mixture.txt" />
+    <None Include="Resources\G2-4_enantiomers.txt" />
+    <None Include="Resources\G2-44_epimer.txt" />
+    <None Include="Resources\G2-46_partially_mixture.txt" />
+    <None Include="Resources\ZeroD_structures.txt" />
+    <None Include="Resources\unknownstereo.txt" />
+    <None Include="Resources\nonAromaticQueryBond.txt" />
+    <None Include="Resources\reboxetine.txt" />
+    <None Include="Resources\querybonds.txt" />
+    <None Include="Resources\nystatin.txt" />
+    <None Include="Resources\josamycin.txt" />
+    <None Include="Resources\erythromycin.txt" />
+    <None Include="Resources\phantomHowarthGlucosamine.txt" />
+    <None Include="Resources\LglucoseRegular.txt" />
+    <None Include="Resources\DglucoseRegular.txt" />
+    <None Include="Resources\phantomhaworthNovobiocin.txt" />
+    <None Include="Resources\oppositedirection.txt" />
+    <None Include="Resources\HbesideImplicitH.txt" />
+    <None Include="Resources\goodnameandsynonym.txt" />
+    <None Include="Resources\goodsynonym.txt" />
+    <None Include="Resources\goodname.txt" />
+    <None Include="Resources\highlysymmetricmol2.txt" />
+    <None Include="Resources\molfileofdeath.txt" />
+    <None Include="Resources\PPh3.txt" />
+    <None Include="Resources\halichoblelideB.txt" />
+    <None Include="Resources\webValidationService.txt" />
+    <None Include="Resources\horizontalhowarth.txt" />
+    <None Include="Resources\phantomhowarth.txt" />
+    <None Include="Resources\fusedringsnohowarth.txt" />
+    <None Include="Resources\phantomring.txt" />
+    <None Include="Resources\doublehexagonDD.txt" />
+    <None Include="Resources\doublechairUU.txt" />
+    <None Include="Resources\doublechairUD.txt" />
+    <None Include="Resources\benzeneV3000.txt" />
+    <None Include="Resources\chairsAtAllAngles.txt" />
+    <None Include="Resources\artwork.txt" />
+    <None Include="Resources\badname.txt" />
+    <None Include="Resources\badsynonym.txt" />
+    <None Include="Resources\aamAcidChloride.txt" />
+    <None Include="Resources\acylationRxn.txt" />
+    <None Include="Resources\acylationRxn_unmapped.txt" />
+    <Content Include="Resources\classificationExceptionTest.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RSC.CVSP.Compounds.ChemSpiderProperties\RSC.CVSP.Compounds.ChemSpiderProperties.csproj">
+      <Project>{225d3bdd-b1e1-451a-99c4-442e15c9c2d6}</Project>
+      <Name>RSC.CVSP.Compounds.ChemSpiderProperties</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.CVSP.Compounds.Core\RSC.CVSP.Compounds.Core.csproj">
+      <Project>{accd3311-a14d-4317-b859-1401b904e837}</Project>
+      <Name>RSC.CVSP.Compounds.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.CVSP.Compounds.ParentChild\RSC.CVSP.Compounds.ParentChild.csproj">
+      <Project>{10a01b87-4bb2-4e12-96e9-7aaa90344025}</Project>
+      <Name>RSC.CVSP.Compounds.ParentChild</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.CVSP.Compounds\RSC.CVSP.Compounds.csproj">
+      <Project>{0a4bde97-64af-45a0-a861-f410e4e48935}</Project>
+      <Name>RSC.CVSP.Compounds</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.CVSP.Core\RSC.CVSP.Core.csproj">
+      <Project>{2a546298-8df8-4c18-bafe-0341dea45aec}</Project>
+      <Name>RSC.CVSP.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.CVSP.Utils\RSC.CVSP.Utils.csproj">
+      <Project>{00754394-63de-4937-bfa2-aee20a79a946}</Project>
+      <Name>RSC.CVSP.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RSC.CVSP.EntityFramework\RSC.CVSP.EntityFramework.csproj">
+      <Project>{36d95f7c-4d56-40cd-9178-853c741baeae}</Project>
+      <Name>RSC.CVSP.EntityFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CVSPWebService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Label="SlowCheetah">
+    <SlowCheetahToolsPath>$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\SlowCheetah.2.5.15\tools\))</SlowCheetahToolsPath>
+    <SlowCheetah_EnableImportFromNuGet Condition=" '$(SlowCheetah_EnableImportFromNuGet)'=='' ">true</SlowCheetah_EnableImportFromNuGet>
+    <SlowCheetah_NuGetImportPath Condition=" '$(SlowCheetah_NuGetImportPath)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\Properties\SlowCheetah\SlowCheetah.Transforms.targets ))</SlowCheetah_NuGetImportPath>
+    <SlowCheetahTargets Condition=" '$(SlowCheetah_EnableImportFromNuGet)'=='true' and Exists('$(SlowCheetah_NuGetImportPath)') ">$(SlowCheetah_NuGetImportPath)</SlowCheetahTargets>
+  </PropertyGroup>
+  <Import Project="$(SlowCheetahTargets)" Condition="Exists('$(SlowCheetahTargets)')" Label="SlowCheetah" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

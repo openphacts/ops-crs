@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "ChemSpider | ChemDoodle Transform";
+    Layout = "~/Views/Shared/_DemoLayout.cshtml";
+}
+
+@section css {
+    <style type="text/css">
+        #moleculesList {
+            margin-bottom: 1em;
+        }
+
+        #dimensionsList {
+            margin: 1em 0;
+            float: left;
+        }
+        #representationsList {
+            float: left;
+            margin: 1em;
+        }
+    </style>
+}
+
+<hgroup class="title">
+    <h3>ChemDoodle Transform</h3>
+</hgroup>
+
+<hgroup class="content">
+    <div id="moleculesList">
+        <input type="radio" id="struc1" name="molRadio" checked="checked" value="CC(=O)OC1=CC=CC=C1C(=O)O"><label for="struc1">1</label>
+        <input type="radio" id="struc2" name="molRadio" value="c1ccccc1"><label for="struc2">2</label>
+        <input type="radio" id="struc3" name="molRadio" value="CCCc1c2c(c(=O)[nH]c(n2)c3cc(ccc3OCC)S(=O)(=O)N4CCN(CC4)C)n(n1)C.C(C(=O)O)C(CC(=O)O)(C(=O)O)O"><label for="struc3">3</label>
+        <input type="radio" id="struc4" name="molRadio" value="Cn1cnc2c1c(=O)n(c(=O)n2C)C"><label for="struc4">4</label>
+    </div>
+
+    <div id="molecule"></div>
+
+    <div id="dimensionsList">
+        <input type="radio" id="2d" name="dimRadio" checked="checked" value="2D"><label for="2d">2D</label>
+        <input type="radio" id="3d" name="dimRadio" value="3D"><label for="3d">3D</label>
+    </div>
+
+    <div id="representationsList">
+        <input type="radio" id="ballAndStick" name="repRadio" checked="checked" value="Ball and Stick"><label for="ballAndStick">Ball and Stick</label>
+        <input type="radio" id="stick" name="repRadio" value="Stick"><label for="stick">Stick</label>
+        <input type="radio" id="wireframe" name="repRadio" value="Wireframe"><label for="wireframe">Wireframe</label>
+        <input type="radio" id="line" name="repRadio" value="Line"><label for="line">Line</label>
+        <input type="radio" id="vanDerWaalsSpheres" name="repRadio" value="van der Waals Spheres"><label for="vanDerWaalsSpheres">van der Waals Spheres</label>
+    </div>
+
+    <br style="clear: both;" />
+    Code example how to display molecule... 
+
+    <pre class="brush: js;">
+        $("#moleculeDiv").chemdoodle_transform({
+            width: 300,
+            height: 300,
+            smiles: 'CC(=O)OC1=CC=CC=C1C(=O)O'
+        });
+    </pre>
+
+    ... and change it dynamically later
+
+    <pre class="brush: js;">
+        $('#moleculeDiv').chemdoodle_transform("setSmiles", "CC(=O)OC1=CC=CC=C1C(=O)O");
+    </pre>
+</hgroup>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#moleculesList').buttonset();
+            $('#dimensionsList').buttonset();
+            $('#representationsList').buttonset().hide();
+
+            $('#molecule').chemdoodle_transform({
+                smiles: 'CC(=O)OC1=CC=CC=C1C(=O)O',
+                //id: $('#struc1').val(),
+                width: 300,
+                height: 300,
+                mode: '2D'
+            });
+
+            $('#moleculesList>input[type="radio"]').click(function () {
+                $('#molecule').chemdoodle_transform('option', { smiles: $(this).val() });
+            });
+
+            $('#dimensionsList>input[type="radio"]').click(function () {
+                $('#molecule').chemdoodle_transform('option', { mode: $(this).val() });
+
+                if ($(this).val() == '3D')
+                    $('#representationsList').show();
+                else if ($(this).val() == '2D')
+                    $('#representationsList').hide();
+            });
+
+            $('#representationsList>input[type="radio"]').click(function () {
+                $('#molecule').chemdoodle_transform('option', { representation3D: $(this).val() });
+            });
+        });
+    </script>
+}

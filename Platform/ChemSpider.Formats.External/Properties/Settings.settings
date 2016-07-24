@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ChemSpider.Formats.External.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ChemSpider_Formats_External_CSWebService_Synonyms_Synonyms" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8000/Synonyms.asmx</Value>
+    </Setting>
+    <Setting Name="ChemSpider_Formats_External_CSWebService_PropertiesImport_Properties" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8000/PropertiesImport.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

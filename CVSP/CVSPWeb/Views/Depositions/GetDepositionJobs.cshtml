@@ -1,0 +1,93 @@
+﻿@model Guid
+
+@{
+    ViewBag.Title = "Deposition's Jobs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-default">
+    <div id="header" class="panel-heading">
+        Jobs statistics
+    </div>
+    <div class="panel-body">
+        <div id="stats"></div>
+    </div>
+</div>
+
+<div id="jobs"></div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#stats').deposition_jobs_info({
+                id: '@Model',
+                onDisplay: function (stats) {
+                    console.log('Running jobs: ')
+                    //if (stats.Status == 'Processing' || stats.Status == 'New') {
+                    //    setTimeout(function () {
+                    //        $('#job').job_info('reload');
+                    //    }, 30000);
+                    //}
+                }
+            });
+
+            $('#jobs').jobs_gridview({
+                deposition: '@Model',
+                countProviderUrl: '@Url.Content("~/api/depositions/")' + '@Model' + '/jobscount',
+                itemsProviderUrl: '@Url.Content("~/api/depositions/")' + '@Model' + '/jobs',
+                onClick: function (event, job) {
+                    window.location = '@Url.Content("~/jobs/")' + job.Id;
+                },
+                onResultsReady: function () {
+                    var filterDescription = $('.cvsp-jobs-filter', '#jobs').jobs_filter('filterDescription');
+
+                    if (filterDescription != '' && filterDescription != null)
+                        $('.filtered-by', '#jobs').text(' - filtered by ' + filterDescription);
+                    else
+                        $('.filtered-by', '#jobs').empty();
+                }
+            });
+
+            $(document.createElement('div'))
+                .addClass('pull-right')
+                .jobs_filter({
+                    deposition: '@Model',
+                    onFilter: function (event, filter) {
+                        if (!filter.status && !filter.command) {
+                            $('#jobs').jobs_gridview('setRid', null);
+                        }
+                        else {
+                            var searchOptions = {
+                                Deposition: '@Model',
+                                Status: filter.status,
+                                Command: filter.command,
+                            };
+
+                            $.Jobs.store.jobsSearch({
+                                searchOptions: searchOptions
+                            }, function (rid) {
+                                $('#jobs').jobs_gridview('setRid', rid);
+                            });
+                        }
+                    }
+                })
+            .appendTo($('.cs-widget-pageview-header', '#jobs'));
+
+            $('.cs-widget-pageview-header>.badge', '#jobs').after(
+                $(document.createElement('span'))
+                    .addClass('filtered-by')
+            );
+
+            //$('#jobs').jobs_gridview('option', {
+            //    onResultsReady: function () {
+            //        var filterDescription = $('.cvsp-records-filter', '#records').records_filter('filterDescription');
+
+            //        if (filterDescription != '' && filterDescription != null)
+            //            $('.filtered-by', '#records').text(' - filtered by ' + filterDescription);
+            //        else
+            //            $('.filtered-by', '#records').empty();
+            //    }
+            //});
+        });
+    </script>
+}

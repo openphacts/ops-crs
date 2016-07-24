@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "~/Views/Shared/_RSCLayout.cshtml";
+}
+
+@section css {
+    @Styles.Render("~/Widgets/css/css-toolkit")
+    @Styles.Render("~/Widgets/css/css-compounds")
+    @Styles.Render(ChemSpider.Datasources.DatasourcesIntegration.CSS)
+    @Styles.Render("~/Widgets/css/css-ui")
+
+    @RenderSection("css", required: false)
+}
+
+@section featured {
+    <div class="toolbar">
+        <div id="simpleSearch"></div>
+    </div>
+    <div class="content">
+        @RenderBody()
+    </div>
+}
+
+@section scripts {
+    @Scripts.Render("~/widgets/js/js-toolkit")
+    @Scripts.Render("~/widgets/js/js-compounds")
+    @Scripts.Render(ChemSpider.Datasources.DatasourcesIntegration.Script)
+    @Scripts.Render("~/widgets/js/js-ui")
+
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if ($.support.bootstrap())
+                $('[data-toggle="tooltip"]').bootstrapTooltip();
+        });
+    </script>
+}

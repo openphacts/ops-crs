@@ -1,0 +1,11 @@
+﻿.general-stats {
+    text-align: center;
+    margin-top: 5em;
+    font-size: 12pt;
+    color: #999;
+}
+
+.general-stats .compounds-count {
+    font-size: 14pt;
+    color: #555;
+}

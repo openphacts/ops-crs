@@ -1,0 +1,54 @@
+﻿.cs-widget-structure-options
+{
+}
+
+.cs-widget-structure-options ul {
+    list-style: none outside none;
+}
+
+.cs-widget-structure-options .ui-accordion .ui-accordion-content {
+    padding: 1em 2em;
+}
+
+.cs-widget-structure-options ul
+{
+    margin: 0;
+    padding: 0;
+}
+
+.cs-widget-structure-options ul li
+{
+    clear: both;
+    margin-bottom: .5em;
+    min-height: 1.6em;
+}
+
+.cs-widget-structure-options ul li input
+{
+    float: left;
+    margin: 0;
+}
+
+.cs-widget-structure-options ul li label
+{
+    float: left;
+    font-size: 1em;
+}
+
+.cs-widget-structure-options .gga
+{
+    margin-top: 1em
+}
+
+.cs-widget-structure-options .gga a.logo
+{
+    float: left;
+}
+
+.cs-widget-structure-options .gga a.conditions
+{
+    float: left;
+    width: 200px;
+    margin-left: 1em;
+    text-decoration:none;
+}

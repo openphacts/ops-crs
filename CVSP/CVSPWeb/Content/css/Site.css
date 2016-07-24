@@ -1,0 +1,55 @@
+﻿body {
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+div.toolbar {
+    padding: 1px !important;
+    background-color: #fff !important;
+}
+
+div.toolbar .nav-pills {
+    margin: 5px !important;
+}
+
+ul.operations > li {
+    padding: 4px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.cs-widget-pageview-header .filtered-by {
+    font-style: italic;
+}
+
+.toolbar .nav {
+    width: 50%;
+    float: left;
+}
+
+.toolbar ul.user-panel {
+    float: right;
+    margin-top: 1em;
+}
+
+.toolbar ul.user-panel li {
+     display: inline;
+     margin: 10px;
+}
+
+.deposition-toolbar a {
+    margin-left: .5em;
+}

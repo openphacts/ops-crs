@@ -1,0 +1,14 @@
+/*
+ * $Id: layout.manager.css 7988 2015-01-02 15:20:24Z ant $ ::2B6A7A!
+ * Copyright (c) 2005 Dr. Vahan Simonyan and Dr. Raja Mazumder.
+ * This software is protected by U.S. Copyright Law and International
+ * Treaties. Unauthorized use, duplication, reverse engineering, any
+ * form of redistribution, use in part or as a whole, other than by
+ * prior, express, written and signed agreement is subject to penalties.
+ * If you have received this file in error, please notify copyright
+ * holder and destroy this and any other copies. All rights reserved.
+ */
+.layout-manager {
+    position: absolute;
+    overflow: hidden;
+}

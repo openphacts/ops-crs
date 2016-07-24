@@ -1,0 +1,12 @@
+﻿.cs-widget-form .form-group {
+    margin-bottom: 5px !important;
+}
+
+.cs-widget-form .form-group input[type="checkbox"].form-control {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.cs-widget-form .form-group .bootstrap-filestyle span.group-span-filestyle {
+    width: auto !important;
+}

@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "ChemSpider | ChemDoodle 2D";
+    Layout = "~/Views/Shared/_DemoLayout.cshtml";
+}
+
+@section css {
+}
+
+<hgroup class="title">
+    <h3>ChemDoodle 2D</h3>
+</hgroup>
+
+<hgroup class="content">
+    <div id="molecule3"></div>
+    <div id="molecule"></div>
+    <div id="molecule2"></div>
+</hgroup>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#molecule').chemdoodle2d({
+                smiles: 'CC(=O)OC1=CC=CC=C1C(=O)O',
+                viewerSpecs: {
+                    atoms_useJMOLColors: true,
+                    //atoms_circles_2D: true,
+                    backgroundColor: '#eee',
+                }
+            });
+/*
+            $('#molecule2').chemdoodle2d({
+                csid: 123
+            });
+*/
+            //$('#molecule3').chemdoodle3d({
+            //    csid: 2157,
+            //    width: 400,
+            //    height: 400
+            //});
+/*
+            $('#sketcher').sketcher({
+                csid: 2157,
+                width: 500,
+                height: 400
+            });
+
+            $('#getMolecule').click(function () {
+                alert($('#sketcher').sketcher('molecule'));
+            });
+*/
+        });
+    </script>
+}

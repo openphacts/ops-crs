@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "FunctionalGroup";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section css {
+    <link href="~/Content/RAVE/functional-group.css" rel="stylesheet" />
+}
+
+<div id="functionalGroups"></div>
+
+<a href="#" id="csid">Search</a>
+
+@section scripts {
+    <script src="~/Content/RAVE/jquery.functional.group.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var funtionalEditor = $('#functionalGroups').functionalgroup({
+                //url: 'http://localhost:47207/api/nmr/features/search',
+                //method: 'get',
+                //width: $("#testDiv").width(),
+                guidelines: 'Functional group search guidelines',
+                guidelinesText: 'Insert number or range (e.g. 1-3) of each type of functional group. To exclude a functional group, set the number to 0. Fields left blank will be included in matches. See Help for further details.',
+                showbutton: false,
+                //RESTApiURL: 'http://localhost:47207/api/nmr/features/search',
+                //RESTApiAcceptHeader: 'application/vnd.rsc.substances-v1+json'
+            }).data('functionalgroup');
+
+            $("#csid").click(function (e) {
+                e.preventDefault();
+                //$("#csid-div").show();
+                //var xlist = $('#functionalGroups').functionalgroup('FunctionGroupsGetCSID');
+                //alert(xlist);
+
+                var groups = $('#functionalGroups').functionalgroup('FunctionGroupsData');
+
+                //mets=1&arome=2&meo=1
+                var features = [];
+                groups.split('&').forEach(function (x) {
+                    var arr = x.split('=');
+                    if(arr.length == 2)
+                        features.push({ Name: arr[0], Count: arr[1] });
+                });
+
+                var options = {
+                    searchOptions: {
+                        SubstructureSearchOptions: {
+                            Molecule: 'CC1C(CC(C)O)=CC(=CC=1O)OC'
+                        },
+                        IntrinsicPropertiesSearchOptions: {
+                            MonoisotopicMassMin: 190,
+                            MonoisotopicMassMax: 200
+                        },
+                        //NMRFeaturesSearchOptions: {
+                        //    Features: features
+                        //}
+                    },
+                    resultOptions: {
+                        Limit: 10000
+                    }
+                };
+
+                if (features.length > 0) {
+                    options.searchOptions.NMRFeaturesSearchOptions = { Features: features };
+                }
+
+                $.Compounds.store.advancedSearch(options, function (rid) {
+                    window.location = '/Search/Results/' + rid;
+                });
+
+                @*$.Compounds.store.nmrFeaturesSearch(features, function (rid) {
+                    window.location = '@Url.Content("~/Search/Results/")' + rid;
+                });*@
+
+                //$("#csid-list").html(xlist);
+            });
+        });
+
+    </script>
+}

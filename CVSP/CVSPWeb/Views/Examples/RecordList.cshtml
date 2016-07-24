@@ -1,0 +1,55 @@
+﻿@{
+	ViewBag.Title = "CVSP | Records List";
+	Layout = "~/Views/Shared/_DemoLayout.cshtml";
+}
+
+<hgroup class="title">
+	<h3>CVSP Records List</h3>
+</hgroup>
+
+<hgroup class="content" style="margin: .5em;">
+	<div id="records"></div>
+
+	<hr />
+
+	Code example how to put widget on page...
+
+	<pre class="brush: js;">
+		$('#records').records_gridview({
+			countProviderUrl: '/api/depositions/fbcc72e4-be37-4457-9e9f-d899fedbd5c6/recordscount',
+			itemsProviderUrl: '/api/depositions/fbcc72e4-be37-4457-9e9f-d899fedbd5c6/records',
+			imageSize: 175,
+			columns: [
+				{ name: 'Ordinal', title: 'Ordinal', format: function (value, record) { return value + 1; } },
+				{ name: 'Original', title: 'Original' },
+				{ name: 'Issues', title: 'Issues', format: DisplayRecordsIssues },
+				{ name: 'Standardized', title: 'Standardized' },
+			]
+		});
+    </pre>
+
+</hgroup>
+
+@section Scripts {
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$.Depositions.store.getDepositionsGUIDs(0, -1, function (guids) {
+				if (guids.length > 0) {
+					$('#records').records_gridview({
+						countProviderUrl: '@Url.Content("~/api/depositions/")' + guids[0] + '/recordscount',
+						itemsProviderUrl: '@Url.Content("~/api/depositions/")' + guids[0] + '/records',
+						imageSize: 175,
+						columns: [
+							{ name: 'Ordinal', title: 'Ordinal', format: function (value, record) { return value + 1; } },
+							{ name: 'Original', title: 'Original' },
+							{ name: 'Issues', title: 'Issues', format: DisplayRecordsIssues },
+							{ name: 'Standardized', title: 'Standardized' },
+						]
+					});
+				}
+				else {
+				}
+			});
+        });
+	</script>
+}

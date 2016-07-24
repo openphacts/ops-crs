@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 15.625, 14" name="ChemSpiderSql">
+  <DataContextMoniker Name="/ChemSpiderSqlDataContext" />
+  <nestedChildShapes>
+    <classShape Id="bc91f04c-5612-4850-bb8f-a01691488c59" absoluteBounds="7.125, 2.75, 2, 4.6554182942708326">
+      <DataClassMoniker Name="/ChemSpiderSqlDataContext/deposition" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ecc05a97-e04f-4cc6-bb64-74e89c6037fa" absoluteBounds="7.14, 3.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c5c69dfa-502f-4ab5-ae43-50d1f1e92832" absoluteBounds="3, 4.25, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/ChemSpiderSqlDataContext/depositions_track" />
+      <nestedChildShapes>
+        <elementListCompartment Id="46a6b80c-fe2d-40dc-9742-b6cf6983b449" absoluteBounds="3.0150000000000006, 4.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.125 : 5.13544840494792); (5 : 5.13544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ChemSpiderSqlDataContext/deposition/deposition_depositions_track" />
+      <nodes>
+        <classShapeMoniker Id="bc91f04c-5612-4850-bb8f-a01691488c59" />
+        <classShapeMoniker Id="c5c69dfa-502f-4ab5-ae43-50d1f1e92832" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="4436e180-8502-4392-b1be-76c2d7908293" absoluteBounds="10.125, 1, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ChemSpiderSqlDataContext/v_filter_run" />
+      <nestedChildShapes>
+        <elementListCompartment Id="958696e9-f2d8-40c8-b01d-b02b222f377c" absoluteBounds="10.14, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="50896e57-7bdc-417d-a6a8-24e4afe868dc" absoluteBounds="3.875, 0.5, 2, 3.1170068359375">
+      <DataClassMoniker Name="/ChemSpiderSqlDataContext/v_filter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b97b5242-525f-46f7-888b-db0fcd6a8567" absoluteBounds="3.89, 0.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ed34ad24-5a7d-40bc-971f-dbb3105fd088" absoluteBounds="10.375, 5.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/ChemSpiderSqlDataContext/synonym" />
+      <nestedChildShapes>
+        <elementListCompartment Id="07b2cb26-e8a4-407e-aae9-fc830cdb00ad" absoluteBounds="10.39, 5.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8d4f0e4b-133d-468f-8d1e-899ce2051344" absoluteBounds="13.375, 3.75, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/ChemSpiderSqlDataContext/v_transaction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="730a1243-027f-4259-9d19-870a7bee01a2" absoluteBounds="13.39, 4.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3c47228e-7c03-44f9-ba94-9a222da9d058" absoluteBounds="3, 6.75, 2, 6.9630354817708326">
+      <DataClassMoniker Name="/ChemSpiderSqlDataContext/v_deposition" />
+      <nestedChildShapes>
+        <elementListCompartment Id="be29a9a7-31ee-40bd-959b-0c2741758c39" absoluteBounds="3.015, 7.21, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

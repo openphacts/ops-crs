@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.125, 8.5" name="Synonyms">
+  <DataContextMoniker Name="/SynonymsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e91da31a-3815-4c82-a498-06812b9a490c" absoluteBounds="9.875, 2.5, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/SynonymsDataContext/compounds_synonym" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4fb71475-d344-41d6-b004-18263d93e6d8" absoluteBounds="9.89, 2.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bac2f3ff-b859-4d87-be25-5bc3c0e92c8c" absoluteBounds="5.75, 2.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/SynonymsDataContext/synonym" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b0aa4751-f10a-48e4-bf6a-5d8bdb887954" absoluteBounds="5.765, 3.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="48578437-5b04-4922-8d70-bd24ea8b1fe0" absoluteBounds="3.125, 1, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/SynonymsDataContext/synonyms_synonyms_flag" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1e054807-82e4-471c-81e5-9776f79f99e7" absoluteBounds="3.14, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a2877656-6349-45af-8682-171482847fc6" absoluteBounds="1, 2.625, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/SynonymsDataContext/synonyms_flag" />
+      <nestedChildShapes>
+        <elementListCompartment Id="df5720f1-4c00-4d6d-a1a5-4791b6bd3f37" absoluteBounds="1.0150000000000001, 3.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="115ddaf7-e86a-44b6-9f9e-4132437060c8" absoluteBounds="6, 5.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/SynonymsDataContext/synonyms_lookup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2122aab4-96f4-4b66-83f2-86c6a948afbb" absoluteBounds="6.0150000000000006, 6.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.75 : 3.70274983723958); (9.875 : 3.70274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SynonymsDataContext/synonym/synonym_compounds_synonym" />
+      <nodes>
+        <classShapeMoniker Id="bac2f3ff-b859-4d87-be25-5bc3c0e92c8c" />
+        <classShapeMoniker Id="e91da31a-3815-4c82-a498-06812b9a490c" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d91bf4e9-3241-4776-8237-c05ea8caad05" absoluteBounds="1.75, 5.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/SynonymsDataContext/systematic_name" />
+      <nestedChildShapes>
+        <elementListCompartment Id="03600873-cd48-4731-9277-03049849dd5a" absoluteBounds="1.7649999999999997, 6.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9873275d-4ff0-4a74-bdc0-476026d249a3" absoluteBounds="6.125, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/SynonymsDataContext/language" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0dcbcbea-167c-4c93-b194-8b955732d713" absoluteBounds="6.14, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

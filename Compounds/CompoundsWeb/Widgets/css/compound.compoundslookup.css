@@ -1,0 +1,154 @@
+﻿.cs-widget-compoundslookup { 
+    padding: 0px; 
+    background: none; 
+    border-width: 0px; 
+} 
+.cs-widget-compoundslookup .ui-tabs-nav { 
+    padding-left: 0px; 
+    background: transparent; 
+    border: none;
+} 
+.cs-widget-compoundslookup .ui-state-default {
+    font-weight: normal;
+    background: none;
+    border: none;
+}
+.cs-widget-compoundslookup .ui-tabs-active {
+    font-weight: bold;
+    background: #d6e0ee;
+    border: solid;
+    border-width: 1px 1px 0px 1px; 
+    border-color: #69a6db;
+    -moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+.cs-widget-compoundslookup .tabsdiv {
+    -moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+    border: solid;
+    border-width: 1px 1px 1px 1px; 
+    border-color: #69a6db;
+    background: #d6e0ee;
+}
+.cs-widget-compoundslookup .textbox {
+    border: 2px solid #69a6db;
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 0 -2px;
+    padding: 8px;
+}
+.cs-widget-compoundslookup .button {
+        border: 2px solid #69a6db;
+        border-radius: 8px;
+        box-shadow: 0 3px 8px #c8d1de;
+        cursor: pointer;
+        font-size: 24px;
+        margin: 15px 15px 15px 0;
+        padding: 4px 10px 2px;
+    }
+/*.cs-widget-home-search {
+    clear: both;
+	position: relative;
+	background: #d6e0ee;
+	padding: 10px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-border-radius-topleft: 0;
+	-webkit-border-top-left-radius: 0;
+	border-top-left-radius: 0;
+	width: 630px;
+	margin: 0em auto;
+	border: 1px solid #69a6db;
+	-moz-box-shadow: 0px 5px 15px #cccccc;
+ 	-webkit-box-shadow: 0px 5px 15px #cccccc;
+	box-shadow: 0px 5px 15px #cccccc;
+}
+
+
+.cs-widget-home-searchx .search-field label span {
+	position: absolute;
+	font-weight: bold;
+	top: -1.3em;
+	background: #ddd;
+	padding: .25em .5em 0 .5em;
+	left: 0;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+}
+
+.cs-widget-home-searchx .search-field label em {
+	display: block;
+	color: #666;
+	font-size: .8em;
+	margin-top: .3em;
+}
+.cs-widget-home-searchx .search-field div a {
+	position: absolute;
+	top: -1.3em;
+	left: 8.5em;
+	white-space: nowrap;
+}
+.cs-widget-home-searchx .search-field div a+a {
+	left: 17em;
+}
+.cs-widget-home-search #options {
+	clear: both;
+}
+.cs-widget-home-search #options legend {
+	font-weight: bold;
+}
+.cs-widget-home-search #options .fieldset,
+.cs-widget-home-search .fieldset {
+	background-color: #eee;
+	float: left;
+	margin-right: 1em;
+	margin-top: .5em;
+	margin-bottom: .5em;
+	padding: 2em .5em .5em .5em;
+	position: relative;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+.cs-widget-home-search .fieldset {
+	padding-top: .5em;
+	margin-top: 0;
+}
+.cs-widget-home-search #options .fieldset legend span {
+	position: absolute;
+	top: .5em;
+	left: .5em;
+	white-space: nowrap;
+}
+.cs-widget-home-search #options .fieldset label {
+	line-height: 1.5;
+}
+.cs-widget-home-search input:checked + label {
+	color: darkgreen;
+}
+
+.cs-widget-home-searchx .button{
+	margin: 15px 0 5px 264px; 
+    font-size: 24px; padding: 4px 10px 2px 10px; display:block;
+	border: 2px solid #69a6db;cursor:pointer;
+	border-radius: 8px; 
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-box-shadow: 0px 3px 8px #c8d1de;
+ 	-webkit-box-shadow: 0px 3px 8px #c8d1de;
+	box-shadow: 0px 3px 8px #c8d1de;
+	background:#f0f0eb url('images/bg-button.png') repeat-x left bottom; 
+ }
+
+.cs-widget-home-searchx .textbox{
+	border: 2px solid #69a6db; padding: 8px; 
+	font-size:18px; width: 614px;
+	margin: 0 -2px; display:block;
+	border-radius: 5px; 
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	background:#000000 url('images/bg-textbox.png') repeat-x left top; }*/

@@ -1,0 +1,19 @@
+﻿.cs-widget-tile .tile-properties {
+    font-size: 80%;
+    text-align: left;
+
+    background-color: #F7F7F9;
+    border: 1px solid #E1E1E8;
+    border-radius: 4px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    margin-bottom: -5px;
+    margin-left: -1px;
+    margin-right: -1px;
+    padding: 9px 14px;
+}
+
+.cs-widget-tile .tile-properties ul {
+    margin-left: 0;
+    padding-left: 5px;
+}

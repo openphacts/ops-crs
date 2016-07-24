@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "ChemSpider Compounds | Structure Editor";
+    Layout = "~/Views/Shared/_DemoLayout.cshtml";
+}
+
+<hgroup class="title">
+    <h3>Structure editor widget</h3>
+</hgroup>
+
+<hgroup class="content">
+    <p>
+        Main widget to edit structure and get result in SMILES or MOL format.
+    </p>
+
+    <div id="structureEditor" class="thumbnail"></div>
+
+    <div style="margin-top: 2em;"><b>Entered SMILES:</b></div>
+    <textarea id="smiles" rows="1" style="width: 100%;"></textarea>
+
+    <div style="margin-top: 2em;"><b>Entered MOL:</b> </div>
+    <textarea id="mol" rows="10" style="width: 100%;"></textarea>
+
+    <hr />
+    <button id="getSmilesBtn" type="button" class="btn btn-default">Get SMILES</button>
+    <button id="getMolBtn" type="button" class="btn btn-default">Get MOL</button>
+
+    <hr />
+
+    Code example how to put widget on page and catch all structure changes
+
+    <pre class="brush: js;">
+        $("#structureEditor").structureeditor({
+            jsdraw: true,
+            jchempaint: true,
+            width: 200,
+            height: 200,
+            smiles: 'CC(=O)Oc1ccccc1C(=O)O',
+            onChange: function (event, res) {
+                $('#smiles').val(res.smiles);
+                $('#mol').val(res.mol);
+            }
+        });
+    </pre>
+</hgroup>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#structureEditor").structureeditor({
+                jsdraw: true,
+                jchempaint: true,
+                width: 300,
+                height: 300,
+                smiles: 'CC(=O)Oc1ccccc1C(=O)O',
+                onChange: function (event, res) {
+                    $('#smiles').val(res.smiles);
+                    $('#mol').val(res.mol);
+                }
+            });
+
+            $('#getSmilesBtn').click(function () {
+                alert($("#structureEditor").structureeditor('smiles'));
+            });
+
+            $('#getMolBtn').click(function () {
+                alert($("#structureEditor").structureeditor('molecule'));
+            });
+        });
+    </script>
+}

@@ -1,0 +1,1658 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Edmx Version="3.0" xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <Runtime>
+    <ConceptualModels>
+      <Schema Namespace="RSC.Compounds.EntityFramework" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ef_Annotation" customannotation:ClrType="RSC.Compounds.EntityFramework.ef_Annotation, RSC.Compounds.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Revision" Relationship="Self.ef_Annotation_Revision" FromRole="ef_Annotation_Revision_Source" ToRole="ef_Annotation_Revision_Target" />
+        </EntityType>
+        <EntityType Name="ef_Revision" customannotation:ClrType="RSC.Compounds.EntityFramework.ef_Revision, RSC.Compounds.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="DepositionId" Type="Guid" Nullable="false" />
+          <Property Name="Version" Type="Int32" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" />
+          <Property Name="EmbargoDate" Type="DateTime" />
+          <Property Name="Revoked" Type="Boolean" Nullable="false" />
+          <Property Name="Sdf" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SubstanceId" Type="Guid" Nullable="false" />
+          <Property Name="CompoundId" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Annotations" Relationship="Self.ef_Annotation_Revision" FromRole="ef_Annotation_Revision_Target" ToRole="ef_Annotation_Revision_Source" />
+          <NavigationProperty Name="Compound" Relationship="Self.ef_Revision_Compound" FromRole="ef_Revision_Compound_Source" ToRole="ef_Revision_Compound_Target" />
+          <NavigationProperty Name="Issues" Relationship="Self.ef_Issue_Revision" FromRole="ef_Issue_Revision_Target" ToRole="ef_Issue_Revision_Source" />
+          <NavigationProperty Name="Substance" Relationship="Self.ef_Revision_Substance" FromRole="ef_Revision_Substance_Source" ToRole="ef_Revision_Substance_Target" />
+          <NavigationProperty Name="Synonyms" Relationship="Self.ef_Synonym_Revisions" FromRole="ef_Synonym_Revisions_Target" ToRole="ef_Synonym_Revisions_Source" />
+        </EntityType>
+        <EntityType Name="ef_Compound" customannotation:ClrType="RSC.Compounds.EntityFramework.ef_Compound, RSC.Compounds.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="OpsId" Type="Int32" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <Property Name="Mol" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NonStandardInChIId" Type="Guid" />
+          <Property Name="TautomericNonStdInChIId" Type="Guid" />
+          <Property Name="StandardInChIId" Type="Guid" />
+          <Property Name="SmilesId" Type="Guid" />
+          <NavigationProperty Name="Children" Relationship="Self.ef_Compound_Children" FromRole="ef_Compound_Children_Source" ToRole="ef_Compound_Children_Target" />
+          <NavigationProperty Name="CompoundSynonyms" Relationship="Self.ef_Compound_CompoundSynonyms" FromRole="ef_Compound_CompoundSynonyms_Source" ToRole="ef_Compound_CompoundSynonyms_Target" />
+          <NavigationProperty Name="NonStandardInChI" Relationship="Self.ef_Compound_NonStandardInChI" FromRole="ef_Compound_NonStandardInChI_Source" ToRole="ef_Compound_NonStandardInChI_Target" />
+          <NavigationProperty Name="Parents" Relationship="Self.ef_Compound_Parents" FromRole="ef_Compound_Parents_Source" ToRole="ef_Compound_Parents_Target" />
+          <NavigationProperty Name="Smiles" Relationship="Self.ef_Compound_Smiles" FromRole="ef_Compound_Smiles_Source" ToRole="ef_Compound_Smiles_Target" />
+          <NavigationProperty Name="StandardInChI" Relationship="Self.ef_Compound_StandardInChI" FromRole="ef_Compound_StandardInChI_Source" ToRole="ef_Compound_StandardInChI_Target" />
+          <NavigationProperty Name="TautomericNonStdInChI" Relationship="Self.ef_Compound_TautomericNonStdInChI" FromRole="ef_Compound_TautomericNonStdInChI_Source" ToRole="ef_Compound_TautomericNonStdInChI_Target" />
+        </EntityType>
+        <EntityType Name="ef_ParentChild" customannotation:ClrType="RSC.Compounds.EntityFramework.ef_ParentChild, RSC.Compounds.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Type" Type="Self.ParentChildRelationship" Nullable="false" />
+          <Property Name="ParentId" Type="Guid" Nullable="false" />
+          <Property Name="ChildId" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Child" Relationship="Self.ef_Compound_Children" FromRole="ef_Compound_Children_Target" ToRole="ef_Compound_Children_Source" />
+          <NavigationProperty Name="Parent" Relationship="Self.ef_Compound_Parents" FromRole="ef_Compound_Parents_Target" ToRole="ef_Compound_Parents_Source" />
+        </EntityType>
+        <EntityType Name="ef_CompoundSynonym" customannotation:ClrType="RSC.Compounds.EntityFramework.ef_CompoundSynonym, RSC.Compounds.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="CompoundId" Type="Guid" Nullable="false" />
+          <Property Name="SynonymId" Type="Guid" Nullable="false" />
+          <Property Name="SynonymState" Type="Self.CompoundSynonymState" Nullable="false" />
+          <Property Name="IsTitle" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Compound" Relationship="Self.ef_Compound_CompoundSynonyms" FromRole="ef_Compound_CompoundSynonyms_Target" ToRole="ef_Compound_CompoundSynonyms_Source" />
+          <NavigationProperty Name="CompoundSynonymSynonymFlags" Relationship="Self.ef_CompoundSynonym_CompoundSynonymSynonymFlags" FromRole="ef_CompoundSynonym_CompoundSynonymSynonymFlags_Source" ToRole="ef_CompoundSynonym_CompoundSynonymSynonymFlags_Target" />
+          <NavigationProperty Name="History" Relationship="Self.ef_CompoundSynonymHistory_CompoundSynonym" FromRole="ef_CompoundSynonymHistory_CompoundSynonym_Target" ToRole="ef_CompoundSynonymHistory_CompoundSynonym_Source" />
+          <NavigationProperty Name="Synonym" Relationship="Self.ef_CompoundSynonym_Synonym" FromRole="ef_CompoundSynonym_Synonym_Source" ToRole="ef_CompoundSynonym_Synonym_Target" />
+        </EntityType>
+        <EntityType Name="ef_CompoundSynonymSynonymFlag" customannotation:ClrType="RSC.Compounds.EntityFramework.ef_CompoundSynonymSynonymFlag, RSC.Compounds.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="CompoundSynonymId" Type="Guid" Nullable="false" />
+          <Property Name="SynonymFlagId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CompoundSynonym" Relationship="Self.ef_CompoundSynonym_CompoundSynonymSynonymFlags" FromRole="ef_CompoundSynonym_CompoundSynonymSynonymFlags_Target" ToRole="ef_CompoundSynonym_CompoundSynonymSynonymFlags_Source" />
+          <NavigationProperty Name="SynonymFlag" Relationship="Self.ef_CompoundSynonymSynonymFlag_SynonymFlag" FromRole="ef_CompoundSynonymSynonymFlag_SynonymFlag_Source" ToRole="ef_CompoundSynonymSynonymFlag_SynonymFlag_Target" />
+        </EntityType>
+        <EntityType Name="ef_SynonymFlag" customannotation:ClrType="RSC.Compounds.EntityFramework.ef_SynonymFlag, RSC.Compounds.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Rank" Type="Int32" Nullable="false" />
+          <Property Name="ExcludeFromTitle" Type="Boolean" Nullable="false" />
+          <Property Name="Type" Type="Self.SynonymFlagType" Nullable="false" />
+          <Property Name="IsUniquePerLanguage" Type="Boolean" Nullable="false" />
+          <Property Name="RegEx" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsRestricted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ef_CompoundSynonymHistory" customannotation:ClrType="RSC.Compounds.EntityFramework.ef_CompoundSynonymHistory, RSC.Compounds.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="CompoundSynonymId" Type="Guid" Nullable="false" />
+          <Property Name="SynonymState" Type="Self.CompoundSynonymState" Nullable="false" />
+          <Property Name="IsTitle" Type="Boolean" Nullable="false" />
+          <Property Name="DateChanged" Type="DateTime" Nullable="false" />
+          <Property Name="CuratorId" Type="Guid" />
+          <Property Name="RevisionId" Type="Int32" />
+          <NavigationProperty Name="CompoundSynonym" Relationship="Self.ef_CompoundSynonymHistory_CompoundSynonym" FromRole="ef_CompoundSynonymHistory_CompoundSynonym_Source" ToRole="ef_CompoundSynonymHistory_CompoundSynonym_Target" />
+          <NavigationProperty Name="SynonymFlags" Relationship="Self.ef_CompoundSynonymHistory_SynonymFlags" FromRole="ef_CompoundSynonymHistory_SynonymFlags_Source" ToRole="ef_CompoundSynonymHistory_SynonymFlags_Target" />
+        </EntityType>
+        <EntityType Name="ef_CompoundSynonymSynonymFlagHistory" customannotation:ClrType="RSC.Compounds.EntityFramework.ef_CompoundSynonymSynonymFlagHistory, RSC.Compounds.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="CompoundSynonymHistoryId" Type="Guid" Nullable="false" />
+          <Property Name="SynonymFlagId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CompoundSynonymHistory" Relationship="Self.ef_CompoundSynonymHistory_SynonymFlags" FromRole="ef_CompoundSynonymHistory_SynonymFlags_Target" ToRole="ef_CompoundSynonymHistory_SynonymFlags_Source" />
+          <NavigationProperty Name="SynonymFlag" Relationship="Self.ef_CompoundSynonymSynonymFlagHistory_SynonymFlag" FromRole="ef_CompoundSynonymSynonymFlagHistory_SynonymFlag_Source" ToRole="ef_CompoundSynonymSynonymFlagHistory_SynonymFlag_Target" />
+        </EntityType>
+        <EntityType Name="ef_Synonym" customannotation:ClrType="RSC.Compounds.EntityFramework.ef_Synonym, RSC.Compounds.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Synonym" Type="String" MaxLength="448" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LanguageId" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="History" Relationship="Self.ef_SynonymHistory_Synonym" FromRole="ef_SynonymHistory_Synonym_Target" ToRole="ef_SynonymHistory_Synonym_Source" />
+          <NavigationProperty Name="Revisions" Relationship="Self.ef_Synonym_Revisions" FromRole="ef_Synonym_Revisions_Source" ToRole="ef_Synonym_Revisions_Target" />
+          <NavigationProperty Name="SynonymFlags" Relationship="Self.ef_Synonym_SynonymFlags" FromRole="ef_Synonym_SynonymFlags_Source" ToRole="ef_Synonym_SynonymFlags_Target" />
+        </EntityType>
+        <EntityType Name="ef_SynonymHistory" customannotation:ClrType="RSC.Compounds.EntityFramework.ef_SynonymHistory, RSC.Compounds.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="SynonymId" Type="Guid" Nullable="false" />
+          <Property Name="CuratorId" Type="Guid" />
+          <Property Name="DateChanged" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Synonym" Relationship="Self.ef_SynonymHistory_Synonym" FromRole="ef_SynonymHistory_Synonym_Source" ToRole="ef_SynonymHistory_Synonym_Target" />
+          <NavigationProperty Name="SynonymFlags" Relationship="Self.ef_SynonymHistory_SynonymFlags" FromRole="ef_SynonymHistory_SynonymFlags_Source" ToRole="ef_SynonymHistory_SynonymFlags_Target" />
+        </EntityType>
+        <EntityType Name="ef_SynonymSynonymFlagHistory" customannotation:ClrType="RSC.Compounds.EntityFramework.ef_SynonymSynonymFlagHistory, RSC.Compounds.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="SynonymHistoryId" Type="Guid" Nullable="false" />
+          <Property Name="SynonymFlagId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="SynonymFlag" Relationship="Self.ef_SynonymSynonymFlagHistory_SynonymFlag" FromRole="ef_SynonymSynonymFlagHistory_SynonymFlag_Source" ToRole="ef_SynonymSynonymFlagHistory_SynonymFlag_Target" />
+          <NavigationProperty Name="SynonymHistory" Relationship="Self.ef_SynonymHistory_SynonymFlags" FromRole="ef_SynonymHistory_SynonymFlags_Target" ToRole="ef_SynonymHistory_SynonymFlags_Source" />
+        </EntityType>
+        <EntityType Name="ef_SynonymSynonymFlag" customannotation:ClrType="RSC.Compounds.EntityFramework.ef_SynonymSynonymFlag, RSC.Compounds.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="SynonymId" />
+            <PropertyRef Name="SynonymFlagId" />
+          </Key>
+          <Property Name="SynonymId" Type="Guid" Nullable="false" />
+          <Property Name="SynonymFlagId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Synonym" Relationship="Self.ef_Synonym_SynonymFlags" FromRole="ef_Synonym_SynonymFlags_Target" ToRole="ef_Synonym_SynonymFlags_Source" />
+          <NavigationProperty Name="SynonymFlag" Relationship="Self.ef_SynonymSynonymFlag_SynonymFlag" FromRole="ef_SynonymSynonymFlag_SynonymFlag_Source" ToRole="ef_SynonymSynonymFlag_SynonymFlag_Target" />
+        </EntityType>
+        <EntityType Name="ef_InChI" customannotation:ClrType="RSC.Compounds.EntityFramework.ef_InChI, RSC.Compounds.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="InChI" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="InChIKey" Type="String" MaxLength="27" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="InChIMD5" Relationship="Self.ef_InChIMD5_InChI" FromRole="ef_InChIMD5_InChI_Target" ToRole="ef_InChIMD5_InChI_Source" />
+        </EntityType>
+        <EntityType Name="ef_InChIMD5" customannotation:ClrType="RSC.Compounds.EntityFramework.ef_InChIMD5, RSC.Compounds.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="InChIKey_A" Type="String" MaxLength="14" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="InChIKey_B" Type="String" MaxLength="23" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="InChI_MD5" Type="Binary" MaxLength="16" FixedLength="false" Nullable="false" />
+          <Property Name="InChI_MF_MD5" Type="Binary" MaxLength="16" FixedLength="false" Nullable="false" />
+          <Property Name="InChI_C_MD5" Type="Binary" MaxLength="16" FixedLength="false" Nullable="false" />
+          <Property Name="InChI_CH_MD5" Type="Binary" MaxLength="16" FixedLength="false" Nullable="false" />
+          <Property Name="InChI_CHSI_MD5" Type="Binary" MaxLength="16" FixedLength="false" Nullable="false" />
+          <NavigationProperty Name="InChI" Relationship="Self.ef_InChIMD5_InChI" FromRole="ef_InChIMD5_InChI_Source" ToRole="ef_InChIMD5_InChI_Target" />
+        </EntityType>
+        <EntityType Name="ef_Smiles" customannotation:ClrType="RSC.Compounds.EntityFramework.ef_Smiles, RSC.Compounds.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="IndigoSmiles" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IndigoSmilesMd5" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Compounds" Relationship="Self.ef_Compound_Smiles" FromRole="ef_Compound_Smiles_Target" ToRole="ef_Compound_Smiles_Source" />
+        </EntityType>
+        <EntityType Name="ef_Issue" customannotation:ClrType="RSC.Compounds.EntityFramework.ef_Issue, RSC.Compounds.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LogId" Type="Guid" Nullable="false" />
+          <Property Name="RevisionId" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Revision" Relationship="Self.ef_Issue_Revision" FromRole="ef_Issue_Revision_Source" ToRole="ef_Issue_Revision_Target" />
+        </EntityType>
+        <EntityType Name="ef_Substance" customannotation:ClrType="RSC.Compounds.EntityFramework.ef_Substance, RSC.Compounds.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="ExternalIdentifier" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DataSourceId" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Revisions" Relationship="Self.ef_Revision_Substance" FromRole="ef_Revision_Substance_Target" ToRole="ef_Revision_Substance_Source" />
+        </EntityType>
+        <EntityType Name="ef_Property" customannotation:ClrType="RSC.Compounds.EntityFramework.ef_Property, RSC.Compounds.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PropertyId" Type="Guid" Nullable="false" />
+          <Property Name="RevisionId" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Revision" Relationship="Self.ef_Property_Revision" FromRole="ef_Property_Revision_Source" ToRole="ef_Property_Revision_Target" />
+        </EntityType>
+        <EnumType Name="ParentChildRelationship" IsFlags="false" customannotation:ClrType="RSC.Compounds.ParentChildRelationship, RSC.Compounds.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" UnderlyingType="Int32">
+          <Member Name="Fragment" Value="0" />
+          <Member Name="ChargeInsensitive" Value="1" />
+          <Member Name="StereoInsensitive" Value="2" />
+          <Member Name="IsotopInsensitive" Value="3" />
+          <Member Name="TautomerInsensitive" Value="4" />
+          <Member Name="SuperInsensitive" Value="5" />
+        </EnumType>
+        <EnumType Name="CompoundSynonymState" IsFlags="false" customannotation:ClrType="RSC.Compounds.CompoundSynonymState, RSC.Compounds.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" UnderlyingType="Int32">
+          <Member Name="eDeleted" Value="0" />
+          <Member Name="eDisproved" Value="1" />
+          <Member Name="eUnconfirmed" Value="2" />
+          <Member Name="eConfirmed" Value="3" />
+          <Member Name="eApproved" Value="4" />
+        </EnumType>
+        <EnumType Name="SynonymFlagType" IsFlags="false" customannotation:ClrType="RSC.Compounds.SynonymFlagType, RSC.Compounds.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" UnderlyingType="Int32">
+          <Member Name="SynonymType" Value="0" />
+          <Member Name="SynonymAssertion" Value="1" />
+        </EnumType>
+        <Association Name="ef_Compound_Children">
+          <End Role="ef_Compound_Children_Source" Type="Self.ef_Compound" Multiplicity="1" />
+          <End Role="ef_Compound_Children_Target" Type="Self.ef_ParentChild" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_Compound_Children_Source">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_Compound_Children_Target">
+              <PropertyRef Name="ChildId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_CompoundSynonymSynonymFlag_SynonymFlag">
+          <End Role="ef_CompoundSynonymSynonymFlag_SynonymFlag_Source" Type="Self.ef_CompoundSynonymSynonymFlag" Multiplicity="*" />
+          <End Role="ef_CompoundSynonymSynonymFlag_SynonymFlag_Target" Type="Self.ef_SynonymFlag" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <ReferentialConstraint>
+            <Principal Role="ef_CompoundSynonymSynonymFlag_SynonymFlag_Target">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_CompoundSynonymSynonymFlag_SynonymFlag_Source">
+              <PropertyRef Name="SynonymFlagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_CompoundSynonym_CompoundSynonymSynonymFlags">
+          <End Role="ef_CompoundSynonym_CompoundSynonymSynonymFlags_Source" Type="Self.ef_CompoundSynonym" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_CompoundSynonym_CompoundSynonymSynonymFlags_Target" Type="Self.ef_CompoundSynonymSynonymFlag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_CompoundSynonym_CompoundSynonymSynonymFlags_Source">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_CompoundSynonym_CompoundSynonymSynonymFlags_Target">
+              <PropertyRef Name="CompoundSynonymId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_CompoundSynonymHistory_CompoundSynonym">
+          <End Role="ef_CompoundSynonymHistory_CompoundSynonym_Source" Type="Self.ef_CompoundSynonymHistory" Multiplicity="*" />
+          <End Role="ef_CompoundSynonymHistory_CompoundSynonym_Target" Type="Self.ef_CompoundSynonym" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <ReferentialConstraint>
+            <Principal Role="ef_CompoundSynonymHistory_CompoundSynonym_Target">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_CompoundSynonymHistory_CompoundSynonym_Source">
+              <PropertyRef Name="CompoundSynonymId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_CompoundSynonymSynonymFlagHistory_SynonymFlag">
+          <End Role="ef_CompoundSynonymSynonymFlagHistory_SynonymFlag_Source" Type="Self.ef_CompoundSynonymSynonymFlagHistory" Multiplicity="*" />
+          <End Role="ef_CompoundSynonymSynonymFlagHistory_SynonymFlag_Target" Type="Self.ef_SynonymFlag" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <ReferentialConstraint>
+            <Principal Role="ef_CompoundSynonymSynonymFlagHistory_SynonymFlag_Target">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_CompoundSynonymSynonymFlagHistory_SynonymFlag_Source">
+              <PropertyRef Name="SynonymFlagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_CompoundSynonymHistory_SynonymFlags">
+          <End Role="ef_CompoundSynonymHistory_SynonymFlags_Source" Type="Self.ef_CompoundSynonymHistory" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_CompoundSynonymHistory_SynonymFlags_Target" Type="Self.ef_CompoundSynonymSynonymFlagHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_CompoundSynonymHistory_SynonymFlags_Source">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_CompoundSynonymHistory_SynonymFlags_Target">
+              <PropertyRef Name="CompoundSynonymHistoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_SynonymHistory_Synonym">
+          <End Role="ef_SynonymHistory_Synonym_Source" Type="Self.ef_SynonymHistory" Multiplicity="*" />
+          <End Role="ef_SynonymHistory_Synonym_Target" Type="Self.ef_Synonym" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <ReferentialConstraint>
+            <Principal Role="ef_SynonymHistory_Synonym_Target">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_SynonymHistory_Synonym_Source">
+              <PropertyRef Name="SynonymId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_SynonymSynonymFlagHistory_SynonymFlag">
+          <End Role="ef_SynonymSynonymFlagHistory_SynonymFlag_Source" Type="Self.ef_SynonymSynonymFlagHistory" Multiplicity="*" />
+          <End Role="ef_SynonymSynonymFlagHistory_SynonymFlag_Target" Type="Self.ef_SynonymFlag" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <ReferentialConstraint>
+            <Principal Role="ef_SynonymSynonymFlagHistory_SynonymFlag_Target">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_SynonymSynonymFlagHistory_SynonymFlag_Source">
+              <PropertyRef Name="SynonymFlagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_SynonymHistory_SynonymFlags">
+          <End Role="ef_SynonymHistory_SynonymFlags_Source" Type="Self.ef_SynonymHistory" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_SynonymHistory_SynonymFlags_Target" Type="Self.ef_SynonymSynonymFlagHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_SynonymHistory_SynonymFlags_Source">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_SynonymHistory_SynonymFlags_Target">
+              <PropertyRef Name="SynonymHistoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Synonym_Revisions">
+          <End Role="ef_Synonym_Revisions_Source" Type="Self.ef_Synonym" Multiplicity="*" />
+          <End Role="ef_Synonym_Revisions_Target" Type="Self.ef_Revision" Multiplicity="*" />
+        </Association>
+        <Association Name="ef_SynonymSynonymFlag_SynonymFlag">
+          <End Role="ef_SynonymSynonymFlag_SynonymFlag_Source" Type="Self.ef_SynonymSynonymFlag" Multiplicity="*" />
+          <End Role="ef_SynonymSynonymFlag_SynonymFlag_Target" Type="Self.ef_SynonymFlag" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <ReferentialConstraint>
+            <Principal Role="ef_SynonymSynonymFlag_SynonymFlag_Target">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_SynonymSynonymFlag_SynonymFlag_Source">
+              <PropertyRef Name="SynonymFlagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Synonym_SynonymFlags">
+          <End Role="ef_Synonym_SynonymFlags_Source" Type="Self.ef_Synonym" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_Synonym_SynonymFlags_Target" Type="Self.ef_SynonymSynonymFlag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_Synonym_SynonymFlags_Source">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_Synonym_SynonymFlags_Target">
+              <PropertyRef Name="SynonymId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_CompoundSynonym_Synonym">
+          <End Role="ef_CompoundSynonym_Synonym_Source" Type="Self.ef_CompoundSynonym" Multiplicity="*" />
+          <End Role="ef_CompoundSynonym_Synonym_Target" Type="Self.ef_Synonym" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <ReferentialConstraint>
+            <Principal Role="ef_CompoundSynonym_Synonym_Target">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_CompoundSynonym_Synonym_Source">
+              <PropertyRef Name="SynonymId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Compound_CompoundSynonyms">
+          <End Role="ef_Compound_CompoundSynonyms_Source" Type="Self.ef_Compound" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_Compound_CompoundSynonyms_Target" Type="Self.ef_CompoundSynonym" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_Compound_CompoundSynonyms_Source">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_Compound_CompoundSynonyms_Target">
+              <PropertyRef Name="CompoundId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_InChIMD5_InChI">
+          <End Role="ef_InChIMD5_InChI_Source" Type="Self.ef_InChIMD5" Multiplicity="0..1" />
+          <End Role="ef_InChIMD5_InChI_Target" Type="Self.ef_InChI" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="ef_InChIMD5_InChI_Target">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_InChIMD5_InChI_Source">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Compound_NonStandardInChI">
+          <End Role="ef_Compound_NonStandardInChI_Source" Type="Self.ef_Compound" Multiplicity="*" />
+          <End Role="ef_Compound_NonStandardInChI_Target" Type="Self.ef_InChI" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ef_Compound_NonStandardInChI_Target">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_Compound_NonStandardInChI_Source">
+              <PropertyRef Name="NonStandardInChIId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Compound_Parents">
+          <End Role="ef_Compound_Parents_Source" Type="Self.ef_Compound" Multiplicity="1" />
+          <End Role="ef_Compound_Parents_Target" Type="Self.ef_ParentChild" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_Compound_Parents_Source">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_Compound_Parents_Target">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Compound_Smiles">
+          <End Role="ef_Compound_Smiles_Source" Type="Self.ef_Compound" Multiplicity="*" />
+          <End Role="ef_Compound_Smiles_Target" Type="Self.ef_Smiles" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ef_Compound_Smiles_Target">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_Compound_Smiles_Source">
+              <PropertyRef Name="SmilesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Compound_StandardInChI">
+          <End Role="ef_Compound_StandardInChI_Source" Type="Self.ef_Compound" Multiplicity="*" />
+          <End Role="ef_Compound_StandardInChI_Target" Type="Self.ef_InChI" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ef_Compound_StandardInChI_Target">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_Compound_StandardInChI_Source">
+              <PropertyRef Name="StandardInChIId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Compound_TautomericNonStdInChI">
+          <End Role="ef_Compound_TautomericNonStdInChI_Source" Type="Self.ef_Compound" Multiplicity="*" />
+          <End Role="ef_Compound_TautomericNonStdInChI_Target" Type="Self.ef_InChI" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ef_Compound_TautomericNonStdInChI_Target">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_Compound_TautomericNonStdInChI_Source">
+              <PropertyRef Name="TautomericNonStdInChIId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Revision_Compound">
+          <End Role="ef_Revision_Compound_Source" Type="Self.ef_Revision" Multiplicity="*" />
+          <End Role="ef_Revision_Compound_Target" Type="Self.ef_Compound" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <ReferentialConstraint>
+            <Principal Role="ef_Revision_Compound_Target">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_Revision_Compound_Source">
+              <PropertyRef Name="CompoundId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Issue_Revision">
+          <End Role="ef_Issue_Revision_Source" Type="Self.ef_Issue" Multiplicity="*" />
+          <End Role="ef_Issue_Revision_Target" Type="Self.ef_Revision" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <ReferentialConstraint>
+            <Principal Role="ef_Issue_Revision_Target">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_Issue_Revision_Source">
+              <PropertyRef Name="RevisionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Revision_Substance">
+          <End Role="ef_Revision_Substance_Source" Type="Self.ef_Revision" Multiplicity="*" />
+          <End Role="ef_Revision_Substance_Target" Type="Self.ef_Substance" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <ReferentialConstraint>
+            <Principal Role="ef_Revision_Substance_Target">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_Revision_Substance_Source">
+              <PropertyRef Name="SubstanceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Annotation_Revision">
+          <End Role="ef_Annotation_Revision_Source" Type="Self.ef_Annotation" Multiplicity="*" />
+          <End Role="ef_Annotation_Revision_Target" Type="Self.ef_Revision" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+        </Association>
+        <Association Name="ef_Property_Revision">
+          <End Role="ef_Property_Revision_Source" Type="Self.ef_Property" Multiplicity="*" />
+          <End Role="ef_Property_Revision_Target" Type="Self.ef_Revision" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <ReferentialConstraint>
+            <Principal Role="ef_Property_Revision_Target">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_Property_Revision_Source">
+              <PropertyRef Name="RevisionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CompoundsContext" customannotation:UseClrTypes="true">
+          <EntitySet Name="Annotations" EntityType="Self.ef_Annotation" />
+          <EntitySet Name="Revisions" EntityType="Self.ef_Revision" />
+          <EntitySet Name="Compounds" EntityType="Self.ef_Compound" />
+          <EntitySet Name="ParentChildren" EntityType="Self.ef_ParentChild" />
+          <EntitySet Name="CompoundSynonyms" EntityType="Self.ef_CompoundSynonym" />
+          <EntitySet Name="CompoundSynonymSynonymFlags" EntityType="Self.ef_CompoundSynonymSynonymFlag" />
+          <EntitySet Name="SynonymFlags" EntityType="Self.ef_SynonymFlag" />
+          <EntitySet Name="CompoundSynonymHistory" EntityType="Self.ef_CompoundSynonymHistory" />
+          <EntitySet Name="CompoundSynonymSynonymFlagHistory" EntityType="Self.ef_CompoundSynonymSynonymFlagHistory" />
+          <EntitySet Name="Synonyms" EntityType="Self.ef_Synonym" />
+          <EntitySet Name="SynonymHistory" EntityType="Self.ef_SynonymHistory" />
+          <EntitySet Name="SynonymSynonymFlagHistory" EntityType="Self.ef_SynonymSynonymFlagHistory" />
+          <EntitySet Name="SynonymSynonymFlags" EntityType="Self.ef_SynonymSynonymFlag" />
+          <EntitySet Name="InChIs" EntityType="Self.ef_InChI" />
+          <EntitySet Name="InChI_MD5s" EntityType="Self.ef_InChIMD5" />
+          <EntitySet Name="Smiles" EntityType="Self.ef_Smiles" />
+          <EntitySet Name="Issues" EntityType="Self.ef_Issue" />
+          <EntitySet Name="Substances" EntityType="Self.ef_Substance" />
+          <EntitySet Name="Properties" EntityType="Self.ef_Property" />
+          <AssociationSet Name="ef_Compound_Children" Association="Self.ef_Compound_Children">
+            <End Role="ef_Compound_Children_Source" EntitySet="Compounds" />
+            <End Role="ef_Compound_Children_Target" EntitySet="ParentChildren" />
+          </AssociationSet>
+          <AssociationSet Name="ef_CompoundSynonymSynonymFlag_SynonymFlag" Association="Self.ef_CompoundSynonymSynonymFlag_SynonymFlag">
+            <End Role="ef_CompoundSynonymSynonymFlag_SynonymFlag_Source" EntitySet="CompoundSynonymSynonymFlags" />
+            <End Role="ef_CompoundSynonymSynonymFlag_SynonymFlag_Target" EntitySet="SynonymFlags" />
+          </AssociationSet>
+          <AssociationSet Name="ef_CompoundSynonym_CompoundSynonymSynonymFlags" Association="Self.ef_CompoundSynonym_CompoundSynonymSynonymFlags">
+            <End Role="ef_CompoundSynonym_CompoundSynonymSynonymFlags_Source" EntitySet="CompoundSynonyms" />
+            <End Role="ef_CompoundSynonym_CompoundSynonymSynonymFlags_Target" EntitySet="CompoundSynonymSynonymFlags" />
+          </AssociationSet>
+          <AssociationSet Name="ef_CompoundSynonymHistory_CompoundSynonym" Association="Self.ef_CompoundSynonymHistory_CompoundSynonym">
+            <End Role="ef_CompoundSynonymHistory_CompoundSynonym_Source" EntitySet="CompoundSynonymHistory" />
+            <End Role="ef_CompoundSynonymHistory_CompoundSynonym_Target" EntitySet="CompoundSynonyms" />
+          </AssociationSet>
+          <AssociationSet Name="ef_CompoundSynonymSynonymFlagHistory_SynonymFlag" Association="Self.ef_CompoundSynonymSynonymFlagHistory_SynonymFlag">
+            <End Role="ef_CompoundSynonymSynonymFlagHistory_SynonymFlag_Source" EntitySet="CompoundSynonymSynonymFlagHistory" />
+            <End Role="ef_CompoundSynonymSynonymFlagHistory_SynonymFlag_Target" EntitySet="SynonymFlags" />
+          </AssociationSet>
+          <AssociationSet Name="ef_CompoundSynonymHistory_SynonymFlags" Association="Self.ef_CompoundSynonymHistory_SynonymFlags">
+            <End Role="ef_CompoundSynonymHistory_SynonymFlags_Source" EntitySet="CompoundSynonymHistory" />
+            <End Role="ef_CompoundSynonymHistory_SynonymFlags_Target" EntitySet="CompoundSynonymSynonymFlagHistory" />
+          </AssociationSet>
+          <AssociationSet Name="ef_SynonymHistory_Synonym" Association="Self.ef_SynonymHistory_Synonym">
+            <End Role="ef_SynonymHistory_Synonym_Source" EntitySet="SynonymHistory" />
+            <End Role="ef_SynonymHistory_Synonym_Target" EntitySet="Synonyms" />
+          </AssociationSet>
+          <AssociationSet Name="ef_SynonymSynonymFlagHistory_SynonymFlag" Association="Self.ef_SynonymSynonymFlagHistory_SynonymFlag">
+            <End Role="ef_SynonymSynonymFlagHistory_SynonymFlag_Source" EntitySet="SynonymSynonymFlagHistory" />
+            <End Role="ef_SynonymSynonymFlagHistory_SynonymFlag_Target" EntitySet="SynonymFlags" />
+          </AssociationSet>
+          <AssociationSet Name="ef_SynonymHistory_SynonymFlags" Association="Self.ef_SynonymHistory_SynonymFlags">
+            <End Role="ef_SynonymHistory_SynonymFlags_Source" EntitySet="SynonymHistory" />
+            <End Role="ef_SynonymHistory_SynonymFlags_Target" EntitySet="SynonymSynonymFlagHistory" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Synonym_Revisions" Association="Self.ef_Synonym_Revisions">
+            <End Role="ef_Synonym_Revisions_Source" EntitySet="Synonyms" />
+            <End Role="ef_Synonym_Revisions_Target" EntitySet="Revisions" />
+          </AssociationSet>
+          <AssociationSet Name="ef_SynonymSynonymFlag_SynonymFlag" Association="Self.ef_SynonymSynonymFlag_SynonymFlag">
+            <End Role="ef_SynonymSynonymFlag_SynonymFlag_Source" EntitySet="SynonymSynonymFlags" />
+            <End Role="ef_SynonymSynonymFlag_SynonymFlag_Target" EntitySet="SynonymFlags" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Synonym_SynonymFlags" Association="Self.ef_Synonym_SynonymFlags">
+            <End Role="ef_Synonym_SynonymFlags_Source" EntitySet="Synonyms" />
+            <End Role="ef_Synonym_SynonymFlags_Target" EntitySet="SynonymSynonymFlags" />
+          </AssociationSet>
+          <AssociationSet Name="ef_CompoundSynonym_Synonym" Association="Self.ef_CompoundSynonym_Synonym">
+            <End Role="ef_CompoundSynonym_Synonym_Source" EntitySet="CompoundSynonyms" />
+            <End Role="ef_CompoundSynonym_Synonym_Target" EntitySet="Synonyms" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Compound_CompoundSynonyms" Association="Self.ef_Compound_CompoundSynonyms">
+            <End Role="ef_Compound_CompoundSynonyms_Source" EntitySet="Compounds" />
+            <End Role="ef_Compound_CompoundSynonyms_Target" EntitySet="CompoundSynonyms" />
+          </AssociationSet>
+          <AssociationSet Name="ef_InChIMD5_InChI" Association="Self.ef_InChIMD5_InChI">
+            <End Role="ef_InChIMD5_InChI_Source" EntitySet="InChI_MD5s" />
+            <End Role="ef_InChIMD5_InChI_Target" EntitySet="InChIs" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Compound_NonStandardInChI" Association="Self.ef_Compound_NonStandardInChI">
+            <End Role="ef_Compound_NonStandardInChI_Source" EntitySet="Compounds" />
+            <End Role="ef_Compound_NonStandardInChI_Target" EntitySet="InChIs" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Compound_Parents" Association="Self.ef_Compound_Parents">
+            <End Role="ef_Compound_Parents_Source" EntitySet="Compounds" />
+            <End Role="ef_Compound_Parents_Target" EntitySet="ParentChildren" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Compound_Smiles" Association="Self.ef_Compound_Smiles">
+            <End Role="ef_Compound_Smiles_Source" EntitySet="Compounds" />
+            <End Role="ef_Compound_Smiles_Target" EntitySet="Smiles" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Compound_StandardInChI" Association="Self.ef_Compound_StandardInChI">
+            <End Role="ef_Compound_StandardInChI_Source" EntitySet="Compounds" />
+            <End Role="ef_Compound_StandardInChI_Target" EntitySet="InChIs" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Compound_TautomericNonStdInChI" Association="Self.ef_Compound_TautomericNonStdInChI">
+            <End Role="ef_Compound_TautomericNonStdInChI_Source" EntitySet="Compounds" />
+            <End Role="ef_Compound_TautomericNonStdInChI_Target" EntitySet="InChIs" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Revision_Compound" Association="Self.ef_Revision_Compound">
+            <End Role="ef_Revision_Compound_Source" EntitySet="Revisions" />
+            <End Role="ef_Revision_Compound_Target" EntitySet="Compounds" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Issue_Revision" Association="Self.ef_Issue_Revision">
+            <End Role="ef_Issue_Revision_Source" EntitySet="Issues" />
+            <End Role="ef_Issue_Revision_Target" EntitySet="Revisions" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Revision_Substance" Association="Self.ef_Revision_Substance">
+            <End Role="ef_Revision_Substance_Source" EntitySet="Revisions" />
+            <End Role="ef_Revision_Substance_Target" EntitySet="Substances" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Annotation_Revision" Association="Self.ef_Annotation_Revision">
+            <End Role="ef_Annotation_Revision_Source" EntitySet="Annotations" />
+            <End Role="ef_Annotation_Revision_Target" EntitySet="Revisions" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Property_Revision" Association="Self.ef_Property_Revision">
+            <End Role="ef_Property_Revision_Source" EntitySet="Properties" />
+            <End Role="ef_Property_Revision_Target" EntitySet="Revisions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </ConceptualModels>
+    <Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CodeFirstDatabase" CdmEntityContainer="CompoundsContext">
+          <EntitySetMapping Name="Annotations">
+            <EntityTypeMapping TypeName="RSC.Compounds.EntityFramework.ef_Annotation">
+              <MappingFragment StoreEntitySet="ef_Annotation">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Revisions">
+            <EntityTypeMapping TypeName="RSC.Compounds.EntityFramework.ef_Revision">
+              <MappingFragment StoreEntitySet="ef_Revision">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DepositionId" ColumnName="DepositionId" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="EmbargoDate" ColumnName="EmbargoDate" />
+                <ScalarProperty Name="Revoked" ColumnName="Revoked" />
+                <ScalarProperty Name="Sdf" ColumnName="Sdf" />
+                <ScalarProperty Name="SubstanceId" ColumnName="SubstanceId" />
+                <ScalarProperty Name="CompoundId" ColumnName="CompoundId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Compounds">
+            <EntityTypeMapping TypeName="RSC.Compounds.EntityFramework.ef_Compound">
+              <MappingFragment StoreEntitySet="ef_Compound">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OpsId" ColumnName="OpsId" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="Mol" ColumnName="Mol" />
+                <ScalarProperty Name="NonStandardInChIId" ColumnName="NonStandardInChIId" />
+                <ScalarProperty Name="TautomericNonStdInChIId" ColumnName="TautomericNonStdInChIId" />
+                <ScalarProperty Name="StandardInChIId" ColumnName="StandardInChIId" />
+                <ScalarProperty Name="SmilesId" ColumnName="SmilesId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ParentChildren">
+            <EntityTypeMapping TypeName="RSC.Compounds.EntityFramework.ef_ParentChild">
+              <MappingFragment StoreEntitySet="ef_ParentChild">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="ChildId" ColumnName="ChildId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompoundSynonyms">
+            <EntityTypeMapping TypeName="RSC.Compounds.EntityFramework.ef_CompoundSynonym">
+              <MappingFragment StoreEntitySet="ef_CompoundSynonym">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CompoundId" ColumnName="CompoundId" />
+                <ScalarProperty Name="SynonymId" ColumnName="SynonymId" />
+                <ScalarProperty Name="SynonymState" ColumnName="SynonymState" />
+                <ScalarProperty Name="IsTitle" ColumnName="IsTitle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompoundSynonymSynonymFlags">
+            <EntityTypeMapping TypeName="RSC.Compounds.EntityFramework.ef_CompoundSynonymSynonymFlag">
+              <MappingFragment StoreEntitySet="ef_CompoundSynonymSynonymFlag">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CompoundSynonymId" ColumnName="CompoundSynonymId" />
+                <ScalarProperty Name="SynonymFlagId" ColumnName="SynonymFlagId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SynonymFlags">
+            <EntityTypeMapping TypeName="RSC.Compounds.EntityFramework.ef_SynonymFlag">
+              <MappingFragment StoreEntitySet="ef_SynonymFlag">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="ExcludeFromTitle" ColumnName="ExcludeFromTitle" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="IsUniquePerLanguage" ColumnName="IsUniquePerLanguage" />
+                <ScalarProperty Name="RegEx" ColumnName="RegEx" />
+                <ScalarProperty Name="IsRestricted" ColumnName="IsRestricted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompoundSynonymHistory">
+            <EntityTypeMapping TypeName="RSC.Compounds.EntityFramework.ef_CompoundSynonymHistory">
+              <MappingFragment StoreEntitySet="ef_CompoundSynonymHistory">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CompoundSynonymId" ColumnName="CompoundSynonymId" />
+                <ScalarProperty Name="SynonymState" ColumnName="SynonymState" />
+                <ScalarProperty Name="IsTitle" ColumnName="IsTitle" />
+                <ScalarProperty Name="DateChanged" ColumnName="DateChanged" />
+                <ScalarProperty Name="CuratorId" ColumnName="CuratorId" />
+                <ScalarProperty Name="RevisionId" ColumnName="RevisionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompoundSynonymSynonymFlagHistory">
+            <EntityTypeMapping TypeName="RSC.Compounds.EntityFramework.ef_CompoundSynonymSynonymFlagHistory">
+              <MappingFragment StoreEntitySet="ef_CompoundSynonymSynonymFlagHistory">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CompoundSynonymHistoryId" ColumnName="CompoundSynonymHistoryId" />
+                <ScalarProperty Name="SynonymFlagId" ColumnName="SynonymFlagId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Synonyms">
+            <EntityTypeMapping TypeName="RSC.Compounds.EntityFramework.ef_Synonym">
+              <MappingFragment StoreEntitySet="ef_Synonym">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Synonym" ColumnName="Synonym" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SynonymHistory">
+            <EntityTypeMapping TypeName="RSC.Compounds.EntityFramework.ef_SynonymHistory">
+              <MappingFragment StoreEntitySet="ef_SynonymHistory">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SynonymId" ColumnName="SynonymId" />
+                <ScalarProperty Name="CuratorId" ColumnName="CuratorId" />
+                <ScalarProperty Name="DateChanged" ColumnName="DateChanged" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SynonymSynonymFlagHistory">
+            <EntityTypeMapping TypeName="RSC.Compounds.EntityFramework.ef_SynonymSynonymFlagHistory">
+              <MappingFragment StoreEntitySet="ef_SynonymSynonymFlagHistory">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SynonymHistoryId" ColumnName="SynonymHistoryId" />
+                <ScalarProperty Name="SynonymFlagId" ColumnName="SynonymFlagId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SynonymSynonymFlags">
+            <EntityTypeMapping TypeName="RSC.Compounds.EntityFramework.ef_SynonymSynonymFlag">
+              <MappingFragment StoreEntitySet="ef_SynonymSynonymFlag">
+                <ScalarProperty Name="SynonymId" ColumnName="SynonymId" />
+                <ScalarProperty Name="SynonymFlagId" ColumnName="SynonymFlagId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InChIs">
+            <EntityTypeMapping TypeName="RSC.Compounds.EntityFramework.ef_InChI">
+              <MappingFragment StoreEntitySet="ef_InChI">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="InChI" ColumnName="InChI" />
+                <ScalarProperty Name="InChIKey" ColumnName="InChIKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InChI_MD5s">
+            <EntityTypeMapping TypeName="RSC.Compounds.EntityFramework.ef_InChIMD5">
+              <MappingFragment StoreEntitySet="ef_InChIMD5">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="InChIKey_A" ColumnName="InChIKey_A" />
+                <ScalarProperty Name="InChIKey_B" ColumnName="InChIKey_B" />
+                <ScalarProperty Name="InChI_MD5" ColumnName="InChI_MD5" />
+                <ScalarProperty Name="InChI_MF_MD5" ColumnName="InChI_MF_MD5" />
+                <ScalarProperty Name="InChI_C_MD5" ColumnName="InChI_C_MD5" />
+                <ScalarProperty Name="InChI_CH_MD5" ColumnName="InChI_CH_MD5" />
+                <ScalarProperty Name="InChI_CHSI_MD5" ColumnName="InChI_CHSI_MD5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Smiles">
+            <EntityTypeMapping TypeName="RSC.Compounds.EntityFramework.ef_Smiles">
+              <MappingFragment StoreEntitySet="ef_Smiles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IndigoSmiles" ColumnName="IndigoSmiles" />
+                <ScalarProperty Name="IndigoSmilesMd5" ColumnName="IndigoSmilesMd5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Issues">
+            <EntityTypeMapping TypeName="RSC.Compounds.EntityFramework.ef_Issue">
+              <MappingFragment StoreEntitySet="ef_Issue">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="LogId" ColumnName="LogId" />
+                <ScalarProperty Name="RevisionId" ColumnName="RevisionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Substances">
+            <EntityTypeMapping TypeName="RSC.Compounds.EntityFramework.ef_Substance">
+              <MappingFragment StoreEntitySet="ef_Substance">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ExternalIdentifier" ColumnName="ExternalIdentifier" />
+                <ScalarProperty Name="DataSourceId" ColumnName="DataSourceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Properties">
+            <EntityTypeMapping TypeName="RSC.Compounds.EntityFramework.ef_Property">
+              <MappingFragment StoreEntitySet="ef_Property">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+                <ScalarProperty Name="RevisionId" ColumnName="RevisionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="ef_Synonym_Revisions" TypeName="RSC.Compounds.EntityFramework.ef_Synonym_Revisions" StoreEntitySet="ef_Synonymef_Revision">
+            <EndProperty Name="ef_Synonym_Revisions_Source">
+              <ScalarProperty Name="Id" ColumnName="ef_Synonym_Id" />
+            </EndProperty>
+            <EndProperty Name="ef_Synonym_Revisions_Target">
+              <ScalarProperty Name="Id" ColumnName="ef_Revision_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ef_Annotation_Revision" TypeName="RSC.Compounds.EntityFramework.ef_Annotation_Revision" StoreEntitySet="ef_Annotation">
+            <EndProperty Name="ef_Annotation_Revision_Target">
+              <ScalarProperty Name="Id" ColumnName="Revision_Id" />
+            </EndProperty>
+            <EndProperty Name="ef_Annotation_Revision_Source">
+              <ScalarProperty Name="Id" ColumnName="Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </Mappings>
+    <StorageModels>
+      <Schema Namespace="CodeFirstDatabaseSchema" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ef_Annotation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Revision_Id" Type="uniqueidentifier" customannotation:Index="{ Name: IX_Revision_Id, Order: 0 }" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ef_Revision">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DepositionId" Type="uniqueidentifier" customannotation:Index="{ }" Nullable="false" />
+          <Property Name="Version" Type="int" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="true" />
+          <Property Name="EmbargoDate" Type="datetime" Nullable="true" />
+          <Property Name="Revoked" Type="bit" Nullable="false" />
+          <Property Name="Sdf" Type="nvarchar(max)" Nullable="true" />
+          <Property Name="SubstanceId" Type="uniqueidentifier" customannotation:Index="{ Name: IX_SubstanceId, Order: 0 }" Nullable="false" />
+          <Property Name="CompoundId" Type="uniqueidentifier" customannotation:Index="{ Name: IX_CompoundId, Order: 0 }" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ef_Compound">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="OpsId" Type="int" Nullable="true" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="Mol" Type="nvarchar(max)" Nullable="true" />
+          <Property Name="NonStandardInChIId" Type="uniqueidentifier" customannotation:Index="{ Name: IX_NonStandardInChIId, Order: 0 }" Nullable="true" />
+          <Property Name="TautomericNonStdInChIId" Type="uniqueidentifier" customannotation:Index="{ Name: IX_TautomericNonStdInChIId, Order: 0 }" Nullable="true" />
+          <Property Name="StandardInChIId" Type="uniqueidentifier" customannotation:Index="{ Name: IX_StandardInChIId, Order: 0 }" Nullable="true" />
+          <Property Name="SmilesId" Type="uniqueidentifier" customannotation:Index="{ Name: IX_SmilesId, Order: 0 }" Nullable="true" />
+        </EntityType>
+        <EntityType Name="ef_ParentChild">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Type" Type="int" customannotation:Index="{ }" Nullable="false" />
+          <Property Name="ParentId" Type="uniqueidentifier" customannotation:Index="{ Name: IX_ParentId, Order: 0 }" Nullable="false" />
+          <Property Name="ChildId" Type="uniqueidentifier" customannotation:Index="{ Name: IX_ChildId, Order: 0 }" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ef_CompoundSynonym">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CompoundId" Type="uniqueidentifier" customannotation:Index="{ Name: IX_CompoundIdAndSynonymState, Order: 1 }" Nullable="false" />
+          <Property Name="SynonymId" Type="uniqueidentifier" customannotation:Index="{ Name: IX_SynonymId, Order: 0 }" Nullable="false" />
+          <Property Name="SynonymState" Type="int" customannotation:Index="{ Name: IX_CompoundIdAndSynonymState, Order: 2 }" Nullable="false" />
+          <Property Name="IsTitle" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ef_CompoundSynonymSynonymFlag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CompoundSynonymId" Type="uniqueidentifier" customannotation:Index="{ Name: IX_CompoundSynonymId, Order: 0 }" Nullable="false" />
+          <Property Name="SynonymFlagId" Type="int" customannotation:Index="{ Name: IX_SynonymFlagId, Order: 0 }" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ef_SynonymFlag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" Nullable="true" />
+          <Property Name="Url" Type="nvarchar" MaxLength="200" Nullable="true" />
+          <Property Name="Rank" Type="int" Nullable="false" />
+          <Property Name="ExcludeFromTitle" Type="bit" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="IsUniquePerLanguage" Type="bit" Nullable="false" />
+          <Property Name="RegEx" Type="nvarchar(max)" Nullable="true" />
+          <Property Name="IsRestricted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ef_CompoundSynonymHistory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CompoundSynonymId" Type="uniqueidentifier" customannotation:Index="{ Name: IX_CompoundSynonymId, Order: 0 }" Nullable="false" />
+          <Property Name="SynonymState" Type="int" Nullable="false" />
+          <Property Name="IsTitle" Type="bit" Nullable="false" />
+          <Property Name="DateChanged" Type="datetime" Nullable="false" />
+          <Property Name="CuratorId" Type="uniqueidentifier" Nullable="true" />
+          <Property Name="RevisionId" Type="int" Nullable="true" />
+        </EntityType>
+        <EntityType Name="ef_CompoundSynonymSynonymFlagHistory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CompoundSynonymHistoryId" Type="uniqueidentifier" customannotation:Index="{ Name: IX_CompoundSynonymHistoryId, Order: 0 }" Nullable="false" />
+          <Property Name="SynonymFlagId" Type="int" customannotation:Index="{ Name: IX_SynonymFlagId, Order: 0 }" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ef_Synonym">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Synonym" Type="nvarchar" customannotation:Index="{ Name: synonym_langid_idx, Order: 0, IsUnique: True }" MaxLength="448" Nullable="false" />
+          <Property Name="LanguageId" Type="nvarchar" customannotation:Index="{ Name: synonym_langid_idx, Order: 1, IsUnique: True }" MaxLength="2" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ef_SynonymHistory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SynonymId" Type="uniqueidentifier" customannotation:Index="{ Name: IX_SynonymId, Order: 0 }" Nullable="false" />
+          <Property Name="CuratorId" Type="uniqueidentifier" Nullable="true" />
+          <Property Name="DateChanged" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ef_SynonymSynonymFlagHistory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SynonymHistoryId" Type="uniqueidentifier" customannotation:Index="{ Name: IX_SynonymHistoryId, Order: 0 }" Nullable="false" />
+          <Property Name="SynonymFlagId" Type="int" customannotation:Index="{ Name: IX_SynonymFlagId, Order: 0 }" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ef_SynonymSynonymFlag">
+          <Key>
+            <PropertyRef Name="SynonymId" />
+            <PropertyRef Name="SynonymFlagId" />
+          </Key>
+          <Property Name="SynonymId" Type="uniqueidentifier" customannotation:Index="{ Name: IX_SynonymId, Order: 0 }" Nullable="false" />
+          <Property Name="SynonymFlagId" Type="int" customannotation:Index="{ Name: IX_SynonymFlagId, Order: 0 }" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ef_InChI">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="InChI" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="InChIKey" Type="nvarchar" customannotation:Index="{ Name: InChIKey_idx, Order: 1, IsUnique: True }" MaxLength="27" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ef_InChIMD5">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" customannotation:Index="{ Name: IX_Id, Order: 0 }" Nullable="false" />
+          <Property Name="InChIKey_A" Type="nvarchar" customannotation:Index="{ }" MaxLength="14" Nullable="false" />
+          <Property Name="InChIKey_B" Type="nvarchar" customannotation:Index="{ }" MaxLength="23" Nullable="false" />
+          <Property Name="InChI_MD5" Type="varbinary" customannotation:Index="{ IsUnique: True }" MaxLength="16" Nullable="false" />
+          <Property Name="InChI_MF_MD5" Type="varbinary" customannotation:Index="{ }" MaxLength="16" Nullable="false" />
+          <Property Name="InChI_C_MD5" Type="varbinary" customannotation:Index="{ }" MaxLength="16" Nullable="false" />
+          <Property Name="InChI_CH_MD5" Type="varbinary" customannotation:Index="{ }" MaxLength="16" Nullable="false" />
+          <Property Name="InChI_CHSI_MD5" Type="varbinary" customannotation:Index="{ }" MaxLength="16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ef_Smiles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IndigoSmiles" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IndigoSmilesMd5" Type="nvarchar" customannotation:Index="{ Name: IndigoSmilesMd5_idx, IsUnique: True }" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ef_Issue">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" customannotation:Index="{ }" MaxLength="10" Nullable="false" />
+          <Property Name="LogId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RevisionId" Type="uniqueidentifier" customannotation:Index="{ Name: IX_RevisionId, Order: 0 }" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ef_Substance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ExternalIdentifier" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DataSourceId" Type="uniqueidentifier" customannotation:Index="{ }" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ef_Property">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PropertyId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RevisionId" Type="uniqueidentifier" customannotation:Index="{ Name: IX_RevisionId, Order: 0 }" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ef_Synonymef_Revision">
+          <Key>
+            <PropertyRef Name="ef_Synonym_Id" />
+            <PropertyRef Name="ef_Revision_Id" />
+          </Key>
+          <Property Name="ef_Synonym_Id" Type="uniqueidentifier" customannotation:Index="{ Name: IX_ef_Synonym_Id, Order: 0 }" Nullable="false" />
+          <Property Name="ef_Revision_Id" Type="uniqueidentifier" customannotation:Index="{ Name: IX_ef_Revision_Id, Order: 0 }" Nullable="false" />
+        </EntityType>
+        <Association Name="ef_Compound_Children">
+          <End Role="ef_Compound" Type="Self.ef_Compound" Multiplicity="1" />
+          <End Role="ef_ParentChild" Type="Self.ef_ParentChild" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_Compound">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_ParentChild">
+              <PropertyRef Name="ChildId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_CompoundSynonymSynonymFlag_SynonymFlag">
+          <End Role="ef_SynonymFlag" Type="Self.ef_SynonymFlag" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_CompoundSynonymSynonymFlag" Type="Self.ef_CompoundSynonymSynonymFlag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_SynonymFlag">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_CompoundSynonymSynonymFlag">
+              <PropertyRef Name="SynonymFlagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_CompoundSynonym_CompoundSynonymSynonymFlags">
+          <End Role="ef_CompoundSynonym" Type="Self.ef_CompoundSynonym" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_CompoundSynonymSynonymFlag" Type="Self.ef_CompoundSynonymSynonymFlag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_CompoundSynonym">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_CompoundSynonymSynonymFlag">
+              <PropertyRef Name="CompoundSynonymId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_CompoundSynonymHistory_CompoundSynonym">
+          <End Role="ef_CompoundSynonym" Type="Self.ef_CompoundSynonym" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_CompoundSynonymHistory" Type="Self.ef_CompoundSynonymHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_CompoundSynonym">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_CompoundSynonymHistory">
+              <PropertyRef Name="CompoundSynonymId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_CompoundSynonymSynonymFlagHistory_SynonymFlag">
+          <End Role="ef_SynonymFlag" Type="Self.ef_SynonymFlag" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_CompoundSynonymSynonymFlagHistory" Type="Self.ef_CompoundSynonymSynonymFlagHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_SynonymFlag">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_CompoundSynonymSynonymFlagHistory">
+              <PropertyRef Name="SynonymFlagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_CompoundSynonymHistory_SynonymFlags">
+          <End Role="ef_CompoundSynonymHistory" Type="Self.ef_CompoundSynonymHistory" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_CompoundSynonymSynonymFlagHistory" Type="Self.ef_CompoundSynonymSynonymFlagHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_CompoundSynonymHistory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_CompoundSynonymSynonymFlagHistory">
+              <PropertyRef Name="CompoundSynonymHistoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_SynonymHistory_Synonym">
+          <End Role="ef_Synonym" Type="Self.ef_Synonym" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_SynonymHistory" Type="Self.ef_SynonymHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_Synonym">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_SynonymHistory">
+              <PropertyRef Name="SynonymId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_SynonymSynonymFlagHistory_SynonymFlag">
+          <End Role="ef_SynonymFlag" Type="Self.ef_SynonymFlag" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_SynonymSynonymFlagHistory" Type="Self.ef_SynonymSynonymFlagHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_SynonymFlag">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_SynonymSynonymFlagHistory">
+              <PropertyRef Name="SynonymFlagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_SynonymHistory_SynonymFlags">
+          <End Role="ef_SynonymHistory" Type="Self.ef_SynonymHistory" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_SynonymSynonymFlagHistory" Type="Self.ef_SynonymSynonymFlagHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_SynonymHistory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_SynonymSynonymFlagHistory">
+              <PropertyRef Name="SynonymHistoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Synonym_Revisions_Source">
+          <End Role="ef_Synonym" Type="Self.ef_Synonym" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_Synonymef_Revision" Type="Self.ef_Synonymef_Revision" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_Synonym">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_Synonymef_Revision">
+              <PropertyRef Name="ef_Synonym_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Synonym_Revisions_Target">
+          <End Role="ef_Revision" Type="Self.ef_Revision" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_Synonymef_Revision" Type="Self.ef_Synonymef_Revision" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_Revision">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_Synonymef_Revision">
+              <PropertyRef Name="ef_Revision_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_SynonymSynonymFlag_SynonymFlag">
+          <End Role="ef_SynonymFlag" Type="Self.ef_SynonymFlag" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_SynonymSynonymFlag" Type="Self.ef_SynonymSynonymFlag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_SynonymFlag">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_SynonymSynonymFlag">
+              <PropertyRef Name="SynonymFlagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Synonym_SynonymFlags">
+          <End Role="ef_Synonym" Type="Self.ef_Synonym" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_SynonymSynonymFlag" Type="Self.ef_SynonymSynonymFlag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_Synonym">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_SynonymSynonymFlag">
+              <PropertyRef Name="SynonymId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_CompoundSynonym_Synonym">
+          <End Role="ef_Synonym" Type="Self.ef_Synonym" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_CompoundSynonym" Type="Self.ef_CompoundSynonym" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_Synonym">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_CompoundSynonym">
+              <PropertyRef Name="SynonymId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Compound_CompoundSynonyms">
+          <End Role="ef_Compound" Type="Self.ef_Compound" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_CompoundSynonym" Type="Self.ef_CompoundSynonym" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_Compound">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_CompoundSynonym">
+              <PropertyRef Name="CompoundId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_InChIMD5_InChI">
+          <End Role="ef_InChI" Type="Self.ef_InChI" Multiplicity="1" />
+          <End Role="ef_InChIMD5" Type="Self.ef_InChIMD5" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ef_InChI">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_InChIMD5">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Compound_NonStandardInChI">
+          <End Role="ef_InChI" Type="Self.ef_InChI" Multiplicity="0..1" />
+          <End Role="ef_Compound" Type="Self.ef_Compound" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_InChI">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_Compound">
+              <PropertyRef Name="NonStandardInChIId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Compound_Parents">
+          <End Role="ef_Compound" Type="Self.ef_Compound" Multiplicity="1" />
+          <End Role="ef_ParentChild" Type="Self.ef_ParentChild" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_Compound">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_ParentChild">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Compound_Smiles">
+          <End Role="ef_Smiles" Type="Self.ef_Smiles" Multiplicity="0..1" />
+          <End Role="ef_Compound" Type="Self.ef_Compound" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_Smiles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_Compound">
+              <PropertyRef Name="SmilesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Compound_StandardInChI">
+          <End Role="ef_InChI" Type="Self.ef_InChI" Multiplicity="0..1" />
+          <End Role="ef_Compound" Type="Self.ef_Compound" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_InChI">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_Compound">
+              <PropertyRef Name="StandardInChIId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Compound_TautomericNonStdInChI">
+          <End Role="ef_InChI" Type="Self.ef_InChI" Multiplicity="0..1" />
+          <End Role="ef_Compound" Type="Self.ef_Compound" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_InChI">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_Compound">
+              <PropertyRef Name="TautomericNonStdInChIId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Revision_Compound">
+          <End Role="ef_Compound" Type="Self.ef_Compound" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_Revision" Type="Self.ef_Revision" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_Compound">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_Revision">
+              <PropertyRef Name="CompoundId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Issue_Revision">
+          <End Role="ef_Revision" Type="Self.ef_Revision" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_Issue" Type="Self.ef_Issue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_Revision">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_Issue">
+              <PropertyRef Name="RevisionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Revision_Substance">
+          <End Role="ef_Substance" Type="Self.ef_Substance" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_Revision" Type="Self.ef_Revision" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_Substance">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_Revision">
+              <PropertyRef Name="SubstanceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Annotation_Revision">
+          <End Role="ef_Revision" Type="Self.ef_Revision" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_Annotation" Type="Self.ef_Annotation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_Revision">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_Annotation">
+              <PropertyRef Name="Revision_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ef_Property_Revision">
+          <End Role="ef_Revision" Type="Self.ef_Revision" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ef_Property" Type="Self.ef_Property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ef_Revision">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ef_Property">
+              <PropertyRef Name="RevisionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CodeFirstDatabase">
+          <EntitySet Name="ef_Annotation" EntityType="Self.ef_Annotation" Schema="dbo" Table="Annotations" />
+          <EntitySet Name="ef_Revision" EntityType="Self.ef_Revision" Schema="dbo" Table="Revisions" />
+          <EntitySet Name="ef_Compound" EntityType="Self.ef_Compound" Schema="dbo" Table="Compounds" />
+          <EntitySet Name="ef_ParentChild" EntityType="Self.ef_ParentChild" Schema="dbo" Table="ParentChildren" />
+          <EntitySet Name="ef_CompoundSynonym" EntityType="Self.ef_CompoundSynonym" Schema="dbo" Table="CompoundSynonyms" />
+          <EntitySet Name="ef_CompoundSynonymSynonymFlag" EntityType="Self.ef_CompoundSynonymSynonymFlag" Schema="dbo" Table="CompoundSynonymsSynonymFlag" />
+          <EntitySet Name="ef_SynonymFlag" EntityType="Self.ef_SynonymFlag" Schema="dbo" Table="SynonymFlags" />
+          <EntitySet Name="ef_CompoundSynonymHistory" EntityType="Self.ef_CompoundSynonymHistory" Schema="dbo" Table="CompoundSynonymHistory" />
+          <EntitySet Name="ef_CompoundSynonymSynonymFlagHistory" EntityType="Self.ef_CompoundSynonymSynonymFlagHistory" Schema="dbo" Table="CompoundSynonymSynonymFlagHistory" />
+          <EntitySet Name="ef_Synonym" EntityType="Self.ef_Synonym" Schema="dbo" Table="Synonyms" />
+          <EntitySet Name="ef_SynonymHistory" EntityType="Self.ef_SynonymHistory" Schema="dbo" Table="SynonymHistory" />
+          <EntitySet Name="ef_SynonymSynonymFlagHistory" EntityType="Self.ef_SynonymSynonymFlagHistory" Schema="dbo" Table="SynonymsSynonymFlagHistory" />
+          <EntitySet Name="ef_SynonymSynonymFlag" EntityType="Self.ef_SynonymSynonymFlag" Schema="dbo" Table="SynonymsSynonymFlag" />
+          <EntitySet Name="ef_InChI" EntityType="Self.ef_InChI" Schema="dbo" Table="InChIs" />
+          <EntitySet Name="ef_InChIMD5" EntityType="Self.ef_InChIMD5" Schema="dbo" Table="InChIMD5s" />
+          <EntitySet Name="ef_Smiles" EntityType="Self.ef_Smiles" Schema="dbo" Table="Smiles" />
+          <EntitySet Name="ef_Issue" EntityType="Self.ef_Issue" Schema="dbo" Table="Issues" />
+          <EntitySet Name="ef_Substance" EntityType="Self.ef_Substance" Schema="dbo" Table="Substances" />
+          <EntitySet Name="ef_Property" EntityType="Self.ef_Property" Schema="dbo" Table="Properties" />
+          <EntitySet Name="ef_Synonymef_Revision" EntityType="Self.ef_Synonymef_Revision" Schema="dbo" Table="ef_Synonymef_Revision" />
+          <AssociationSet Name="ef_Compound_Children" Association="Self.ef_Compound_Children">
+            <End Role="ef_Compound" EntitySet="ef_Compound" />
+            <End Role="ef_ParentChild" EntitySet="ef_ParentChild" />
+          </AssociationSet>
+          <AssociationSet Name="ef_CompoundSynonymSynonymFlag_SynonymFlag" Association="Self.ef_CompoundSynonymSynonymFlag_SynonymFlag">
+            <End Role="ef_SynonymFlag" EntitySet="ef_SynonymFlag" />
+            <End Role="ef_CompoundSynonymSynonymFlag" EntitySet="ef_CompoundSynonymSynonymFlag" />
+          </AssociationSet>
+          <AssociationSet Name="ef_CompoundSynonym_CompoundSynonymSynonymFlags" Association="Self.ef_CompoundSynonym_CompoundSynonymSynonymFlags">
+            <End Role="ef_CompoundSynonym" EntitySet="ef_CompoundSynonym" />
+            <End Role="ef_CompoundSynonymSynonymFlag" EntitySet="ef_CompoundSynonymSynonymFlag" />
+          </AssociationSet>
+          <AssociationSet Name="ef_CompoundSynonymHistory_CompoundSynonym" Association="Self.ef_CompoundSynonymHistory_CompoundSynonym">
+            <End Role="ef_CompoundSynonym" EntitySet="ef_CompoundSynonym" />
+            <End Role="ef_CompoundSynonymHistory" EntitySet="ef_CompoundSynonymHistory" />
+          </AssociationSet>
+          <AssociationSet Name="ef_CompoundSynonymSynonymFlagHistory_SynonymFlag" Association="Self.ef_CompoundSynonymSynonymFlagHistory_SynonymFlag">
+            <End Role="ef_SynonymFlag" EntitySet="ef_SynonymFlag" />
+            <End Role="ef_CompoundSynonymSynonymFlagHistory" EntitySet="ef_CompoundSynonymSynonymFlagHistory" />
+          </AssociationSet>
+          <AssociationSet Name="ef_CompoundSynonymHistory_SynonymFlags" Association="Self.ef_CompoundSynonymHistory_SynonymFlags">
+            <End Role="ef_CompoundSynonymHistory" EntitySet="ef_CompoundSynonymHistory" />
+            <End Role="ef_CompoundSynonymSynonymFlagHistory" EntitySet="ef_CompoundSynonymSynonymFlagHistory" />
+          </AssociationSet>
+          <AssociationSet Name="ef_SynonymHistory_Synonym" Association="Self.ef_SynonymHistory_Synonym">
+            <End Role="ef_Synonym" EntitySet="ef_Synonym" />
+            <End Role="ef_SynonymHistory" EntitySet="ef_SynonymHistory" />
+          </AssociationSet>
+          <AssociationSet Name="ef_SynonymSynonymFlagHistory_SynonymFlag" Association="Self.ef_SynonymSynonymFlagHistory_SynonymFlag">
+            <End Role="ef_SynonymFlag" EntitySet="ef_SynonymFlag" />
+            <End Role="ef_SynonymSynonymFlagHistory" EntitySet="ef_SynonymSynonymFlagHistory" />
+          </AssociationSet>
+          <AssociationSet Name="ef_SynonymHistory_SynonymFlags" Association="Self.ef_SynonymHistory_SynonymFlags">
+            <End Role="ef_SynonymHistory" EntitySet="ef_SynonymHistory" />
+            <End Role="ef_SynonymSynonymFlagHistory" EntitySet="ef_SynonymSynonymFlagHistory" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Synonym_Revisions_Source" Association="Self.ef_Synonym_Revisions_Source">
+            <End Role="ef_Synonym" EntitySet="ef_Synonym" />
+            <End Role="ef_Synonymef_Revision" EntitySet="ef_Synonymef_Revision" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Synonym_Revisions_Target" Association="Self.ef_Synonym_Revisions_Target">
+            <End Role="ef_Revision" EntitySet="ef_Revision" />
+            <End Role="ef_Synonymef_Revision" EntitySet="ef_Synonymef_Revision" />
+          </AssociationSet>
+          <AssociationSet Name="ef_SynonymSynonymFlag_SynonymFlag" Association="Self.ef_SynonymSynonymFlag_SynonymFlag">
+            <End Role="ef_SynonymFlag" EntitySet="ef_SynonymFlag" />
+            <End Role="ef_SynonymSynonymFlag" EntitySet="ef_SynonymSynonymFlag" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Synonym_SynonymFlags" Association="Self.ef_Synonym_SynonymFlags">
+            <End Role="ef_Synonym" EntitySet="ef_Synonym" />
+            <End Role="ef_SynonymSynonymFlag" EntitySet="ef_SynonymSynonymFlag" />
+          </AssociationSet>
+          <AssociationSet Name="ef_CompoundSynonym_Synonym" Association="Self.ef_CompoundSynonym_Synonym">
+            <End Role="ef_Synonym" EntitySet="ef_Synonym" />
+            <End Role="ef_CompoundSynonym" EntitySet="ef_CompoundSynonym" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Compound_CompoundSynonyms" Association="Self.ef_Compound_CompoundSynonyms">
+            <End Role="ef_Compound" EntitySet="ef_Compound" />
+            <End Role="ef_CompoundSynonym" EntitySet="ef_CompoundSynonym" />
+          </AssociationSet>
+          <AssociationSet Name="ef_InChIMD5_InChI" Association="Self.ef_InChIMD5_InChI">
+            <End Role="ef_InChI" EntitySet="ef_InChI" />
+            <End Role="ef_InChIMD5" EntitySet="ef_InChIMD5" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Compound_NonStandardInChI" Association="Self.ef_Compound_NonStandardInChI">
+            <End Role="ef_InChI" EntitySet="ef_InChI" />
+            <End Role="ef_Compound" EntitySet="ef_Compound" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Compound_Parents" Association="Self.ef_Compound_Parents">
+            <End Role="ef_Compound" EntitySet="ef_Compound" />
+            <End Role="ef_ParentChild" EntitySet="ef_ParentChild" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Compound_Smiles" Association="Self.ef_Compound_Smiles">
+            <End Role="ef_Smiles" EntitySet="ef_Smiles" />
+            <End Role="ef_Compound" EntitySet="ef_Compound" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Compound_StandardInChI" Association="Self.ef_Compound_StandardInChI">
+            <End Role="ef_InChI" EntitySet="ef_InChI" />
+            <End Role="ef_Compound" EntitySet="ef_Compound" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Compound_TautomericNonStdInChI" Association="Self.ef_Compound_TautomericNonStdInChI">
+            <End Role="ef_InChI" EntitySet="ef_InChI" />
+            <End Role="ef_Compound" EntitySet="ef_Compound" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Revision_Compound" Association="Self.ef_Revision_Compound">
+            <End Role="ef_Compound" EntitySet="ef_Compound" />
+            <End Role="ef_Revision" EntitySet="ef_Revision" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Issue_Revision" Association="Self.ef_Issue_Revision">
+            <End Role="ef_Revision" EntitySet="ef_Revision" />
+            <End Role="ef_Issue" EntitySet="ef_Issue" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Revision_Substance" Association="Self.ef_Revision_Substance">
+            <End Role="ef_Substance" EntitySet="ef_Substance" />
+            <End Role="ef_Revision" EntitySet="ef_Revision" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Annotation_Revision" Association="Self.ef_Annotation_Revision">
+            <End Role="ef_Revision" EntitySet="ef_Revision" />
+            <End Role="ef_Annotation" EntitySet="ef_Annotation" />
+          </AssociationSet>
+          <AssociationSet Name="ef_Property_Revision" Association="Self.ef_Property_Revision">
+            <End Role="ef_Revision" EntitySet="ef_Revision" />
+            <End Role="ef_Property" EntitySet="ef_Property" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </StorageModels>
+  </Runtime>
+  <Designer>
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="ProcessDependentTemplatesOnSave" Value="False" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <Diagrams >
+      <Diagram DiagramId="f21c48338b6d481ab0bd48f0529b03e6" Name="Diagram1">
+        <EntityTypeShape EntityType="RSC.Compounds.EntityFramework.ef_Annotation" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RSC.Compounds.EntityFramework.ef_Revision" Width="1.625" PointX="2.375" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="RSC.Compounds.EntityFramework.ef_Compound" Width="1.75" PointX="4.375" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="RSC.Compounds.EntityFramework.ef_ParentChild" Width="1.5" PointX="4.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RSC.Compounds.EntityFramework.ef_CompoundSynonym" Width="1.875" PointX="4.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RSC.Compounds.EntityFramework.ef_CompoundSynonymSynonymFlag" Width="2" PointX="6.5" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RSC.Compounds.EntityFramework.ef_SynonymFlag" Width="1.5" PointX="8.875" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RSC.Compounds.EntityFramework.ef_CompoundSynonymHistory" Width="2.625" PointX="6.5" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RSC.Compounds.EntityFramework.ef_CompoundSynonymSynonymFlagHistory" Width="3.125" PointX="6.5" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RSC.Compounds.EntityFramework.ef_Synonym" Width="1.5" PointX="2.5" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RSC.Compounds.EntityFramework.ef_SynonymHistory" Width="1.75" PointX="0.5" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RSC.Compounds.EntityFramework.ef_SynonymSynonymFlagHistory" Width="2.5" PointX="0.5" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="RSC.Compounds.EntityFramework.ef_SynonymSynonymFlag" Width="2.25" PointX="3.5" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RSC.Compounds.EntityFramework.ef_InChI" Width="1.5" PointX="6.5" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RSC.Compounds.EntityFramework.ef_InChIMD5" Width="1.5" PointX="8.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RSC.Compounds.EntityFramework.ef_Smiles" Width="1.5" PointX="6.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RSC.Compounds.EntityFramework.ef_Issue" Width="1.5" PointX="2.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RSC.Compounds.EntityFramework.ef_Substance" Width="1.5" PointX="0.5" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RSC.Compounds.EntityFramework.ef_Property" Width="1.5" PointX="0.5" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_Compound_Children" ManuallyRouted="false" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_CompoundSynonymSynonymFlag_SynonymFlag" ManuallyRouted="false" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_CompoundSynonym_CompoundSynonymSynonymFlags" ManuallyRouted="false" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_CompoundSynonymHistory_CompoundSynonym" ManuallyRouted="false" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_CompoundSynonymSynonymFlagHistory_SynonymFlag" ManuallyRouted="false" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_CompoundSynonymHistory_SynonymFlags" ManuallyRouted="false" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_SynonymHistory_Synonym" ManuallyRouted="false" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_SynonymSynonymFlagHistory_SynonymFlag" ManuallyRouted="false" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_SynonymHistory_SynonymFlags" ManuallyRouted="false" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_Synonym_Revisions" ManuallyRouted="false" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_SynonymSynonymFlag_SynonymFlag" ManuallyRouted="false" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_Synonym_SynonymFlags" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_CompoundSynonym_Synonym" ManuallyRouted="false" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_Compound_CompoundSynonyms" ManuallyRouted="false" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_InChIMD5_InChI" ManuallyRouted="false" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_Compound_NonStandardInChI" ManuallyRouted="false" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_Compound_Parents" ManuallyRouted="false" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_Compound_Smiles" ManuallyRouted="false" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_Compound_StandardInChI" ManuallyRouted="false" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_Compound_TautomericNonStdInChI" ManuallyRouted="false" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_Revision_Compound" ManuallyRouted="false" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_Issue_Revision" ManuallyRouted="false" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_Revision_Substance" ManuallyRouted="false" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_Annotation_Revision" ManuallyRouted="false" />
+        <AssociationConnector Association="RSC.Compounds.EntityFramework.ef_Property_Revision" ManuallyRouted="false" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</Edmx>

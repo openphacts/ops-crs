@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rules>
+  <moleculerules>
+    <Error message="contains carbon atom" description="[#6]">
+	  <test name="SMARTStest" param="[#6]"/>
+	</Error>
+  </moleculerules>
+</rules>

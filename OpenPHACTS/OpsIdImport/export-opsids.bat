@@ -1,0 +1,1 @@
+bcp "SELECT 'INSERT [dbo].[LegacyOpsIds] ([ID], [INCHIKEY]) VALUES (' + Value + ', N''' + i.InChIKey + ''')' FROM Compounds c JOIN Inchis i on i.Id = c.NonStandardInChIId join ExternalReferences e on e.CompoundId = c.Id AND e.ExternalReferenceTypeId = 2" queryout opsids.sql -c -S OPERATE\LIVE2012 -d RSCCompounds2 -T

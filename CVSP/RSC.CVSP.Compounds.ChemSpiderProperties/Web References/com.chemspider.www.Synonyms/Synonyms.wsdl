@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.chemspider.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.chemspider.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.chemspider.com/">
+      <s:element name="GetStructureSynonyms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStructureSynonymsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStructureSynonymsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetStructureSynonymsInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStructureSynonymsInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStructureSynonymsInfoResult" type="tns:ArrayOfSynonymInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSynonymInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SynonymInfo" type="tns:SynonymInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SynonymInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="synonym" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="approved" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RetrieveByCSIDList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="csids" type="tns:ArrayOfInt" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RetrieveByCSIDListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveByCSIDListResult" type="tns:ArrayOfSynonymsInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSynonymsInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SynonymsInfo" type="tns:SynonymsInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SynonymsInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CSID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SynonymId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Synonym" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LangId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsValidated" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDbId" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsCompoundTitle" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+      <s:element name="ArrayOfSynonymInfo" nillable="true" type="tns:ArrayOfSynonymInfo" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetStructureSynonymsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStructureSynonyms" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureSynonymsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStructureSynonymsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureSynonymsInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStructureSynonymsInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureSynonymsInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStructureSynonymsInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveByCSIDListSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveByCSIDList" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveByCSIDListSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveByCSIDListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureSynonymsHttpGetIn">
+    <wsdl:part name="mol" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureSynonymsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureSynonymsInfoHttpGetIn">
+    <wsdl:part name="mol" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureSynonymsInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSynonymInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureSynonymsHttpPostIn">
+    <wsdl:part name="mol" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureSynonymsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureSynonymsInfoHttpPostIn">
+    <wsdl:part name="mol" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureSynonymsInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfSynonymInfo" />
+  </wsdl:message>
+  <wsdl:portType name="SynonymsSoap">
+    <wsdl:operation name="GetStructureSynonyms">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Maps a mol file or an InChI to a list of Synonyms.</wsdl:documentation>
+      <wsdl:input message="tns:GetStructureSynonymsSoapIn" />
+      <wsdl:output message="tns:GetStructureSynonymsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureSynonymsInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Maps a mol file or an InChI to a list of SynonymInfo.</wsdl:documentation>
+      <wsdl:input message="tns:GetStructureSynonymsInfoSoapIn" />
+      <wsdl:output message="tns:GetStructureSynonymsInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveByCSIDList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Maps a list of CSIDs to a list of SynonymsInfo.</wsdl:documentation>
+      <wsdl:input message="tns:RetrieveByCSIDListSoapIn" />
+      <wsdl:output message="tns:RetrieveByCSIDListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SynonymsHttpGet">
+    <wsdl:operation name="GetStructureSynonyms">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Maps a mol file or an InChI to a list of Synonyms.</wsdl:documentation>
+      <wsdl:input message="tns:GetStructureSynonymsHttpGetIn" />
+      <wsdl:output message="tns:GetStructureSynonymsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureSynonymsInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Maps a mol file or an InChI to a list of SynonymInfo.</wsdl:documentation>
+      <wsdl:input message="tns:GetStructureSynonymsInfoHttpGetIn" />
+      <wsdl:output message="tns:GetStructureSynonymsInfoHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="SynonymsHttpPost">
+    <wsdl:operation name="GetStructureSynonyms">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Maps a mol file or an InChI to a list of Synonyms.</wsdl:documentation>
+      <wsdl:input message="tns:GetStructureSynonymsHttpPostIn" />
+      <wsdl:output message="tns:GetStructureSynonymsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureSynonymsInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Maps a mol file or an InChI to a list of SynonymInfo.</wsdl:documentation>
+      <wsdl:input message="tns:GetStructureSynonymsInfoHttpPostIn" />
+      <wsdl:output message="tns:GetStructureSynonymsInfoHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SynonymsSoap" type="tns:SynonymsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetStructureSynonyms">
+      <soap:operation soapAction="http://www.chemspider.com/GetStructureSynonyms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureSynonymsInfo">
+      <soap:operation soapAction="http://www.chemspider.com/GetStructureSynonymsInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveByCSIDList">
+      <soap:operation soapAction="http://www.chemspider.com/RetrieveByCSIDList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SynonymsSoap12" type="tns:SynonymsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetStructureSynonyms">
+      <soap12:operation soapAction="http://www.chemspider.com/GetStructureSynonyms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureSynonymsInfo">
+      <soap12:operation soapAction="http://www.chemspider.com/GetStructureSynonymsInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveByCSIDList">
+      <soap12:operation soapAction="http://www.chemspider.com/RetrieveByCSIDList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SynonymsHttpGet" type="tns:SynonymsHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetStructureSynonyms">
+      <http:operation location="/GetStructureSynonyms" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureSynonymsInfo">
+      <http:operation location="/GetStructureSynonymsInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SynonymsHttpPost" type="tns:SynonymsHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetStructureSynonyms">
+      <http:operation location="/GetStructureSynonyms" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureSynonymsInfo">
+      <http:operation location="/GetStructureSynonymsInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Synonyms">
+    <wsdl:port name="SynonymsSoap" binding="tns:SynonymsSoap">
+      <soap:address location="http://www.chemspider.com/Synonyms.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SynonymsSoap12" binding="tns:SynonymsSoap12">
+      <soap12:address location="http://www.chemspider.com/Synonyms.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SynonymsHttpGet" binding="tns:SynonymsHttpGet">
+      <http:address location="http://www.chemspider.com/Synonyms.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SynonymsHttpPost" binding="tns:SynonymsHttpPost">
+      <http:address location="http://www.chemspider.com/Synonyms.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,21 @@
+WPM00631
+ addWPLinks.groovy
+
+  1  0  0  0  0  0            999 V2000
+    0.0000    0.0000    0.0000 e   0  5  0  0  0  0  0  0  0  0  0  0
+M  CHG  1   1  -1
+M  RAD  1   1   2
+M  END
+> <WPM>
+WPM00631
+
+> <http://www.wikipathways.org/index.php/Pathway:WP2670>
+Iron uptake and transport (Homo sapiens)
+
+> <Label0>
+e-
+
+> <http://semanticscience.org/resource/CHEMINF_000407>
+CHEBI:10545
+
+$$$$

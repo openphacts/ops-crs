@@ -1,0 +1,124 @@
+﻿@{
+    ViewBag.Title = "ChemSpider Compounds | Molecule 2D";
+    Layout = "~/Views/Shared/_DemoLayout.cshtml";
+}
+
+<hgroup class="title">
+    <h3>Molecule 2D</h3>
+</hgroup>
+
+<hgroup class="content">
+    <p>
+        Main widget to display structure in 2D format. Accepts veriety of formats - SMILES, MOL, InChI etc.
+    </p>
+
+    <hr />
+    <h4>Molecule 2D by SMILES</h4>
+    <div id="molecule2d"></div>
+
+    <div style="margin-top: 2em; margin-bottom: 2em;">
+        Enter SMILES and click Load button:
+        <input type="text" />
+        <button id="loadBtn">Load</button>
+    </div>
+
+    Code example how to display structure using jQuery...
+
+    <pre class="brush: js;">
+        $("#molecule2d").molecule2d({
+            width: 200,         //  image width
+            height: 200,        //  image height
+            zoomWidth: 500,     //  zoom size
+            zoomHeight: 500,    //  zoom size
+            allowSave: true,    //  do you want to save the structure as MOL?
+            smiles: 'CC(=O)OC1=CC=CC=C1C(=O)O'  //  SMILES that specify the structure
+        });
+    </pre>
+
+    ... and change it dynamically later
+
+    <pre class="brush: js;">
+        $('#molecule2d').molecule2d("setSMILES", "CC(=O)");
+    </pre>
+
+    <hr />
+    <h4>Molecule 2D by InChI</h4>
+
+    <div data-type="molecule2d" data-inchi="InChI=1S/C5H5N/c1-2-4-6-5-3-1/h1-5H" data-width="200" data-height="200" data-allow-save="true"></div>
+
+    Instead of using jQuery to init the widget you can just add specific attributes to the HTML element and the widget will be initiated automatically
+
+    <pre class="brush: xml;">
+        &lt;div data-type="molecule2d" 
+            data-inchi="InChI=1S/C5H5N/c1-2-4-6-5-3-1/h1-5H" 
+            data-width="200" 
+            data-height="200"
+            data-allow-save="true"&gt;
+        &lt;/div&gt;
+    </pre>
+
+    <hr />
+    <h4>Molecule 2D by MOL</h4>
+
+    There are two options how you can init Molecule2D widget by MOL. First one by the URL that returns MOL file like this
+
+    <pre class="brush: xml;">
+        &lt;div data-type="molecule2d" 
+            data-mol-url="https://parts.api.rsc.org/compounds/v1/api/compounds/325/mol?dimension=3d"&gt;
+        &lt;/div&gt;
+    </pre>
+    <div data-type="molecule2d" data-mol-url="https://parts.api.rsc.org/compounds/v1/api/compounds/325/mol?dimension=3d"></div>
+
+    or directly adding MOL to the document like this
+
+    <pre class="brush: xml;">
+&lt;div data-type="molecule2d" data-width="300" data-height="300"&gt;
+&lt;input type="hidden" class="mol-file" value="
+
+
+  3  2  0  0000  0  0  0  0  0999 V2000
+    2.3010   -0.6673    0.0000 O   0  0  0  0  0  0  0  0  0  0  0
+    1.1505    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0
+    0.0000   -0.6673    0.0000 C   0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0
+  2  3  1  0
+M  END
+" /&gt;
+&lt;/div&gt;
+    </pre>
+
+    <div id="jsmolByMol" data-type="molecule2d" data-width="300" data-height="300">
+        <input type="hidden" class="mol-file" value="
+
+
+  3  2  0  0000  0  0  0  0  0999 V2000
+    2.3010   -0.6673    0.0000 O   0  0  0  0  0  0  0  0  0  0  0
+    1.1505    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0
+    0.0000   -0.6673    0.0000 C   0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0
+  2  3  1  0
+M  END
+" />
+    </div>
+
+</hgroup>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#molecule2d").molecule2d({
+                width: 200,
+                height: 200,
+                zoomWidth: 500,
+                zoomHeight: 500,
+                allowSave: true,
+                smiles: 'CC(=O)OC1=CC=CC=C1C(=O)O'
+            });
+
+            $('#loadBtn').click(function () {
+                var smiles = $('input').val();
+                $('#molecule2d').molecule2d("setSMILES", smiles);
+            });
+        });
+    </script>
+}

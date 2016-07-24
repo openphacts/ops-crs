@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- These normalizations are keyed to the IDs in ChemicalAnalyser.-->
+<rules>
+  <!-- START OF INCHI normalization-->
+  <!-- 1.1-->
+  <rule id="1.1" category="INCHI" type="SMIRKS" value="[*:1][H+:2]>>[*+:1][H:2]" description="XH+ -> X+-H, X - any atom except H"/>
+
+  <!-- 1.2-->
+  <rule id="1.2" category="INCHI" type="SMIRKS" value="[*:1][H-:2]>>[*-:1][H:2]" description="XH- -> X--H, X - any atom except H"/>
+
+  <!-- 1.3-->
+  <rule id="1.3" category="INCHI" type="SMIRKS" value="[N-,P-,As-,Sb-,O-,S-,Se-,Te-:1][C:2]=[N+,P+,As+,Sb+,O+,S+,Se+,Te+:3]>>[N,P,As,Sb,O,S,Se,Te:1]=[C:2][N,P,As,Sb,O,S,Se,Te:3]" description="Example: *-C(O-)=O+H => *-CO2H"/>
+
+  <!-- 1.4-->
+  <rule id="1.4" category="INCHI" type="SMIRKS" value="[O-,S-,Se-,Te-:1][S&amp;D4,Se&amp;D4,Te&amp;D4:2][O-,S-,Se-,Te-:3]>>[O,S,Se,Te:1]=[S&amp;D4,Se&amp;D4,Te&amp;D4:2]=[O,S,Se,Te:3]" description=""/>
+
+  <!-- 1.5-->
+  <rule id="1.5" category="INCHI" type="SMIRKS" value="[O-,S-,Se-,Te-:1][P+;D4:2][O-,S-,Se-,Te-:3]>>[O,S,Se,Te:1]=[P;D5:2][O-,S-,Se-,Te-:3]" description=""/>
+
+  <!-- 1.6-->
+  <rule id="1.6" category="INCHI" type="SMIRKS" value="[F-,Cl-,Br-,I-,At-:1]=[O:2]>>[F,Cl,Br,I,At:1][O-:2]" description=""/>
+
+  <!-- 1.7.1-->
+  <rule id="1.7.1" category="INCHI" type="SMIRKS" value="[S-;v7:1]=[O:2]>>[S:1][O-:2]" description="applic. if valence of X > 6"/>
+
+  <!-- 1.7.2-->
+  <rule id="1.7.2" category="INCHI" type="SMIRKS" value="[Se-;v7:1]=[S,O:2]>>[Se:1][S-,O-:2]" description="applic. if valence of X > 6"/>
+
+  <!-- 1.7.3-->
+  <rule id="1.7.3" category="INCHI" type="SMIRKS" value="[Te-;v7:1]=[Se,S,O:2]>>[Te:1][Se-,S-,O-:2]" description="applic. if valence of X > 6"/>
+
+  <!-- 1.8.1-->
+  <rule id="1.8.1" category="INCHI" type="SMIRKS" value="[*:1][C+,S+:2]([N:3][*:4])[N:5]([H:6])[*:7]>>[*:1][C,S:2]([N:3][*:4])=[N+:5]([H:6])[*:7]" description=""/>
+
+  <!-- 1.8.2-->
+  <rule id="1.8.2" category="INCHI" type="SMIRKS" value="[*:1][P+:2]([*:7])([N:3][*:4])[N:5]([H:6])[*:7]>>[*:1][P:2]([*:7])([N:3][*:4])=[N+:5]([H:6])[*:7]" description=""/>
+
+  <!-- 2.1-->
+  
+  <rule id="2.1.1" category="INCHI" type="SMIRKS" value="[*:1][N+,P+,As+,Sb+:2]([O-,S-,Se-,Te-:3])=[O,S,Se,Te:4]>>[*:1][N,P,As,Sb:2](=[O,S,Se,Te:3])=[O,S,Se,Te:4]" description=""/>
+  
+  <rule id="2.1.2" category="INCHI" type="SMIRKS" value="[C;v2:1][N,P,As:2]=[O,S,Se,Te:3]>>[C:1]#[N,P,As:2]=[O,S,Se,Te:3]" description=""/>
+
+  <!-- 2.1.2-->
+  <rule id="2.1.2.1" category="INCHI" type="SMIRKS" value="[C;v2:1][N,P,As:2]=[O,S,Se,Te:3]>>[C:1]#[N,P,As:2]=[O,S,Se,Te:3]" description=""/>
+
+  <!-- 2.1.3-->
+  <rule id="2.1.3" category="INCHI" type="SMIRKS" value="[O,S,Se,Te:1]=[O+,S+,Se+,Te+:2][C-;v3:3]>>[O,S,Se,Te:1]=[O,S,Se,Te:2]=[C:3]" description=""/>
+
+  <!-- 2.1.4-->
+  
+  <rule id="2.1.4.1" category="INCHI" type="SMIRKS" value="[O-,S-,Se-,Te-:1][N+&amp;v4&amp;D3,P+&amp;v4&amp;D3,As+&amp;v4&amp;D3,Sb+&amp;v4&amp;D3:2]>>[O,S,Se,Te:1]=[N,P,As,Sb:2]" description=""/>
+  <rule id="2.1.4.2" category="INCHI" type="SMIRKS" value="[O-,S-,Se-,Te-:1][N+&amp;v4&amp;D2,P+&amp;v4&amp;D2,As+&amp;v4&amp;D2,Sb+&amp;v4&amp;D2:2]>>[O,S,Se,Te:1]=[N,P,As,Sb:2]" description=""/>
+  
+
+  <!-- 2.1.5-->
+  <rule id="2.1.5" category="INCHI" type="SMIRKS" value="[O-,S-,Se-,Te-:1][O+&amp;v3,S+&amp;v3,Se+&amp;v3,Te+&amp;v3:2]>>[O,S,Se,Te:1]=[O,S,Se,Te:2]" description=""/>
+
+  <!-- 2.1.6-->
+  <rule id="2.1.6" category="INCHI" type="SMIRKS" value="[O-,S-,Se-,Te-:1][O,S,Se,Te:2][C+;v3]>>[O,S,Se,Te:1]=[O,S,Se,Te:2]=[C]" description=""/>
+
+  
+  <rule id="2.1.7" category="INCHI" type="SMIRKS" value="[N-,P-,As-,Sb-:1]=[N+&amp;v4,P+&amp;v4,As+&amp;v4,Sb+&amp;v4:2]>>[N,P,As,Sb:1]#[N,P,As,Sb:2]" description=""/>
+  
+  <!-- 2.1.8-->
+  <rule id="2.1.8" category="INCHI" type="SMIRKS" value="[N-,P-,As-,Sb-:1]=[O+&amp;v3,S+&amp;v3,Se+&amp;v3,Te+&amp;v3:2]>>[N,P,As,Sb:1]#[O,S,Se,Te:2]" description=""/>
+
+  <!-- 2.1.9-->
+  <rule id="2.1.9" category="INCHI" type="SMIRKS" value="[N-,P-,As-,Sb-:1]=[C+;v3:2]>>[N,P,As,Sb:1]#[C:2]" description=""/>
+
+  <!-- 2.1.10-->
+  <rule id="2.1.10" category="INCHI" type="SMIRKS" value="[P+&amp;X4,As+&amp;X4,Sb+&amp;X4:1][O-,S-,Se-,Te-:2]>>[P,As,Sb:1]=[O,S,Se,Te:2]" description=""/>
+
+  <!-- 2.2.1-->
+  <rule id="2.2.1" category="INCHI" type="SMIRKS" value="[N+&amp;v4,P+&amp;v4,As+&amp;v4,Sb+&amp;v4:1][C-;v3:2]>>[N,P,As,Sb:1]=[C:2]" description=""/>
+
+  <!-- 2.2.2-->
+  <rule id="2.2.2" category="INCHI" type="SMIRKS" value="[N+&amp;v4,P+&amp;v4,As+&amp;v4,Sb+&amp;v4:1]=[C-;v3:2]>>[N,P,As,Sb:1]#[C:2]" description=""/>
+
+  <!-- 2.2.3-->
+  <rule id="2.2.3" category="INCHI" type="SMIRKS" value="[N+&amp;v4,P+&amp;v4,As+&amp;v4,Sb+&amp;v4:1][N-&amp;v2,P-&amp;v2,As-&amp;v2,Sb-&amp;v2:2]>>[N,P,As,Sb:1]=[N,P,As,Sb:2]" description=""/>
+
+  <!-- 2.2.4-->
+  <rule id="2.2.4" category="INCHI" type="SMIRKS" value="[O+&amp;v3,S+&amp;v3,Se+&amp;v3,Te+&amp;v3:1][C-&amp;v3:2]>>[O,S,Se,Te:1]=[C:2]" description=""/>
+
+  <!-- 2.2.5-->
+  <rule id="2.2.5" category="INCHI" type="SMIRKS" value="[O+&amp;v3,S+&amp;v3,Se+&amp;v3,Te+&amp;v3:1]=[C-&amp;v3:2]>>[O,S,Se,Te:1]#[C:2]" description=""/>
+
+  <!-- 2.2.6-->
+  <rule id="2.2.6" category="INCHI" type="SMIRKS" value="[O+&amp;v3,S+&amp;v3,Se+&amp;v3,Te+&amp;v3:1][N-&amp;v2,P-&amp;v2,As-&amp;v2:2]>>[O,S,Se,Te:1]=[N,P,As:2]" description=""/>
+
+  <!-- 2.3.1-->
+  <rule id="2.3.1" category="INCHI" type="SMIRKS" value="[N-&amp;v2,P-&amp;v2,As-&amp;v2,Sb-&amp;v2:1][O:2][C+&amp;v3:3]>>[N,P,As,Sb:1]=[O:2]=[C:3]" description=""/>
+
+  <!-- 2.3.2-->
+  <rule id="2.3.2" category="INCHI" type="SMIRKS" value="[C-&amp;v3:1][N,P,As,Sb:2]([*:3])[C+&amp;v3:4]>>[C:1]=[N,P,As,Sb:2]([*:3])=[C:4]" description=""/>
+
+  <!-- 2.3.3.1-->
+  <rule id="2.3.3.1" category="INCHI" type="SMIRKS" value="[C-&amp;v3:1][N,P,As,Sb:2]=[C+&amp;v3:3]>>[C:1]=[N,P,As,Sb:2]#[C:3]" description=""/>
+  <rule id="2.3.3.2" category="INCHI" type="SMIRKS" value="[C;v4:1]=[N,P,As,Sb:2][C;v2:3]>>[C:1]=[N,P,As,Sb:2]#[C:3]" description=""/>
+
+  <rule id="3.2.1" category="INCHI" type="SMIRKS" value="[{M_+0}:1][O:2][C,c:3](=[*:4])[*:5]>>[{M_+1}:1].[O:2][C,c:3](=[*:4])[*:5]" description="metal salts disconnection"/>
+  <rule id="3.2.2" category="INCHI" type="SMIRKS" value="[{M_+1}:1][O:2][C,c:3](=[*:4])[*:5]>>[{M_+2}:1].[O:2][C,c:3](=[*:4])[*:5]" description="metal salts disconnection"/>
+  <rule id="3.2.3" category="INCHI" type="SMIRKS" value="[{M_+2}:1][O:2][C,c:3](=[*:4])[*:5]>>[{M_+3}:1].[O:2][C,c:3](=[*:4])[*:5]" description="metal salts disconnection"/>
+  <rule id="3.2.4" category="INCHI" type="SMIRKS" value="[{M_+3}:1][O:2][C,c:3](=[*:4])[*:5]>>[{M_+4}:1].[O:2][C,c:3](=[*:4])[*:5]" description="metal salts disconnection"/>
+  <rule id="3.2.5" category="INCHI" type="SMIRKS" value="[{M_+4}:1][O:2][C,c:3](=[*:4])[*:5]>>[{M_+5}:1].[O:2][C,c:3](=[*:4])[*:5]" description="metal salts disconnection"/>
+  <rule id="3.2.6" category="INCHI" type="SMIRKS" value="[{M_+5}:1][O:2][C,c:3](=[*:4])[*:5]>>[{M_+6}:1].[O:2][C,c:3](=[*:4])[*:5]" description="metal salts disconnection"/>
+  <rule id="3.2.7" category="INCHI" type="SMIRKS" value="[{M_+6}:1][O:2][C,c:3](=[*:4])[*:5]>>[{M_+7}:1].[O:2][C,c:3](=[*:4])[*:5]" description="metal salts disconnection"/>
+
+  <rule id="3.3.1" category="INCHI" type="SMIRKS" value="[{M_+0}:1][O:2][C:3]#[*:4]>>[{M_+1}:1].[O:2][C:3]#[*:4]" description="metal salts disconnection"/>
+  <rule id="3.3.2" category="INCHI" type="SMIRKS" value="[{M_+1}:1][O:2][C:3]#[*:4]>>[{M_+2}:1].[O:2][C:3]#[*:4]" description="metal salts disconnection"/>
+  <rule id="3.3.3" category="INCHI" type="SMIRKS" value="[{M_+2}:1][O:2][C:3]#[*:4]>>[{M_+3}:1].[O:2][C:3]#[*:4]" description="metal salts disconnection"/>
+  <rule id="3.3.4" category="INCHI" type="SMIRKS" value="[{M_+3}:1][O:2][C:3]#[*:4]>>[{M_+4}:1].[O:2][C:3]#[*:4]" description="metal salts disconnection"/>
+  <rule id="3.3.5" category="INCHI" type="SMIRKS" value="[{M_+4}:1][O:2][C:3]#[*:4]>>[{M_+5}:1].[O:2][C:3]#[*:4]" description="metal salts disconnection"/>
+  <rule id="3.3.6" category="INCHI" type="SMIRKS" value="[{M_+5}:1][O:2][C:3]#[*:4]>>[{M_+6}:1].[O:2][C:3]#[*:4]" description="metal salts disconnection"/>
+  <rule id="3.3.7" category="INCHI" type="SMIRKS" value="[{M_+6}:1][O:2][C:3]#[*:4]>>[{M_+7}:1].[O:2][C:3]#[*:4]" description="metal salts disconnection"/>
+
+  <rule id="3.4" category="INCHI" type="SMIRKS" value="[H:1][NH3:2][{Hal}:3]>>[NH3:2].[H:1][{Hal_-1}:3]" description="metal salts disconnection"/>
+  
+</rules>

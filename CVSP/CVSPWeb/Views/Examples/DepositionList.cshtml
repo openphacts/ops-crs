@@ -1,0 +1,65 @@
+﻿@{
+	ViewBag.Title = "CVSP | Depositions List";
+	Layout = "~/Views/Shared/_DemoLayout.cshtml";
+}
+
+<hgroup class="title">
+	<h3>CVSP Depositions list</h3>
+</hgroup>
+
+<hgroup class="content" style="margin: .5em;">
+	<div id="depositions"></div>
+
+	<hr />
+
+	Code example how to put widget on page...
+
+	<pre class="brush: js;">
+		$('#deposition').depositions_gridview({
+			columns: [
+                { name: 'Id', title: 'ID' },
+                { name: 'DateSubmitted', title: 'Date', format: function (value) { return (new Date(value)).toLocaleDateString(); } },
+                { name: 'DatasourceId', title: 'Datasource', format: DatasourceFormat },
+                { name: 'UserId', title: 'Depositor', format: DepositorDisplayNameFormat },
+                {
+                    name: 'DepositionFiles', title: 'File Name', format: function (files) {
+                    	if (files.length > 0) {
+                    		return files[0].Name;
+                    	}
+                    }
+                },
+                { name: 'Status', title: 'Status' }
+			],
+			onClick: function (event, datasource) {
+				alert('Datasource ID: ' + datasource.Id);
+			}
+		});
+    </pre>
+
+</hgroup>
+
+@section Scripts {
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#depositions').depositions_gridview({
+				columns: [
+                    { name: 'Id', title: 'ID' },
+                    { name: 'DateSubmitted', title: 'Date', format: function (value) { return (new Date(value)).toLocaleDateString(); } },
+                    { name: 'DatasourceId', title: 'Datasource', format: DatasourceFormat },
+                    { name: 'UserId', title: 'Depositor', format: DepositorDisplayNameFormat },
+                    {
+                    	name: 'DepositionFiles', title: 'File Name', format: function (files) {
+                    		if (files.length > 0) {
+                    			return files[0].Name;
+                    		}
+                    	}
+                    },
+                    { name: 'Status', title: 'Status' }
+				],
+				onClick: function (event, datasource) {
+					alert('Datasource ID: ' + datasource.Id);
+				}
+			});
+        });
+	</script>
+}

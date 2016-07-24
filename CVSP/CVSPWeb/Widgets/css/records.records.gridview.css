@@ -1,0 +1,7 @@
+﻿.cs-widget-gridview .cs-widget-pageview-content ul {
+    padding: 0px;
+}
+
+.cs-widget-gridview .cs-widget-pageview-content ul li span.label {
+    margin-right: .5em;
+}

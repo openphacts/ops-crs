@@ -1,0 +1,98 @@
+﻿@model RSC.Compounds.Statistics
+
+@{
+    ViewBag.Title = "ChemSpider Compounds";
+}
+
+@Html.Partial("_HomeSearchPartial")
+
+<div id="searchOptionsView">
+    @*@Html.ActionLink("Options", "Settings", "Search")*@
+</div>
+
+<div id="compoundsStats" class="general-stats well">
+    @Html.ActionLink(@Model.CompoundsNumber.ToString(), "Index", "Compounds", null, new { @class = "compounds-count" }) compounds already loaded from @Html.ActionLink(@Model.DatasourcesNumber.ToString(), "Index", "Datasources", null, new { @class = "compounds-count" }) datasources. Deposit yours <a href="http://cvsp.beta.rsc-us.org/">here</a>.
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var searchOptions = new SearchOptions();
+
+            $(document)
+                .on('SimpleSearch', function (e, params) {
+                    $.Compounds.store.simpleSearchWithOptions({
+                        searchOptions: {
+                            QueryText: params.value
+                        },
+                        resultOptions: {
+                            Limit: searchOptions.getHitsLimit()
+                        },
+                        scopeOptions: {
+                            Datasources: searchOptions.getDatasourcesIds(),
+                            RealOnly: searchOptions.options.searchScopes.realOnly
+                        }
+                    }, function (rid) {
+                        window.location = '@Url.Content("~/Search/Results/")' + rid;
+                    });
+                })
+                .on('ExactStructureSearch', function (e, params) {
+                    $.Compounds.store.exactStructureSearchWithOptions({
+                        searchOptions: {
+                            Molecule: params.smiles,
+                            MatchType: params.matchType
+                        },
+                        resultOptions: {
+                            Limit: searchOptions.getHitsLimit()
+                        },
+                        scopeOptions: {
+                            Datasources: searchOptions.getDatasourcesIds(),
+                            RealOnly: searchOptions.options.searchScopes.realOnly
+                        }
+                    }, function (rid) {
+                        window.location = '@Url.Content("~/Search/Results/")' + rid;
+                    });
+                })
+                .on('SubStructureSearch', function (e, params) {
+                    $.Compounds.store.substructureSearchWithOptions({
+                        searchOptions: {
+                            Molecule: params.smiles,
+                            RealOnly: searchOptions.options.searchScopes.realOnly
+                        },
+                        resultOptions: {
+                            Limit: searchOptions.getHitsLimit()
+                        },
+                        scopeOptions: {
+                            Datasources: searchOptions.getDatasourcesIds(),
+                            RealOnly: searchOptions.options.searchScopes.realOnly
+                        }
+                    }, function (rid) {
+                        window.location = '@Url.Content("~/Search/Results/")' + rid;
+                    });
+                })
+                .on('SimilarityStructureSearch', function (e, params) {
+                    $.Compounds.store.similarityStructureSearchWithOptions({
+                        searchOptions: {
+                            Molecule: params.smiles,
+                            Threshold: params.threshold,
+                            SimilarityType: params.type
+                        },
+                        resultOptions: {
+                            Limit: searchOptions.getHitsLimit()
+                        },
+                        scopeOptions: {
+                            Datasources: searchOptions.getDatasourcesIds(),
+                            RealOnly: searchOptions.options.searchScopes.realOnly
+                        }
+                    }, function (rid) {
+                        window.location = '@Url.Content("~/Search/Results/")' + rid;
+                    });
+                });
+
+            $('#searchOptionsView').searchoptions({
+                searchOptions: searchOptions,
+                settingsUrl: '@Url.Content("~/Search/Settings")'
+            });
+        });
+    </script>
+}

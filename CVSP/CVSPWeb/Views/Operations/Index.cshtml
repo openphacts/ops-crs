@@ -1,0 +1,28 @@
+﻿@model IEnumerable<IEnumerable<RSC.CVSP.OperationInfo>>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<ul id="operations" class="operations">
+    @foreach (var operation in Model)
+    {
+        <li>
+            <ul>
+                @foreach (var info in operation)
+                {
+                    <li>@info.Name</li>
+                }
+            </ul>
+        </li>
+    }
+</ul>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#operations').sortable();
+        });
+    </script>
+}

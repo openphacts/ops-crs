@@ -1,0 +1,7 @@
+﻿.cvsp-depositions-gridview {
+}
+
+.cvsp-depositions-gridview .loading-spinner {
+    display: inline-block;
+    margin-right: .5em;
+}

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Log>
+  <Sources>
+    <Source id="5e7f8673-e59a-4a75-8868-e3b8ac2f76f4" shortName="cvsp.vld" title="CVSP Validation" />
+    <Source id="9eb0ab94-cade-4081-bc10-72a792f824e2" shortName="cvsp.std" title="CVSP Standardization" />
+    <Source id="d66ab8ba-c1db-4d93-a99e-8111087908ed" shortName="cvsp.prc" title="CVSP Processing" />
+  </Sources>
+  <Categories>
+    <Category id="d9d1dbe5-dda5-423c-bd50-ee015f04af4f" shortName="vld.fmt" title="Format Validation" />
+    <Category id="80666c5b-7306-4822-8b92-1128e813d313" shortName="vld.chm" title="Chemical Validation" />
+    <Category id="fb2ccb4d-b077-4e2b-9cf0-b1f57df83bad" shortName="std.chm" title="Chemical Standardization" />
+    <Category id="76c6ec01-f32b-4d2c-9efc-1946d29aeac8" shortName="std.layout" title="Layout Standardization" />
+    <Category id="f4cbb7f1-d7ac-4c60-9765-fadd6ede4a40" shortName="prc.chm" title="Chemical Processing" />
+    <Category id="f44aa7f4-9c9c-4aa9-a98f-94826bf4b526" shortName="prc.pred" title="Processing Prediction" />
+    <Category id="5a80f254-d1ff-4cfb-8d3c-43f75e98ba4b" shortName="indigo" title="Indigo" />
+  </Categories>
+  <EntryTypes>
+    <EntryType id="a9ce416a-4f37-4758-8064-5fb4b08a195d" code="100.1" category="vld.chm" severity="error" shortName="validationFailed" title="Validation failed" />
+    <EntryType id="7c14df67-0193-40ee-8bdb-074ad8cd8521" code="100.2" category="vld.chm" severity="information" shortName="validationContainsV3000" title="Molfile is in V3000 format" />
+    <EntryType id="865fb82c-e8cb-43d7-9015-beac0ea812f1" code="100.3" category="vld.chm" severity="information" shortName="validationV3000NotSupported" title="V3000 molfile contains unsupported feature" />
+    <EntryType id="5a46d521-9ac6-4b9d-9877-492df6e5c970" code="100.4" category="vld.chm" severity="error" shortName="validationContainsNonInChIfiableAtoms" title="Contains unknown atom symbol" />
+    <EntryType id="05aedd20-f67d-41be-9d7f-91c69b769d60" code="100.5" category="vld.chm" severity="error" shortName="validationHasNonAromaticQueryBonds" title="Contains non aromatic query bond(s)" />
+    <EntryType id="39055a6a-0944-40c2-80ad-32e289422b62" code="100.6" category="vld.chm" severity="warning" shortName="validationHasArgonAtom" title="Contains Argon atom" />
+    <EntryType id="c34aec91-0655-4933-963e-f2bbbe1aa928" code="100.7" category="vld.chm" severity="information" shortName="validationFixedValenceTest" title="Atom has fixed valence" />
+    <EntryType id="d354d294-163d-4824-bf83-78ce41a04dc6" code="100.8" category="vld.chm" severity="information" shortName="validationPartialIonizationTest" title="Strongest acid not ionized first in partially-ionized system" />
+    <EntryType id="b8f1c34d-02c5-40c7-b400-99f3a74f14af" code="100.9" category="vld.chm" severity="information" shortName="validationAllNeutralMolecules" title="Contains non-neutral component" />
+    <EntryType id="34fc6cda-8579-4b38-9fd7-e34c818a3328" code="100.10" category="vld.chm" severity="information" shortName="validationChairTest" title="Contains perspective chair" />
+    <EntryType id="c3af55bd-f842-4bb5-b8d9-aefb4b4e4313" code="100.11" category="vld.chm" severity="information" shortName="validationBoatTest" title="Contains perspective boat" />
+    <EntryType id="454b1e6a-832a-46fe-a4a5-e4ac476c004b" code="100.12" category="vld.chm" severity="information" shortName="validationHaworthTest" title="Contains perspective Haworth" />
+    <EntryType id="839cf64a-31df-473a-96cc-1ac95eb25ba7" code="100.13" category="vld.chm" severity="warning" shortName="validationContainsRingSP3StereoBond" title="Contains SP3 stereo in ring" />
+    <EntryType id="160f4927-dff4-406f-b402-1ea5e5f5f2e9" code="100.14" category="vld.chm" severity="warning" shortName="validationContainsStereoBondBetweenStereoCenters" title="Contains SP3 stereo bond between stereocenters" />
+    <EntryType id="e42c1e5f-2e4e-467e-8f2e-d875ed5c5a34" code="100.15" category="vld.chm" severity="warning" shortName="validationContainsStereoCentersWithMoreThan2StereoBonds" title="Contains stereo center with &gt;2 stereo bonds" />
+    <EntryType id="e1bf21ee-ce14-43b7-964e-cdbaf77a7245" code="100.16" category="vld.chm" severity="warning" shortName="validationContainsStereoCenterWith3Bonds_TShaped" title="Contains stereo center with 3 bonds (T-shaped)" />
+    <EntryType id="d1def190-b0bb-4ea7-8dd5-58cdfd7ee889" code="100.17" category="vld.chm" severity="warning" shortName="validationContainsStereoBondAtDoubleBond" title="Contains SP3 stereo bond attached to double bond" />
+    <EntryType id="d748e896-ebf0-4481-935f-27966a1ae0ee" code="100.18" category="vld.chm" severity="error" shortName="validationContainsBadAlleneStereo" title="Contains not acceptable allene stereo" />
+    <EntryType id="1e8817b9-dd26-4998-bcc3-2280fd31d46b" code="100.19" category="vld.chm" severity="information" shortName="validationLPyranoseTest" title="Contains L-pyranose" />
+    <EntryType id="8f8a896f-d35b-4dd5-86ae-8bbd875ba099" code="100.20" category="vld.chm" severity="information" shortName="validationNonLinearTripleTest_C" title="Contains non-linear triply-bonded C (&gt;2 degree)" />
+    <EntryType id="9b8f90ce-8185-4622-8619-e2c29d1b9473" code="100.21" category="vld.chm" severity="information" shortName="validationNonLinearTripleTest_N" title="Contains non-linear triply-bonded N (&gt;2 degree)" />
+    <EntryType id="4e9615ee-9766-49f4-8f58-951a483ba80e" code="100.22" category="vld.chm" severity="information" shortName="validationIs0d" title="Contains 0d structure" />
+    <EntryType id="c6c908f8-7e1e-444f-8210-6099994e47c8" code="100.23" category="vld.chm" severity="information" shortName="validationIs3d" title="Contains 3d coordinates" />
+    <EntryType id="8f3d133e-5bd6-49f9-81e6-e7da4e21b62d" code="100.24" category="vld.chm" severity="information" shortName="validationIsCongested" title="Layout is congested" />
+    <EntryType id="eb6a05a1-d03c-4f48-b4f8-7a30d5f2589b" code="100.25" category="vld.chm" severity="information" shortName="validationHasUnevenLengthBonds" title="Layout has uneven length bonds" />
+    <EntryType id="e9d761ed-5a38-4a3d-852f-082d72e51fee" code="100.26" category="vld.chm" severity="error" shortName="validationSmilesCantBeGenerated" title="Smiles generation failed" />
+    <EntryType id="cdce6bc2-ab7a-49db-a28f-2e279bd40b57" code="100.27" category="vld.chm" severity="error" shortName="validationCanonicalSmilesCantBeGenerated" title="Canonical smiles generation failed" />
+    <EntryType id="51436fda-b89c-453f-a157-0dd738353c2b" code="100.28" category="vld.chm" severity="error" shortName="validationGenericMoleculeGeneration" title="Generic Molecule generation failed" />
+    <EntryType id="cd6015f5-98b2-4afd-99fc-1de504db6552" code="100.29" category="vld.chm" severity="error" shortName="validationInChIGenerationFailed" title="InChI generation failed" />
+    <EntryType id="42206266-a3f8-4fbd-bd7d-ed2c2da5bb0f" code="100.30" category="vld.chm" severity="warning" shortName="validationRadicalCountFailed" title="Radical count failed" />
+    <EntryType id="90484f5c-17d1-4636-8615-d89addd41361" code="100.31" category="vld.chm" severity="warning" shortName="validationNoAtoms" title="No atoms found" />
+    <EntryType id="6b74e275-9e1e-4024-8376-41a95c3b76b1" code="100.32" category="vld.chm" severity="warning" shortName="validationNeutralityTest" title="Not an overall neutral system" />
+    <EntryType id="6dec1430-e19e-4138-a3b3-256c2e0ebd52" code="100.33" category="vld.chm" severity="information" shortName="validationContainsStereoWithNoChiralFlag" title="Contains relative stereo" />
+    <EntryType id="bfe0ed61-8f1b-4df8-9d72-a54e98e81832" code="100.34" category="vld.chm" severity="error" shortName="validationForbiddenFreeElementsInMixtures" title="Forbidden free element in mixture" />
+    <EntryType id="207268d7-f5b5-4061-8922-483cb87fabe3" code="100.35" category="vld.chm" severity="warning" shortName="validationStructureWithForbiddenValenceChargeCombination" title="Forbidden valence/charge combination" />
+    <EntryType id="296f9a58-87bb-4fcd-80f1-07cec4cb4739" code="100.36" category="vld.chm" severity="warning" shortName="validationDuplicateMoleculesTest" title="More than one instance of a same molecule" />
+    <EntryType id="f5ee8ca6-5a65-4747-9b4c-ab4425672369" code="100.37" category="vld.chm" severity="warning" shortName="validationContainsOnlyMultipleInstancesOfSameMolecule" title="Contains only multiple instances of same molecule" />
+    <EntryType id="5b34c92e-71bf-4b18-8a24-2f3c3f1923df" code="100.38" category="vld.chm" severity="warning" shortName="validationContainsCrossedDoubleBond" title="Contains crossed double bond (ST-4.4)" />
+    <EntryType id="cf2800f7-1aba-435f-a0fc-376a4f560892" code="100.39" category="vld.chm" severity="error" shortName="validationContainsCrossedDoubleBondWithAdjacentWavyBond" title="Contains crossed double bond with adjacent wavy bond" />
+    <EntryType id="1101cf05-18d4-41bf-be88-af0e54cf5ae4" code="100.40" category="vld.chm" severity="information" shortName="validationContainsDoubleBondWithAdjacentWavyBond" title="Contains double bond with an adjacent wavy bond" />
+    <EntryType id="e49d66a5-457d-42c7-acda-57ef52e36b04" code="100.41" category="vld.chm" severity="warning" shortName="validationStructureWithForbiddenValence" title="Contains atom(s) with forbidden valence" />
+    <EntryType id="70386ad2-a386-4118-ae1e-f2b4270e00db" code="100.42" category="vld.chm" severity="information" shortName="validationStructureTooManyAtoms" title="Atom count exceeded maximum allowed for validation" />
+    <EntryType id="12801361-3783-4776-a53c-a104e9224cb4" code="100.43" category="vld.chm" severity="warning" shortName="validationNameNotMatchStructure" title="(obsolete) Synonym(s) not match the structure" />
+    <EntryType id="a9b1b089-8960-4026-bb49-c5bddeb78251" code="100.44" category="vld.chm" severity="information" shortName="validationNameCouldNotBeValidated" title="(obsolete) Synonym(s) could not be validated" />
+    <EntryType id="e2a4c08b-c0d3-4571-9e72-e82a498905a7" code="100.45" category="vld.chm" severity="information" shortName="validationNameMatchStructure" title="(obsolete) Synonym(s) match the structure" />
+    <EntryType id="a6abe7ae-5d42-471a-a2aa-bbde335d9480" code="100.46" category="vld.chm" severity="warning" shortName="validationInChIMisMatchStructure" title="(obsolete) Standard InChI does not match the structure" />
+    <EntryType id="db73b38e-11d2-41cb-b5ee-f062989c1b7c" code="100.47" category="vld.chm" severity="information" shortName="validationInChIMatchStructure" title="(obsolete) Standard InChI matches the structure" />
+    <EntryType id="0a252bfc-8864-4262-ada7-ebdbd6d2c38b" code="100.48" category="vld.chm" severity="information" shortName="validationStdInChICouldNotBeValidated" title="(obsolete) Standard InChI could not be validated" />
+    <EntryType id="8544545c-056b-459c-abf7-b92b790157ff" code="100.49" category="vld.chm" severity="information" shortName="validationNonStdInChICouldNotBeValidated" title="(obsolete) Non-standard InChI can't be validated" />
+    <EntryType id="30e0a499-78bc-4431-85a8-d087f237881d" code="100.50" category="vld.chm" severity="information" shortName="validationNoDepositorRegid" title="(obsolete) No depositor-specified REGID" />
+    <EntryType id="085f2cae-256f-4b09-96b4-92602e0632d5" code="100.51" category="vld.chm" severity="error" shortName="validation_Multiple_REGIDs_Under_REGID_TAG" title="(obsolete) Contains multiple REGIDs under depositor-specified SDF field" />
+    <EntryType id="0562076f-adc3-4340-ad9e-f1bd4fca28e2" code="100.52" category="vld.chm" severity="information" shortName="validation_DuplicateRegIdInFile" title="(obsolete) Duplicate REGID in file" />
+    <EntryType id="08c7c74c-1e20-4098-b276-0211207284d9" code="100.53" category="vld.chm" severity="warning" shortName="validationFreeCarbonMonoxideInMixture" title="Contains free carbon monoxide" />
+    <EntryType id="60fb7266-9f7e-4233-b52a-1e8666ba90c0" code="100.54" category="vld.chm" severity="information" shortName="validationRadicalCenter_1" title="Contains 1 radical" />
+    <EntryType id="a0582762-b0bb-47cb-ace2-9e69ea7bfa06" code="100.55" category="vld.chm" severity="warning" shortName="validationRadicalCenters_2" title="Contains 2 radical" />
+    <EntryType id="6149ea65-507e-4f29-930c-ffb1432f6d73" code="100.56" category="vld.chm" severity="warning" shortName="validationRadicalCenters_many" title="Contains &gt;2 many radicals" />
+    <EntryType id="4c8adafb-dcb7-4bf2-9e78-65617df30515" code="100.57" category="vld.chm" severity="information" shortName="validationUnknownStereoCenters" title="Contains unknown stereo center(s)" />
+    <EntryType id="51feda4e-f672-4d5a-9fce-1d35169195f8" code="100.58" category="vld.chm" severity="information" shortName="validationEnantiomers" title="Contains completely undefined stereo: enantiomers" />
+    <EntryType id="5ead596f-9a12-4cd9-ad31-12c18f313a75" code="100.59" category="vld.chm" severity="information" shortName="validationCompletelyUndefinedStereo_Mixtures" title="Contains completely undefined stereo: mixtures" />
+    <EntryType id="b3820aae-6499-4007-8ee7-e1334f6254c6" code="100.60" category="vld.chm" severity="error" shortName="validationContainsAromaticBondsAfterKekulizaiton" title="Not able to properly dearomatize" />
+    <EntryType id="a2a31a47-2780-4a0c-aa58-ac52beff6436" code="100.61" category="vld.chm" severity="information" shortName="validationEpimers" title="Contains partially undefined stereo: epimers" />
+    <EntryType id="1eaa9879-9e8b-4b3e-a5e5-4b5f0c41aafd" code="100.62" category="vld.chm" severity="information" shortName="validationPartiallyUndefinedStereo_Mixtures" title="Contains partially undefined stereo: mixtures" />
+    <EntryType id="c0215d0f-b5e8-4f5d-9ac1-05245b68e848" code="100.63" category="vld.chm" severity="warning" shortName="validationSmilesNotMatchStructure" title="Smiles does not match the structure" />
+    <EntryType id="f779edcd-4cd9-44e1-a16f-4e5b5fa2e63a" code="100.64" category="vld.chm" severity="information" shortName="validationSmilesMatchStructure" title="Smiles match the structure" />
+    <EntryType id="efa86fba-4456-4968-a063-eea3b53e8deb" code="100.65" category="vld.chm" severity="information" shortName="validationSmilesCouldNotBeValidated" title="Smiles could not be validated" />
+    <EntryType id="5f970f8f-f442-4518-9158-fee01e6c05ac" code="100.66" category="vld.chm" severity="information" shortName="validationInChI2CSIDFailed" title="InChI to CSID service failed" />
+    <EntryType id="69ac3544-afbe-44ac-844f-f00b98ed80fd" code="100.67" category="vld.chm" severity="information" shortName="validationInChI2CSIDNotFound" title="no ChemSpider ID found by InChI" />
+    <EntryType id="75e7dc6d-13df-41ec-82e8-fda80ce357b5" code="100.68" category="vld.chm" severity="information" shortName="validationCDX" title="CDX not valid" />
+    <EntryType id="3d5d31c7-fa22-4dda-9f49-1f17ec2c48a7" code="100.69" category="vld.chm" severity="error" shortName="validationExceptionCodes" title="General validation error" />
+    <EntryType id="e3342700-9271-4712-9c3c-828777b8d956" code="100.70" category="vld.chm" severity="information" shortName="validationUserValidationInformation" title="Custom user validation information" />
+    <EntryType id="21f6513b-0060-4742-aac0-cca6e4295a46" code="100.71" category="vld.chm" severity="warning" shortName="validationUserValidationWarning" title="Custom user validation warning" />
+    <EntryType id="afc13818-2333-4327-a2eb-74b70fc31e77" code="100.72" category="vld.chm" severity="error" shortName="validationUserValidationError" title="Custom user validation error" />
+    <EntryType id="c8129af2-74f7-4189-81a9-46613962b73b" code="200.1" category="indigo" severity="warning" shortName="indigo_molecule" title="Molecule contains pseudoatoms" />
+    <EntryType id="21f79f25-e6c1-4de2-9910-81f91488288f" code="200.2" category="indigo" severity="warning" shortName="indigo_molfile_loader" title="molfile loader (indigo)" />
+    <EntryType id="b3d23567-ed76-42de-98b7-b2cadabdbc85" code="200.3" category="indigo" severity="warning" shortName="indigo_allene_stereo" title="allene stereo (indigo)" />
+    <EntryType id="7ff1ac90-56d2-4d82-abb6-bc74eaecc97c" code="200.4" category="indigo" severity="warning" shortName="indigo_element" title="element (indigo)" />
+    <EntryType id="f971afa5-6221-4296-b7df-7f06640e63b6" code="200.5" category="indigo" severity="warning" shortName="indigo_stereocenters_other" title="Stereocenters: other (indigo)" />
+    <EntryType id="9d47b2c4-8a95-4158-ab3b-0386c2e54510" code="200.6" category="indigo" severity="warning" shortName="indigo_stereocenters_angle_too_small" title="Stereocenters: angle between bonds is too small (indigo)" />
+    <EntryType id="78fca6b8-da70-49e4-a295-c7dd47008ee7" code="200.7" category="indigo" severity="warning" shortName="indigo_stereocenters_stereotypes_of_the_opposite_bonds_mismatch" title="Stereocenters: stereotypes of opposite bonds mismatch (indigo)" />
+    <EntryType id="f3dcdd28-8f61-4699-b4ef-9a56d51ee7f3" code="200.8" category="indigo" severity="warning" shortName="indigo_stereocenters_one_bond_up_one_bond_down" title="Stereocenters: one bond up, one bond down (indigo)" />
+    <EntryType id="e6bf9f63-8f25-42eb-b513-d6eab225a200" code="200.9" category="indigo" severity="warning" shortName="indigo_stereocenters_stereotypes_of_non_opposite_bonds_match" title="Stereocenters: stereotypes of non opposite bonds match (indigo)" />
+    <EntryType id="b6def42b-18b3-4ce4-bba5-9f4f6f333703" code="200.10" category="indigo" severity="warning" shortName="indigo_stereocenters_have_hydrogen_besides_implicit_hydrogen_near_stereocenter" title="Stereocenters: implicit hydrogen near stereocenter (indigo)" />
+    <EntryType id="4c0dc542-f859-4955-9d7c-cbe19bff2d09" code="200.11" category="indigo" severity="warning" shortName="indigo_stereocenters_2_hydrogens_near_stereocenters" title="Stereocenters: two hydrogens near stereocenter (indigo)" />
+    <EntryType id="bbbf36e7-bb89-48b3-a349-654b6afa4a64" code="200.12" category="indigo" severity="warning" shortName="indigo_stereocenters_DegenerateCase" title="Stereocenters: degenerate case (indigo)" />
+    <EntryType id="9266d5dd-e05c-42b3-80a0-44923828fa28" code="200.13" category="indigo" severity="error" shortName="indigo_inchi" title="InChI generator (indigo)" />
+    <EntryType id="1d659db2-8b4e-446e-91a1-1e4a39c6bb65" code="200.14" category="indigo" severity="information" shortName="indigo_other" title="Indigo" />
+    <EntryType id="93255bf1-28ee-420e-b52d-29fe6e23cfc1" code="200.15" category="indigo" severity="error" shortName="indigo_smiles_saver" title="Smiles saver (indigo)" />
+    <EntryType id="3e849d7e-3d8e-4352-825b-eb277d4c1230" code="200.16" category="indigo" severity="error" shortName="indigo_smiles_loader" title="Smiles loader (indigo)" />
+    <EntryType id="0f6b15ba-0289-4127-b255-7b56b4e68bcd" code="200.17" category="indigo" severity="warning" shortName="indigo_dearomatization_groups" title="Kekulization failed (indigo)" />
+    <EntryType id="dc98ef7e-e10c-44e2-a455-1aaca3d1fbe8" code="200.18" category="indigo" severity="information" shortName="indigo_automorphism_search_timeout" title="Timeout (indigo)" />
+    <EntryType id="985b5203-7fba-4fef-b63f-c49f096bb31f" code="200.19" category="indigo" severity="information" shortName="indigo_badValence" title="Bad valence (indigo)" />
+    <EntryType id="e8097ab3-42c1-495e-8573-3b7af6daf570" code="200.20" category="indigo" severity="error" shortName="indigo_ambiguousH" title="Ambiguous H (indigo)" />
+    <EntryType id="761c394b-a36e-4f8e-9546-1958d1e65b97" code="300.1" category="vld.fmt" severity="error" shortName="parsing_StructureGenerationFromSynonymFailed" title="Structure generation from synonym failed" />
+    <EntryType id="b274dcf0-49dc-4292-a0c8-9025ceba3d51" code="300.2" category="vld.fmt" severity="error" shortName="parsing_StructureGenerationFromSmilesFailed" title="Structure generation from SMILES failed" />
+    <EntryType id="d8e7790b-24b7-44ef-99df-b0af44e86de4" code="300.3" category="vld.fmt" severity="error" shortName="parsing_StructureGenerationFromInChIFailed" title="Structure generation from InChI failed" />
+    <EntryType id="4bef2f1c-8973-48e4-b980-9bc568816d69" code="300.4" category="vld.fmt" severity="error" shortName="parsing_HeaderLineMissing" title="Less than 3 header lines found in molfile" />
+    <EntryType id="25409c8c-baac-481b-b194-627f4c751ea9" code="300.5" category="vld.fmt" severity="error" shortName="parsing_M_END_Missing" title="'M END' is missing from molfile" />
+    <EntryType id="28760fe6-3753-42b3-8ec7-af8eacf60266" code="300.6" category="vld.fmt" severity="error" shortName="parsing_NotAbleToInterpretMolfileLine" title="Not able to interpret line in molfile" />
+    <EntryType id="bba1a8ea-0d01-4d92-9462-04916e366e27" code="300.7" category="vld.fmt" severity="information" shortName="parsing_PeculiarAtomCoordinate" title="Peculiar atom coordinate" />
+    <EntryType id="7942b592-de24-455f-a915-e43639b4e632" code="400.1" category="std.chm" severity="information" shortName="standardization_NotTried" title="Standardization not tried" />
+    <EntryType id="867bb491-ff6b-42a9-a6a6-c74776d9930f" code="400.2" category="std.chm" severity="information" shortName="standardization_LayoutChangedInChI" title="Layout module altered InChI" />
+    <EntryType id="3a61836a-73c4-4a0a-a707-5d1daa67177c" code="400.3" category="std.chm" severity="information" shortName="standardization_LayoutFailed" title="Layout failed" />
+    <EntryType id="3e0812fb-1f8b-46ca-9b0e-74adf4dd6fee" code="400.4" category="std.chm" severity="warning" shortName="standardization_LayoutTimedOut" title="Layout timed out" />
+    <EntryType id="839a7f27-0b61-4f62-9f8a-f95fb88caba1" code="400.5" category="std.chm" severity="information" shortName="standardization_NoAtomsFound" title="Standardization  omitted: no atoms found" />
+    <EntryType id="fb19c1a5-0279-46b2-b42c-4750ffd6d7e9" code="400.6" category="std.chm" severity="warning" shortName="standardization_AtomLimitReached" title="Standardization omitted: atom limited exceeded maximum" />
+    <EntryType id="7daa180e-60e6-4585-82be-ce531d58a434" code="400.7" category="std.chm" severity="error" shortName="standardization_StrippingStereoFailed" title="Stereo removal failed" />
+    <EntryType id="fc100d7c-3380-4c8d-b64c-04d077731013" code="400.8" category="std.chm" severity="error" shortName="standardization_TautomerCanonicalizationError" title="ChemAxon tautomer canonicalization error" />
+    <EntryType id="d48cbce7-522a-4638-9f20-62b11c8239cb" code="400.9" category="std.chm" severity="warning" shortName="standardization_TautomerCanonicalizationWarning" title="ChemAxon tautomer canonicalization warning" />
+    <EntryType id="738ddbc1-5b7f-460e-bc93-aba09a32da00" code="400.10" category="std.chm" severity="warning" shortName="standardization_AtomMaximum_Reached_noTautomerCanonicalizationPerformed" title="Tautomer canonicalization omitted" />
+    <EntryType id="0bd57e0d-3d5d-4f28-ade7-96a13cfeae9b" code="400.11" category="std.chm" severity="information" shortName="standardization_ChiralFlagAddedForV2000RelativeStereo" title="V2000 relative stereo treated as absolute" />
+    <EntryType id="3f1ec1ac-4115-4b94-bd6f-2d03b9428ee9" code="400.12" category="std.chm" severity="error" shortName="standardization_Failed" title="Standardization failed" />
+    <EntryType id="9056d672-b458-4ef8-a172-fbbec1d9ae11" code="500.1" category="prc.chm" severity="error" shortName="processingOperationFailed" title="Processing operation failed" />
+  </EntryTypes>
+</Log>

@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "ChemSpider Compounds | JChemPaint Editor";
+    Layout = "~/Views/Shared/_DemoLayout.cshtml";
+}
+
+<hgroup class="title">
+    <h3>JChemPaint structure editor widget</h3>
+</hgroup>
+
+<hgroup class="content">
+    <div id="jchemEditor"></div>
+
+    <hr />
+    <button id="getSmilesBtn" type="button" class="btn btn-default">Get SMILES</button>
+    <button id="getMolBtn" type="button" class="btn btn-default">Get MOL</button>
+
+    <hr />
+
+    Code example how to put widget on page...
+
+    <pre class="brush: js;">
+        $("#jchemEditor").jchempaint({
+            width: 700,
+            height: 400,
+            smiles: 'CC(=O)Oc1ccccc1C(=O)O'
+        });
+    </pre>
+
+    ... and get structure as SMILES...
+
+    <pre class="brush: js;">
+        var smiles = $("#jchemEditor").jchempaint('smiles');
+    </pre>
+
+    ... or as MOL
+
+    <pre class="brush: js;">
+        var mol = $("#jchemEditor").jchempaint('molecule');
+    </pre>
+</hgroup>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#jchemEditor").jchempaint({
+                width: 700,
+                height: 400,
+                smiles: 'CC(=O)Oc1ccccc1C(=O)O'
+            });
+
+            $('#getSmilesBtn').click(function () {
+                alert($("#jchemEditor").jchempaint('smiles'));
+            });
+
+            $('#getMolBtn').click(function () {
+                alert($("#jchemEditor").jchempaint('molecule'));
+            });
+        });
+    </script>
+}

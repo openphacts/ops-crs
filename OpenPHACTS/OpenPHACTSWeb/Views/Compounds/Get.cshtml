@@ -1,0 +1,147 @@
+﻿@model int
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">Compound Record</div>
+    <div class="panel-body">
+        <div id="compound"></div>
+    </div>
+</div>
+
+<div class="panel panel-default substances-panel">
+    <div class="panel-heading">Substances <span class="substances-badge badge"></span></div>
+    <div class="panel-body">
+        <div id="substances"></div>
+    </div>
+</div>
+
+<div class="panel panel-default children-panel">
+    <div class="panel-heading">Children <span class="children-badge badge"></span></div>
+    <div class="panel-body">
+        <div id="children"></div>
+    </div>
+</div>
+
+<div class="panel panel-default parents-panel">
+    <div class="panel-heading">Parents <span class="parents-badge badge"></span></div>
+    <div class="panel-body">
+        <div id="parents"></div>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('#compound').compoundinfo({
+            id: @Model,
+            imgSize: 250,
+            properties: [
+                { name: 'COMPOUND_ID', title: 'ID' },
+                { name: 'IsVirtual', title: 'Virtual', format: function(virtual) { return virtual ? 'Yes' : 'No'; } },
+                { name: 'CompoundTypes', title: 'Type', format: buildCompoundTypesProperty },
+                { name: 'MolecularFormula', title: 'Molecular Formula', format: function (value) { return value.molecularFormula(); } },
+                { name: 'Indigo_MonoisotopicMass', title: 'Monoisotopic Mass', format: function (value) { return value.toFixed(6) + ' Da'; } },
+                { name: 'Indigo_MolecularWeight', title: 'Molecular Weight', format: function (value) { return value.toFixed(6) + ' Da'; } },
+                { name: 'INDIGO_CANONICAL_SMILES', title: 'SMILES', format: buildSMILESProperty },
+                { name: 'NON_STD_INCHI', title: 'Non Std. InChI', format: buildInChIProperty },
+                { name: 'NON_STD_INCHI_KEY', title: 'Non Std. InChIKey', format: buildInChIKeyProperty },
+                { name: 'STD_INCHI', title: 'Std. InChI', format: buildInChIProperty },
+                { name: 'STD_INCHI_KEY', title: 'Std. InChIKey', format: buildInChIKeyProperty },
+                { name: 'STD_INCHI_KEY', title: 'ChemSpider ID', format: buildChemSpiderIDProperty },
+                //{ name: 'SubstanceID', title: 'Substance ID', format: function(id) { return $(document.createElement('a')).attr({ href: '/Substances/Get/' + id }).text(id); } }
+            ]
+        });
+
+        //  show compound's substances...
+        $('.substances-panel').loadProgress();
+        $.Compounds.store.getCompoundSubstances(@Model, function (substances) {
+            if(substances.length == 0) {
+                $('.substances-panel').css({display: 'none'});
+            }
+            else
+            {
+                $('#substances').scroller({
+                    items: substances,
+                    size: 200,
+                    drawCell: substanceTile
+                });
+
+                $('.substances-badge').text(substances.length);
+            }
+
+            $('.substances-panel').hideProgress();
+        });
+
+        //  show compound's children...
+        $('.children-panel').loadProgress();
+        $.Compounds.store.getChildren(@Model, function (compounds) {
+            if(compounds.length == 0) {
+                $('.children-panel').css({display: 'none'});
+            }
+            else
+            {
+                $('#children').scroller({
+                    items: compounds,
+                    size: 200,
+                    drawCell: compoundTile
+                });
+
+                $('.children-badge').text(compounds.length);
+            }
+
+            $('.children-panel').hideProgress();
+        });
+
+        //  show compound's parents...
+        $('.parents-panel').loadProgress();
+        $.Compounds.store.getParents(@Model, function (compounds) {
+                if(compounds.length == 0) {
+                    $('.parents-panel').css({ display: 'none' });
+                }
+                else
+                {
+                    $('#parents').scroller({
+                        items: compounds,
+                        size: 200,
+                        drawCell: compoundTile
+                    });
+
+                    $('.parents-badge').text(compounds.length);
+                }
+
+                $('.parents-panel').hideProgress();
+            });
+        });
+
+        function compoundTile(compound) {
+            return $(document.createElement('div'))
+                        .compoundtile({
+                            item: compound,
+                            width: 200,
+                            properties: [
+                                { name: 'COMPOUND_ID', title: 'ID', format: function (value) { return $(document.createElement('a')).attr({ href: '@Url.Content("~/Compounds/Get/")' + value }).text(value) } },
+                                { name: 'IsVirtual', title: 'Virtual', format: function (virtual) { return virtual ? 'Yes' : 'No'; } },
+                                { name: 'MolecularFormula', title: 'Molecular Formula', format: function (value) { return value.molecularFormula(); } },
+                                { name: 'CompoundTypes', title: 'Type', format: buildCompoundTypesProperty }
+                            ]
+                        });
+        }
+
+        function substanceTile(substance) {
+            return $(document.createElement('div'))
+                        .compoundtile({
+                            item: substance,
+                            width: 200,
+                            properties: [
+                                { name: 'SUBSTANCE_ID', title: 'ID', format: function (value) { return $(document.createElement('a')).attr({ href: '@Url.Content("~/Substances/Get/")' + value }).text(value) } },
+                                { name: 'DEPOSITOR_DATA_SOURCE_NAME', title: 'Datasource' },
+                                { name: 'DEPOSITOR_SUBSTANCE_REGID', title: 'Reg. ID' }
+                            ]
+                        });
+        }
+    </script>
+}

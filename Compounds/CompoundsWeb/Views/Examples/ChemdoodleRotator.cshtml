@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "ChemSpider Compounds | ChemDoodle Rotator";
+    Layout = "~/Views/Shared/_DemoLayout.cshtml";
+}
+
+@section css {
+    <style type="text/css">
+        #moleculesList {
+            margin-bottom: 1em;
+        }
+        #dimensionsList {
+            margin: 1em 0;
+            float: left;
+        }
+        #startStopList {
+            margin: 1em;
+            float: left;
+        }
+        #representationsList {
+            float: left;
+            margin: 1em;
+        }
+    </style>
+}
+
+<hgroup class="title">
+    <h3>ChemDoodle Rotator</h3>
+</hgroup>
+
+<hgroup class="content">
+    <div id="moleculesList">
+        <input type="radio" id="aspirin" name="molRadio" checked="checked" value="CC(=O)OC1=CC=CC=C1C(=O)O"><label for="aspirin">Aspirin</label>
+        @*<input type="radio" id="taxol" name="molRadio" value="CC1=C2[C@@]([C@]([C@H]([C@@H]3[C@]4([C@H](OC4)C[C@@H]([C@]3(C(=O)[C@@H]2OC(=O)C)C)O)OC(=O)C)OC(=O)C5=CC=CC=C5)(C[C@@H]1OC(=O)[C@H](O)[C@@H](NC(=O)C6=CC=CC=C6)C7=CC=CC=C7)O)(C)C"><label for="taxol">Taxol</label>
+        <input type="radio" id="morphine" name="molRadio" value="CN1CC[C@]23[C@@H]4[C@H]1CC5=C2C(=C(C=C5)O)O[C@H]3[C@H](C=C4)O"><label for="morphine">Morphine</label>*@
+        <input type="radio" id="caffeine" name="molRadio" value="CN1C=NC2=C1C(=O)N(C(=O)N2C)C"><label for="caffeine">Caffeine</label>
+    </div>
+
+    <div id="molecule"></div>
+
+    <div id="dimensionsList">
+        <input type="radio" id="2d" name="dimRadio" checked="checked" value="2D"><label for="2d">2D</label>
+        <input type="radio" id="3d" name="dimRadio" value="3D"><label for="3d">3D</label>
+    </div>
+
+    <div id="representationsList">
+        <input type="radio" id="ballAndStick" name="repRadio" checked="checked" value="Ball and Stick"><label for="ballAndStick">Ball and Stick</label>
+        <input type="radio" id="stick" name="repRadio" value="Stick"><label for="stick">Stick</label>
+        <input type="radio" id="wireframe" name="repRadio" value="Wireframe"><label for="wireframe">Wireframe</label>
+        <input type="radio" id="line" name="repRadio" value="Line"><label for="line">Line</label>
+        <input type="radio" id="vanDerWaalsSpheres" name="repRadio" value="van der Waals Spheres"><label for="vanDerWaalsSpheres">van der Waals Spheres</label>
+    </div>
+
+    <br style="clear: both;" />
+    Code example how to display molecule... 
+
+    <pre class="brush: js;">
+        $("#moleculeDiv").chemdoodle_rotator({
+            width: 300,
+            height: 300,
+            smiles: 'CC(=O)OC1=CC=CC=C1C(=O)O'
+        });
+    </pre>
+
+    ... and change it dynamically later
+
+    <pre class="brush: js;">
+        $('#moleculeDiv').chemdoodle_rotator("setSmiles", 'CC(=O)OC1=CC=CC=C1C(=O)O');
+    </pre>
+</hgroup>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#moleculesList').buttonset();
+            $('#dimensionsList').buttonset();
+            $('#representationsList').buttonset().hide();
+
+            $('#molecule').chemdoodle_rotator({
+                smiles: 'CC(=O)OC1=CC=CC=C1C(=O)O',
+                width: 300,
+                height: 300,
+                mode: '2D'
+            });
+
+            $('#moleculesList>input[type="radio"]').click(function () {
+                $('#molecule').chemdoodle_rotator('option', { smiles: $(this).val() });
+            });
+
+            $('#dimensionsList>input[type="radio"]').click(function () {
+                $('#molecule').chemdoodle_rotator('option', { mode: $(this).val() });
+
+                if ($(this).val() == '3D')
+                    $('#representationsList').show();
+                else if ($(this).val() == '2D')
+                    $('#representationsList').hide();
+            });
+
+            $('#representationsList>input[type="radio"]').click(function () {
+                $('#molecule').chemdoodle_rotator('option', { representation3D: $(this).val() });
+            });
+
+            $('.widget-version SPAN').text($("#molecule").chemdoodle_rotator('getVersion'));
+        });
+    </script>
+}

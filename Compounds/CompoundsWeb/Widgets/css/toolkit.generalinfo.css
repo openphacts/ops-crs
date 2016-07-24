@@ -1,0 +1,14 @@
+﻿.cs-widget-generalinfo .properties s {
+    margin-top: 0;
+    margin-bottom: .5em;
+}
+
+.cs-widget-generalinfo .properties .copy-button {
+    margin-left: .5em;
+    color: #bbb;
+    z-index: 1000;
+}
+
+.cs-widget-generalinfo .properties .copy-button:hover {
+    color: #444;
+}

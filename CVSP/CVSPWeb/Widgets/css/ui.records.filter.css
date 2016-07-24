@@ -1,0 +1,20 @@
+﻿.cvsp-records-filter {
+}
+
+.cvsp-records-filter .severities,
+.cvsp-records-filter .issue-types {
+    min-height: 300px;
+    max-height: 300px;
+    overflow: auto;
+    padding: 1em;
+}
+
+.cvsp-records-filter .severities .checkbox,
+.cvsp-records-filter .issue-types .checkbox {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.cvsp-records-filter .severities .glyphicon {
+    margin-right: .5em;
+}

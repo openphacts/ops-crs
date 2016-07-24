@@ -1,0 +1,29 @@
+﻿.cs-widget-searchoptions {
+}
+
+.cs-widget-searchoptions .header {
+    font-size: 12pt;
+    font-weight: bold;
+    border-bottom: 1px solid #999;
+    margin-bottom: 1em;
+}
+
+.cs-widget-searchoptions .title {
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.cs-widget-searchoptions .value {
+    font-size: 9pt;
+    font-style: italic;
+    color: #999999;
+}
+
+.cs-widget-searchoptions .footer {
+    margin-top: .5em;
+    text-align: right;
+}
+
+.cs-widget-searchoptions .footer a {
+    text-decoration: none;
+}

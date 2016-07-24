@@ -1,0 +1,51 @@
+/*
+ * $Id: layout.infobox.tabs.css 9013 2015-04-29 19:32:21Z alexp $ ::2B6A7A!
+ * Copyright (c) 2005 Dr. Vahan Simonyan and Dr. Raja Mazumder.
+ * This software is protected by U.S. Copyright Law and International
+ * Treaties. Unauthorized use, duplication, reverse engineering, any
+ * form of redistribution, use in part or as a whole, other than by
+ * prior, express, written and signed agreement is subject to penalties.
+ * If you have received this file in error, please notify copyright
+ * holder and destroy this and any other copies. All rights reserved.
+ */
+/*
+.layout-infobox-tabs .panel-heading {
+    z-index: 50;
+}
+*/
+.layout-infobox-tabs .panel-body {
+    overflow: auto;
+}
+
+.layout-infobox-tabs .panel-heading .nav-tabs li {
+    margin-bottom: -2px;
+}
+
+.layout-infobox-tabs .panel-body .view-area {
+    position: relative;
+}
+
+.layout-infobox-tabs ul li a {
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    float: left;
+}
+
+.layout-infobox-tabs ul li a.icon {
+    padding: 0.2em 0.5em 0.2em 2em !important;
+}
+
+.layout-infobox-tabs ul li ul.tab-control-menu {
+    position: absolute;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    top: 0;
+    z-index: 100;
+    padding: .2em;
+}
+
+.layout-infobox-tabs ul li span.close-tab {
+    float: right;
+    cursor: pointer;
+    margin-left: .5em;
+    margin-top: .1em;
+}

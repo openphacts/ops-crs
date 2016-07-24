@@ -1,0 +1,73 @@
+.round-border
+{
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid grey;
+	padding: 1em;
+	margin-bottom: 1em;
+}
+
+.help-service
+{
+}
+
+.help-service .subHeading
+{
+    margin-top: 13px;
+    margin-bottom: 7px;
+    font-size: 1em;
+    color: #3F529C;
+    font-weight: bold;
+}
+
+.help-service dl
+{
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+.help-service dd
+{
+    display: block;
+    -webkit-margin-start: 40px;
+}
+
+.help-service .parameter
+{
+    font-size: 100%;
+    font-style: italic;
+    margin: 0;
+}
+
+.help-service p
+{
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+.help-service li
+{
+    list-style: none;
+}
+
+.help-service table
+{
+    width: 100%;
+}
+
+.help-service table th
+{
+    font-size: smaller;
+}
+
+.help-service .obsolete
+{
+    color: Red;
+}

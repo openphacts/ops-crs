@@ -1,0 +1,534 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MethodUsage_DataSourceSearch_Description" xml:space="preserve">
+    <value>Get all compounds from Abacipharm data source</value>
+  </data>
+  <data name="MethodUsage_DataSourceSearch_Example" xml:space="preserve">
+    <value>JSON.ashx?op=DataSourceSearch&amp;searchOptions.DataSources[0]=Abacipharm</value>
+  </data>
+  <data name="MethodUsage_ExactStructureSearch_Description" xml:space="preserve">
+    <value>Run the ExactStructureSearch operation and search for Aspirin compound by SMILES</value>
+  </data>
+  <data name="MethodUsage_ExactStructureSearch_Example" xml:space="preserve">
+    <value>JSON.ashx?op=ExactStructureSearch&amp;searchOptions.Molecule=CC(=O)Oc1ccccc1C(=O)O</value>
+  </data>
+  <data name="MethodUsage_IntrinsicPropertiesSearch_Description" xml:space="preserve">
+    <value>Run the IntrinsicPropertiesSearch operation and search for structures with empirical formula H2O.</value>
+  </data>
+  <data name="MethodUsage_IntrinsicPropertiesSearch_Example" xml:space="preserve">
+    <value>JSON.ashx?op=IntrinsicPropertiesSearch&amp;searchOptions.EmpiricalFormula=H2O</value>
+  </data>
+  <data name="MethodUsage_SimilaritySearch_Description" xml:space="preserve">
+    <value>Run the SimilaritySearch operation and search for all structures that similar to Aspirin with threshold equal to 0.99. Limit the search results number by 100.</value>
+  </data>
+  <data name="MethodUsage_SimilaritySearch_Example" xml:space="preserve">
+    <value>JSON.ashx?op=SimilaritySearch&amp;searchOptions.Molecule=CC(=O)Oc1ccccc1C(=O)O&amp;searchOptions.Threshold=0.99&amp;searchOptions.SimilarityType=Tanimoto&amp;limit=100</value>
+  </data>
+  <data name="MethodUsage_SimpleSearch_Description" xml:space="preserve">
+    <value>Run the SimpleSearch operation and search for Aspirin</value>
+  </data>
+  <data name="MethodUsage_SimpleSearch_Example" xml:space="preserve">
+    <value>JSON.ashx?op=SimpleSearch&amp;searchOptions.QueryText=Aspirin</value>
+  </data>
+  <data name="MethodUsage_SubstructureSearch_Description" xml:space="preserve">
+    <value>Run the SubstructureSearch operation and search for all structures that have Aspirin as sub-structure. Limit the search results number by 10.</value>
+  </data>
+  <data name="MethodUsage_SubstructureSearch_Example" xml:space="preserve">
+    <value>JSON.ashx?op=SubstructureSearch&amp;searchOptions.Molecule=CC(=O)Oc1ccccc1C(=O)O&amp;resultOptions.Limit=10</value>
+  </data>
+  <data name="Method_DataSourceSearch_commonOptions_Description" xml:space="preserve">
+    <value>Common search options like HasSpectra or HasPatents</value>
+  </data>
+  <data name="Method_DataSourceSearch_Description" xml:space="preserve">
+    <value>Run search by data source, data collection or data slice.</value>
+  </data>
+  <data name="Method_DataSourceSearch_limit_Description" xml:space="preserve">
+    <value>Search limit. Specify  how many results return back during the search.</value>
+  </data>
+  <data name="Method_DataSourceSearch_resultOptions_Description" xml:space="preserve">
+    <value>Some search results properties like limit, pagination etc.</value>
+  </data>
+  <data name="Method_DataSourceSearch_ReturnDescription" xml:space="preserve">
+    <value>Request ID string that uniquely identify search request on the server side and that should be used to get information related to search like search status or search results</value>
+  </data>
+  <data name="Method_DataSourceSearch_searchOptions_Description" xml:space="preserve">
+    <value>Data source search options</value>
+  </data>
+  <data name="Method_ExactStructureSearch_commonOptions_Description" xml:space="preserve">
+    <value>Common search options like HasSpectra or HasPatents</value>
+  </data>
+  <data name="Method_ExactStructureSearch_Description" xml:space="preserve">
+    <value>Run identical structure search</value>
+  </data>
+  <data name="Method_ExactStructureSearch_limit_Description" xml:space="preserve">
+    <value>Search limit. Specify  how many results return back during the search.</value>
+  </data>
+  <data name="Method_ExactStructureSearch_resultOptions_Description" xml:space="preserve">
+    <value>Some search results properties like limit, pagination etc.</value>
+  </data>
+  <data name="Method_ExactStructureSearch_ReturnDescription" xml:space="preserve">
+    <value>Request ID string that uniquely identify search request on the server side and that should be used to get information related to search like search status or search results</value>
+  </data>
+  <data name="Method_ExactStructureSearch_scopeOptions_Description" xml:space="preserve">
+    <value>Scope options that specify the set where the results should be found. Not supported at the full manner at the moment.</value>
+  </data>
+  <data name="Method_ExactStructureSearch_searchOptions_Description" xml:space="preserve">
+    <value>Exact structure search options</value>
+  </data>
+  <data name="Method_IntrinsicPropertiesSearch_commonOptions_Description" xml:space="preserve">
+    <value>Common search options like HasSpectra or HasPatents</value>
+  </data>
+  <data name="Method_IntrinsicPropertiesSearch_Description" xml:space="preserve">
+    <value>Run intrinsic properties search.</value>
+  </data>
+  <data name="Method_IntrinsicPropertiesSearch_limit_Description" xml:space="preserve">
+    <value>Search limit. Specify how many results return back during the search.</value>
+  </data>
+  <data name="Method_IntrinsicPropertiesSearch_resultOptions_Description" xml:space="preserve">
+    <value>Some search results properties like limit, pagination etc.</value>
+  </data>
+  <data name="Method_IntrinsicPropertiesSearch_ReturnDescription" xml:space="preserve">
+    <value>Request ID string that uniquely identify search request on the server side and that should be used to get information related to search like search status or search results</value>
+  </data>
+  <data name="Method_IntrinsicPropertiesSearch_scopeOptions_Description" xml:space="preserve">
+    <value>Scope options that specify the set where the results should be found. Not supported at the full manner at the moment.</value>
+  </data>
+  <data name="Method_IntrinsicPropertiesSearch_searchOptions_Description" xml:space="preserve">
+    <value>Intrinsic properties search options (Empirical formula, min/max molecule weight etc.)</value>
+  </data>
+  <data name="Method_SimilaritySearch_commonOptions_Description" xml:space="preserve">
+    <value>Common search options like HasSpectra or HasPatents</value>
+  </data>
+  <data name="Method_SimilaritySearch_Description" xml:space="preserve">
+    <value>Run similarity search.</value>
+  </data>
+  <data name="Method_SimilaritySearch_limit_Description" xml:space="preserve">
+    <value>Search limit. Specify  how many results return back during the search.</value>
+  </data>
+  <data name="Method_SimilaritySearch_resultOptions_Description" xml:space="preserve">
+    <value>Some search results properties like limit, pagination etc.</value>
+  </data>
+  <data name="Method_SimilaritySearch_ReturnDescription" xml:space="preserve">
+    <value>Request ID string that uniquely identify search request on the server side and that should be used to get information related to search like search status or search results</value>
+  </data>
+  <data name="Method_SimilaritySearch_scopeOptions_Description" xml:space="preserve">
+    <value>Scope options that specify the set where the results should be found. Not supported at the full manner at the moment.</value>
+  </data>
+  <data name="Method_SimilaritySearch_searchOptions_Description" xml:space="preserve">
+    <value>Similarity search options (molecule, threshold etc.)</value>
+  </data>
+  <data name="Method_SimpleSearch_commonOptions_Description" xml:space="preserve">
+    <value>Common search options like HasSpectra or HasPatents</value>
+  </data>
+  <data name="Method_SimpleSearch_Description" xml:space="preserve">
+    <value>Run a simple search which tries to interpret a query string as anything it can search by (Synonym, SMILES, InChI, ChemSpider ID etc.)</value>
+  </data>
+  <data name="Method_SimpleSearch_limit_Description" xml:space="preserve">
+    <value>Search limit. Specify  how many results return back during the search.</value>
+  </data>
+  <data name="Method_SimpleSearch_resultOptions_Description" xml:space="preserve">
+    <value>Some search results properties like limit, pagination etc.</value>
+  </data>
+  <data name="Method_SimpleSearch_ReturnDescription" xml:space="preserve">
+    <value>Request ID string that uniquely identify search request on the server side and that should be used to get information related to search like search status or search results</value>
+  </data>
+  <data name="Method_SimpleSearch_scopeOptions_Description" xml:space="preserve">
+    <value>Scope options that specify the set where the results should be found. Not supported at the full manner at the moment.</value>
+  </data>
+  <data name="Method_SimpleSearch_searchOptions_Description" xml:space="preserve">
+    <value>Simple search options</value>
+  </data>
+  <data name="Method_SubstructureSearch_commonOptions_Description" xml:space="preserve">
+    <value>Common search options like HasSpectra or HasPatents</value>
+  </data>
+  <data name="Method_SubstructureSearch_Description" xml:space="preserve">
+    <value>Run substructure search.</value>
+  </data>
+  <data name="Method_SubstructureSearch_limit_Description" xml:space="preserve">
+    <value>Search limit. Specify  how many results return back during the search.</value>
+  </data>
+  <data name="Method_SubstructureSearch_resultOptions_Description" xml:space="preserve">
+    <value>Some search results properties like limit, pagination etc.</value>
+  </data>
+  <data name="Method_SubstructureSearch_ReturnDescription" xml:space="preserve">
+    <value>Request ID string that uniquely identify search request on the server side and that should be used to get information related to search like search status or search results</value>
+  </data>
+  <data name="Method_SubstructureSearch_scopeOptions_Description" xml:space="preserve">
+    <value>Scope options that specify the set where the results should be found. Not supported at the full manner at the moment.</value>
+  </data>
+  <data name="Method_SubstructureSearch_searchOptions_Description" xml:space="preserve">
+    <value>Substructure search options</value>
+  </data>
+  <data name="Type_SearchResultOptions_Description" xml:space="preserve">
+    <value>Used to narrow search results by setting search limit that will be returned or specify what results page to return</value>
+  </data>
+  <data name="Type_SearchResultOptions_Length_Description" xml:space="preserve">
+    <value>How many results should be returned started the Start index. Default value: -1</value>
+  </data>
+  <data name="Type_SearchResultOptions_Limit_Description" xml:space="preserve">
+    <value>Search limit. Specefy how many results return back during the search. Default value: -1</value>
+  </data>
+  <data name="Type_SearchResultOptions_SortOrder_Description" xml:space="preserve">
+    <value>The list of table columns to sort search results by. Not supported at the moment</value>
+  </data>
+  <data name="Type_SearchResultOptions_Start_Description" xml:space="preserve">
+    <value>Return results starting the index. Default value: 0</value>
+  </data>
+  <data name="Method_ElementsSearch_Description" xml:space="preserve">
+    <value>Run search by chemical elements (inclusive and/or exclusive).</value>
+  </data>
+  <data name="Method_ElementsSearch_ReturnDescription" xml:space="preserve">
+    <value>Request ID string that uniquely identify search request on the server side and that should be used to get information related to search like search status or search results</value>
+  </data>
+  <data name="Method_ElementsSearch_searchOptions_Description" xml:space="preserve">
+    <value>Elements search options</value>
+  </data>
+  <data name="Method_ElementsSearch_commonOptions_Description" xml:space="preserve">
+    <value>Common search options like HasSpectra or HasPatents</value>
+  </data>
+  <data name="Method_ElementsSearch_scopeOptions_Description" xml:space="preserve">
+    <value>Scope options that specify the set where the results should be found. Not supported at the full manner at the moment.</value>
+  </data>
+  <data name="Method_ElementsSearch_resultOptions_Description" xml:space="preserve">
+    <value>Some search results properties like limit, pagination etc.</value>
+  </data>
+  <data name="Method_ElementsSearch_limit_Description" xml:space="preserve">
+    <value>Search limit. Specify  how many results return back during the search.</value>
+  </data>
+  <data name="Method_PredictedPropertiesSearch_Description" xml:space="preserve">
+    <value>Run search by predicted properties.</value>
+  </data>
+  <data name="Method_PredictedPropertiesSearch_ReturnDescription" xml:space="preserve">
+    <value>Request ID string that uniquely identify search request on the server side and that should be used to get information related to search like search status or search results</value>
+  </data>
+  <data name="Method_PredictedPropertiesSearch_searchOptions_Description" xml:space="preserve">
+    <value>Predicted properties search options (LogP minimum/maximum, Boiling point minimum/maximum etc.)</value>
+  </data>
+  <data name="Method_PredictedPropertiesSearch_commonOptions_Description" xml:space="preserve">
+    <value>Common search options like HasSpectra or HasPatents</value>
+  </data>
+  <data name="Method_PredictedPropertiesSearch_scopeOptions_Description" xml:space="preserve">
+    <value>Scope options that specify the set where the results should be found. Not supported at the full manner at the moment.</value>
+  </data>
+  <data name="Method_PredictedPropertiesSearch_resultOptions_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Method_PredictedPropertiesSearch_limit_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Method_AdvancedSearch_Description" xml:space="preserve">
+    <value>Run advanced search as a union of all other search types.</value>
+  </data>
+  <data name="Method_AdvancedSearch_ReturnDescription" xml:space="preserve">
+    <value>Request ID string that uniquely identify search request on the server side and that should be used to get information related to search like search status or search results</value>
+  </data>
+  <data name="Method_AdvancedSearch_searchOptions_Description" xml:space="preserve">
+    <value>Advanced search options</value>
+  </data>
+  <data name="Method_AdvancedSearch_commonOptions_Description" xml:space="preserve">
+    <value>Common search options like HasSpectra or HasPatents</value>
+  </data>
+  <data name="Method_AdvancedSearch_resultOptions_Description" xml:space="preserve">
+    <value>Some search results properties like limit, pagination etc.</value>
+  </data>
+  <data name="Method_AdvancedSearch_limit_Description" xml:space="preserve">
+    <value>Search limit. Specify how many results return back during the search.</value>
+  </data>
+  <data name="MethodUsage_GetSearchResult_Description" xml:space="preserve">
+    <value>Get the search results as the list of ChemSpider IDs</value>
+  </data>
+  <data name="MethodUsage_GetSearchResult_Example" xml:space="preserve">
+    <value>JSON.ashx?op=GetSearchResult&amp;rid=9c2cfa9a-8439-4389-be16-6d7c6b69fa58</value>
+  </data>
+  <data name="Method_GetSearchResult_Description" xml:space="preserve">
+    <value>Get search results by Request ID.</value>
+  </data>
+  <data name="Method_GetSearchResult_ReturnDescription" xml:space="preserve">
+    <value>Array of CSIDs</value>
+  </data>
+  <data name="Method_GetSearchResult_rid_Description" xml:space="preserve">
+    <value>Request ID that was returned by any other method that run search procedure</value>
+  </data>
+  <data name="Method_GetSearchResult_start_Description" xml:space="preserve">
+    <value>Return results starting from</value>
+  </data>
+  <data name="Method_GetSearchResult_count_Description" xml:space="preserve">
+    <value>Number of results that will be returned for the request</value>
+  </data>
+  <data name="MethodUsage_GetSearchStatus_Description" xml:space="preserve">
+    <value>Check search status for one of the previousely started search operations.</value>
+  </data>
+  <data name="MethodUsage_GetSearchStatus_Example" xml:space="preserve">
+    <value>JSON.ashx?op=GetSearchStatus&amp;rid=9c2cfa9a-8439-4389-be16-6d7c6b69fa58</value>
+  </data>
+  <data name="Method_GetSearchStatus_Description" xml:space="preserve">
+    <value>Returns the status of request.</value>
+  </data>
+  <data name="Method_GetSearchStatus_ReturnDescription" xml:space="preserve">
+    <value>Structure that describe search status</value>
+  </data>
+  <data name="Method_GetSearchStatus_rid_Description" xml:space="preserve">
+    <value>Request ID that was returned by any other method that run search procedure</value>
+  </data>
+  <data name="MethodUsage_GetSearchResultAsCompounds_Description" xml:space="preserve">
+    <value>Get the search results as the list of Compound objects</value>
+  </data>
+  <data name="MethodUsage_GetSearchResultAsCompounds_Example" xml:space="preserve">
+    <value>JSON.ashx?op=GetSearchResult&amp;rid=9c2cfa9a-8439-4389-be16-6d7c6b69fa58</value>
+  </data>
+  <data name="MethodUsage2_GetSearchResultAsCompounds_Description" xml:space="preserve">
+    <value>Get the search results as the list of Compound objects and return only requested compounds properties</value>
+  </data>
+  <data name="MethodUsage2_GetSearchResultAsCompounds_Example" xml:space="preserve">
+    <value>JSON.ashx?op=GetSearchResult&amp;rid=9c2cfa9a-8439-4389-be16-6d7c6b69fa58&amp;serfilter=Compound[CSID|Name|Mol]</value>
+  </data>
+  <data name="Method_GetSearchResultAsCompounds_Description" xml:space="preserve">
+    <value>Returns search results by Request ID.</value>
+  </data>
+  <data name="Method_GetSearchResultAsCompounds_ReturnDescription" xml:space="preserve">
+    <value>Array of Compound objects.</value>
+  </data>
+  <data name="Method_GetSearchResultAsCompounds_rid_Description" xml:space="preserve">
+    <value>Request ID that was returned by any other method that run search procedure</value>
+  </data>
+  <data name="Method_GetSearchResultAsCompounds_start_Description" xml:space="preserve">
+    <value>Return results starting from</value>
+  </data>
+  <data name="Method_GetSearchResultAsCompounds_count_Description" xml:space="preserve">
+    <value>Number of results that will be returned for the request</value>
+  </data>
+  <data name="Method_GetSearchResultAsCompounds_serfilter_Description" xml:space="preserve">
+    <value>Serialization filter. Specify what compound properties should be serialized to response. E.g. Compound[CSID|Name|Mol] will return only internal ChemSpider ID, common compound name and Mol file. Extraction of some compound properties (like References or Predicted Properties) is time valued operation and if you really don't need it it can make you request much faster. See list of Compound properties to figure out what other properties can be returned. By default all compound properties are returned.</value>
+  </data>
+  <data name="MethodUsage_GetSearchResultAsSdf_Description" xml:space="preserve">
+    <value>Get the search results as SDF file</value>
+  </data>
+  <data name="MethodUsage_GetSearchResultAsSdf_Example" xml:space="preserve">
+    <value>JSON.ashx?op=GetSearchResultAsSdf&amp;rid=9c2cfa9a-8439-4389-be16-6d7c6b69fa58</value>
+  </data>
+  <data name="Method_GetSearchResultAsSdf_Description" xml:space="preserve">
+    <value>Returns results of the search identified by Request ID as SDF.</value>
+  </data>
+  <data name="Method_GetSearchResultAsSdf_ReturnDescription" xml:space="preserve">
+    <value>Data in SDF format</value>
+  </data>
+  <data name="Method_GetSearchResultAsSdf_rid_Description" xml:space="preserve">
+    <value>Request ID that was returned by any other method that run search procedure</value>
+  </data>
+  <data name="Method_GetSearchResultAsSdf_start_Description" xml:space="preserve">
+    <value>Return results starting from</value>
+  </data>
+  <data name="Method_GetSearchResultAsSdf_count_Description" xml:space="preserve">
+    <value>Number of results that will be returned for the request</value>
+  </data>
+  <data name="MethodUsage_GetRecordsAsCompounds_Description" xml:space="preserve">
+    <value>Get information about two compounds in one request</value>
+  </data>
+  <data name="MethodUsage_GetRecordsAsCompounds_Example" xml:space="preserve">
+    <value>JSON.ashx?op=GetRecordsAsCompounds&amp;csids[0]=123&amp;csids[1]=124</value>
+  </data>
+  <data name="MethodUsage2_GetRecordsAsCompounds_Description" xml:space="preserve">
+    <value>Get information about two compounds in one request and return only requested compounds properties</value>
+  </data>
+  <data name="MethodUsage2_GetRecordsAsCompounds_Example" xml:space="preserve">
+    <value>JSON.ashx?op=GetRecordsAsCompounds&amp;csids[0]=123&amp;csids[1]=124&amp;serfilter=Compound[CSID|Name|Mol]</value>
+  </data>
+  <data name="Method_GetRecordsAsCompounds_Description" xml:space="preserve">
+    <value>Returns information about requested records specified as an array of CSIDs as array of Compound objects.</value>
+  </data>
+  <data name="Method_GetRecordsAsCompounds_ReturnDescription" xml:space="preserve">
+    <value>Array of requested Compound objects.</value>
+  </data>
+  <data name="Method_GetRecordsAsCompounds_csids_Description" xml:space="preserve">
+    <value>Array of ChemSpider IDs</value>
+  </data>
+  <data name="Method_GetRecordsAsCompounds_serfilter_Description" xml:space="preserve">
+    <value>Serialization filter. Specify what compound properties should be serialized to response. E.g. Compound[CSID|Name|Mol] will return only internal ChemSpider ID, common compound name and Mol file. Extraction of some compound properties (like References or Predicted Properties) is time valued operation and if you really don't need it it can make you request much faster. See list of Compound properties to figure out what other properties can be returned. By default all compound properties are returned.</value>
+  </data>
+  <data name="MethodUsage_GetRecordsAsSdf_Description" xml:space="preserve">
+    <value>Get information about two compounds in one request in SDF format</value>
+  </data>
+  <data name="MethodUsage_GetRecordsAsSdf_Example" xml:space="preserve">
+    <value>JSON.ashx?op=GetRecordsAsSdf&amp;csids[0]=123&amp;csids[1]=124</value>
+  </data>
+  <data name="Method_GetRecordsAsSdf_Description" xml:space="preserve">
+    <value>Returns information about requested records specified as an array of CSIDs as SDF.</value>
+  </data>
+  <data name="Method_GetRecordsAsSdf_ReturnDescription" xml:space="preserve">
+    <value>Array of compounds in SDF format</value>
+  </data>
+  <data name="Method_GetRecordsAsSdf_csids_Description" xml:space="preserve">
+    <value>Array of ChemSpider IDs</value>
+  </data>
+  <data name="MethodUsage_ConvertToStructure_Description" xml:space="preserve">
+    <value>Get aspirin mol file by name</value>
+  </data>
+  <data name="MethodUsage_ConvertToStructure_Example" xml:space="preserve">
+    <value>JSON.ashx?op=ConvertToStructure&amp;text=Aspirin</value>
+  </data>
+  <data name="Method_ConvertToStructure_Description" xml:space="preserve">
+    <value>Convert Name, SMILES, InChI or ChemSpider ID into structure</value>
+  </data>
+  <data name="Method_ConvertToStructure_ReturnDescription" xml:space="preserve">
+    <value>Returns N2SResult object that will hold conversion's result.</value>
+  </data>
+  <data name="Method_ConvertToStructure_text_Description" xml:space="preserve">
+    <value>Text for convertion</value>
+  </data>
+  <data name="Type_Synonym_Description" xml:space="preserve">
+    <value>Describes base synonym properties</value>
+  </data>
+  <data name="Type_Synonym_Name_Description" xml:space="preserve">
+    <value>Synonym's name</value>
+  </data>
+  <data name="Type_Synonym_LangID_Description" xml:space="preserve">
+    <value>Synonym's lanquage</value>
+  </data>
+  <data name="Type_Synonym_SynonymType_Description" xml:space="preserve">
+    <value>Synonym's type like EINECS or SystematicName</value>
+  </data>
+  <data name="Type_Blob_Description" xml:space="preserve">
+    <value>Describes blobs stored in ChemSpider</value>
+  </data>
+  <data name="Type_Blob_ID_Description" xml:space="preserve">
+    <value>Internal blob's id</value>
+  </data>
+  <data name="Type_Blob_BlobType_Description" xml:space="preserve">
+    <value>Specify blob's type (Spectrum, Image etc.)</value>
+  </data>
+  <data name="Type_Blob_SubType_Description" xml:space="preserve">
+    <value>Used only for spectra blobs. Specify spectrum type.</value>
+  </data>
+  <data name="Type_Blob_Filename_Description" xml:space="preserve">
+    <value>Original filename that was loaded to ChemSpider</value>
+  </data>
+  <data name="Type_Blob_Open_Description" xml:space="preserve">
+    <value>Is the data opened or not</value>
+  </data>
+  <data name="Type_Blob_Approved_Description" xml:space="preserve">
+    <value>Is the blob's connection to compound approved or not</value>
+  </data>
+  <data name="Type_Blob_HomePageUrl_Description" xml:space="preserve">
+    <value>Original source where the blob came from</value>
+  </data>
+  <data name="Type_SubstructureSearchOptions_MatchTautomers_Description" xml:space="preserve">
+    <value>Search exactly for the given tautomeric form and ignore others. Not &lt;b&gt;supported&lt;/b&gt; at the moment</value>
+  </data>
+</root>

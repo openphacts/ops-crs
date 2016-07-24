@@ -1,0 +1,139 @@
+/*
+ * $Id: layout.area.css 9013 2015-04-29 19:32:21Z alexp $ ::2B6A7A!
+ * Copyright (c) 2005 Dr. Vahan Simonyan and Dr. Raja Mazumder.
+ * This software is protected by U.S. Copyright Law and International
+ * Treaties. Unauthorized use, duplication, reverse engineering, any
+ * form of redistribution, use in part or as a whole, other than by
+ * prior, express, written and signed agreement is subject to penalties.
+ * If you have received this file in error, please notify copyright
+ * holder and destroy this and any other copies. All rights reserved.
+ */
+.layout-area {
+    position: absolute;
+}
+
+.layout-area.focus {
+    z-index: 100;
+}
+
+.layout-area.maximize {
+    top: 1% !important;
+    left: 1% !important;
+    width: 98% !important;
+    height: 98% !important;
+    position: fixed !important;
+    z-index: 1000;
+}
+
+/* **************************************************
+    Area toggletrs
+************************************************** */
+.layout-area .toggler {
+    cursor: pointer;
+    position: absolute;
+    z-index: 1000 !important;
+    /*background-color:rgba(176,176,176);*/
+    background-color:gray;
+    opacity: 0.3;
+    filter: alpha(opacity=30); /* For IE8 and earlier */
+}
+
+.layout-area .toggler:hover {
+    background-position: center center;
+    background-color:transparent;
+    opacity: .8;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
+    width: 32px;
+}
+/* East toggler */
+.layout-area .toggler.east {
+    top: 45%;
+    right: 1px;
+	height: 40px;
+    width: 6px;
+}
+
+.layout-area .toggler.east:hover {
+    width: 32px;
+    background-image: url("images/arrow-left-32.png");
+}
+
+.layout-area.collapsed .toggler.east {
+    top: 45%;
+    right: -6px;
+}
+
+.layout-area.collapsed .toggler.east:hover {
+    right: -32px;
+    width: 32px;
+    background-image: url("images/arrow-right-32.png");
+}
+
+/* West toggler */
+.layout-area .toggler.west {
+	height: 40px;
+    width: 6px;
+    top: 45%;
+    left: 1px;
+}
+
+.layout-area .toggler.west:hover {
+    width: 32px;
+    background-image: url("images/arrow-right-32.png");
+}
+
+.layout-area.collapsed .toggler.west {
+	left: -6px;
+}
+
+.layout-area.collapsed .toggler.west:hover {
+    width: 32px;
+    left: -32px;
+    background-image: url("images/arrow-left-32.png");
+}
+
+/* South toggler */
+.layout-area .toggler.south {
+	height: 6px;
+    width: 40px;
+    bottom: 0px;
+    left: 45%;
+}
+
+.layout-area .toggler.south:hover {
+    height: 32px;
+    background-image: url("images/arrow-up-32.png");
+}
+
+.layout-area.collapsed .toggler.south {
+	bottom: -6px;
+}
+
+.layout-area.collapsed .toggler.south:hover {
+    height: 32px;
+    bottom: -32px;
+    background-image: url("images/arrow-down-32.png");
+}
+
+/* North toggler */
+.layout-area .toggler.north {
+	height: 6px;
+    width: 40px;
+    top: 0px;
+    left: 45%;
+}
+
+.layout-area .toggler.north:hover {
+    height: 32px;
+    background-image: url("images/arrow-down-32.png");
+}
+
+.layout-area.collapsed .toggler.north {
+	top: -6px;
+}
+
+.layout-area.collapsed .toggler.north:hover {
+    height: 32px;
+    top: -32px;
+    background-image: url("images/arrow-up-32.png");
+}

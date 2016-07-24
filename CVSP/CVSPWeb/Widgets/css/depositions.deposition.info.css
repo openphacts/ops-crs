@@ -1,0 +1,12 @@
+﻿.cvsp-deposition-info .loading-spinner {
+    display: inline-block;
+    margin-right: .5em;
+}
+
+.cvsp-deposition-info .deposition-records .counter {
+    margin-left: .5em;
+}
+
+.cvsp-deposition-info dd ul .title {
+    min-width: 12em;
+}

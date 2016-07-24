@@ -1,0 +1,31 @@
+benzene with nonetheless wrong deposition stuff
+
+
+  6  6  0  0  0  0  0  0  0  0999 V2000
+   21.3320  -32.2437    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   21.3320  -36.1759    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   24.7373  -38.1420    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   28.1427  -36.1759    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   28.1427  -32.2437    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   24.7373  -30.2776    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  2  0  0  0  0
+  2  3  1  0  0  0  0
+  3  4  2  0  0  0  0
+  4  5  1  0  0  0  0
+  5  6  2  0  0  0  0
+  6  1  1  0  0  0  0
+
+M  END
+> <DEPOSITOR_SUBSTANCE_SYNONYM>
+benzene
+
+> <DEPOSITOR_SUBSTANCE_SMILES>
+C1=CC=CC=C1
+
+> <DEPOSITOR_SUBSTANCE_INCHI>
+InChI=1S/C6H6/c1-2-4-6-5-3-1/h1-6H
+
+> <DEPOSITOR_PRIMARY_STRUCTURE_TAG>
+DEPOSITOR_SUBSTANCE_INCHI
+
+$$$$

@@ -1,0 +1,68 @@
+﻿@using ChemSpider.Profile.RSCID;
+@using ChemSpider.Profile;
+
+@{
+    Layout = "~/Views/Shared/_RSCLayout.cshtml";
+}
+
+@section css {
+    <link href="@ChemSpider.Compounds.CompoundsIntegration.ToolkitCSS" rel="stylesheet" />
+    <link href="@ChemSpider.Compounds.CompoundsIntegration.CSS" rel="stylesheet" />
+    <link href="@ChemSpider.Datasources.DatasourcesIntegration.CSS" rel="stylesheet" />
+    @Styles.Render("~/Widgets/css/css-cvsp")
+
+    @RenderSection("css", required: false)
+}
+
+@section featured {
+    <div class="toolbar">
+        <ul class="nav nav-pills">
+            <li role="presentation" class="home">@Html.ActionLink("Home", "Index", "Home")</li>
+            <li role="presentation" class="submit">@Html.ActionLink("Submit", "Submit", "Depositions")</li>
+            <li role="presentation" class="depositions">@Html.ActionLink("Depositions", "Index", "Depositions")</li>
+            <li role="presentation" class="profile">@Html.ActionLink("Profile", "CVSPProfile", "Home")</li>
+        </ul>
+        @if (!RSCIDAuthentication.IsEnabled)
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                <ul class="user-panel">
+                    <li class="account_container">
+                        Welcome, @Profile.DisplayName()!
+                    </li>
+                    <li>
+                        <a class="logout_link" style="line-height: 26px !important;" title="Sign out" href="~/Account/LogOff">Sign out</a>
+                    </li>
+                </ul>
+            }
+            else
+            {
+                <ul class="user-panel">
+                    <li class="account_container">
+                        <a class="login_link" style="line-height: 26px !important;" title="Sign in" href="~/Account/Login">Sign in</a>
+                    </li>
+                </ul>
+            }
+        }
+
+    </div>
+    <hr />
+    <div class="content">
+        @RenderBody()
+    </div>
+}
+
+@section scripts {
+    <script src="@ChemSpider.Compounds.CompoundsIntegration.ToolkitScript"></script>
+    <script src="@ChemSpider.Compounds.CompoundsIntegration.Script"></script>
+    <script src="@ChemSpider.Datasources.DatasourcesIntegration.Script"></script>
+    @Scripts.Render("~/widgets/js/js-cvsp")
+    
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        //$(document).ready(function () {
+        //    $('[data-toggle="tooltip"]').tooltip();
+        //});
+    </script>
+}

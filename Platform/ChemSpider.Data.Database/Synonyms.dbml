@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ChemSpider" Class="SynonymsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SQLHUB;Initial Catalog=ChemSpider;Integrated Security=True" SettingsObjectName="ChemSpider.Database.Properties.Settings" SettingsPropertyName="ChemSpiderConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.compounds_synonyms" Member="compounds_synonyms">
+    <Type Name="compounds_synonym">
+      <Column Name="cmp_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="syn_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="opinion" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="approved_yn" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="date_changed" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="deleted_yn" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="usr_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cur_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="common_name_yn" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="csid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dep_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date_created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_updated" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="synonym_compounds_synonym" Member="synonym" ThisKey="syn_id" OtherKey="syn_id" Type="synonym" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.synonyms" Member="synonyms">
+    <Type Name="synonym">
+      <Column Name="syn_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="synonym" Member="synonym1" Type="System.String" DbType="NVarChar(448) NOT NULL" CanBeNull="false" />
+      <Column Name="lang_id1" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="checked_yn" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="deleted_yn" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="date_created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_updated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="synonym_compounds_synonym" Member="compounds_synonyms" ThisKey="syn_id" OtherKey="syn_id" Type="compounds_synonym" />
+    </Type>
+  </Table>
+  <Table Name="dbo.synonyms_synonyms_flags" Member="synonyms_synonyms_flags">
+    <Type Name="synonyms_synonyms_flag">
+      <Column Name="syn_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="flag_id" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.synonyms_flags" Member="synonyms_flags">
+    <Type Name="synonyms_flag">
+      <Column Name="flag_id" Type="System.Byte" DbType="TinyInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="descr" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="url" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.synonyms_lookup" Member="synonyms_lookups">
+    <Type Name="synonyms_lookup">
+      <Column Name="synonym" Type="System.String" DbType="NVarChar(448) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="score" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.systematic_names" Member="systematic_names">
+    <Type Name="systematic_name">
+      <Column Name="cmp_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="oechem_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="oechem_blah_yn" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.languages" Member="languages">
+    <Type Name="language">
+      <Column Name="lang_id" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="iso639_3" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="iso639_2b" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="iso639_2t" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

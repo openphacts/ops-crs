@@ -1,0 +1,119 @@
+﻿<div id="searchTabs" class="home-search">
+    <ul>
+        <li><a href="#simpleSearch">Simple seach</a></li>
+        <li><a href="#structureSearch">Structure search</a></li>
+    </ul>
+    <div id="simpleSearch">
+        <input id="searchField" type="text" class="textbox autocompleteList" size="60" />
+
+        <table width="100%" cellspacing="0" border="0" class="search-examples">
+            <tbody>
+                <tr>
+                    <td>Systematic names</td>
+                    <td>Synonyms</td>
+                    <td>Trade names</td>
+                    <td>Registry numbers</td>
+                    <td>SMILES</td>
+                    <td>InChl</td>
+                </tr>
+                <tr>
+                    <td>1,2-dihydroxybenzene</td>
+                    <td>AIBN</td>
+                    <td>Aspirin</td>
+                    <td>7732-18-5</td>
+                    <td>O=C(OCC)C</td>
+                    <td>InChI=1/CH4/h1H4</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <input type="submit" class="button" id="simpleSearchBtn" value="Search">
+    </div>
+    <div id="structureSearch">
+        <div id="structureEditor" style="width: 250px; height: 250px; float: left; margin-right: 10px;"></div>
+        <div id="structureOptions" style="width: 340px; float: left;"></div>
+        <br style="clear: both;" />
+        <input type="submit" class="button" id="structureSearchBtn" value="Search">
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#searchField')
+            .watermark({ hint: 'eg. Aspirin' })
+            .keydown(function (event) {
+                if (event.which == 13) {
+                    $('#simpleSearchBtn').click();
+                }
+            });
+
+        $('#simpleSearchBtn').click(function () {
+            if ($('#searchField').val() != 'eg. Aspirin') {
+                $('body').searchProgress();
+
+                $(document).trigger("SimpleSearch", { value: $('#searchField').val() });
+            }
+        });
+
+        $('#searchTabs').tabs({
+            active: 0,
+            activate: function (event, ui) {
+                if (ui.newPanel.attr('id') === 'structureSearch') {
+                    $("#structureOptions").structureoptions({
+                        saveState: true
+                    });
+                }
+            }
+        });
+
+        var structEditor = $("#structureEditor").structureeditor({
+            jsdraw: true,
+            jchempaint: true,
+            width: 250,
+            height: 250
+        });
+
+        $('#structureSearchBtn').click(function () {
+            var smiles = structEditor.structureeditor("smiles");
+            var molecule = structEditor.structureeditor("molecule");
+
+            if (smiles == '') {
+                $('body').showMessage("Info", "Please, enter some structure first!");
+                return;
+            }
+
+            $('body').loadProgress("Searching...");
+
+            var activeIndex = $("#structureOptions").structureoptions("activeIndex");
+
+            //  Exact structure search...
+            if (activeIndex == 0) {
+                var matchType = 0;
+
+                switch ($("#structureOptions").structureoptions('exactSearchType')) {
+                    case 'allow-isotopes-and-stereoisomers':
+                        matchType = 4;
+                        break;
+                    case 'all-tautomers':
+                        matchType = 1;
+                        break;
+                    default:
+                        matchType = 0;
+                        break;
+                }
+
+                $(document).trigger("ExactStructureSearch", { smiles: smiles, mol: molecule, matchType: matchType });
+            }
+                //  Sub-structure search...
+            else if (activeIndex == 1) {
+                $(document).trigger("SubStructureSearch", { smiles: smiles, mol: molecule });
+            }
+                //  Similarity structure search...
+            else if (activeIndex == 2) {
+                var threshold = $("#structureOptions").structureoptions("similarityThreshold")
+                var type = $("#structureOptions").structureoptions("similarityType");
+                $(document).trigger("SimilarityStructureSearch", { smiles: smiles, mol: molecule, threshold: threshold, type: type });
+            }
+        });
+    });
+</script>

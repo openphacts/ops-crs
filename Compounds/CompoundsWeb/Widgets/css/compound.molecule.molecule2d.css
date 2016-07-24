@@ -1,0 +1,28 @@
+﻿.cs-widget-mol2d {
+	position: relative;
+	/*text-align: center;*/
+}
+
+.cs-widget-mol2d .cs-widget-cmp-image {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto !important;
+}
+
+.cs-widget-mol2d .mol2d-toolbar {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.cs-widget-mol2d .mol2d-toolbar a {
+	color: lightgray;
+}
+
+.cs-widget-mol2d .mol2d-toolbar a:hover {
+	color: gray;
+	border: 1px solid #eee;
+}

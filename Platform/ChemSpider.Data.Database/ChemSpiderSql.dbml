@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ChemSpider" EntityNamespace="ChemSpider.Sql" ContextNamespace="ChemSpider.Sql" Class="ChemSpiderSqlDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SQLHUB;Initial Catalog=ChemSpider;Integrated Security=True" SettingsObjectName="ChemSpider.Database.Properties.Settings" SettingsPropertyName="ChemSpiderConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.depositions" Member="depositions">
+    <Type Name="deposition">
+      <Column Name="dep_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="date_submitted" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_published" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="dsn_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="usr_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="file_name" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="open_yn" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="synonyms_confirmed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="orig_file_name" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="num_records" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="typ" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="supp_info" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="date_locked" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="col_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="file_encoding" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="dsn_update_yn" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="data_dir" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="update_flags" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="deposition_depositions_track" Member="depositions_tracks" ThisKey="dep_id" OtherKey="dep_id" Type="depositions_track" />
+    </Type>
+  </Table>
+  <Table Name="dbo.depositions_track" Member="depositions_tracks">
+    <Type Name="depositions_track">
+      <Column Name="dtid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dep_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="usr_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="deposition_depositions_track" Member="deposition" ThisKey="dep_id" OtherKey="dep_id" Type="deposition" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_filter_runs" Member="v_filter_runs">
+    <Type Name="v_filter_run">
+      <Column Name="frid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="trn_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="undo_frid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_filters" Member="v_filters">
+    <Type Name="v_filter">
+      <Column Name="fid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="search_handler" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="search_options" Type="System.Xml.Linq.XElement" DbType="Xml NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ui_state" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="object_type" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="action_handler" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="action_options" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="deleted_yn" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="creator" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="frid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.synonyms" Member="synonyms">
+    <Type Name="synonym">
+      <Column Name="syn_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="synonym" Member="synonym1" Type="System.String" DbType="NVarChar(448) NOT NULL" CanBeNull="false" />
+      <Column Name="lang_id1" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="checked_yn" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="deleted_yn" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="date_created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_updated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_transactions" Member="v_transactions">
+    <Type Name="v_transaction">
+      <Column Name="trn_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ses_id" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="type" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="address" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="referrer" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="date_started" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_updated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="progress" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="predicate" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="message" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="result_data" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="stop" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.v_depositions" Member="v_depositions">
+    <Type Name="v_deposition">
+      <Column Name="dep_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="date_submitted" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="date_published" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="status_tag" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="dsn_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="usr_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="file_name" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="description" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="num_records" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="orig_file_name" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="supp_info" Type="System.Xml.Linq.XElement" DbType="Xml" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="file_encoding" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="dsn_update_yn" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="synonyms_confirmed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="typ" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="data_dir" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="dataset_version" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="dataset_created" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="dataset_imported_from" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="dataset_license" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="dataset_uri_space" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="dataset_void_uri" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="mapped_fields_count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fields_count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ds_name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="files_count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="date_locked" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="update_flags" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="progress" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="submitter" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="is_legacy" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.DeleteSynonym" Method="DeleteSynonym">
+    <Parameter Name="syn_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UndeleteSynonym" Method="UndeleteSynonym">
+    <Parameter Name="syn_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.filter_run_create" Method="filter_run_create">
+    <Parameter Name="fid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="trn_id" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="undo_frid" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.filter_update" Method="filter_update">
+    <Parameter Name="fid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="description" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="search_handler" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="search_options" Type="System.Xml.Linq.XElement" DbType="Xml" />
+    <Parameter Name="object_type" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="action_handler" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="action_options" Type="System.Xml.Linq.XElement" DbType="Xml" />
+    <Parameter Name="ui_state" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
+    <Parameter Name="deleted_yn" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.filter_create" Method="filter_create">
+    <Parameter Name="name" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="description" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="creator" Type="System.Int32" DbType="Int" />
+    <Parameter Name="search_handler" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="search_options" Type="System.Xml.Linq.XElement" DbType="Xml" />
+    <Parameter Name="object_type" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="action_handler" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="action_options" Type="System.Xml.Linq.XElement" DbType="Xml" />
+    <Parameter Name="ui_state" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
+    <Parameter Name="fid" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateSynonym" Method="UpdateSynonym">
+    <Parameter Name="syn_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="synonym" Type="System.String" DbType="NVarChar(448)" />
+    <Parameter Name="lang_id" Type="System.String" DbType="Char(2)" />
+    <Parameter Name="flags" Type="System.Xml.Linq.XElement" DbType="Xml" />
+    <Parameter Name="merge_options" Type="System.Int32" DbType="Int" />
+    <Parameter Name="updating_syn_id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="action_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SetDepositionSuppInfo" Method="SetDepositionSuppInfo">
+    <Parameter Name="dep_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="supp_info" Type="System.Xml.Linq.XElement" DbType="Xml" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DepricateCompound" Method="DepricateCompound">
+    <Parameter Name="cmp_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="usr_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="depricated_yn" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeprecateCompoundsSynonym" Method="DeprecateCompoundsSynonym">
+    <Parameter Name="cmp_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="syn_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="usr_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="deleted_yn" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

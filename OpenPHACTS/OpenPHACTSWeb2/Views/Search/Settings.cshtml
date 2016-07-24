@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "ChemSpider Compounds | Search Settings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Search Settings</h4>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Scope options
+    </div>
+    <div class="panel-body search-scope-options">
+
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Datasources</label>
+                <div class="col-sm-10">
+                    <span id="datasources"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Real Only</label>
+                <div class="col-sm-10">
+                    <input type="checkbox" class="form-control" id="realOnly" style="width: 20px; height: 20px;" />
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Results options
+    </div>
+    <div class="panel-body search-results-options">
+
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="resultsLimit" class="col-sm-2 control-label">Hits Limit</label>
+                <div class="col-sm-10">
+                    <select id="resultsLimit" class="form-control" style="width: 100px;">
+                        <option value="100" selected="selected">100</option>
+                        <option value="1000">1000</option>
+                        <option value="10000">10000</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<div>
+    <button type="button" class="btn btn-primary" id="saveBtn">Save</button>
+    <button type="button" class="btn btn-default" id="cancelBtn">Cancel</button>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var datasources = $('#datasources').datasource_lookup({
+                guidsProviderUrl: '@Url.Content("~/api/datasources")'
+            });
+            var resultsLimit = $('#resultsLimit');
+            var realOnly = $('#realOnly');
+
+            var searchOptions = new SearchOptions();
+
+            resultsLimit.val(searchOptions.getHitsLimit());
+            realOnly.prop('checked', searchOptions.options.searchScopes.realOnly);
+            datasources.datasource_lookup('setSelected', searchOptions.getDatasourcesIds());
+
+            $('#saveBtn').click(function () {
+                searchOptions.setHitsLimit(parseInt(resultsLimit.val()));
+                searchOptions.setDatasources(datasources.datasource_lookup('getSelectedItems'));
+                searchOptions.options.searchScopes.realOnly = realOnly.is(':checked');
+
+                searchOptions.save();
+
+                window.location = '@Url.Content("~/")';
+            });
+
+            $('#cancelBtn').click(function () {
+                window.location = '@Url.Content("~/")';
+            });
+        });
+</script>
+}

@@ -1,0 +1,21 @@
+﻿@model Guid
+
+@{
+    ViewBag.Title = "Deposition's Chunks";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="chunks"></div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#chunks').chunks_gridview({
+                deposition: '@Model',
+                onClick: function (event, chunk) {
+                    window.location = '@Url.Content("~/chunks/")' + chunk.Id;
+                }
+            });
+        });
+    </script>
+}

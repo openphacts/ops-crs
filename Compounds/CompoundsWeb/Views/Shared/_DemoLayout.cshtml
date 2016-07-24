@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "~/Views/Shared/_RSCDemoLayout.cshtml";
+}
+
+@section css {
+    @Styles.Render("~/Widgets/css/css-toolkit")
+    @Styles.Render("~/Widgets/css/css-compounds")
+    @*@Styles.Render(ChemSpider.Datasources.DatasourcesIntegration.CSS)*@
+
+    @RenderSection("css", required: false)
+}
+
+@section featured {
+    @RenderBody()
+}
+
+@section scripts {
+    @Scripts.Render("~/widgets/js/js-toolkit")
+    @Scripts.Render("~/widgets/js/js-compounds")
+    @*@Scripts.Render(ChemSpider.Datasources.DatasourcesIntegration.Script)*@
+
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if ($.support.bootstrap())
+                $('[data-toggle="tooltip"]').bootstrapTooltip();
+        });
+    </script>
+}

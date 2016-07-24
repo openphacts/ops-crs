@@ -1,0 +1,112 @@
+
+  Mrv0541 02231214452D          
+
+ 15 17  0  0001  0  0  0  0  0999 V2000
+    2.1442   -0.8250    0.0000 C   0  0  0  0  0  0  0  0  0  0  0
+    2.1442    0.8250    0.0000 C   0  0  0  0  0  0  0  0  0  0  0
+    2.8587    0.4125    0.0000 C   0  0  0  0  0  0  0  0  0  0  0
+    2.8587   -0.4125    0.0000 C   0  0  0  0  0  0  0  0  0  0  0
+    1.4297    0.4125    0.0000 C   0  0  0  0  0  0  0  0  0  0  0
+    1.4297   -0.4125    0.0000 C   0  0  0  0  0  0  0  0  0  0  0
+    0.6451   -0.6674    0.0000 N   0  0  0  0  0  0  0  0  0  0  0
+    0.6451    0.6674    0.0000 N   0  0  0  0  0  0  0  0  0  0  0
+   -1.4297    0.4124    0.0000 C   0  0  0  0  0  0  0  0  0  0  0
+   -1.4297   -0.4125    0.0000 C   0  0  0  0  0  0  0  0  0  0  0
+    0.0000    0.0000    0.0000 Pt  0  0  0  0  0  0  0  0  0  0  0
+   -0.6451    0.6673    0.0000 O   0  0  0  0  0  0  0  0  0  0  0
+   -0.6451   -0.6674    0.0000 O   0  0  0  0  0  0  0  0  0  0  0
+   -2.1441   -0.8250    0.0000 O   0  0  0  0  0  0  0  0  0  0  0
+   -2.1441    0.8249    0.0000 O   0  0  0  0  0  0  0  0  0  0  0
+  1  6  1  0
+  1  4  1  0
+  5  2  1  0
+  2  3  1  0
+  3  4  1  0
+  5  8  1  6
+  5  6  1  0
+  6  7  1  1
+  7 11  1  0
+ 11  8  1  0
+ 14 10  2  0
+  9 15  2  0
+  9 12  1  0
+  9 10  1  0
+ 10 13  1  0
+ 13 11  1  0
+ 11 12  1  0
+M  END
+> <SYNONYMS>
+Oxaliplatin [Usan:Inn:Ban]; Oxaliplatino [Spanish]; Oxaliplatinum [Latin]; Oxaloplatine [French]; Oxaloplatino [Spanish]
+
+> <JCHEM_POLAR_SURFACE_AREA>
+76.66
+
+> <JCHEM_DONOR_COUNT>
+2
+
+> <JCHEM_ACCEPTOR_COUNT>
+4
+
+> <GENERIC_NAME>
+Oxaliplatin
+
+> <SMILES>
+O=C1O[Pt]2(N[C@@H]3CCCC[C@H]3N2)OC1=O
+
+> <EXACT_MASS>
+395.044481331
+
+> <MOLECULAR_WEIGHT>
+395.276
+
+> <INCHI_IDENTIFIER>
+InChI=1S/C6H14N2.C2H2O4.Pt/c7-5-3-1-2-4-6(5)8;3-1(4)2(5)6;/h5-6H,1-4,7-8H2;(H,3,4)(H,5,6);/q;;+2/p-2/t5-,6-;;/m1../s1
+
+> <ALOGPS_LOGS>
+-1.2
+
+> <DRUGBANK_ID>
+DB00526
+
+> <JCHEM_ROTATABLE_BOND_COUNT>
+0
+
+> <DRUG_GROUPS>
+approved; investigational
+
+> <JCHEM_POLARIZABILITY>
+21.29
+
+> <INCHI_KEY>
+InChIKey=ZROHGHOFXNOHSO-BNTLRKBRSA-L
+
+> <ALOGPS_LOGP>
+-0.47
+
+> <IUPAC_NAME>
+(3aR,7aR)-octahydro-2',5'-dioxaspiro[cyclohexa[d]1,3-diaza-2-platinacyclopentane-2,1'-cyclopentane]-3',4'-dione
+
+> <BRANDS>
+Eloxatin
+
+> <JCHEM_LOGP>
+1.73
+
+> <ALOGPS_SOLUBILITY>
+2.75e+01 g/l
+
+> <CHEMICAL_FORMULA>
+C8H12N2O4Pt
+
+> <JCHEM_REFRACTIVITY>
+65.92
+
+> <Issues>
+Information => contains covalent metal--nitrogen bond
+Information => contains covalent metal--oxygen bond
+Information => contains non-metal?transition metal bond
+Information => Names could not be validated
+Warning => InChI does not match the structure
+Information => SMILES match the structure
+
+$$$$

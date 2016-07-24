@@ -1,0 +1,95 @@
+﻿@model Guid
+
+@{
+    ViewBag.Title = "Deposition's details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-default">
+    <div id="header" class="panel-heading">
+        Deposition
+        <div id="toolbar" class="deposition-toolbar pull-right"></div>
+    </div>
+    <div class="panel-body">
+        <div id="deposition"></div>
+    </div>
+</div>
+
+<div id="records"></div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#deposition').deposition_info({
+                id: '@Model'
+            });
+
+            $('#toolbar').deposition_toolbar({
+                id: '@Model'
+            });
+
+            $(document).on('onDepositionProgressChange', function (event, params) {
+                $('#records').records_gridview('load');
+            })
+            .on('onDepositionStatusChange', function (event, params) {
+                if (params.status == 'depositing2gcn' || params.status == 'deletingfromgcn') {
+                    $('#deposition').deposition_info('reload');
+                }
+                else {
+                    $('#records').records_gridview('load');
+                }
+                $('#toolbar').deposition_toolbar('refresh');
+            });
+
+            $('#records').records_gridview({
+                countProviderUrl: '@Url.Content("~/api/depositions/")' + '@Model' + '/recordscount',
+                itemsProviderUrl: '@Url.Content("~/api/depositions/")' + '@Model' + '/records',
+                imageSize: 175,
+                columns: [
+                    { name: 'Ordinal', title: 'Ordinal', format: function (value, record) { return $(document.createElement('a')).attr({ href: '@Url.Content("~/records/")' + record.Id.ObjectId }).text(value + 1); } },
+                    { name: 'Original', title: 'Original' },
+                    { name: 'Issues', title: 'Issues', format: DisplayRecordsIssues },
+                    { name: 'Standardized', title: 'Standardized' },
+                ],
+                onResultsReady: function () {
+                    var filterDescription = $('.cvsp-records-filter', '#records').records_filter('filterDescription');
+
+                    if (filterDescription != '' && filterDescription != null)
+                        $('.filtered-by', '#records').text(' - filtered by ' + filterDescription);
+                    else
+                        $('.filtered-by', '#records').empty();
+                }
+            });
+
+            $(document.createElement('div'))
+                .addClass('pull-right')
+                .records_filter({
+                    deposition: '@Model',
+                    onFilter: function (event, filter) {
+                        if (filter.regids.length == 0 && filter.ordinals.length == 0 && filter.codes.length == 0) {
+                            $('#records').records_gridview('setRid', null);
+                        }
+                        else {
+                            var searchOptions = {
+                                Deposition: '@Model',
+                                Codes: filter.codes,
+                                Ordinals: filter.ordinals
+                            };
+
+                            $.Records.store.recordsSearch({
+                                searchOptions: searchOptions
+                            }, function (rid) {
+                                $('#records').records_gridview('setRid', rid);
+                            });
+                        }
+                    }
+                })
+                .appendTo($('.cs-widget-pageview-header', '#records'));
+
+            $('.cs-widget-pageview-header>.badge', '#records').after(
+                $(document.createElement('span'))
+                    .addClass('filtered-by')
+            );
+        });
+    </script>
+}

@@ -1,0 +1,11 @@
+﻿.cvsp-job-info label.title {
+    width: 12em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cvsp-job-info label.title {
+    font-weight: lighter;
+
+}

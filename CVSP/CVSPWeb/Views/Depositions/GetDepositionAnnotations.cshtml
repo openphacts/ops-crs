@@ -1,0 +1,29 @@
+﻿@model Guid
+
+@{
+    ViewBag.Title = "Deposition's Annotations";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-default">
+    <div id="header" class="panel-heading">
+        Deposition's Annotations
+    </div>
+    <div class="panel-body">
+        <div id="annotations"></div>
+    </div>
+</div>
+
+<a href='@Url.Action("Get", "Depositions", new { id = @Model })' role="button" class="btn btn-default btn-xs">
+    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Back
+</a>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#annotations').annotation_add({
+                guid: '@Model'
+            });
+        });
+    </script>
+}

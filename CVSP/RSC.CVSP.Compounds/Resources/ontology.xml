@@ -1,0 +1,1541 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<classes>
+  <!--
+  <class>
+    <name>abietadiene</name>
+    <id>CHEBI:50072</id>
+    <rule>
+      <or>
+        <smarts>[H][C@]12CCC(=CC1=CC[C@@]1([H])C(C)(C)CCC[C@]21C)C(C)C</smarts>
+        <smarts>[H][C@]12CC=C(C=C1CC[C@@]1([H])C(C)(C)CCC[C@]21C)C(C)C</smarts>
+      </or>
+    </rule>
+    <example>[H][C@]12CC=C(C=C1CC[C@@]1([H])C(C)(C)CCC[C@]21C)C(C)C</example>
+    <counterexample>[H][C@@]12CC[C@@]3([H])C(C)(C)CCC[C@]3(C)[C@@]1([H])CC[C@@H](C2)C(C)C</counterexample>
+    <is_a>CHEBI:35190</is_a>
+  </class>
+-->
+  <class>
+    <name>acetylene</name>
+    <id>CHEBI:33644</id>
+    <rule>
+      <smarts>C#C</smarts>
+    </rule>
+    <example>CC#CC</example>
+    <counterexample>C=CC=C</counterexample>
+    <is_a>CHEBI:24632</is_a>
+  </class>
+
+  <!--
+  <class>
+    <name>anilide</name>
+    <id>CHEBI:13248</id>
+    <rule>
+      <smarts>O=CN[c;R1]1[c;R1][c;R1][c;R1][c;R1][c;R1]1</smarts>
+    </rule>
+    <example>CCC(=O)Nc1ccccc1</example> 
+    <counterexample>OCNc1ccccc1</counterexample>
+    <is_a>CHEBI:32988</is_a>
+  </class>
+  -->
+  <class>
+    <name>macrolide</name>
+    <id>CHEBI:25106</id>
+    <rule>
+      <or>
+        <smarts>O1C(=O)~C~C~C~C~C~C~C~C~C~C1</smarts>
+        <smarts>O1C(=O)~C~C~C~C~C~C~C~C~C~C~C~C1</smarts>
+        <smarts>O1C(=O)~C~C~C~C~C~C~C~C~C~C~C~C~C1</smarts>
+        <smarts>O1C(=O)~C~C~C~C~C~C~C~C~C~C~C~C~C1</smarts>
+        <smarts>O1C(=O)~C~C~C~C~C~C~C~C~C~C~C~C~C~C1</smarts>
+      </or>
+    </rule>
+    <example>CO[C@H]1[C@H](O)CC(=O)O[C@H](C)C\C=C\C=C\[C@H](O)[C@H](C)C[C@H](CC=O)[C@@H]1O[C@@H]1O[C@H](C)[C@@H](O[C@H]2C[C@@](C)(O)[C@@H](O)[C@H](C)O2)[C@@H]([C@H]1O)N(C)C</example>
+    <counterexample>O1CCCCCCCCCCC1</counterexample>
+    <is_a>CHEBI:26188</is_a>
+    <is_a>CHEBI:63944</is_a>
+  </class>
+  
+  <class>
+    <name>sulfonamide</name>
+    <id>CHEBI:35358</id>
+    <rule>
+      <smarts>[S;D4](=O)(=O)[N;X3]</smarts>
+    </rule>
+    <example>Nc1ccc(cc1)S(N)(=O)=O</example>
+    <counterexample>Nc1ccc(cc1)S(N)=O</counterexample>
+    <is_a>CHEBI:33256</is_a>
+  </class>
+  
+  <!--<class>
+    <id>CHEBI:35562</id>
+    <name>1,2,3-triazole</name>
+    <rule>
+      <smarts>c1nnnc1</smarts>
+    </rule>
+    <example>c1nnnc1C</example>
+    <counterexample>c1nncn1</counterexample>
+    <is_a>CHEBI:38597</is_a>
+  </class>-->
+
+  <!--<class>
+    <id>CHEBI:35560</id>
+    <name>1,2,4-triazole</name>
+    <rule>
+      <smarts>c1nncn1</smarts>
+    </rule>
+    <counterexample>c1nnnc1C</counterexample>
+    <example>c1nncn1</example>
+    <is_a>CHEBI:38597</is_a>
+  </class>-->
+
+  <!--<class>
+    <name>triazole</name>
+    <rule>
+      <or>
+        <smarts>c1nnnc1</smarts>
+        <smarts>c1nncn1</smarts>
+      </or>
+    </rule>
+    <example>c1nc[nH]n1</example>
+    <counterexample>O=C1NCCN1</counterexample>
+    <id>CHEBI:38597</id>
+  </class>-->
+
+  <class>
+    <name>thioenol</name>
+    <id>CHEBI:59722</id>
+    <rule>
+      <smarts>C=C[SH]</smarts>
+    </rule>
+    <example>CC=CS</example>
+    <counterexample>CCC=S</counterexample>
+    <is_a>CHEBI:29256</is_a>
+  </class>
+
+  <class>
+    <name>thiol</name>
+    <id>CHEBI:29256</id>
+    <rule>
+      <smarts>[#6][SH]</smarts>
+    </rule>
+    <example>CC=CS</example>
+    <counterexample>CCC=S</counterexample>
+    <is_a>CHEBI:33261</is_a>
+  </class>
+
+  <class>
+    <name>organosulfur compound</name>
+    <rule>
+      <smarts>C~S</smarts>
+    </rule>
+    <example>CC=CS</example>
+    <counterexample>CCC=O</counterexample>
+    <id>CHEBI:33261</id>
+    <is_a>CHEBI:26385</is_a>
+  </class>
+
+  <!--<class>
+    <name>oxacephem</name>
+    <id>CHEBI:55506</id>
+    <rule>
+      <or>
+      <smarts>CC1=C(N2(O[CH2]1)[CH]C2=O)C(=O)[O;D1;H1]</smarts>
+      <smarts>CC1=C(N2(O[CH2]1)C(O[CH3])C2=O)C(=O)[O;D1;H1]</smarts>
+      </or>
+    </rule>
+    <example>[H][C@]12OCC(CSc3nnnn3C)=C(N1C(=O)[C@]2(NC(=O)C(C(O)=O)c1ccc(O)cc1)OC)C(O)=O</example>
+    <counterexample>[H][C@]12SCC(COC(C)=O)=C(N1C(=O)[C@H]2NC(=O)CCC[C@@H](N)C(O)=O)C(O)=O</counterexample>
+  </class>-->
+
+  <!--<class>
+    <name>cephalosporin</name>
+    <id>CHEBI:23066</id>
+    <rule>
+      <smarts>CC1=C(N2(O[CH2]1)[CH]C2=O)C(=O)[O;D1;H1]</smarts>
+    </rule>
+    <counterexample>[H][C@]12SCC(COC(N)=O)=C(N1C(=O)[C@]2(NC(=O)CCC[C@@H](N)C(O)=O)OC)C(O)=O</counterexample>
+    <example>[H][C@]12SCC(COC(C)=O)=C(N1C(=O)[C@H]2NC(=O)CCC[C@@H](N)C(O)=O)C(O)=O</example>
+    <is_a>CHEBI:38311</is_a>
+  </class>-->
+
+  <!--<class>
+    <name>cephamycin</name>
+    <id>CHEBI:55429</id>
+    <rule>
+      <smarts>C(/*)1C(\[$(O[CH3])])2S[CH2]C=C([C;X3](=O)[O;D1;H1])N2C1(=O)</smarts>
+    </rule>
+    <example>[H][C@]12SCC(COC(N)=O)=C(N1C(=O)[C@]2(NC(=O)CCC[C@@H](N)C(O)=O)OC)C(O)=O</example>
+    <counterexample>[H][C@]12SCC(COC(C)=O)=C(N1C(=O)[C@H]2NC(=O)CCC[C@@H](N)C(O)=O)C(O)=O</counterexample>
+    <is_a>CHEBI:38311</is_a>
+  </class>-->
+
+  <class>
+    <name>carbapenem</name>
+    <id>CHEBI:46633</id>
+    <rule>
+      <!-- C1C(\H)2CC=CN2C(=O)1 -->
+      <smarts>C1C2CC=CN2C(=O)1</smarts>
+    </rule>
+    <example>[H][C@@]12CC(=O)N1C=C[C@@H]2C</example>
+    <counterexample>C[C@H]1[C@H](NC(=O)C(=N/OC(C)(C)C(O)=O)\c2csc([NH3+])n2)C(=O)N1S([O-])(=O)=O</counterexample>
+    <is_a>CHEBI:27933</is_a>
+  </class>
+
+  <class>
+    <name>monobactam</name>
+    <id>CHEBI:50695</id>
+    <rule>
+      <smarts>[C;R1]1[C;R1][N;R1][C;R1]1(=O)</smarts>
+    </rule>
+    <example>C[C@H]1[C@H](NC(=O)C(=N/OC(C)(C)C(O)=O)\c2csc([NH3+])n2)C(=O)N1S([O-])(=O)=O</example>
+    <counterexample>[H][C@@]12CC(=O)N1C=C[C@@H]2C</counterexample>
+    <is_a>CHEBI:27933</is_a>
+  </class>
+
+  <class>
+    <name>penam</name>
+    <id>CHEBI:35992</id>
+    <rule>
+      <smarts>C1-C(\H)2-S-C-C-N2-C(=O)1</smarts>
+    </rule>
+    
+  </class>
+
+  <class>
+    <name>penem</name>
+    <id>CHEBI:35994</id>
+    <rule>
+      <smarts>C1-C(\H)2-S-C=C-N2-C(=O)1</smarts>
+    </rule>
+  </class>
+
+  <!-- not submitted yet<class>
+    <name>carbapenam</name>
+    <id></id>
+  </class>-->
+
+  <!--<class>
+    <name>penicillin</name>
+    <id>CHEBI:17334</id>
+    <rule>
+      <smarts>C1(/NC(=O))C(\H)2SC(C)(C)-C(\[C;X3](=O)[O;D1;H1])N2C(=O)1</smarts>
+    </rule>
+    <example>[H][C@]12SC(C)(C)[C@@H](N1C(=O)[C@H]2NC(=O)c1c(C)onc1-c1ccccc1)C(O)=O</example>
+    <counterexample>C[C@H]1[C@H](NC(=O)C(=N/OC(C)(C)C(O)=O)\c2csc([NH3+])n2)C(=O)N1S([O-])(=O)=O</counterexample>
+    <is_a>CHEBI:37806</is_a>
+  </class>-->
+
+  <!--<class>
+    <name>penicillanic acid</name>
+    <id>CHEBI:37806</id>
+    <rule>
+      <smarts>C1C(\H)2SC(C)(C)-C([C;X3](=O)[O;D1;H1])-N2C(=O)1</smarts>
+    </rule>
+    <example>[H][C@]12SC(C)(C)[C@@H](N1C(=O)[C@H]2N)C(O)=O</example>
+  </class>-->
+  
+  <class>
+    <name>cyclic acetylene</name>
+    <id>CHEBI:33649</id>
+    <rule>
+      <smarts>[C;R]#[C;R]</smarts>
+    </rule>
+    <example>C1C#CC1</example>
+    <counterexample>CC#CC</counterexample>
+    <is_a>CHEBI:33644</is_a>
+  </class>
+
+  <class>
+    <name>phenylpropanoid</name>
+    <id>CHEBI:26004</id>
+    <rule>
+      <smarts>c1ccccc1~C~C~[#6]</smarts>
+    </rule>
+    <example>OCc1ccccc1CC=C</example>
+    <counterexample>OCc1ccccc1CC</counterexample>
+    <is_a>CHEBI:33659</is_a>
+  </class>
+  
+  <class>
+    <name>acyclic acetylene</name>
+    <id>CHEBI:33650</id>
+    <rule>
+      <smarts>[C;!R]#[C;!R]</smarts>
+    </rule>
+    <counterexample>C1C#CC1</counterexample>
+    <example>CC#CC</example>
+    <is_a>CHEBI:33644</is_a>
+  </class>
+
+  <class>
+    <name>acyclic olefin</name>
+    <id>CHEBI:33645</id>
+    <rule>
+      <smarts>[C;!R]=[C;!R]</smarts>
+    </rule>
+    <counterexample>C1C=CC1</counterexample>
+    <example>CC=CC</example>
+    <is_a>CHEBI:33641</is_a>
+  </class>
+
+  <class>
+    <name>stilbenoid</name>
+    <id>CHEBI:26776</id>
+    <rule>
+      <smarts>c1ccccc1C=Cc1ccccc1</smarts>
+    </rule>
+    <counterexample>c1ccccc1CCc1ccccc1</counterexample>
+    <example>[H]C(=C([H])c1ccccc1)c1ccccc1</example>
+    <is_a>CHEBI:33645</is_a>
+  </class>
+
+  <class>
+    <name>stilbenol</name>
+    <id>CHEBI:36027</id>
+    <rule>
+      <and>
+        <smarts>c1ccccc1C=Cc1ccccc1</smarts>
+        <smarts>c[OH]</smarts>
+      </and>
+    </rule>
+    <counterexample>c1ccccc1CCc1ccccc1O</counterexample>
+    <example>[H]C(=C([H])c1ccccc1O)c1ccccc1</example>
+    <is_a>CHEBI:33645</is_a>
+  </class>
+
+  <class>
+    <name>tertiary alcohol</name>
+    <id>CHEBI:26878</id>
+    <rule>
+      <smarts>[C;X4;H0][OH]</smarts>
+    </rule>
+    <example>[H][C@@]12CC[C@@H](C)[C@@]11CC[C@@](C)(O)[C@H](C1)C2(C)C</example>
+    <counterexample>CC(C)O</counterexample>
+    <is_a>CHEBI:30879</is_a>
+  </class>
+
+  <class>
+    <name>tertiary amine</name>
+    <id>CHEBI:32876</id>
+    <rule>
+      <smarts>[N;X3](C)(C)C</smarts>
+    </rule>
+    <example>CCN(C)CC</example>
+    <counterexample>CCNCC</counterexample>
+    <is_a>CHEBI:32952</is_a>
+  </class>
+
+  <class>
+    <name>secondary alcohol</name>
+    <id>CHEBI:35681</id>
+    <rule>
+      <smarts>[OH][CH](C)C</smarts>
+    </rule>
+    <example>OC(C)CCC</example>
+    <counterexample>CCNCC</counterexample>
+    <is_a>CHEBI:30879</is_a>
+  </class>
+
+  <class>
+    <name>primary alcohol</name>
+    <id>CHEBI:15734</id>
+    <rule>
+      <smarts>[OH][#6;H2]C</smarts>
+    </rule>
+    <example>CCO</example>
+    <counterexample>COC</counterexample>
+    <is_a>CHEBI:30879</is_a>
+  </class>
+
+  <class>
+    <name>aromatic primary alcohol</name>
+    <id>CHEBI:33857</id>
+    <rule>
+      <smarts>[OH]c</smarts>
+    </rule>
+    <example>c1ccccc1O</example>
+    <counterexample>C1CCCCC1O</counterexample>
+    <is_a>CHEBI:15734</is_a>
+  </class>
+
+  <class>
+    <name>aliphatic alcohol</name>
+    <id>CHEBI:2571</id>
+    <rule>
+      <smarts>C[OH]</smarts>
+    </rule>
+    <example>C1CCCCC1O</example>
+    <counterexample>c1ccccc1O</counterexample>
+    <is_a>CHEBI:30879</is_a>
+  </class>
+
+  <class>
+    <name>aminophenol</name>
+    <id>CHEBI:28829</id>
+    <rule>
+      <or>
+        <smarts>[OH]c1ccccc1[NH2]</smarts>
+        <smarts>[OH]c1cccc[NH2]c1</smarts>
+        <smarts>[OH]c1ccc[NH2]cc1</smarts>
+      </or>
+    </rule>
+    <example>Oc1ccccc1N</example>
+    <counterexample>OC1CCCCC1N</counterexample>
+    <is_a>CHEBI:48975</is_a>
+  </class>
+
+  <!--<class>
+    <name>aristolochene</name>
+    <id>CHEBI:36529</id>
+    <rule>
+      <smarts>[CH3]C1C2([CH3])C(CCC(C(=[CH2])[CH3])C2)CCC1</smarts>
+    </rule>
+    <example>C[C@H]1CCCC2=CC[C@@H](C[C@]12C)C(C)=C</example>
+    <counterexample>CC(C)C1CCC2CCCC(CC)C2(CC)C1</counterexample>
+    <is_a>CHEBI:35189</is_a>
+  </class>-->
+
+  <class>
+    <name>aromatic alcohol</name>
+    <id>CHEBI:33854</id>
+    <rule>
+      <and>
+        <smarts>a</smarts>
+        <smarts>[OH]</smarts>
+      </and>
+    </rule>
+    <example>Oc1ccccc1</example>
+    <counterexample>OC1CCCCC1</counterexample>
+    <is_a>CHEBI:30879</is_a>
+  </class>
+
+  <class>
+    <name>aromatic amine</name>
+    <id>CHEBI:33860</id>
+    <rule>
+      <smarts>c[N;X3]</smarts>
+    </rule>
+    <example>Nc1ccccc1</example>
+    <counterexample>NC1CCCCC1</counterexample>
+    <is_a>CHEBI:32952</is_a>
+    <is_a>CHEBI:33659</is_a>
+  </class>
+
+  <!-- B -->
+  
+  <class>
+    <name>benzoin</name>
+    <id>CHEBI:51586</id>
+    <rule>
+      <smarts>c1ccccc1C(=O)C([OH])c1ccccc1</smarts>
+    </rule>
+    <example>O[C@@H](C(=O)c1ccccc1)c1ccccc1</example>
+    <counterexample>O=C(O)c1ccccc1</counterexample>
+    <is_a>CHEBI:33854</is_a>
+  </class>
+
+  <class>
+    <name>benzothiazole</name>
+    <id>CHEBI:45993</id>
+    <rule>
+      <smarts>[n;r1]1[c;r2]2[c;r1][c;r1][c;r1][c;r1][c;r2]2[s;r1][c;r1]1</smarts>
+    </rule>
+    <is_a>CHEBI:27171</is_a>
+  </class>
+  
+  <class>
+    <name>bromate salt</name>
+    <id>CHEBI:22923</id>
+    <rule>
+      <smarts>[Br](=O)(=O)[O-]</smarts>
+    </rule>
+    <example>[K+].[O-]Br(=O)=O</example>
+    <counterexample>[K+].[O-]Br(=O)</counterexample>
+    <is_a>CHEBI:33444</is_a>
+  </class>
+  
+  <class>
+    <name>butynal</name>
+    <id>CHEBI:22968</id>
+    <rule>
+      <or>
+        <smarts>C#CC[C;H]=O</smarts>
+        <smarts>CC#C[C;H]=O</smarts>
+      </or>
+    </rule>
+    <example>C(=O)CC#C</example>
+    <counterexample>CC(=O)C#C</counterexample>
+    <is_a>CHEBI:17478</is_a>
+  </class>
+  
+  <class>
+    <!-- needs to be amended so it only has two! -->
+    <name>butynediol</name>
+    <id>CHEBI:22970</id>
+    <rule>
+      <smarts>[OH]CC#CC[OH]</smarts>
+    </rule>
+    <example>OCC#CCO</example>
+    <counterexample>OCC#CC</counterexample>
+  </class>
+  
+  <!--<class>
+    <name>cadinene</name>
+    <id>CHEBI:22976</id>
+    <rule>
+      <smarts>[H][C@]12~[C@@]~([C@H](C(C)C)~C~C~C2~C)([H])~C~C(~C)~C~C1</smarts>
+    </rule>
+    <example>[H][C@@]12CC(C)=CC[C@@]1([H])C(C)=CC[C@H]2C(C)C</example>
+    <counterexample>C\2(=C\C1C(/C(=C)CC[C@@H]1C(C)C)CC/2)C</counterexample>
+    <is_a>CHEBI:35189</is_a>
+  </class>-->
+  
+  <!-- M -->
+  
+  <class>
+    <name>methylamine</name>
+    <id>CHEBI:25274</id>
+    <rule>
+      <smarts>N[CH3]</smarts>
+    </rule>
+    <example>CCNC</example>
+    <counterexample>CCNCC</counterexample>
+    <is_a>CHEBI:22331</is_a>
+  </class>
+
+  <!-- P -->
+
+  <class>
+    <name>primary amine</name>
+    <id>CHEBI:32877</id>
+    <rule>
+      <smarts>[N;H2]C</smarts>
+    </rule>
+    <example>CCN</example>
+    <counterexample>CCN(C)C</counterexample>
+    <is_a>CHEBI:32952</is_a>
+  </class>
+
+  <!-- S -->
+  
+  <class>
+    <name>secondary amine</name>
+    <id>CHEBI:32863</id>
+    <rule>
+      <smarts>[N;H1;X3](C)C</smarts>
+    </rule>
+    <example>CCNCC</example>
+    <counterexample>CCN(C)C</counterexample>
+    <counterexample>CC[NH+](CC)CC</counterexample>
+    <is_a>CHEBI:32952</is_a>
+  </class>
+
+  
+
+
+  <class>
+    <name>acetylenic fatty acid</name>
+    <id>CHEBI:25830</id>
+    <rule>
+      <and>
+        <smarts>C#C</smarts>
+        <smarts>C(=O)[OH]</smarts>
+      </and>
+    </rule>
+    <example>CC#CCC(=O)O</example>
+    <counterexample>CCCCC(=O)O</counterexample>
+    <is_a>CHEBI:27208</is_a>
+    <is_a>CHEBI:22339</is_a>
+  </class>
+
+  <class>
+    <name>acetylide</name>
+    <id>CHEBI:55386</id>
+    <rule>
+      <and>
+        <smarts>[+,++]</smarts>
+        <smarts>C#[C-]</smarts>
+      </and>
+    </rule>
+    <example>CC#[C-].[Na+]</example>
+    <counterexample>C#C</counterexample>
+    <is_a>CHEBI:24868</is_a>
+  </class>
+  
+  <class>
+    <name>aromatic amide</name>
+    <id>CHEBI:62733</id>
+    <rule>
+      <or>
+        <smarts>a[NX3][CX3]=O</smarts>
+        <smarts>[NX3][CX3](=O)a</smarts>
+      </or>
+    </rule>
+    <example>NC(=O)c1ccccc1</example>
+    <counterexample>NC(=O)C1CCCCC1</counterexample>
+    <is_a>CHEBI:33655</is_a>
+    <is_a>CHEBI:32988</is_a>
+  </class>
+
+  <class>
+    <name>acenaphthenes</name>
+    <id>CHEBI:22156</id>
+    <rule>
+      <smarts>C1Cc2cccc3cccc1c23</smarts>
+    </rule>
+    <example>O[C@H]1[C@H](O)c2cccc3cccc1c23</example>
+    <counterexample>O=C1C(=O)c2ncccc2-c2cccnc12</counterexample>
+    <is_a>CHEBI:38033</is_a>
+  </class>
+
+  <class>
+    <name>acid anhydride</name>
+    <id>CHEBI:36606</id>
+    <rule>
+      <smarts>O=COC=O</smarts>
+    </rule>
+    <example>CCC(=O)OC(=O)C</example>
+    <counterexample>OCOCO</counterexample>
+    <is_a>CHEBI:50860</is_a>
+  </class>
+
+  <class>
+    <name>acridines</name>
+    <id>CHEBI:22213</id>
+    <rule>
+      <smarts>n1c3c(cc2c1cccc2)cccc3</smarts>
+    </rule>
+    <example>n1c3c(cc2c1cccc2)cccc3</example>
+    <counterexample>CC1(C)c2ccccc2C=C2C=C(Cl)C(=O)C(Cl)=C12</counterexample>
+    <is_a>CHEBI:39206</is_a>
+  </class>
+
+  <class>
+    <name>aromatic compound</name>
+    <id>CHEBI:33655</id>
+    <rule>
+      <smarts>a</smarts>
+    </rule>
+    <example>c1ccccc1</example>
+    <counterexample>C1CCCCC1</counterexample>
+    <is_a>CHEBI:33595</is_a>
+  </class>
+
+  <class>
+    <name>aromatic ester</name>
+    <id>CHEBI:62732</id>
+    <rule>
+      <or>
+        <smarts>a[C;X3](=O)[O;D2;H0][#6]</smarts>
+        <smarts>[C;X3](=O)[O;D2;H0]a</smarts>
+      </or>
+    </rule>
+    <example>CCOC(=O)c1ccc(N)cc1</example>
+    <counterexample>OC(=O)c1ccc(N)cc1</counterexample>
+    <is_a>CHEBI:33655</is_a>
+    <is_a>CHEBI:33308</is_a>
+  </class>
+
+
+
+  <class>
+    <name>organic aromatic compound</name>
+    <id>CHEBI:33659</id>
+    <rule>
+      <smarts>c</smarts>
+    </rule>
+    <example>c1ccccc1</example>
+    <counterexample>B1NBNBN1</counterexample>
+    <is_a>CHEBI:33655</is_a>
+  </class>
+
+  <class>
+    <name>benzyl alcohol</name>
+    <id>CHEBI:22473</id>
+    <rule>
+      <smarts>[O;H]Cc1ccccc1</smarts>
+    </rule>
+    <example>OCc1ccccc1</example>
+    <counterexample>OCC1CCCCC1</counterexample>
+    <is_a>CHEBI:33854</is_a>
+    <!-- aromatic alcohol -->
+  </class>
+
+  <class>
+    <name>benzyl bromide</name>
+    <id>CHEBI:59857</id>
+    <rule>
+      <smarts>[Br]Cc1ccccc1</smarts>
+    </rule>
+    <example>[Br]Cc1ccccc1</example>
+    <counterexample>[Br]c1ccccc1</counterexample>
+
+    <is_a>CHEBI:59851</is_a>
+  </class>
+
+  <class>
+    <name>benzyl chloride</name>
+    <id>CHEBI:59852</id>
+    <rule>
+      <smarts>[Cl]Cc1ccccc1</smarts>
+    </rule>
+    <example>[Cl]Cc1ccccc1</example>
+    <counterexample>[Cl]c1ccccc1</counterexample>
+
+    <is_a>CHEBI:59851</is_a>
+  </class>
+
+  <class>
+    <name>benzyl ether</name>
+    <id>CHEBI:59859</id>
+    <rule>
+      <smarts>COCc1ccccc1</smarts>
+    </rule>
+    <example>CCOCc1ccccc1</example>
+    <counterexample>COCCc1ccccc1</counterexample>
+    <is_a>CHEBI:25698</is_a>
+  </class>
+
+  <class>
+    <name>benzyl halide</name>
+    <id>CHEBI:59851</id>
+    <rule>
+      <smarts>[F,Cl,Br,I]Cc1ccccc1</smarts>
+    </rule>
+    <example>[Br]Cc1ccccc1</example>
+    <counterexample>[Br]c1ccccc1</counterexample>
+    <is_a>CHEBI:36684</is_a>
+  </class>
+
+  <class>
+    <name>benzyne</name>
+    <id>CHEBI:33667</id>
+    <rule>
+      <smarts>C1=CC#CC=C1</smarts>
+    </rule>
+    <example>COC1=CC=CC#C1</example>
+    <counterexample>c1ccccc1</counterexample>
+  </class>
+
+  <class>
+    <name>bisphenol</name>
+    <id>CHEBI:22901</id>
+    <rule>
+      <smarts>C(c1ccc(O)cc1)c1ccc(O)cc1</smarts>
+    </rule>
+    <example>CC(C)(c1ccc(O)cc1)c1ccc(O)cc1</example>
+    <counterexample>c1ccc(O)cc1c2cccc(O)c2</counterexample>
+  </class>
+
+  <class>
+    <name>bisphosphoglyceric acid</name>
+    <id>CHEBI:22902</id>
+    <rule>
+      <smarts>OC(=O)C(COP([O;H])([O;H])=O)OP([O;H])([O;H])=O</smarts>
+    </rule>
+    <example>OC(=O)C(COP(O)(O)=O)OP(O)(O)=O</example>
+    <counterexample>OC(=O)C(COP(OC)(OC)=O)OP(OC)(OC)=O</counterexample>
+    <counterexample>OCC(O)C(O)=O</counterexample>
+  </class>
+
+  <class>
+    <name>enal</name>
+    <id>CHEBI:51688</id>
+    <rule>
+      <smarts>[C;H](=O)C=C</smarts>
+    </rule>
+    <example>[H]C(=O)C=C(C)CCC=C(C)CCC=C(C)C</example>
+    <counterexample>C=CC(=O)C</counterexample>
+    <is_a>CHEBI:17478</is_a>
+  </class>
+
+  <class>
+    <name>oxime</name>
+    <id>CHEBI:25750</id>
+    <rule>
+      <smarts>C=N[O;H1]</smarts>
+    </rule>
+    <example>CCCC=NO[H]</example>
+    <counterexample>CCCC=NOC</counterexample>
+    <is_a>CHEBI:50860</is_a>
+  </class>
+
+  <class>
+    <name>polyatomic entity</name>
+    <id>CHEBI:36537</id>
+    <rule>
+      <smarts>**</smarts>
+    </rule>
+    <example>CC</example>
+    <counterexample>C</counterexample>
+    <is_a>root</is_a>
+  </class>
+
+  <class>
+    <name>pyrazole</name>
+    <id>CHEBI:14973</id>
+    <rule>
+      <smarts>n1nccc1</smarts>
+    </rule>
+    <example>Cn1cccn1</example>
+    <counterexample>n1ccccc1</counterexample>
+    <is_a>CHEBI:23677</is_a>
+  </class>
+
+  <class>
+    <name>acenaphthylenes</name><id>CHEBI:38033</id>
+    <rule>
+      <smarts>c1cc2C=Cc3cccc(c1)c23</smarts>
+    </rule>
+    <example>c1cc2C=Cc3cccc(c1)c23</example>
+    <counterexample>O[C@H]1[C@H](O)c2cccc3cccc1c23</counterexample>
+    <is_a>CHEBI:38032</is_a>
+  </class>
+  <class>
+    <name>acenes</name>
+    <id>CHEBI:51269</id>|<rule>
+      <smarts>c3ccc2cc1ccccc1cc2c3</smarts>
+    </rule>
+    <example>c1ccc2cc3cc4ccccc4cc3cc2c1</example>
+    <counterexample>c1ccc2c(c1)ccc1ccccc21</counterexample>
+    <is_a>CHEBI:33836</is_a>
+  </class>  
+  <class>
+    <name>acetal</name>
+    <id>CHEBI:59769</id><rule>
+      <smarts>C(OC)(OC)</smarts>
+    </rule><example>COCOC</example>
+    <counterexample>CCCCOc1c(OCCCC)c(=O)c1=O</counterexample>
+    <is_a>CHEBI:46786</is_a>
+  </class>
+  <class>
+    <name>acetamides</name>
+    <id>CHEBI:27856</id>
+    <rule>
+      <smarts>CC([N;H])=O</smarts>
+    </rule>
+    <example>CC(=O)Nc1ccccc1</example>
+    <counterexample>CC(=O)N(C)C</counterexample>
+    <is_a>CHEBI:29347</is_a>
+  </class>
+  <class>
+    <name>acetate ester</name><id>CHEBI:47622</id><rule>
+      <smarts>[C;H3]C(=O)OC</smarts>
+    </rule>
+    <example>CC(=O)OCC</example>
+    <counterexample>CCC(=O)OCC</counterexample>
+    <is_a>CHEBI:33308</is_a>
+  </class>
+  <class>
+    <name>acid chloride</name>
+    <id>CHEBI:36687</id>
+    <rule>
+      <smarts>[C;X3](=O)[Cl]</smarts>
+    </rule>
+    <example>CCC(=O)Cl</example>
+    <counterexample>CCC(O)Cl</counterexample>
+    <is_a>CHEBI:36586</is_a>
+  </class>
+
+  <class>
+    <name>acyl fluoride</name><id>CHEBI:38110</id>
+    <rule>
+      <smarts>[C;X3](=O)F</smarts>
+    </rule><example>CCC(=O)F</example>
+    <counterexample>CCC(O)F</counterexample>
+    <is_a>CHEBI:36586</is_a>
+  </class>
+  <class>
+    <name>acyl halide</name>
+    <id>CHEBI:37579</id><rule>
+      <smarts>[C;X3](=O)[F,Cl,Br,I]</smarts>
+    </rule><example>CCC(=O)I</example><counterexample>CCC(O)Br</counterexample><is_a>CHEBI:36586</is_a>
+</class>
+  <class>
+    <name>acyl sulfate</name><id>CHEBI:37875</id>
+    <rule>
+      <smarts>[C;H3]C(=O)OS(O)(=O)=O</smarts>
+    </rule><example>CC(=O)OS(O)(=O)=O</example><counterexample>CCC(=O)OS(O)(=O)=O</counterexample>
+    <is_a>CHEBI:37787</is_a>
+  </class><class>
+    <name>alcohol</name><id>CHEBI:30879</id>
+    <rule>
+      <smarts>[OH]-[C;X4]</smarts>
+    </rule><example>OCCCCC</example><counterexample>CCOCC</counterexample><is_a>CHEBI:36537</is_a>
+</class><class>
+  <name>adamantanes</name><id>CHEBI:51339</id><rule>
+    <smarts>C1C2CC3CC1CC(C2)C3</smarts>
+  </rule><example>C1C2CC3CC1CC(C2)C3O</example>
+  <counterexample>C1C2CCCC1CC(C2)C</counterexample>
+  <is_a>CHEBI:33598</is_a>
+</class><class>
+  <name>aldehyde</name><id>CHEBI:17478</id><rule>
+  <smarts>[C;X3;H1](=O)</smarts>
+</rule><example>CCC=O</example><counterexample>CCC(=O)C</counterexample><is_a>CHEBI:36586</is_a>
+</class><class>
+  <name>aldimine</name><id>CHEBI:33271</id>
+  <rule>
+    <or>
+      <smarts>[C;H1]=N</smarts>
+      <smarts>[C;H2]=N</smarts>
+    </or>
+  </rule><example>C=N</example><counterexample>CN</counterexample><is_a>CHEBI:24783</is_a>
+</class><name>aldoxime</name>
+  <id>CHEBI:22307</id><rule>
+  <smarts>[C;H1]=N-O</smarts>
+</rule><example>[H]C(=NO)C(C)CC</example><counterexample>C=NOC</counterexample><is_a>CHEBI:25750</is_a>
+<class>
+  <name>allene</name><id>CHEBI:37602</id><rule>
+    <smarts>C=C=C</smarts>
+  </rule>
+  <example>CCCC=C=CCCCC</example>
+  <counterexample>C=CC=C</counterexample>|<is_a>CHEBI:50860</is_a>
+</class>
+  <class>
+    <name>amide</name>
+    <id>CHEBI:32988</id><rule>
+      <smarts>[NX3][CX3]=O</smarts>
+    </rule>
+    <example>CC(=O)N</example>
+    <counterexample>CC(=O)CN</counterexample>
+    <is_a>CHEBI:36586</is_a>
+  </class>
+  <class>
+    <name>amine</name>
+    <id>CHEBI:32952</id>
+    <rule>
+      <smarts>[N;X3][C]</smarts>
+    </rule>
+    <example>CCNCC</example><counterexample>n1ccccc1</counterexample><is_a>CHEBI:36537</is_a>
+  </class>
+  <class>
+    <name>amino acid</name><id>CHEBI:33309</id><rule>
+    <smarts>[N;X3][C][C;X3](=O)[O;D1;H1]</smarts>
+  </rule>
+    <example>C(C(=O)O)N</example><counterexample>C(C(=O)O)C</counterexample><is_a>CHEBI:36537</is_a><is_a>CHEBI:33575</is_a>
+  </class>
+  
+  <!--<class>
+    <name>arene epoxide</name><id>CHEBI:37410</id><rule>
+    <smarts>O1[#7]2[#7]=,:[#7]-,:[#7]=,:[#7]-,:C12</smarts>
+  </rule><example>O1C2C=Cc3c(ccc4ccccc34)C12</example>
+    <counterexample>Oc1ccccc1</counterexample><is_a>CHEBI:32955</is_a>
+  </class>-->
+
+  <class>
+    <name>azo compound</name><id>CHEBI:37533</id><rule>
+    <smarts>[#6]-N=N-[#6]</smarts>
+  </rule><example>[Na+].[Na+].[Na+].[O-]C(=O)C1=NN(C(=O)C1\N=N\c1ccc(cc1)S([O-])(=O)=O)c1ccc(cc1)S([O-])(=O)=O</example><counterexample>CN=N</counterexample><is_a>CHEBI:36537</is_a>
+</class>
+  <class>
+    <name>azobenzene</name><id>CHEBI:22682</id><rule>
+    <smarts>c1ccccc1-N=N-c1ccccc1</smarts>
+  </rule><example>CN(C)c1ccc(cc1)N=Nc1ccccc1</example><counterexample>CN=Nc1ccccc1</counterexample><is_a>CHEBI:36537</is_a>
+</class>
+
+  <class>
+    <name>azulene</name>
+    <id>CHEBI:31249</id>
+    <rule>
+      <smarts>c1ccc2cccc2cc1</smarts>
+    </rule>
+    <example>c1ccc2cccc2cc1CC</example>
+    <counterexample>C1CCC2CCCC2CC1</counterexample>
+    <is_a>CHEBI:36785</is_a>
+  </class>
+
+  <class>
+    <name>benzazepine</name>
+    <id>CHEBI:35676</id>
+    <rule>
+      <or>
+        <smarts>N1C=CC=Cc2ccccc12</smarts>
+        <smarts>C12=CC=CC=C1C=CNC=C2</smarts>
+      </or>
+    </rule>
+    <example>CCN1C=CC=Cc2ccccc12</example>
+    <counterexample>C1=CC=NNC=C1</counterexample>
+    <is_a></is_a>
+  </class>
+  
+  <!--<class>
+    <name>bacteriochlorin</name>
+    <id>CHEBI:52581</id>
+    <rule>
+      <smarts>C1Cc2cc3ccc(cc4CCc(cc5ccc(cc1n2)[nH]5)n4)[nH]3</smarts>
+    </rule>
+    <is_a>CHEBI:26214</is_a>
+  </class>-->
+
+  <!--<class>
+    <name>barbiturate</name>
+    <id>CHEBI:22693</id>
+    <rule>
+      <smarts>C1C(=O)NC(=O)NC1(=O)</smarts>
+    </rule>
+    <example>C1C(=O)NC(=O)NC1(=O)C</example>
+    <counterexample>C1C(=C)CC(=C)NC1(=C)</counterexample>
+    <is_a>CHEBI:38337</is_a>
+  </class>-->
+
+  <class>
+    <name>benzaldehyde</name>
+    <id>CHEBI:22698</id>
+    <rule>
+      <smarts>c1ccccc1[C;H]=O</smarts>
+    </rule>
+    <example>Cc1ccccc1C=O</example>
+    <counterexample>c1ccccc1C(=O)C</counterexample>
+    <is_a>CHEBI:33855</is_a>
+  </class>
+
+  <class>
+    <name>benzamide</name>
+    <id>CHEBI:22702</id>
+    <rule>
+      <smarts>c1ccccc1C(=O)N</smarts>
+    </rule>
+    <example>c1ccccc1C(=O)NCC</example>
+    <counterexample>c1ccccc1C=O</counterexample>
+    <is_a>CHEBI:22645</is_a>
+  </class>
+
+  <class>
+    <name>benzene</name>
+    <id>CHEBI:22712</id>
+    <rule>
+      <smarts>[c;R1]1[c;R1][c;R1][c;R1][c;R1][c;R1]1</smarts>
+    </rule>
+    <example>Cc1ccccc1</example>
+    <counterexample>C1CCCCC1</counterexample>
+    <counterexample>c1ccc2ccccc2c1</counterexample>
+    <is_a>CHEBI:33836</is_a>
+  </class>
+
+  <class>
+    <name>benzenediol</name>
+    <id>CHEBI:17701</id>
+    <rule>
+      <or>
+        <smarts>[OH]c1ccccc1[OH]</smarts> <!--catechol, CHEBI:33566-->
+        <smarts>[OH]c1cccc([OH])c1</smarts> <!-- resorcinol, CHEBI:33572-->
+        <smarts>[OH]c1ccc([OH])cc1</smarts> 
+      </or>
+    </rule>
+    <example>Oc1ccc(O)cc1C</example>
+    <counterexample>O=C(O)c1ccccc1O</counterexample>
+    <is_a>CHEBI:22625</is_a>
+  </class>
+
+  <class>
+    <name>catechol</name>
+    <id>CHEBI:33566</id>
+    <rule>
+      <smarts>[OH]c1ccccc1[OH]</smarts>
+    </rule>
+    <example>Oc1cc(C)ccc1O</example>
+    <counterexample>Oc1cccc(O)c1</counterexample>
+    <is_a>CHEBI:17701</is_a>
+  </class>
+
+  <class>
+    <name>quinazoline</name>
+    <id>CHEBI:38530</id>
+    <rule>
+      <smarts>c1ccc2ncncc2c1</smarts>
+    </rule>
+    <example>c1ccc2nc(C)ncc2c1</example>
+    <counterexample>c1ccc2nnccc2c1</counterexample>
+    <is_a>CHEBI:27171</is_a>
+  </class>
+  
+  <class>
+    <name>resorcinol</name>
+    <id>CHEBI:33572</id>
+    <rule>
+      <smarts>[OH]c1cccc([OH])c1</smarts>
+    </rule>
+    <example>Oc1cccc(O)c1</example>
+    <counterexample>Oc1cc(C)ccc1O</counterexample>
+    <is_a>CHEBI:17701</is_a>
+  </class>
+
+  <!--<class>
+    <name>isobacteriochlorin</name>
+    <id>CHEBI:52583</id>
+    <rule>
+      <smarts>C1Cc2cc3ccc(cc4ccc(cc5CCc(cc1n2)[nH]5)n4)[nH]3</smarts>
+    </rule>
+    <is_a>CHEBI:26214</is_a>
+    <example>CCC1Cc2cc3ccc(cc4ccc(cc5CCc(cc1n2)[nH]5)n4)[nH]3</example>
+    <counterexample>CCC1Cc2cc3ccc(cc4CCc(cc5ccc(cc1n2)[nH]5)n4)[nH]3</counterexample>
+  </class>-->
+  
+  <class>
+    <name>carbonyl compound</name><id>CHEBI:36586</id><rule>
+    <smarts>C=O</smarts>
+  </rule><example>CC(=O)C</example><counterexample>CO</counterexample><is_a>CHEBI:36537</is_a>
+</class>
+  <class>
+    <name>carboxylic acid</name>
+    <id>CHEBI:33575</id>
+    <rule>
+      <smarts>[C;X3](=O)[O;D1;H1]</smarts>
+    </rule>
+    <example>CC(=O)O</example>
+    <counterexample>CC(=O)OC</counterexample>
+    <is_a>CHEBI:36537</is_a>
+  </class>
+  
+  <!-- E -->
+  <class>
+    <name>enal</name><id>CHEBI:51688</id><rule>
+    <smarts>[C;H](=O)C=C</smarts>
+  </rule><example>[H]C(=O)C=C(C)CCC=C(C)CCC=C(C)C</example><counterexample>C=CC(=O)C</counterexample><is_a>CHEBI:17478</is_a>
+</class>
+  <class>
+    <name>enol</name><id>CHEBI:33823</id><rule>
+    <smarts>[O;H]C=C</smarts>
+  </rule><example>OC(=C)c1ccccc1</example><counterexample>O=Cc1ccccc1</counterexample><is_a>CHEBI:33822</is_a>
+</class>
+  <class>
+    <name>enone</name>
+    <id>CHEBI:51689</id>
+    <rule>
+      <smarts>C=C[C;X3](=O)[#6]</smarts>
+    </rule>
+    <example>CCCCCC(=O)\C=C\C=O</example>
+    <counterexample>C#CC(=O)C</counterexample>
+    <counterexample>C=CC(=O)</counterexample>
+    <is_a>CHEBI:51721</is_a>
+  </class>
+  
+  <class>
+    <name>epoxide</name><id>CHEBI:32955</id>
+    <rule>
+      <smarts>O1CC1</smarts>
+    </rule>
+    <example>BrCC1CO1</example>
+    <counterexample>O1CCC1</counterexample>
+    <is_a>CHEBI:37407</is_a>
+  </class>
+  <class>
+    <name>epoxy compound</name>
+    <id>CHEBI:37407</id>
+    <rule>
+      <smarts>[C;R][O;R][C;R]</smarts>
+    </rule>
+    <example>BrCC1CO1</example>
+    <counterexample>OC1CC1</counterexample>
+    <is_a>CHEBI:25698</is_a>
+  </class>
+  <class>
+
+    <name>ester</name>
+    <id>CHEBI:33308</id>
+    <rule>
+      <smarts>[C;X3](=O)[O;D2;H0][#6]</smarts>
+    </rule>
+    <example>CC(=O)OC</example>
+    <counterexample>CC(=O)O</counterexample>
+    <is_a>CHEBI:36586</is_a>
+  </class>
+  <class>
+    <name>ketone</name><id>CHEBI:17087</id><rule>
+      <smarts>[#6][C;X3](=O)[#6]</smarts>
+    </rule>
+    <example>CC(=O)C</example><counterexample>CCC=O</counterexample>
+    <is_a>CHEBI:36586</is_a>
+  </class>
+    <class>
+      <name>pyrazole</name><id>CHEBI:14973</id><rule>
+      <smarts>n1nccc1</smarts>
+    </rule><example>Cn1cccn1</example><counterexample>n1ccccc1</counterexample><is_a>CHEBI:23677</is_a>
+    </class>
+    <class>
+      <name>pyridine</name><id>CHEBI:16227</id><rule>
+      <smarts>c1ccncc1</smarts>
+    </rule><example>CCCOCCCc1ccncc1</example>
+    <counterexample>CCN1CCCCC1</counterexample><is_a>CHEBI:33655</is_a>
+  </class>
+    <class>
+      <name>pyrimidine</name><id>CHEBI:16898</id><rule>
+      <smarts>n1cnccc1</smarts>
+    </rule><example>n1c(CCC=O)nccc1</example><counterexample>n1ncccc1</counterexample><is_a>CHEBI:33655</is_a>
+  </class>
+    <class>
+      <name>nitrile</name><id>CHEBI:18379</id><rule>
+      <smarts>C#N</smarts>
+    </rule>
+      <example>NC#N</example>
+      <counterexample>NC=N</counterexample>
+      <is_a>CHEBI:36586</is_a>
+    </class>
+    
+  <!-- D -->
+
+  <!--<class>
+    <name>diazo compound</name>
+    <id>CHEBI:39444</id>
+    <rule>
+    <smarts>
+      <or>N=[N+]=[N-]</or>
+      <or>N=N#N</or>
+    </smarts>
+    </rule>
+    <example>CN=[N+]=[N-]</example>
+    <example>CN=N#N</example>
+    <counterexample>CNNN</counterexample>
+    <is_a>CHEBI:35352</is_a>
+  </class>-->
+  
+  <class>
+    <name>diazole</name><id>CHEBI:23677</id><rule>
+      <or>
+        <smarts>n1nccc1</smarts>
+        <smarts>c1cncn1</smarts>
+      </or>
+    </rule>
+    <example>Cn1cccn1</example>
+    <counterexample>c1ccncc1</counterexample>
+    <is_a>CHEBI:33655</is_a>
+  </class>
+
+  <!-- E -->
+  
+  <class>
+    <name>ether</name>
+    <id>CHEBI:25698</id>
+    <rule>
+      <smarts>[#6;!$(C=O)]-O-[#6;!$(C=O)]</smarts>
+    </rule>
+    <example>C1COCC1</example>
+    <counterexample>OCCCC</counterexample>
+    <is_a>CHEBI:36537</is_a>
+  </class>
+
+  <!-- F -->
+  
+  <class>
+    <name>flavone</name>
+    <id>CHEBI:24043</id>
+    <rule>
+      <smarts>O=c1cc(oc2ccccc12)c1ccccc1</smarts>
+    </rule>
+    <example>O=c1cc(oc2ccccc12)-c1ccccc1</example>
+    <counterexample>C1C=C(OC2=CCC=C12)-c3ccccc3CC</counterexample>
+    <is_a>CHEBI:36537</is_a>
+  </class>
+  
+  <class>
+    <name>furan</name>
+    <id>CHEBI:24129</id>
+    <rule>
+      <smarts>[#8;R1]1[#6;R1]~[#6;R1]~[#6;R1]~[#6;R1]1</smarts>
+    </rule>
+    <example>c1ccco1</example>
+    <counterexample>C1CCCCO1</counterexample>
+  </class>
+  <class>
+    <name>furoic acid</name>
+    <id>CHEBI:36055</id>
+    <rule>
+      <or>
+        <smarts>[#8;R1]1[#6;R1]([C;X3](=O)[O;D1;H1])~[#6;R1]~[#6;R1]~[#6;R1]1</smarts>
+        <smarts>[#8;R1]1[#6;R1]~[#6;R1]([#6;X3](=O)[O;D1;H1])~[#6;R1]~[#6;R1]1</smarts>
+      </or>
+    </rule>
+    <example>OC(=O)c1ccco1</example>
+    <example>OC(=O)c1ccoc1</example>
+    <counterexample>c1ccoc1</counterexample>
+  </class>
+  
+  <!-- I -->
+      <class>
+        <name>imidazole</name><id>CHEBI:24780</id><rule>
+        <smarts>c1cncn1</smarts>
+      </rule>
+      <example>c1c[nH]cn1</example>
+      <counterexample>N1NCCC1</counterexample><is_a>CHEBI:23677</is_a>
+    </class>
+    <class>
+      <name>imine</name><id>CHEBI:24783</id><rule>
+      <smarts>C=N</smarts>
+    </rule>
+      <example>CCCC=NCCC</example>|<counterexample>CCCC=CN</counterexample>|<is_a>CHEBI:35352</is_a>
+  </class>
+  
+  <!-- N -->
+  
+    <!--<class>
+      <name>naphthalenes</name>
+      <id>CHEBI:25477</id>
+      <rule>
+        <smarts>c1ccc2ccccc2c1</smarts>
+      </rule>
+      <example>c1ccc2ccccc2c1</example>
+      <counterexample>c1c[nH]c2c(c1)ccc1cc[nH]cc21</counterexample>
+      <is_a>CHEBI:33836</is_a>
+    </class>-->
+  
+    <class>
+      <name>neoflavanoid</name>|<id>CHEBI:62744</id>|<rule>
+      <smarts>C1C[C;R1](c2ccccc2)c2ccccc2O1</smarts>
+    </rule>
+      <example>O=C1CC(c2ccccc2)c2ccccc2O1</example>|<counterexample>O=C1Cc2ccccc2OC1c1ccccc1</counterexample>|<is_a>CHEBI:36537</is_a>
+    </class>
+
+  <class>
+    <name>nitro compound</name>
+    <id>CHEBI:35715</id>
+    <rule>
+      <or>
+      <smarts>[N+]([O-])=O</smarts>
+        <smarts>N(=O)=O</smarts>
+      </or>
+    </rule>
+    <example>[O-][N+](=O)c1ccc(Nc2ccc(cc2)N=C=S)cc1</example>
+    <counterexample>[O-][N+]C=O</counterexample>
+    <is_a>CHEBI:51143</is_a>
+  </class>
+
+  <class>
+    <name>C-nitro compound</name>
+    <id>CHEBI:35716</id>
+    <rule>
+      <or>
+        <smarts>[#6]-N(=O)=O</smarts>        
+        <smarts>[#6]-[N+]([O-])=O</smarts>
+      </or>
+    </rule>
+    <example>[O-][N+](=O)c1ccc(Nc2ccc(cc2)N=C=S)cc1</example>
+    <counterexample>[O-][N+]C=O</counterexample>
+    <is_a>CHEBI:35715</is_a>
+
+  </class>
+  
+  <!-- O -->
+    <class>
+      <name>olefin</name>|<id>CHEBI:33641</id>|<rule>
+      <smarts>C=C</smarts>
+    </rule>|<example>CC=CC</example>|<counterexample>CC#CC</counterexample>|<is_a>CHEBI:36537</is_a>
+  </class>
+    <class>
+      <name>organochlorine compound</name><id>CHEBI:36683</id><rule>
+        <smarts>CCl</smarts>
+      </rule>|<example>CCCl</example>|<counterexample>CCBr</counterexample>|<is_a>CHEBI:36684</is_a>
+  </class>
+    <class>
+      <name>organohalogen compound</name>|<id>CHEBI:36684</id>|<rule>
+        <smarts>C[F,Br,Cl,I]</smarts>
+      </rule>|<example>CCBr</example>|<counterexample>CCN</counterexample>|<is_a>CHEBI:36537</is_a>
+  </class>
+
+  <class>
+    <name>organobromine compound</name><id>CHEBI:37141</id><rule>
+      <smarts>CBr</smarts>
+    </rule><example>CCBr</example><counterexample>CCCl</counterexample>
+    <is_a>CHEBI:36684</is_a>
+  </class>
+
+  <!-- P -->
+
+  <class>
+    <name>pyridine N-oxide</name>
+    <id>CHEBI:38189</id>
+    <rule>
+      <smarts>[O-][n+;R1]1[c;R1][c;R1][c;R1][c;R1][c;R1]1</smarts>
+    </rule>
+    <is_a>CHEBI:26421</is_a>
+    <example>[O-][n+]1ccccc1</example>
+    <counterexample>[O-][n+]1cccc2c1CCCC2</counterexample>
+  </class>
+  
+  <!--<class>
+    <name>platinum coordination entity</name>
+    <id>CHEBI:33862</id>
+    <rule>
+      <smarts>[Pt][{NM}]</smarts>
+    </rule>
+    <example>[H][N]([H])([H])[Pt](Cl)(Cl)[N]([H])([H])[H]</example>
+    <counterexample>[Pt]</counterexample>
+    <is_a>CHEBI:33861</is_a>
+  </class>-->
+
+  <!--<class>
+    <name>transition element coordination entity</name>
+    <id>CHEBI:33861</id>
+    <rule>
+      <smarts>[{TM}][{NM}]</smarts>
+    </rule>
+    <example>[H][N]([H])([H])[Pt](Cl)(Cl)[N]([H])([H])[H]</example>
+    <counterexample>[Pt]</counterexample>
+    <is_a>CHEBI:33497</is_a>
+  </class>-->
+  
+  <class>
+    <name>pyran</name>
+    <id>CHEBI:35594</id>
+    <rule>
+      <or>
+        <smarts>C1OC=CC=C1</smarts>
+        <smarts>C1C=COC=C1</smarts>
+      </or>
+    </rule>
+    <example>C1C=COC=C1CCC</example>
+    <counterexample>C1C=CC(=O)C=C1</counterexample>
+    <is_a>CHEBI:36537</is_a>
+  </class>
+  <class>
+    <name>2H-pyran</name><id>CHEBI:35592</id><rule>
+      <smarts>C1OC=CC=C1</smarts>
+    </rule>
+    <example>CCCC1OC=CC=C1</example>
+    <counterexample>C1C=CC(=O)C=C1</counterexample>
+    <is_a>CHEBI:35594</is_a>
+  </class>
+  <class>
+    <name>4H-pyran</name><id>CHEBI:35593</id>|<rule>
+      <smarts>C1C=COC=C1</smarts>
+    </rule>|<example>C1C=COC=C1CCC</example>|<counterexample>C1C=COC=CC1</counterexample>|<is_a>CHEBI:35594</is_a>
+  </class><class>
+    <name>pyrazine</name><id>CHEBI:30953</id>|<rule>
+      <smarts>n1ccncc1</smarts>
+    </rule>|<example>n1c(CCCC)cncc1</example>|<counterexample>n1ncccc1</counterexample>|<is_a>CHEBI:33655</is_a>
+  </class>
+  <class>
+    <name>pyridazine</name>
+    <id>CHEBI:30954</id>|<rule>
+      <smarts>n1ncccc1</smarts>
+    </rule>|<example>n1nc(CCC=O)ccc1</example>|<counterexample>n1cnccc1</counterexample>|<is_a>CHEBI:33655</is_a>
+  </class>
+
+  <class>
+    <name>anthraquinone</name>
+    <id>CHEBI:22580</id>
+    <rule>
+      <smarts>O=C1c2ccccc2C(=O)c2ccccc12</smarts>
+    </rule>
+    <example>O=C1c2ccccc2C(=O)c2ccccc12</example>
+    <counterexample>CCCCC</counterexample>
+    <is_a>CHEBI:46955</is_a>
+    <is_a>CHEBI:51285</is_a>
+  </class>
+
+  <class>
+    <name>flavanoid</name><id>CHEBI:38672</id>|<rule>
+      <smarts>C1Cc2ccccc2OC1c1ccccc1</smarts>
+    </rule>
+    <example>O=C1Cc2ccccc2OC1c1ccccc1</example>
+    <counterexample>C1Oc2ccccc2CC1c1ccccc1</counterexample>
+    <is_a>CHEBI:36537</is_a>
+  </class>
+
+  <class>
+    <name>isoflavanoid</name>
+    <id>CHEBI:38673</id>
+    <rule>
+      <smarts>C1Oc2ccccc2CC1c1ccccc1</smarts>
+    </rule>
+    <example>O=C1Oc2ccccc2CC1c1ccccc1</example>
+    <counterexample>O=C1Cc2ccccc2OC1c1ccccc1</counterexample>
+    <is_a>CHEBI:36537</is_a>
+  </class>
+
+  <class>
+    <name>pyrrole</name>
+    <id>CHEBI:35556</id>
+    <rule>
+      <smarts>n1cccc1</smarts>
+    </rule>
+    <example>CCCn1cccc1</example>
+    <counterexample>C1NCN=C1</counterexample>
+    <is_a>CHEBI:33655</is_a>
+  </class>
+  <class>
+    <name>pyrrolopyrimidine</name><id>CHEBI:38670</id><rule>
+      <smarts>c1ncnc2n(ccc12)</smarts>
+    </rule><example>Nc1ncnc2n(ccc12)[C@@H]1O[C@H](CO)[C@@H](O)[C@H]1O</example>|<counterexample>c1ccccc1</counterexample>|<is_a>CHEBI:38101</is_a>
+</class>
+  <class>
+    <name>pyrroloquinoline</name><id>CHEBI:50918</id><rule>
+      <smarts>c1cc2nc(ccc2c2[nH]c(cc12))</smarts>
+    </rule>
+    <example>[O]c1c(O)c2nc(cc(C(O)=O)c2c2[nH]c(cc12)C(O)=O)C(O)=O</example>
+    <counterexample>c1ccccc1</counterexample><is_a>CHEBI:38101</is_a>
+
+  </class>
+  <!--<class>
+    <name>pyrylium</name>
+    <id>CHEBI:59657</id>
+    <rule>
+      <smarts>c1cc[o+]cc1</smarts>
+    </rule>
+    <example>CCc1cc[o+]cc1</example>
+    <counterexample>c1cc[nH]cc1</counterexample>
+    <is_a>CHEBI:38104</is_a>
+  </class>-->
+
+ <!-- T -->
+  <class>
+    <name>thiophene</name>
+    <id>CHEBI:26961</id>
+    <rule>
+      <smarts>[#16;R1]1[#6;R1]~[#6;R1]~[#6;R1]~[#6;R1]1</smarts>
+    </rule>
+    <example>c1ccsc1</example>
+    <counterexample>s2c1ccccc1cc2</counterexample>
+    <is_a>CHEBI:38106</is_a>
+  </class>
+ 
+
+  <!-- Y -->
+  
+  <class>
+    <name>ynal</name>
+    <id>CHEBI:51720</id>
+    <rule>
+      <smarts>[C;H](=O)C#C</smarts>
+    </rule>
+    <example>[H]C(=O)C#C</example>
+    <counterexample>[H]C(=O)C=C</counterexample>
+  </class>
+  
+  <class>
+    <name>ynone</name>
+    <id>CHEBI:51723</id>
+    <rule>
+      <smarts>C#C[C;X3](=O)[#6]</smarts>
+    </rule>
+    <example>C#CC(=O)C</example>
+    <counterexample>C=CC(=O)C</counterexample>
+    <is_a>CHEBI:51721</is_a>
+  </class>
+
+  <!-- α -->
+  <class>
+    <name>α,β-unsaturated aldehyde</name>
+    <id>CHEBI:51718</id>
+    <rule>
+      <smarts>[C;H](=O)C=,#C</smarts>
+    </rule>
+    <example>[H]C(=O)C#C</example>
+    <example>[H]C(=O)C=C</example>
+    <counterexample>C#CC(=O)C</counterexample>
+    <is_a>CHEBI:17478</is_a>
+  </class>
+
+  <class>
+    <name>α,β-unsaturated ketone</name>
+    <id>CHEBI:51718</id>
+    <rule>
+      <smarts>C=,#C[C;X3](=O)[#6]</smarts>
+    </rule>
+    <example>CC(=O)C#C</example>
+    <example>CC(=O)C=C</example>
+    <counterexample>C#CC(=O)[H]</counterexample>
+    <is_a>CHEBI:17087</is_a>
+  </class>
+  
+</classes>

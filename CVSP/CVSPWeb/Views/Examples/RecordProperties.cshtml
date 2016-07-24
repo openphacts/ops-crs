@@ -1,0 +1,45 @@
+﻿@{
+	ViewBag.Title = "CVSP | Record Properties";
+	Layout = "~/Views/Shared/_DemoLayout.cshtml";
+}
+
+<hgroup class="title">
+	<h3>CVSP Record Properties</h3>
+</hgroup>
+
+<hgroup class="content" style="margin: .5em;">
+	<div id="properties"></div>
+
+	<hr />
+
+	Code example how to put widget on page...
+
+	<pre class="brush: js;">
+		$('#record').properties_gridview({
+			id: 'fbcc72e4-be37-4457-9e9f-d899fedbd5c6'
+		});
+    </pre>
+
+</hgroup>
+
+@section Scripts {
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$.Depositions.store.getDepositionsGUIDs(0, -1, function (guids) {
+				if (guids.length > 0) {
+					$.Depositions.store.getDepositionRecords(guids[0], 0, 10, function (ids) {
+						if (ids.length > 0) {
+							$('#properties').properties_gridview({
+								id: ids[0]
+							});
+						}
+						else {
+						}
+					});
+				}
+				else {
+				}
+			});
+        });
+	</script>
+}

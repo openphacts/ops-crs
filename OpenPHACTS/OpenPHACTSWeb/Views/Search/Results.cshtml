@@ -1,0 +1,44 @@
+﻿@model string
+@{
+    ViewBag.Title = "OpenPHACTS | Search Results";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="searchResults"></div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var rid = '@Model';
+
+            $("#searchResults")
+                .compounds_gridresults({
+                    rid: '@Model',
+                    imageSize: 150,
+                    columns: [
+                        { name: 'COMPOUND_ID', title: '#', format: function (id) { return $(document.createElement('a')).attr({ href: '/Compounds/Get/' + id }).text(id); } },
+                        { name: 'Structure', title: 'Structure' },
+                        { name: 'MolecularFormula', title: 'Molecular Formula', format: function (value) { return value.molecularFormula(); } },
+                        { name: 'Indigo_MolecularWeight', title: 'Molecular Weight', format: function (value) { return parseFloat(value).toFixed(3); } },
+                        { name: 'Indigo_MonoisotopicMass', title: 'Monoisotopic Mass', format: function (value) { return parseFloat(value).toFixed(6); } }
+                    ],
+                    tooltipFields: [
+                        { name: 'COMPOUND_ID', title: 'ID' },
+                        { name: 'IsVirtual', title: 'Virtual', format: function (virtual) { return virtual ? 'Yes' : 'No'; } },
+                        { name: 'MolecularFormula', title: 'Molecular Formula', format: function (value) { return value.molecularFormula(); } },
+                        { name: 'CompoundTypes', title: 'Type', format: buildCompoundTypesProperty }
+                    ],
+                    onResultsReady: function (e, status) {
+                        if (status.Count == 0) {
+                            $('body').showMessage('Info', 'Nothing was found! Try to search for something else.', function () {
+                                window.location = '/';
+                            });
+                        }
+                    },
+                    onClick: function (event, id) {
+                        window.location = '/Compounds/Get/' + id;
+                    }
+                });
+        });
+    </script>
+}

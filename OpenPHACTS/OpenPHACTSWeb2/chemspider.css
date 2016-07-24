@@ -1,0 +1,99 @@
+/* Do not remove this - it is used by the html retrieved by the SponsorsListControl.ascx which is hosted on the ChemSpider blog */
+.col-ad-sponsor 
+{
+    display: -moz-inline-box;
+    display: inline-block;
+}
+
+* html .col-ad-sponsor { display:inline; }  /* for IE 6 */
+* + html .col-ad-sponsor { display:inline; }  /* for IE 7 */
+
+/* advanced search */
+.search-section-header {
+        padding: 1em 0 0 0;
+        clear: both;
+}
+.search-section-header + div {
+        margin-left: 1.5em;
+}
+
+.search-section-header > label {
+        font-size: 1.1em;
+        font-weight: bold;
+}
+
+.search-options-section {
+        padding: 1em 0 1em 0; 
+        clear: both;
+}
+
+.search-options-section-header {
+	cursor: pointer;
+}
+.search-options-section-header span {
+        float: left; 
+        margin-top: 0.4em; 
+        padding-right: 0.4em;
+}
+.search-options-section-header h3 {
+        float: left; 
+        margin: 2px 0 0 0; 
+        width: 11em;
+}
+
+div.blockMsg {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: 270px;
+}
+
+/* visual clues */
+.visual-cues {
+}
+
+.visual-cue {
+}
+
+.visual-cue-compact {
+    margin-top: 0.5em;
+}
+
+.visual-cues span {
+    font-size: 90%;
+    font-style: italic;
+    color: #666;
+}
+
+.list-table 
+{
+    list-style-type: none;
+}
+
+.list-table li 
+{
+    float: left;
+    width: 18em;
+}
+                    
+.list-table .label 
+{
+    float: left;
+    text-align: right;
+    width: 9em;
+    padding-right: 0.5em;
+}
+
+.profile
+{
+    position: relative;
+}
+
+#usercard
+{
+    position: absolute;
+    right: 0;
+    top: 3em;
+    width: 250px;
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18), 0 0 5px 0 rgba(0, 0, 0, 0.2);
+}

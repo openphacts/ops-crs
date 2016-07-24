@@ -1,0 +1,39 @@
+﻿@{
+	ViewBag.Title = "CVSP | Deposition Information";
+	Layout = "~/Views/Shared/_DemoLayout.cshtml";
+}
+
+<hgroup class="title">
+	<h3>CVSP Deposition information</h3>
+</hgroup>
+
+<hgroup class="content" style="margin: .5em;">
+	<div id="deposition"></div>
+
+	<hr />
+
+	Code example how to put widget on page...
+
+	<pre class="brush: js;">
+		$('#deposition').deposition_info({
+			id: 'fbcc72e4-be37-4457-9e9f-d899fedbd5c6'
+		});
+    </pre>
+
+</hgroup>
+
+@section Scripts {
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$.Depositions.store.getDepositionsGUIDs(0, -1, function (guids) {
+				if (guids.length > 0) {
+					$('#deposition').deposition_info({
+						id: guids[0]
+					});
+				}
+				else {
+				}
+			});
+        });
+	</script>
+}

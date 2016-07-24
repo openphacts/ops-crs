@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "ChemSpider Compounds | General Compound Info";
+    Layout = "~/Views/Shared/_DemoLayout.cshtml";
+}
+
+<hgroup class="title">
+    <h3>General compound information</h3>
+</hgroup>
+
+<hgroup class="content">
+    <div id="info"></div>
+
+    <div style="margin-top: 2em; margin-bottom: 2em;">
+        Enter any compound's synonym and click Search button:
+        <input id="text" type="text" />
+        <button id="searchBtn">Search</button>
+    </div>
+
+    <hr />
+
+    Code example how to put widget on page...
+
+    <pre class="brush: js;">
+        $("#info").compoundinfo({
+            id: 'f6af72b3-9047-43e0-a2ea-9246b45aa191'
+        });
+    </pre>
+
+</hgroup>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.Compounds.store.simpleSearchWithOptions({
+                searchOptions: {
+                    QueryText: 'aspirin'
+                },
+                scopeOptions: {
+                    RealOnly: true
+                }
+            }, function (rid) {
+                $.Compounds.store.waitAndGetSearchResults(rid, function (results) {
+                    if (results.length > 0) {
+                        $("#info").compoundinfo({
+                            id: results[0]
+                        });
+                    }
+                });
+            });
+
+            $('#searchBtn').click(function () {
+                $.Compounds.store.simpleSearchWithOptions({
+                    searchOptions: {
+                        QueryText: $('#text').val()
+                    },
+                    scopeOptions: {
+                        RealOnly: true
+                    }
+                }, function (rid) {
+                    $.Compounds.store.waitAndGetSearchResults(rid, function (results) {
+                        console.log(results);
+                        if (results.length > 0) {
+                            $("#info").compoundinfo('setID', results[0]);
+                        }
+                        else {
+                            alert('Nothing was found!');
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+}

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XmlProfiles>
+  <XmlProfile>
+    <UserKey>BA82FD2B-8E70-43A7-9062-8C1BEFF40BBE</UserKey>
+    <UserGuid>BA82FD2B-8E70-43A7-9062-8C1BEFF40BBE</UserGuid>
+    <LastUpdated>2014-11-19T11:37:04.6418361-05:00</LastUpdated>
+    <FirstName>Alexey</FirstName>
+    <LastName>Pshenichnov</LastName>
+    <DisplayName>Alexey Pshenichnov</DisplayName>
+    <UserId>321</UserId>
+    <Email>PshenichnovA@rsc.org</Email>
+    <CompanyName>RSC</CompanyName>
+  </XmlProfile>
+  <XmlProfile>
+    <UserKey>EB3EB562-71F5-4B69-8DCF-8482CC825100</UserKey>
+    <UserGuid>EB3EB562-71F5-4B69-8DCF-8482CC825100</UserGuid>
+    <LastUpdated>2014-11-19T11:37:04.6418361-05:00</LastUpdated>
+    <FirstName>Valery</FirstName>
+    <LastName>Tkachenko</LastName>
+    <DisplayName>Valery Tkachenko</DisplayName>
+    <UserId>179</UserId>
+    <Email>TkachenkoV@rsc.org</Email>
+  </XmlProfile>
+  <XmlProfile>
+    <UserKey>E810F5EC-6203-43C5-951D-426B0D3A4733</UserKey>
+    <UserGuid>E810F5EC-6203-43C5-951D-426B0D3A4733</UserGuid>
+    <LastUpdated>2014-11-19T11:37:04.6418361-05:00</LastUpdated>
+    <FirstName>Antony</FirstName>
+    <LastName>Williams</LastName>
+    <DisplayName>Antony Williams</DisplayName>
+    <UserId>4</UserId>
+    <Email>WilliamsA@rsc.org</Email>
+  </XmlProfile>
+  <XmlProfile>
+    <UserKey>7AB0DF30-0135-4936-9E80-A1AA783D5615</UserKey>
+    <UserGuid>7AB0DF30-0135-4936-9E80-A1AA783D5615</UserGuid>
+    <LastUpdated>2014-11-19T11:37:04.6418361-05:00</LastUpdated>
+    <FirstName>Ken</FirstName>
+    <LastName>Karapetyan</LastName>
+    <DisplayName>Ken Karapetyan</DisplayName>
+    <UserId>91778</UserId>
+    <Email>KarapetyanK@rsc.org</Email>
+  </XmlProfile>
+  <XmlProfile>
+    <UserKey>39FD5B49-6B75-4134-A580-31D31D0ECEC9</UserKey>
+    <UserGuid>39FD5B49-6B75-4134-A580-31D31D0ECEC9</UserGuid>
+    <LastUpdated>2014-11-19T11:37:04.6418361-05:00</LastUpdated>
+    <FirstName>Colin</FirstName>
+    <LastName>Batchelor</LastName>
+    <DisplayName>Colin Batchelor</DisplayName>
+    <UserId>5093</UserId>
+    <Email>batchelorc@rsc.org</Email>
+  </XmlProfile>
+</XmlProfiles>

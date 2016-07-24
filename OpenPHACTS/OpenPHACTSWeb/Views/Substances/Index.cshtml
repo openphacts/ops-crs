@@ -1,0 +1,29 @@
+﻿@model int
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="substances"></div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#substances').substances_tileview({
+                count: @Model,
+                imageSize: 173,
+                tooltipSize: 250,
+                onClick: function (event, id) {
+                    window.location = '/Substances/Get/' + id;
+                },
+                tooltipFields: [
+                    { name: 'SUBSTANCE_ID', title: 'ID' },
+                    { name: 'SUBSTANCE_VERSION', title: 'Version' },
+                    { name: 'DEPOSITOR_DATA_SOURCE_NAME', title: 'Data Source' },
+                    { name: 'DEPOSITOR_SUBSTANCE_REGID', title: 'Registry ID' }
+                ]
+            });
+        });
+    </script>
+}

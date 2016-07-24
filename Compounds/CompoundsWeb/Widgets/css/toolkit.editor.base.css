@@ -1,0 +1,27 @@
+﻿.top-toolbar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 2px;
+}
+
+.cs-widget-editor
+{
+    position: relative;
+    background-color: #fff;
+}
+
+.cs-widget-editor .empty-text
+{
+    position: absolute; 
+    text-align: center; 
+    vertical-align: middle; 
+    color: Gray;
+    font-size: 15pt;
+}
+
+.cs-widget-edit-image
+{
+    cursor: hand;
+    background-color: #fff;
+}

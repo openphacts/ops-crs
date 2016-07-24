@@ -1,0 +1,944 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.chemspider.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://www.chemspider.com/AbstractTypes" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.chemspider.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.chemspider.com/">
+      <s:element name="Mol2ThreeDMol">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mol2ThreeDMolResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mol2ThreeDMolResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="N2strwsDLL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="N2strwsDLLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="N2strwsDLLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="N2strwsbatDLL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="names" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="N2strwsbatDLLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="N2strwsbatDLLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="N2strws">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="N2strwsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="N2strwsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="N2strwsbat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="names" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="N2strwsbatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="N2strwsbatResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="synonym2CSIDs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="synonym" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="synonym2CSIDsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="synonym2CSIDsResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MolToInChI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="flags" type="tns:InChIFlags" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InChIFlags">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="version" type="tns:InChIVersion" />
+          <s:element minOccurs="1" maxOccurs="1" name="stereo" type="tns:InChIStereo" />
+          <s:element minOccurs="1" maxOccurs="1" name="fixedH" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="InChIVersion">
+        <s:restriction base="s:string">
+          <s:enumeration value="v102b" />
+          <s:enumeration value="v102s" />
+          <s:enumeration value="v103" />
+          <s:enumeration value="v104" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="InChIStereo">
+        <s:restriction base="s:string">
+          <s:enumeration value="No" />
+          <s:enumeration value="Absolute" />
+          <s:enumeration value="Relative" />
+          <s:enumeration value="Racemic" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="MolToInChIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MolToInChIResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MolToInChIKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mol" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="flags" type="tns:InChIFlags" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MolToInChIKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MolToInChIKeyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStructureBestNameByCSID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="csidString" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStructureBestNameByCSIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStructureBestNameByCSIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStructureBestNamesByCSIDs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="csidStrings" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStructureBestNamesByCSIDsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStructureBestNamesByCSIDsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStructureSynonymsByCSID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="csid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStructureSynonymsByCSIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStructureSynonymsByCSIDResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWikipediaNames">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="csid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWikipediaNamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWikipediaNamesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ArrayOfInt" nillable="true" type="tns:ArrayOfInt" />
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+    </s:schema>
+    <s:schema targetNamespace="http://www.chemspider.com/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Mol2ThreeDMolSoapIn">
+    <wsdl:part name="parameters" element="tns:Mol2ThreeDMol" />
+  </wsdl:message>
+  <wsdl:message name="Mol2ThreeDMolSoapOut">
+    <wsdl:part name="parameters" element="tns:Mol2ThreeDMolResponse" />
+  </wsdl:message>
+  <wsdl:message name="N2strwsDLLSoapIn">
+    <wsdl:part name="parameters" element="tns:N2strwsDLL" />
+  </wsdl:message>
+  <wsdl:message name="N2strwsDLLSoapOut">
+    <wsdl:part name="parameters" element="tns:N2strwsDLLResponse" />
+  </wsdl:message>
+  <wsdl:message name="N2strwsbatDLLSoapIn">
+    <wsdl:part name="parameters" element="tns:N2strwsbatDLL" />
+  </wsdl:message>
+  <wsdl:message name="N2strwsbatDLLSoapOut">
+    <wsdl:part name="parameters" element="tns:N2strwsbatDLLResponse" />
+  </wsdl:message>
+  <wsdl:message name="N2strwsSoapIn">
+    <wsdl:part name="parameters" element="tns:N2strws" />
+  </wsdl:message>
+  <wsdl:message name="N2strwsSoapOut">
+    <wsdl:part name="parameters" element="tns:N2strwsResponse" />
+  </wsdl:message>
+  <wsdl:message name="N2strwsbatSoapIn">
+    <wsdl:part name="parameters" element="tns:N2strwsbat" />
+  </wsdl:message>
+  <wsdl:message name="N2strwsbatSoapOut">
+    <wsdl:part name="parameters" element="tns:N2strwsbatResponse" />
+  </wsdl:message>
+  <wsdl:message name="synonym2CSIDsSoapIn">
+    <wsdl:part name="parameters" element="tns:synonym2CSIDs" />
+  </wsdl:message>
+  <wsdl:message name="synonym2CSIDsSoapOut">
+    <wsdl:part name="parameters" element="tns:synonym2CSIDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="MolToInChISoapIn">
+    <wsdl:part name="parameters" element="tns:MolToInChI" />
+  </wsdl:message>
+  <wsdl:message name="MolToInChISoapOut">
+    <wsdl:part name="parameters" element="tns:MolToInChIResponse" />
+  </wsdl:message>
+  <wsdl:message name="MolToInChIKeySoapIn">
+    <wsdl:part name="parameters" element="tns:MolToInChIKey" />
+  </wsdl:message>
+  <wsdl:message name="MolToInChIKeySoapOut">
+    <wsdl:part name="parameters" element="tns:MolToInChIKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureBestNameByCSIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStructureBestNameByCSID" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureBestNameByCSIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStructureBestNameByCSIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureBestNamesByCSIDsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStructureBestNamesByCSIDs" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureBestNamesByCSIDsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStructureBestNamesByCSIDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureSynonymsByCSIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStructureSynonymsByCSID" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureSynonymsByCSIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStructureSynonymsByCSIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWikipediaNamesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWikipediaNames" />
+  </wsdl:message>
+  <wsdl:message name="GetWikipediaNamesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWikipediaNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mol2ThreeDMolHttpGetIn">
+    <wsdl:part name="mol" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Mol2ThreeDMolHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="N2strwsDLLHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="N2strwsDLLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="N2strwsHttpGetIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="N2strwsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="synonym2CSIDsHttpGetIn">
+    <wsdl:part name="synonym" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="synonym2CSIDsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInt" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureBestNameByCSIDHttpGetIn">
+    <wsdl:part name="csidString" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureBestNameByCSIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureBestNamesByCSIDsHttpGetIn">
+    <wsdl:part name="csidStrings" type="s1:StringArray" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureBestNamesByCSIDsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureSynonymsByCSIDHttpGetIn">
+    <wsdl:part name="csid" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureSynonymsByCSIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetWikipediaNamesHttpGetIn">
+    <wsdl:part name="csid" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWikipediaNamesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="Mol2ThreeDMolHttpPostIn">
+    <wsdl:part name="mol" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Mol2ThreeDMolHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="N2strwsDLLHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="N2strwsDLLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="N2strwsHttpPostIn">
+    <wsdl:part name="name" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="N2strwsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="synonym2CSIDsHttpPostIn">
+    <wsdl:part name="synonym" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="synonym2CSIDsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfInt" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureBestNameByCSIDHttpPostIn">
+    <wsdl:part name="csidString" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureBestNameByCSIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureBestNamesByCSIDsHttpPostIn">
+    <wsdl:part name="csidStrings" type="s1:StringArray" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureBestNamesByCSIDsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureSynonymsByCSIDHttpPostIn">
+    <wsdl:part name="csid" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStructureSynonymsByCSIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetWikipediaNamesHttpPostIn">
+    <wsdl:part name="csid" type="s:string" />
+    <wsdl:part name="token" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWikipediaNamesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:portType name="BatchNamesSoap">
+    <wsdl:operation name="Mol2ThreeDMol">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Takes a molfile and returns molfile with 3d coordinates. Uses balloon (http://users.abo.fi/mivainio/balloon/).</wsdl:documentation>
+      <wsdl:input message="tns:Mol2ThreeDMolSoapIn" />
+      <wsdl:output message="tns:Mol2ThreeDMolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="N2strwsDLL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Accepts single name and returns sdf file (uses DLL).</wsdl:documentation>
+      <wsdl:input message="tns:N2strwsDLLSoapIn" />
+      <wsdl:output message="tns:N2strwsDLLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="N2strwsbatDLL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Accepts list of names and returns sdf file (uses DLL).</wsdl:documentation>
+      <wsdl:input message="tns:N2strwsbatDLLSoapIn" />
+      <wsdl:output message="tns:N2strwsbatDLLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="N2strws">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Accepts single name and returns sdf file (uses executable).</wsdl:documentation>
+      <wsdl:input message="tns:N2strwsSoapIn" />
+      <wsdl:output message="tns:N2strwsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="N2strwsbat">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Accepts list of names and returns sdf file (uses executable).</wsdl:documentation>
+      <wsdl:input message="tns:N2strwsbatSoapIn" />
+      <wsdl:output message="tns:N2strwsbatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="synonym2CSIDs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return a list of CSIDs where they have an approved synonym that matches the query string.</wsdl:documentation>
+      <wsdl:input message="tns:synonym2CSIDsSoapIn" />
+      <wsdl:output message="tns:synonym2CSIDsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MolToInChI">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For InChI validation! Like MolToInChI in InChI.asmx but allows InChIFlags to be passed to it</wsdl:documentation>
+      <wsdl:input message="tns:MolToInChISoapIn" />
+      <wsdl:output message="tns:MolToInChISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MolToInChIKey">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">For InChI validation! Like MolToInChIKey in InChI.asmx but allows InChIflags to be passed to it</wsdl:documentation>
+      <wsdl:input message="tns:MolToInChIKeySoapIn" />
+      <wsdl:output message="tns:MolToInChIKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureBestNameByCSID">
+      <wsdl:input message="tns:GetStructureBestNameByCSIDSoapIn" />
+      <wsdl:output message="tns:GetStructureBestNameByCSIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureBestNamesByCSIDs">
+      <wsdl:input message="tns:GetStructureBestNamesByCSIDsSoapIn" />
+      <wsdl:output message="tns:GetStructureBestNamesByCSIDsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureSynonymsByCSID">
+      <wsdl:input message="tns:GetStructureSynonymsByCSIDSoapIn" />
+      <wsdl:output message="tns:GetStructureSynonymsByCSIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWikipediaNames">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Accepts single name and returns any associated URI encoded wikipedia name(s).</wsdl:documentation>
+      <wsdl:input message="tns:GetWikipediaNamesSoapIn" />
+      <wsdl:output message="tns:GetWikipediaNamesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="BatchNamesHttpGet">
+    <wsdl:operation name="Mol2ThreeDMol">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Takes a molfile and returns molfile with 3d coordinates. Uses balloon (http://users.abo.fi/mivainio/balloon/).</wsdl:documentation>
+      <wsdl:input message="tns:Mol2ThreeDMolHttpGetIn" />
+      <wsdl:output message="tns:Mol2ThreeDMolHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="N2strwsDLL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Accepts single name and returns sdf file (uses DLL).</wsdl:documentation>
+      <wsdl:input message="tns:N2strwsDLLHttpGetIn" />
+      <wsdl:output message="tns:N2strwsDLLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="N2strws">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Accepts single name and returns sdf file (uses executable).</wsdl:documentation>
+      <wsdl:input message="tns:N2strwsHttpGetIn" />
+      <wsdl:output message="tns:N2strwsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="synonym2CSIDs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return a list of CSIDs where they have an approved synonym that matches the query string.</wsdl:documentation>
+      <wsdl:input message="tns:synonym2CSIDsHttpGetIn" />
+      <wsdl:output message="tns:synonym2CSIDsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureBestNameByCSID">
+      <wsdl:input message="tns:GetStructureBestNameByCSIDHttpGetIn" />
+      <wsdl:output message="tns:GetStructureBestNameByCSIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureBestNamesByCSIDs">
+      <wsdl:input message="tns:GetStructureBestNamesByCSIDsHttpGetIn" />
+      <wsdl:output message="tns:GetStructureBestNamesByCSIDsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureSynonymsByCSID">
+      <wsdl:input message="tns:GetStructureSynonymsByCSIDHttpGetIn" />
+      <wsdl:output message="tns:GetStructureSynonymsByCSIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWikipediaNames">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Accepts single name and returns any associated URI encoded wikipedia name(s).</wsdl:documentation>
+      <wsdl:input message="tns:GetWikipediaNamesHttpGetIn" />
+      <wsdl:output message="tns:GetWikipediaNamesHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="BatchNamesHttpPost">
+    <wsdl:operation name="Mol2ThreeDMol">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Takes a molfile and returns molfile with 3d coordinates. Uses balloon (http://users.abo.fi/mivainio/balloon/).</wsdl:documentation>
+      <wsdl:input message="tns:Mol2ThreeDMolHttpPostIn" />
+      <wsdl:output message="tns:Mol2ThreeDMolHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="N2strwsDLL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Accepts single name and returns sdf file (uses DLL).</wsdl:documentation>
+      <wsdl:input message="tns:N2strwsDLLHttpPostIn" />
+      <wsdl:output message="tns:N2strwsDLLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="N2strws">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Accepts single name and returns sdf file (uses executable).</wsdl:documentation>
+      <wsdl:input message="tns:N2strwsHttpPostIn" />
+      <wsdl:output message="tns:N2strwsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="synonym2CSIDs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Return a list of CSIDs where they have an approved synonym that matches the query string.</wsdl:documentation>
+      <wsdl:input message="tns:synonym2CSIDsHttpPostIn" />
+      <wsdl:output message="tns:synonym2CSIDsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureBestNameByCSID">
+      <wsdl:input message="tns:GetStructureBestNameByCSIDHttpPostIn" />
+      <wsdl:output message="tns:GetStructureBestNameByCSIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureBestNamesByCSIDs">
+      <wsdl:input message="tns:GetStructureBestNamesByCSIDsHttpPostIn" />
+      <wsdl:output message="tns:GetStructureBestNamesByCSIDsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureSynonymsByCSID">
+      <wsdl:input message="tns:GetStructureSynonymsByCSIDHttpPostIn" />
+      <wsdl:output message="tns:GetStructureSynonymsByCSIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWikipediaNames">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Accepts single name and returns any associated URI encoded wikipedia name(s).</wsdl:documentation>
+      <wsdl:input message="tns:GetWikipediaNamesHttpPostIn" />
+      <wsdl:output message="tns:GetWikipediaNamesHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BatchNamesSoap" type="tns:BatchNamesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Mol2ThreeDMol">
+      <soap:operation soapAction="http://www.chemspider.com/Mol2ThreeDMol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="N2strwsDLL">
+      <soap:operation soapAction="http://www.chemspider.com/N2strwsDLL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="N2strwsbatDLL">
+      <soap:operation soapAction="http://www.chemspider.com/N2strwsbatDLL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="N2strws">
+      <soap:operation soapAction="http://www.chemspider.com/N2strws" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="N2strwsbat">
+      <soap:operation soapAction="http://www.chemspider.com/N2strwsbat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="synonym2CSIDs">
+      <soap:operation soapAction="http://www.chemspider.com/synonym2CSIDs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MolToInChI">
+      <soap:operation soapAction="http://www.chemspider.com/MolToInChI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MolToInChIKey">
+      <soap:operation soapAction="http://www.chemspider.com/MolToInChIKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureBestNameByCSID">
+      <soap:operation soapAction="http://www.chemspider.com/GetStructureBestNameByCSID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureBestNamesByCSIDs">
+      <soap:operation soapAction="http://www.chemspider.com/GetStructureBestNamesByCSIDs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureSynonymsByCSID">
+      <soap:operation soapAction="http://www.chemspider.com/GetStructureSynonymsByCSID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWikipediaNames">
+      <soap:operation soapAction="http://www.chemspider.com/GetWikipediaNames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BatchNamesSoap12" type="tns:BatchNamesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Mol2ThreeDMol">
+      <soap12:operation soapAction="http://www.chemspider.com/Mol2ThreeDMol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="N2strwsDLL">
+      <soap12:operation soapAction="http://www.chemspider.com/N2strwsDLL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="N2strwsbatDLL">
+      <soap12:operation soapAction="http://www.chemspider.com/N2strwsbatDLL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="N2strws">
+      <soap12:operation soapAction="http://www.chemspider.com/N2strws" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="N2strwsbat">
+      <soap12:operation soapAction="http://www.chemspider.com/N2strwsbat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="synonym2CSIDs">
+      <soap12:operation soapAction="http://www.chemspider.com/synonym2CSIDs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MolToInChI">
+      <soap12:operation soapAction="http://www.chemspider.com/MolToInChI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MolToInChIKey">
+      <soap12:operation soapAction="http://www.chemspider.com/MolToInChIKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureBestNameByCSID">
+      <soap12:operation soapAction="http://www.chemspider.com/GetStructureBestNameByCSID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureBestNamesByCSIDs">
+      <soap12:operation soapAction="http://www.chemspider.com/GetStructureBestNamesByCSIDs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureSynonymsByCSID">
+      <soap12:operation soapAction="http://www.chemspider.com/GetStructureSynonymsByCSID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWikipediaNames">
+      <soap12:operation soapAction="http://www.chemspider.com/GetWikipediaNames" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BatchNamesHttpGet" type="tns:BatchNamesHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Mol2ThreeDMol">
+      <http:operation location="/Mol2ThreeDMol" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="N2strwsDLL">
+      <http:operation location="/N2strwsDLL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="N2strws">
+      <http:operation location="/N2strws" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="synonym2CSIDs">
+      <http:operation location="/synonym2CSIDs" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureBestNameByCSID">
+      <http:operation location="/GetStructureBestNameByCSID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureBestNamesByCSIDs">
+      <http:operation location="/GetStructureBestNamesByCSIDs" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureSynonymsByCSID">
+      <http:operation location="/GetStructureSynonymsByCSID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWikipediaNames">
+      <http:operation location="/GetWikipediaNames" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BatchNamesHttpPost" type="tns:BatchNamesHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Mol2ThreeDMol">
+      <http:operation location="/Mol2ThreeDMol" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="N2strwsDLL">
+      <http:operation location="/N2strwsDLL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="N2strws">
+      <http:operation location="/N2strws" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="synonym2CSIDs">
+      <http:operation location="/synonym2CSIDs" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureBestNameByCSID">
+      <http:operation location="/GetStructureBestNameByCSID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureBestNamesByCSIDs">
+      <http:operation location="/GetStructureBestNamesByCSIDs" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStructureSynonymsByCSID">
+      <http:operation location="/GetStructureSynonymsByCSID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWikipediaNames">
+      <http:operation location="/GetWikipediaNames" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BatchNames">
+    <wsdl:port name="BatchNamesSoap" binding="tns:BatchNamesSoap">
+      <soap:address location="http://www.chemspider.com/BatchNames.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BatchNamesSoap12" binding="tns:BatchNamesSoap12">
+      <soap12:address location="http://www.chemspider.com/BatchNames.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BatchNamesHttpGet" binding="tns:BatchNamesHttpGet">
+      <http:address location="http://www.chemspider.com/BatchNames.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BatchNamesHttpPost" binding="tns:BatchNamesHttpPost">
+      <http:address location="http://www.chemspider.com/BatchNames.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,64 @@
+﻿@model Guid
+
+@{
+    ViewBag.Title = "Record's details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Record
+        <div id="toolbar" class="deposition-toolbar pull-right"></div>
+    </div>
+    <div class="panel-body">
+        <div id="record"></div>
+    </div>
+</div>
+
+<div id="issues"></div>
+
+<div id="fields"></div>
+
+<div id="properties"></div>
+
+<div id="chemspider_properties"></div>
+
+<div id="chemspider_synonyms"></div>
+
+@section scripts {
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('#record').record_info({
+            id: '@Model'
+        });
+
+        $('#toolbar').append(
+            $(document.createElement('a'))
+                .attr({
+                    href: $.Records.store.getUrl('api/records/@Model/json')
+                })
+                .text('JSON')
+        );
+
+        $('#issues').issues_gridview({
+            id: '@Model'
+        });
+
+        $('#fields').fields_gridview({
+            id: '@Model'
+        });
+
+        $('#properties').properties_gridview({
+            id: '@Model'
+        });
+
+        @*$('#chemspider_properties').chemspider_properties_gridview({
+            id: '@Model'
+        });*@
+
+        $('#chemspider_synonyms').chemspider_synonyms_gridview({
+            id: '@Model'
+        });
+    });
+    </script>
+}

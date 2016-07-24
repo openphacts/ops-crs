@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Crystal";
+    Layout = "~/Views/Shared/_DemoLayout.cshtml";
+}
+
+<div id="cif"></div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                type: 'GET',
+                url: '/Content/1000118.txt'
+            })
+            .done(function (data) {
+                $('#cif').jsmol({
+                    width: 500,
+                    height: 500,
+                    mol: data,
+                    type: 'JMol'
+                })
+            })
+            .fail(function (xhr, error, thrownError) {
+                alert('fail')
+            });
+        });
+    </script>
+}

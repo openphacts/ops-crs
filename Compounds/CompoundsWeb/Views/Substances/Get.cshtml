@@ -1,0 +1,98 @@
+﻿@using RSC;
+@using ChemSpider.Utilities;
+
+@model RSC.Compounds.Revision
+
+@{
+    ViewBag.Title = "Get";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">Substance Record</div>
+    <div class="panel-body">
+        <div id="substance"></div>
+    </div>
+</div>
+
+@if (Model.Issues != null && Model.Issues.Any())
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">Issues</div>
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>Severity</th>
+                    <th>Type</th>
+                    <th>Code</th>
+                    <th>Message</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Issues)
+                {
+                    @*string cssClass, popOverStackTrace = String.Empty, moreDetails = String.Empty;
+                    if (item.Severity == Severity.Error)
+                    {
+                        cssClass = "danger";
+                        moreDetails = "<button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-container=&quot;body&quot; data-toggle=&quot;popover&quot; data-placement=&quot;left&quot; data-content=&quot;Vivamus sagittis lacus vel augue laoreet rutrum faucibus.&quot;>Popover on left</button>";
+
+                    }
+                    else if (item.Severity == Severity.Warning)
+                    {
+                        cssClass = "warning";
+                    }
+                    else { cssClass = "info"; }
+                    <tr class="@cssClass">
+                        <td>@item.Severity</td>
+                        <td>@item.Type</td>
+                        <td>@item.Code</td>
+                        <td>@item.Message</td>
+                        <td>@Html.Raw(@item.Description.softHyphen())</td>
+                    </tr>*@
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#substance').substanceinfo({
+                id: '@Model.Substance.Id',
+                imgSize: 250,
+                properties: [
+                    { name: 'Id', title: 'ID' },
+                    { name: 'VERSION', title: 'Version' },
+                    { name: 'COMPOUND_ID', title: 'Compound ID', format: function (value) { return $(document.createElement('a')).attr({ href: '@Url.Content("~/Compounds/")' + value }).text(value) } },
+                    { name: 'DEPOSITOR_DATA_SOURCE_NAME', title: 'Data Source' },
+                    { name: 'DEPOSITOR_SUBSTANCE_REGID', title: 'Registry ID' },
+                    {
+                        name: 'Id',
+                        title: 'SDF',
+                        format: function(id) {
+                            return $(document.createElement('a'))
+                                .addClass("btn btn-xs")
+                                .attr({
+                                    'data-toggle': 'tooltip',
+                                    'data-placement': 'right',
+                                    'data-original-title': 'Save as SDF'
+                                })
+                                .click(function() {
+                                    $.Substances.store.getSubstance({ id: id }, function (substance) {
+                                        saveAs(new Blob([substance.SDF], { type: 'chemical/x-mdl-sdfile;charset=utf-8' }), substance.SUBSTANCE_ID + '.sdf');
+                                    });
+                                })
+                                .append(
+                                    $(document.createElement('span'))
+                                        .addClass("glyphicon glyphicon-floppy-save")
+                                );
+                        }
+                    },
+                ]
+            });
+        });
+
+    </script>
+}

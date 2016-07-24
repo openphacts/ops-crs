@@ -1,0 +1,25 @@
+﻿@model Guid
+
+@{
+    ViewBag.Title = "Chunk's details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="panel panel-default">
+    <div id="header" class="panel-heading">
+        Chunk Details
+    </div>
+    <div class="panel-body">
+        <div id="chunk"></div>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#chunk').chunk_info({
+                id: '@Model'
+            });
+        });
+    </script>
+}

@@ -1,0 +1,130 @@
+﻿@{
+    ViewBag.Title = "ConfigLayout";
+    Layout = "~/Views/Shared/_FlexLayout.cshtml";
+}
+
+<div id="configLayoutManager">
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        var config = {
+            layout: {
+                layoutType: 'horizontal',
+                items: [
+                {
+                    size: '25%',
+                    allowMaximize: true,
+                    tabs: {
+                        items: [{
+                            active: false,
+                            title: 'List',
+                            name: 'list',
+                            class: 'annotations',
+                            view: {
+                                name: 'areastats'
+                            }
+                        }, {
+                            active: true,
+                            title: 'Chart',
+                            name: 'chart',
+                            class: 'files',
+                            view: {
+                                name: 'areastats'
+                            }
+                        }]
+                    }
+                },
+                {
+                    size: '35%',
+                    layout: {
+                        layoutType: 'vertical',
+                        items: [{
+                            size: '30%',
+                            title: 'Some Panel',
+                            name: 'some_name',
+                            class: 'genomes',
+                            layout: {
+                                border: 'between',
+                                overflow: 'hidden',
+                                layoutType: 'horizontal',
+                                allowResize: true,
+                                items: [{
+                                    size: '50%',
+                                    overflow: 'hidden',
+                                    view: {
+                                        name: 'areastats',
+                                    }
+                                }, {
+                                    size: '50%',
+                                    overflow: 'hidden',
+                                    view: {
+                                        name: 'areastats',
+                                    }
+                                }]
+                            }
+                        }, {
+                            size: '70%',
+                            title: 'Some Details',
+                            name: 'details',
+                            class: 'details',
+                            overflow: 'hidden',
+                            view: {
+                                //name: 'areastats',
+                                name: 'customlayout',
+                            }
+                        }]
+                    }
+                },
+                {
+                    size: '40%',
+                    tabs: {
+                        items: [{
+                            title: 'Alignments',
+                            name: 'alignments',
+                            class: 'details',
+                            view: {
+                                name: 'areastats'
+                            }
+                        }, {
+                            active: true,
+                            title: 'Computations',
+                            name: 'computations',
+                            class: 'computations',
+                            layout: {
+                                border: 'between',
+                                overflow: 'hidden',
+                                layoutType: 'vertical',
+                                allowResize: true,
+                                items: [{
+                                    size: '20%',
+                                    view: {
+                                        name: 'areastats'
+                                    }
+                                }, {
+                                    size: '40%',
+                                    view: {
+                                        name: 'areastats'
+                                    }
+                                }, {
+                                    size: '40%',
+                                    view: {
+                                        name: 'areastats'
+                                    }
+                                }]
+                            }
+                        }]
+                    }
+                }]
+            }
+        };
+
+        $('#configLayoutManager').layoutmanager({
+            type: 'horizontal',
+            saveState: false,
+            config: config
+        });
+
+        //var layout = $.layout.addLayout('layoutManager', config);
+    </script>
+}

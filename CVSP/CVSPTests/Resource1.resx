@@ -1,0 +1,1141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="aromaticMarkush" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\aromaticMarkush.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="atoms" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\atoms.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="benzeneAsCdx" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\benzene.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="benzeneAsMol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\benzene.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;iso-8859-1</value>
+  </data>
+  <data name="bracketsN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\bracketsN.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bracketsxbracketsy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\bracketsxbracketsy.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="c1cc14394h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\c1cc14394h.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cavitand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\cavitand.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chairglucose" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\chairglucose.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ChEBI_53227" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\ChEBI_53227.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="clashymol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\clashymol.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="congestedsdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\congestedsdf.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Cpcyclohexane" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Cpcyclohexane.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="crossedbondsdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\crossedbondsdf.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="cyclobutaneethanemethane" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\cyclobutaneethanemethane.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cyclohexyl_acetate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\cyclohexyl_acetate.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="disentangly" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\disentangly.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="entangledsdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\entangledsdf.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="fragmentsMol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\fragmentsMol.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="genericnickname" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\genericnickname.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="germole" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\germole.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="graphictest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\graphictest.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hexaTHPcyclohexane" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\hexaTHPcyclohexane.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="justAbbreviations" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\justAbbreviations.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="longrepeats" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\longrepeats.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="longUnknownAbbrev" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\longUnknownAbbrev.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="multiplemolecules" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\multiplemolecules.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nEquals0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\nEquals0.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nofragments" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\nofragments.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="OO_OCO_OCCO" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\OO_OCO_OCCO.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="paraxylene" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\paraxylene.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PartiallyDigestedSdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PartiallyDigestedSdf.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="phenylacetate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\phenylacetate.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PhH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PhH.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PMPTol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PMPTol.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PPh2and3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PPh2and3.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="R1group" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\R1group.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="RBenzene" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\RBenzene.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;iso-8859-1</value>
+  </data>
+  <data name="Rcyclohexane" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Rcyclohexane.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="reactionpartitioning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\reactionpartitioning.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Rgroup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Rgroup.mol;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RnOH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\RnOH.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Scheme5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\Scheme5.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="selenacalixtriazines" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\selenacalixtriazines.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stretchedbondcdx" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\stretchedbondcdx.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tetrahydropyranyl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\tetrahydropyranyl.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="the32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\the32.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="twomarkush" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\twomarkush.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="underthearrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\underthearrow.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="UninterpretableFirst" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\UninterpretableFirst.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="unlabelledbrackets" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\unlabelledbrackets.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="utf8containingsdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\utf8containingsdf.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="wrongwaybonds" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\wrongwaybonds.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_9312824" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\9312824.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_5aii_nitrate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\5aii_nitrate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_5ai_pentavalentnitro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\5ai_pentavalentnitro.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_5b_pyridineOxideBad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\5b_pyridineOneOxide.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_5g_sulfoxide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\5g_sulfoxide.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="calciumHydroxideAsMol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\calciumHydroxideAsMol.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="hemeAsMol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\hemeAsMol.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="benzene3D" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\benzene3D.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_5aii_tervalentnitrate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\5aii_tervalentnitrate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_5ai_tervalentnitro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\5ai_tervalentnitro.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_5b_pyridineoxide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\5b_pyridineoxide.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_5g_tricoordinatesulfoxide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\5g_tricoordinatesulfoxide.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_5d_badazide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\5d_badazide.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_5d_goodazide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\5d_goodazide.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="bismuth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\bismuth.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_20b_badAcetophenone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\20b_badAcetophenone.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_20b_distractor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\20b_distractor.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_20b_goodAcetophenone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\20b_goodAcetophenone.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_20c_badPhenobarbital" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\20c_badPhenobarbital.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_20c_goodPhenobarbital" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\20c_goodPhenobarbital.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_20e_badBenzaldoxime" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\20e_badBenzaldoxime.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_20e_goodBenzaldoxime" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\20e_goodBenzaldoxime.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_20g_badTetrazole" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\20g_badTetrazole.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_20g_goodTetrazole" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\20g_goodTetrazole.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_7_badNaOAc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\7_badNaOAc.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_7_badNaOAcNeutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\7_badNaOAcNeutral.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_7_goodNaOAc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\7_goodNaOAc.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_8iii_badQuaternaryAmmonium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\8iii_badQuaternaryAmmonium.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_8iii_goodQuaternaryAmmonium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\8iii_goodQuaternaryAmmonium.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_8i_badAmmoniumChloride" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\8i_badAmmoniumChloride.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_8i_badAmmoniumLactate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\8i_badAmmoniumLactate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_8i_goodAmmoniumChloride" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\8i_goodAmmoniumChloride.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_8i_goodAmmoniumLactate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\8i_goodAmmoniumLactate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_9ii_badAminoguanidineSulfate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\9ii_badAminoguanidineSulfate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_9ii_goodAminoguanidineSulfate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\9ii_goodAminoguanidineSulfate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_9i_badNEt3HCl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\9i_badNEt3HCl.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_9i_goodNEt3HCl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\9i_goodNEt3HCl.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_5e_badhydrazone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\5e_badhydrazone.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_5e_gooddiazo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\5e_gooddiazo.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="adjacentcharges" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\adjacentcharges.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="fixedValenceMol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\fixedValenceMol.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="nonadjacentcharges" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\nonadjacentcharges.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_19bii_badthimerosal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\19bii_badthimerosal.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_19bi_goodthimerosal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\19bi_goodthimerosal.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_5f_badbenzoylcyanide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\5f_badbenzoylcyanide.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_5f_badtbutylisocyanide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\5f_badtbutylisocyanide.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_5f_goodbenzoylcyanide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\5f_goodbenzoylcyanide.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_5f_goodtbutylisocyanide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\5f_goodtbutylisocyanide.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="badphosphoruschloride" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\badphosphoruschloride.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="goodphosphoruschloride" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\goodphosphoruschloride.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_19i_badtrimethyltinchloride" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\19i_badtrimethyltinchloride.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="chair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\perspectivehexagon.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="regularHexagon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\nonperspectivehexagon.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="twistboat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\boat.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_19i_goodtrimethyltinchloride" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\19i_goodtrimethyltinchloride.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="bigGeneric" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\bigGeneric.CDX;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pubchemMol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\pubchemMol.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="task128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\task128.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cyclohexylcompound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\cyclohexylcompound.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="excellentGenerics" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\excellentGenerics.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_1_methylphenylhydrazine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\1-methylphenylhydrazine.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="wonkyCN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\wonkyCN.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="missingexpectedstereo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\missingexpectedstereo.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="noexpectedstereo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\noexpectedstereo.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="chargesInAtomBlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\chargesInAtomBlock.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="JSDrawIsotopes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\JSDrawIsotopes.txt.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="neutralJSDraw" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\neutralJSDraw.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="goodness126388" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\goodness126388.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="goodness40405" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\goodness40405.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="multiplebenzene" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\multiplebenzene.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="aluminiumForInChI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\aluminiumForInChI.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ammoniaFalsePositive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\ammoniaFalsePositive.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="FeNbond" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\FeNbond.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="nameAndSynonymsMol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\nameAndSynonymsMol.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="backslashN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\backslashN.sdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FOOOOF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\FOOOOF.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="pentahydropentazole" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\pentahydropentazole.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="divinyl_benzene" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\divinyl_benzene.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;iso-8859-1</value>
+  </data>
+  <data name="chairglucose1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\chairglucose.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_14i_badSodiumSulfosalicylate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\14i_badSodiumSulfosalicylate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_14i_goodSodiumSulfosalicylate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\19i_goodSodiumSulfosalicylate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="classificationExceptionTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\classificationExceptionTest.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="_101_2Mos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\101_2Mos.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="illFormedCdxText" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\unusualText.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bracketedBondToAbbreviation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\nequals3.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="charge6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\charge6.CDX;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="charge8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\charge8.CDX;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dashystereo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\dashystereo.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="doublebondPh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\doublebondPh.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nojirimycin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\nojirimycin.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="benzeneV3000" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\benzeneV3000.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="righthandedchair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\righthandedchair.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="doublechairUD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\doublechairUD.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="doublechairUU" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\doublechairUU.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="doublehexagonDD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\doublehexagonDD.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="chairsAtAllAngles" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\chairsAtAllAngles.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="phantomchair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\phantomring.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="haworth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\haworth.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="boatsugar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\boatsugar.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fusedringsnohowarth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\fusedringsnohowarth.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="unfusedhexagonfusedrings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\unfusedhexagonfusedrings.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="phantomhaworth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\phantomhowarth.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="horizontalhowarth" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\horizontalhowarth.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="thiaminepyrophosphateMol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\webValidationService.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="invisiblemolecule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\invisiblemolecule.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="murucin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\murucin.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="halichoblelideB" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\halichoblelideB.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="papilistatin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\papilistatin.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="PPh3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PPh3.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="node_type1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\node_type1.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ch4chm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\ch4.chm;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="highlysymmetricmol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\molfileofdeath.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="highlysymmetricmol2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\highlysymmetricmol2.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="phantominternalstructure" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\CM022728.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="arrownoboundingbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\arrownoboundingbox.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="artwork" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\artwork.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="badname" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\badname.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="badsynonym" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\badsynonym.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="goodname" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\goodname.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="goodnameandsynonym" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\goodnameandsynonym.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="goodsynonym" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\goodsynonym.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="HbesideImplicitH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\HbesideImplicitH.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="oppositedirection" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\oppositedirection.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="lostAnomericStereo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\lostAnomericStereo.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lostAnomericStereo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\lostAnomericStereo2.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DglucoseRegular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DglucoseRegular.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="LglucoseRegular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\LglucoseRegular.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="phantomhaworthNovobiocin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\phantomhaworthNovobiocin.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="phantomHowarthGlucosamine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\phantomHowarthGlucosamine.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="NodeType10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\NodeType10.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NodeContainsFragmentContainsNodeType7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\NodeContainsFragmentContainsNodeType7.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NodeType1ChemSketch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\NodeType1ChemSketch.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="erythromycin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\erythromycin.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="josamycin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\josamycin.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="nystatin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\nystatin.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="querybonds" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\querybonds.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="aamAcidChloride" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\aamAcidChloride.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="acylationRxn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\acylationRxn.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="reboxetine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\reboxetine.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="acylationRxn_unmapped" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\acylationRxn_unmapped.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ringcontraction" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\ringcontraction.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="reactionWithAbbreviations" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\reactionWithAbbreviations.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nonAromaticQueryBond" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\nonAromaticQueryBond.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="disconnectedlithiummapping" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\disconnectedlithiummapping.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="unknownstereo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\unknownstereo.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="hypervalentmolecules" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\hypervalentmolecules.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="commonMistakes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\commonMistakes.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ZeroD_structures" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\ZeroD_structures.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="G2_42_completely_mixture" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\G2-42_completely_mixture.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="G2_44_epimer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\G2-44_epimer.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="G2_46_partially_mixture" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\G2-46_partially_mixture.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="G2_4_enantiomers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\G2-4_enantiomers.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="absurdlyLargeMolecule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\9770_1mos.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dashedbondacrossbracket" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\dashedbondacrossbracket.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="floatingplus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\floatingplus.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="OTfstrayplus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\OTfstrayplus.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="notInChemSpider" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\notInChemSpider.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="proximity" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\proximity.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="_1_calix" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\1_calix.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nitrile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\nitrile.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="allelements" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\allelements.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="perfluoroalkyl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\perfluoroalkyl.cdx;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="fourvalentN" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\fourvalentN.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="PtCarboxylateDisconnection" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PtCarboxylateDisconnection.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="freeMetal_And_CarboxylicAcid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\freeMetal_And_CarboxylicAcid.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
+  <data name="acidbase" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\doublebondadjacenttowavysinglebond.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ambiguousSp3Stereo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\ambiguousSp3Stereo.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="badallene" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\badallene.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="badallene2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\badallene2.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="benzyllithium_bonded" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\benzyllithium_bonded.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="benzyllithium_free" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\benzyllithium_free.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="benzyllithium_freeneutral" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\benzyllithium_freeneutral.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="bondType4molecule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\bondType4molecule1.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="bromoiodopropene_crossedandwavy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\bromoiodopropene_crossed.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="bromoiodopropene_crossedonly" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\bromoiodopropene_crossedonly.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="bromoiodopropene_flat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\bromoiodopropene_flat.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="bromoiodopropene_wavy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\bromoiodopropene_wavy.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="CHEMBL12760_doublebondadjacenttoupbond" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\CHEMBL12760_doublebondadjacenttoupbond.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="CHEMBL50821_stereobondadjacenttodoublebond" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\CHEMBL50821_stereobondadjacenttodoublebond.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="chiralflagset" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\chiralflagset.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="chloronium" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\chloronium.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="doublebond" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\doublebond.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="doublebondwithattachedeitherbond" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\doublebondwithattachedeitherbond.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;iso-8859-1</value>
+  </data>
+  <data name="doublebondwithattachedwavybond" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\doublebondwithattachedwavybond.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="duplicatemolecules_counterexample" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\duplicatemolecules1.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="duplicatemolecules_example" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\duplicatemolecules2.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="eitherbond_molecule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\eitherbond_molecule.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="empty" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\empty.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="enol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\enol.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="flatsugar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\flatsugar.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="fourstereobondsatcentre" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\fourstereobondsatcentre.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="fourstereobondsatcentre_counterexample" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\fourstereobondsatcentre_counterexample.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="fusedrings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\fusedrings.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="goodallene" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\badallene3.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="inorganicresidues" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\inorganicresidues.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="inorganicresidues2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\inorganicresidues2.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="iodine123" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\iodine123.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ironporphyrin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\ironporphyrin.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="layoutfail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\layoutfail.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="mercaptotetrahydropyrimidinol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\mercaptotetrahydropyrimidinol.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="moleculeWithInChIProps" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\moleculeWithInChIProps.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="mystery" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\mystery.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="nonoppositebondsmatch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\nonoppositebondsmatch.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="nonstereohydrogens2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\nonstereohydrogens2.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="nonstereohydrogens3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\nonstereohydrogens3.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="nonstereohydrogens4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\nonstereohydrogens4.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="nonstereohydrogens5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\nonstereohydrogens5.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="onebonduponebonddown" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\onebonduponebonddown.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="oppositebondmismatch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\oppositebondmismatch.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;iso-8859-1</value>
+  </data>
+  <data name="partialIonization_amineAmide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\partialIonization_amineAmide.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="partialIonization_sodiumSulfateThiol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\partialIonization_sodiumSulfateThiol.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="partialIonization_sulfateMethyl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\partialIonization_sulfateMethyl.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="partialIonization_sulfateSulfonate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\partialIonization_sulfateSulfonate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="partialIonization_sulfateThiol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\partialIonization_sulfateThiol.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="pentavalentmol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\pentavalentmol.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="relativestereo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\relativestereo.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="rifampin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\rifampin.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;iso-8859-1</value>
+  </data>
+  <data name="ringstereo_absent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\ringstereo_absent.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ringstereo_present" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\ringstereo_present.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="sodiumcarboxylicacid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\sodiumcarboxylicacid.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="stereobondatdoublebond" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\stereobondatdoublebond.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="stereobondatdoublebond_allene" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\stereobondatdoublebond_allene.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="stereobondatdoublebond_false" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\stereobondatdoublebond_2.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="stereobondatdoublebond_phosphate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\stereobondatdoublebond_phosphate.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="stereobondbetweenstereocentres_false" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\stereobondbetweenstereocentres_false.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="stereobondbetweenstereocentres_false1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\stereobondbetweenstereocentres_false1.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;iso-8859-1</value>
+  </data>
+  <data name="stereobondbetweenstereocentres_true" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\stereobondbetweenstereocentres_true.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="stereoinversion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\stereoinversion.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="tenradicalcentres" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\tenradicalcentres.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="toosmallangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\toosmallangle.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="tritiatedmolecule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\tritiatedmolecule.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="tshapedmolecule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\tshapedmolecule.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="tshapedmolecule_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\tshapedmolecule_2.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="twostereobondsoneinwardoneoutward" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\twostereobondsoneinwardoneoutward.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="v2000relativestereo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\v2000relativestereo.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;iso-8859-1</value>
+  </data>
+  <data name="_20ki_tetracycline" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\20ki_tetracycline.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="iodine124" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\iodine124.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="bentacetonitrile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\bentacetonitrile.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="borazine_nonunique" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\borazine_nonunique.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="degeneratestereocenters" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\degeneratestereocenters.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="deuteratedmolecule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\deuteratedmolecule.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="dodgyiodine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\dodgyiodine.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="electron" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\electron.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="fixedvalence" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\fixedvalence.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="implicithydrogen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\implicithydrogen.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="noproblemsmolecule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\noproblemsmolecule.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="oppositebondsmismatch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\oppositebondsmismatch.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="partiallyionized" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\partiallyionizedpelargonicacid.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="PF6anion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\PF6anion.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="radical_one" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\radical_one.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="radical_three" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\radical_three.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="radical_two" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\radical_two.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="substitutedatommolecule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\substitutedatommolecule.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="twowaters" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\twowaters.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="unknownstereo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\unknownstereo2.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="v3000example" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\v3000example.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="v2000Ablock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\v2000Ablock.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="epoxystereo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\epoxystereo.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="standardizationTestSdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\standardizationTestSdf.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="cistranseither" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\cistranseither.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="multicomponentStrippableH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\multicomponentStrippableH.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="multipleregids" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\multipleregids.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="st114mol" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\st114mol.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="benzeneWithWrongSynonyms" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\benzeneWithWrongSynonyms.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;iso-8859-1</value>
+  </data>
+  <data name="benzeneWithProperties" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\benzenewithproperties.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="molHeaderLineMissing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\molHeaderLineMissing.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="benzenePeculiarCoordinates" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\benzenePeculiarCoordinates.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="benzeneUninterpretableLine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\benzeneUninterpretableLine.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="stereosulfoxo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\stereosulfoxo.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="CHEMBL50821" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\CHEMBL50821.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="validationError" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\validationError.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="attachmentPointsMolecule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\attachmentPointsMolecule.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="pseudoatomMolecule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\pseudoatomMolecule.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="polymerFromWikipathways" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\polymerFromWikipathways.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="hairycyclohexane" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\hairycyclohexane.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="stereocentresOther" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\stereocentresOther.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="stereoIsotopeChargeFragmentMolecule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\stereoIsotopeMolecule.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="stereoIsotopeDMolecule" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\stereoIsotopeDMolecule.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="triplybondedgold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\triplybondedgold.mol;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="octahedralPtComplex" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\octahedralPtComplex.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="metalNonMetalBond" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\metalNonMetalBond.mol;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="failingNAD" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\failingNAD.mol;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="heme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\heme.mol;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nitricoxide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\nitricoxide.mol;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="azabicycloheptene" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\azabicycloheptene.mol;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="OPS1136544" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\OPS1136544.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="OPS1136548" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\OPS1136548.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+</root>

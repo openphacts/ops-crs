@@ -1,0 +1,905 @@
+[DocumentObject]
+(id = 0)
+@id: 0
+@CreationProgram: [ChemDraw 5.0] 
+@Name: [fmoc.cdx] 
+@BoundingBox: ((30.5, 256), (385, 418.5))
+@ColorTable: 0x0800ffffffffffff000000000000ffff00000000ffffffff00000000ffff00000000ffffffff00000000ffffffff0000ffff
+@Magnification: 0xf401
+@Window_IsZoomed: 0x
+@Window_Position: 0x0000420000003500
+@Window_Size: 0x00008e020000cb03
+@PrintMargins: 0x00002400000024000000240000002400
+@ChainAngle: 0x00007800
+@BondSpacing: 0xb400
+@BondLength: 0x00660e00
+@BoldWidth: 0x00000200
+@LineWidth: 0x009a0000
+@MarginWidth: 0x009a0100
+@HashSpacing: 0x00800200
+@LabelStyle: 0x03006000c8000200
+@CaptionStyle: 0x03000000c8000200
+@FractionalWidths: 0x
+@MacPrintInfo: 0x0003000001680168000000000e3f0ac8ff65ff6a0edb0b5e0367052703fc0002000001680168000000000e3f0ac8000100640064000000010001010100000001270f000100010000000000000000000000000002001901900000000000600000000000000000000100000000000000000000000000000000
+@FontTable: 0x000002000300e4040500417269616c07000000060053796d626f6c
+ [Page]
+ (id = 1)
+ @id: 1
+  [Group]
+  (id = 136)
+  @id: 136
+   [Fragment]
+   (id = 140)
+   @id: 140
+    [Node]
+    (id = 2)
+    @id: 2
+    @ZOrder: 0x0000
+    @2DPosition: (82.44921875, 289.6015625)
+    [Node]
+    (id = 3)
+    @id: 3
+    @ZOrder: 0x0100
+    @2DPosition: (94.94921875, 282.3984375)
+    [Bond]
+    (id = 4)
+    @id: 4
+    @ZOrder: 0x0200
+    @Bond_Begin: 2
+    @Bond_End: 3
+    [Node]
+    (id = 5)
+    @id: 5
+    @ZOrder: 0x0300
+    @2DPosition: (107.3984375, 289.6015625)
+    @Node_Element: 7
+    @Atom_NumHydrogens: 2
+     [Text]
+     (id = 7)
+     @id: 7
+     @ZOrder: 0x0500
+     @Text: [NH2] 
+     @LabelAlignment: 0x01
+     @2DPosition: (104.05078125, 293.6015625)
+     @BoundingBox: ((104.5, 286), (121, 295.5))
+    [Bond]
+    (id = 6)
+    @id: 6
+    @ZOrder: 0x0400
+    @Bond_Begin: 3
+    @Bond_End: 5
+   [Graphic]
+   (id = 8)
+   @id: 8
+   @ZOrder: 0x0600
+   @Graphic_Type: 0x0500
+   @Unknown property 0x0a05: 0x0001
+   @BoundingBox: ((81.3515625, 301.6484375), (78.5, 293.55078125))
+  [Graphic]
+  (id = 9)
+  @id: 9
+  @ZOrder: 0x0700
+  @Graphic_Type: 0x0100
+  @Line_Type: 0x00
+  @Arrow_Type: 2
+  @Arrow_HeadSize: 0xca08
+  @BoundingBox: ((202, 294), (132, 294))
+  [Text]
+  (id = 10)
+  @id: 10
+  @ZOrder: 0x0800
+  @Text: [Fmoc-Gly] 
+  @LineHeight: 0x0100
+  @2DPosition: (140, 285)
+  @BoundingBox: ((141, 277.5), (183, 287))
+  [Text]
+  (id = 11)
+  @id: 11
+  @ZOrder: 0x0900
+  @Text: [DCC, DIPEA] 
+  @LineHeight: 0x0100
+  @2DPosition: (134, 310)
+  @BoundingBox: ((135, 302.5), (190.5, 311.5))
+  [Group]
+  (id = 138)
+  @id: 138
+   [Fragment]
+   (id = 141)
+   @id: 141
+    [Node]
+    (id = 12)
+    @id: 12
+    @ZOrder: 0x0a00
+    @2DPosition: (325.30078125, 321.3515625)
+    [Node]
+    (id = 13)
+    @id: 13
+    @ZOrder: 0x0b00
+    @2DPosition: (339.3984375, 324.1484375)
+    [Node]
+    (id = 14)
+    @id: 14
+    @ZOrder: 0x0c00
+    @2DPosition: (348.80078125, 313.19921875)
+    [Node]
+    (id = 15)
+    @id: 15
+    @ZOrder: 0x0d00
+    @2DPosition: (344.19921875, 299.69921875)
+    [Node]
+    (id = 16)
+    @id: 16
+    @ZOrder: 0x0e00
+    @2DPosition: (330.1015625, 297)
+    [Node]
+    (id = 17)
+    @id: 17
+    @ZOrder: 0x0f00
+    @2DPosition: (320.6484375, 307.75)
+    [Bond]
+    (id = 18)
+    @id: 18
+    @ZOrder: 0x1000
+    @Bond_Order: 2
+    @Bond_DoublePosition: 0x0101
+    @Bond_Begin: 12
+    @Bond_End: 13
+    [Bond]
+    (id = 19)
+    @id: 19
+    @ZOrder: 0x1100
+    @Bond_Begin: 13
+    @Bond_End: 14
+    [Bond]
+    (id = 20)
+    @id: 20
+    @ZOrder: 0x1200
+    @Bond_Order: 2
+    @Bond_DoublePosition: 0x0101
+    @Bond_Begin: 14
+    @Bond_End: 15
+    [Bond]
+    (id = 21)
+    @id: 21
+    @ZOrder: 0x1300
+    @Bond_Begin: 15
+    @Bond_End: 16
+    [Bond]
+    (id = 22)
+    @id: 22
+    @ZOrder: 0x1400
+    @Bond_Order: 2
+    @Bond_DoublePosition: 0x0101
+    @Bond_Begin: 16
+    @Bond_End: 17
+    [Bond]
+    (id = 23)
+    @id: 23
+    @ZOrder: 0x1500
+    @Bond_Begin: 12
+    @Bond_End: 17
+    [Node]
+    (id = 24)
+    @id: 24
+    @ZOrder: 0x1600
+    @2DPosition: (351.1484375, 287.1484375)
+    [Node]
+    (id = 25)
+    @id: 25
+    @ZOrder: 0x1700
+    @2DPosition: (341.3515625, 276.69921875)
+    [Node]
+    (id = 26)
+    @id: 26
+    @ZOrder: 0x1800
+    @2DPosition: (328.44921875, 282.69921875)
+    [Bond]
+    (id = 27)
+    @id: 27
+    @ZOrder: 0x1900
+    @Bond_Begin: 15
+    @Bond_End: 24
+    [Bond]
+    (id = 28)
+    @id: 28
+    @ZOrder: 0x1a00
+    @Bond_Order: 2
+    @Bond_DoublePosition: 0x0201
+    @Bond_Begin: 24
+    @Bond_End: 25
+    [Bond]
+    (id = 29)
+    @id: 29
+    @ZOrder: 0x1b00
+    @Bond_Begin: 25
+    @Bond_End: 26
+    [Bond]
+    (id = 30)
+    @id: 30
+    @ZOrder: 0x1c00
+    @Bond_Begin: 16
+    @Bond_End: 26
+    [Node]
+    (id = 31)
+    @id: 31
+    @ZOrder: 0x1d00
+    @2DPosition: (365.05078125, 283.94921875)
+    [Node]
+    (id = 32)
+    @id: 32
+    @ZOrder: 0x1e00
+    @2DPosition: (369.25, 270.25)
+    [Node]
+    (id = 33)
+    @id: 33
+    @ZOrder: 0x1f00
+    @2DPosition: (359.30078125, 259.94921875)
+    [Node]
+    (id = 34)
+    @id: 34
+    @ZOrder: 0x2000
+    @2DPosition: (345.69921875, 263.1484375)
+    [Bond]
+    (id = 35)
+    @id: 35
+    @ZOrder: 0x2100
+    @Bond_Begin: 24
+    @Bond_End: 31
+    [Bond]
+    (id = 36)
+    @id: 36
+    @ZOrder: 0x2200
+    @Bond_Order: 2
+    @Bond_DoublePosition: 0x0101
+    @Bond_Begin: 31
+    @Bond_End: 32
+    [Bond]
+    (id = 37)
+    @id: 37
+    @ZOrder: 0x2300
+    @Bond_Begin: 32
+    @Bond_End: 33
+    [Bond]
+    (id = 38)
+    @id: 38
+    @ZOrder: 0x2400
+    @Bond_Order: 2
+    @Bond_DoublePosition: 0x0101
+    @Bond_Begin: 33
+    @Bond_End: 34
+    [Bond]
+    (id = 39)
+    @id: 39
+    @ZOrder: 0x2500
+    @Bond_Begin: 25
+    @Bond_End: 34
+    [Node]
+    (id = 40)
+    @id: 40
+    @ZOrder: 0x2600
+    @2DPosition: (315.80078125, 275.69921875)
+    [Bond]
+    (id = 41)
+    @id: 41
+    @ZOrder: 0x2700
+    @Bond_Begin: 26
+    @Bond_End: 40
+    [Node]
+    (id = 42)
+    @id: 42
+    @ZOrder: 0x2800
+    @2DPosition: (303.5, 283.05078125)
+    @Node_Element: 8
+     [Text]
+     (id = 44)
+     @id: 44
+     @ZOrder: 0x2a00
+     @Text: [O] 
+     @LabelAlignment: 0x01
+     @2DPosition: (299.8515625, 287.05078125)
+     @BoundingBox: ((300.5, 279.5), (307.5, 287))
+    [Bond]
+    (id = 43)
+    @id: 43
+    @ZOrder: 0x2900
+    @Bond_Begin: 40
+    @Bond_End: 42
+    [Node]
+    (id = 45)
+    @id: 45
+    @ZOrder: 0x2b00
+    @2DPosition: (290.8515625, 276)
+    [Bond]
+    (id = 46)
+    @id: 46
+    @ZOrder: 0x2c00
+    @Bond_Begin: 42
+    @Bond_End: 45
+    [Node]
+    (id = 47)
+    @id: 47
+    @ZOrder: 0x2d00
+    @2DPosition: (278.5, 283.44921875)
+    @Node_Element: 7
+    @Atom_NumHydrogens: 1
+     [Text]
+     (id = 54)
+     @id: 54
+     @ZOrder: 0x3400
+     @Text: [NH] 
+     @LineStarts: 0x020002000300
+     @LabelAlignment: 0x05
+     @2DPosition: (275.1484375, 287.44921875)
+     @BoundingBox: ((275.5, 280), (281, 296))
+    [Bond]
+    (id = 48)
+    @id: 48
+    @ZOrder: 0x2e00
+    @Bond_Begin: 45
+    @Bond_End: 47
+    [Node]
+    (id = 49)
+    @id: 49
+    @ZOrder: 0x2f00
+    @2DPosition: (290.8515625, 261.6015625)
+    @Node_Element: 8
+     [Text]
+     (id = 51)
+     @id: 51
+     @ZOrder: 0x3100
+     @Text: [O] 
+     @LabelAlignment: 0x01
+     @2DPosition: (287.19921875, 265.6015625)
+     @BoundingBox: ((287.8515625, 258.05078125), (294.8515625, 265.55078125))
+    [Bond]
+    (id = 50)
+    @id: 50
+    @ZOrder: 0x3000
+    @Bond_Order: 2
+    @Bond_Begin: 45
+    @Bond_End: 49
+    [Node]
+    (id = 52)
+    @id: 52
+    @ZOrder: 0x3200
+    @2DPosition: (265.6015625, 277.1015625)
+    [Bond]
+    (id = 53)
+    @id: 53
+    @ZOrder: 0x3300
+    @Bond_Begin: 47
+    @Bond_End: 52
+    [Node]
+    (id = 55)
+    @id: 55
+    @ZOrder: 0x3500
+    @2DPosition: (253.6015625, 285.1015625)
+    [Bond]
+    (id = 56)
+    @id: 56
+    @ZOrder: 0x3600
+    @Bond_Begin: 52
+    @Bond_End: 55
+    [Node]
+    (id = 57)
+    @id: 57
+    @ZOrder: 0x3700
+    @2DPosition: (240.6484375, 278.75)
+    @Node_Element: 7
+    @Atom_NumHydrogens: 1
+     [Text]
+     (id = 61)
+     @id: 61
+     @ZOrder: 0x3b00
+     @Text: [NH] 
+     @LineStarts: 0x020002000300
+     @LabelAlignment: 0x04
+     @2DPosition: (237.30078125, 274.44921875)
+     @BoundingBox: ((238, 267), (243.5, 283))
+    [Bond]
+    (id = 58)
+    @id: 58
+    @ZOrder: 0x3800
+    @Bond_Begin: 55
+    @Bond_End: 57
+    [Node]
+    (id = 59)
+    @id: 59
+    @ZOrder: 0x3900
+    @2DPosition: (254.6484375, 299.69921875)
+    @Node_Element: 8
+     [Text]
+     (id = 66)
+     @id: 66
+     @ZOrder: 0x4000
+     @Text: [O] 
+     @2DPosition: (251, 303.69921875)
+     @BoundingBox: ((251.6484375, 296.1484375), (258.6484375, 303.6484375))
+    [Bond]
+    (id = 60)
+    @id: 60
+    @ZOrder: 0x3a00
+    @Bond_Order: 2
+    @Bond_Begin: 55
+    @Bond_End: 59
+    [Node]
+    (id = 62)
+    @id: 62
+    @ZOrder: 0x3c00
+    @2DPosition: (228.75, 286.80078125)
+    [Bond]
+    (id = 63)
+    @id: 63
+    @ZOrder: 0x3d00
+    @Bond_Begin: 57
+    @Bond_End: 62
+    [Node]
+    (id = 64)
+    @id: 64
+    @ZOrder: 0x3e00
+    @2DPosition: (215.80078125, 280.55078125)
+    [Bond]
+    (id = 65)
+    @id: 65
+    @ZOrder: 0x3f00
+    @Bond_Begin: 62
+    @Bond_End: 64
+   [Graphic]
+   (id = 67)
+   @id: 67
+   @ZOrder: 0x4100
+   @Graphic_Type: 0x0500
+   @Unknown property 0x0a05: 0x0001
+   @BoundingBox: ((214.3515625, 289.1484375), (211.5, 281.05078125))
+  [Graphic]
+  (id = 68)
+  @id: 68
+  @ZOrder: 0x4200
+  @Graphic_Type: 0x0100
+  @Line_Type: 0x00
+  @Arrow_Type: 2
+  @Arrow_HeadSize: 0xca08
+  @BoundingBox: ((293.5, 377), (293.5, 314))
+  [Group]
+  (id = 137)
+  @id: 137
+   [Fragment]
+   (id = 142)
+   @id: 142
+    [Node]
+    (id = 69)
+    @id: 69
+    @ZOrder: 0x4300
+    @2DPosition: (319.55078125, 412.1015625)
+    [Node]
+    (id = 70)
+    @id: 70
+    @ZOrder: 0x4400
+    @2DPosition: (333.6484375, 414.8984375)
+    [Node]
+    (id = 71)
+    @id: 71
+    @ZOrder: 0x4500
+    @2DPosition: (343.05078125, 403.94921875)
+    [Node]
+    (id = 72)
+    @id: 72
+    @ZOrder: 0x4600
+    @2DPosition: (338.44921875, 390.44921875)
+    [Node]
+    (id = 73)
+    @id: 73
+    @ZOrder: 0x4700
+    @2DPosition: (324.30078125, 387.75)
+    [Node]
+    (id = 74)
+    @id: 74
+    @ZOrder: 0x4800
+    @2DPosition: (314.6484375, 398.5)
+    [Bond]
+    (id = 75)
+    @id: 75
+    @ZOrder: 0x4900
+    @Bond_Order: 2
+    @Bond_DoublePosition: 0x0101
+    @Bond_Begin: 69
+    @Bond_End: 70
+    [Bond]
+    (id = 76)
+    @id: 76
+    @ZOrder: 0x4a00
+    @Bond_Begin: 70
+    @Bond_End: 71
+    [Bond]
+    (id = 77)
+    @id: 77
+    @ZOrder: 0x4b00
+    @Bond_Order: 2
+    @Bond_DoublePosition: 0x0101
+    @Bond_Begin: 71
+    @Bond_End: 72
+    [Bond]
+    (id = 78)
+    @id: 78
+    @ZOrder: 0x4c00
+    @Bond_Begin: 72
+    @Bond_End: 73
+    [Bond]
+    (id = 79)
+    @id: 79
+    @ZOrder: 0x4d00
+    @Bond_Order: 2
+    @Bond_DoublePosition: 0x0101
+    @Bond_Begin: 73
+    @Bond_End: 74
+    [Bond]
+    (id = 80)
+    @id: 80
+    @ZOrder: 0x4e00
+    @Bond_Begin: 69
+    @Bond_End: 74
+    [Node]
+    (id = 81)
+    @id: 81
+    @ZOrder: 0x4f00
+    @2DPosition: (345.3984375, 377.8984375)
+    [Node]
+    (id = 82)
+    @id: 82
+    @ZOrder: 0x5000
+    @2DPosition: (335.6015625, 367.44921875)
+    [Node]
+    (id = 83)
+    @id: 83
+    @ZOrder: 0x5100
+    @2DPosition: (322.69921875, 373.44921875)
+    [Bond]
+    (id = 84)
+    @id: 84
+    @ZOrder: 0x5200
+    @Bond_Begin: 72
+    @Bond_End: 81
+    [Bond]
+    (id = 85)
+    @id: 85
+    @ZOrder: 0x5300
+    @Bond_Order: 2
+    @Bond_DoublePosition: 0x0201
+    @Bond_Begin: 81
+    @Bond_End: 82
+    [Bond]
+    (id = 86)
+    @id: 86
+    @ZOrder: 0x5400
+    @Bond_Begin: 82
+    @Bond_End: 83
+    [Bond]
+    (id = 87)
+    @id: 87
+    @ZOrder: 0x5500
+    @Bond_Begin: 73
+    @Bond_End: 83
+    [Node]
+    (id = 88)
+    @id: 88
+    @ZOrder: 0x5600
+    @2DPosition: (359.30078125, 374.69921875)
+    [Node]
+    (id = 89)
+    @id: 89
+    @ZOrder: 0x5700
+    @2DPosition: (363.5, 361)
+    [Node]
+    (id = 90)
+    @id: 90
+    @ZOrder: 0x5800
+    @2DPosition: (353.75, 350.6015625)
+    [Node]
+    (id = 91)
+    @id: 91
+    @ZOrder: 0x5900
+    @2DPosition: (339.94921875, 353.8984375)
+    [Bond]
+    (id = 92)
+    @id: 92
+    @ZOrder: 0x5a00
+    @Bond_Begin: 81
+    @Bond_End: 88
+    [Bond]
+    (id = 93)
+    @id: 93
+    @ZOrder: 0x5b00
+    @Bond_Order: 2
+    @Bond_DoublePosition: 0x0101
+    @Bond_Begin: 88
+    @Bond_End: 89
+    [Bond]
+    (id = 94)
+    @id: 94
+    @ZOrder: 0x5c00
+    @Bond_Begin: 89
+    @Bond_End: 90
+    [Bond]
+    (id = 95)
+    @id: 95
+    @ZOrder: 0x5d00
+    @Bond_Order: 2
+    @Bond_DoublePosition: 0x0101
+    @Bond_Begin: 90
+    @Bond_End: 91
+    [Bond]
+    (id = 96)
+    @id: 96
+    @ZOrder: 0x5e00
+    @Bond_Begin: 82
+    @Bond_End: 91
+    [Node]
+    (id = 97)
+    @id: 97
+    @ZOrder: 0x5f00
+    @2DPosition: (310.1484375, 366.3984375)
+    [Bond]
+    (id = 98)
+    @id: 98
+    @ZOrder: 0x6000
+    @Bond_Order: 2
+    @Bond_Begin: 83
+    @Bond_End: 97
+  [Text]
+  (id = 99)
+  @id: 99
+  @ZOrder: 0x6100
+  @Text: [+ CO2] 
+  @LineHeight: 0x0100
+  @2DPosition: (355, 394.5)
+  @BoundingBox: ((355.5, 387), (383, 396.5))
+  [Group]
+  (id = 139)
+  @id: 139
+   [Fragment]
+   (id = 143)
+   @id: 143
+    [Node]
+    (id = 100)
+    @id: 100
+    @ZOrder: 0x6200
+    @2DPosition: (294.75, 390.44921875)
+    @Node_Element: 7
+    @Atom_NumHydrogens: 2
+     [Text]
+     (id = 103)
+     @id: 103
+     @ZOrder: 0x6500
+     @Text: [NH2] 
+     @LabelAlignment: 0x01
+     @2DPosition: (291.3984375, 394.44921875)
+     @BoundingBox: ((292, 387), (308.5, 396.5))
+    [Node]
+    (id = 101)
+    @id: 101
+    @ZOrder: 0x6300
+    @2DPosition: (281.8515625, 383.8515625)
+    [Bond]
+    (id = 102)
+    @id: 102
+    @ZOrder: 0x6400
+    @Bond_Begin: 100
+    @Bond_End: 101
+    [Node]
+    (id = 104)
+    @id: 104
+    @ZOrder: 0x6600
+    @2DPosition: (269.8515625, 391.6484375)
+    [Bond]
+    (id = 105)
+    @id: 105
+    @ZOrder: 0x6700
+    @Bond_Begin: 101
+    @Bond_End: 104
+    [Node]
+    (id = 106)
+    @id: 106
+    @ZOrder: 0x6800
+    @2DPosition: (256.8984375, 385.5)
+    @Node_Element: 7
+    @Atom_NumHydrogens: 1
+     [Text]
+     (id = 110)
+     @id: 110
+     @ZOrder: 0x6c00
+     @Text: [NH] 
+     @LineStarts: 0x020002000300
+     @LabelAlignment: 0x04
+     @2DPosition: (253.55078125, 381.19921875)
+     @BoundingBox: ((254, 373.5), (259.5, 389.5))
+    [Bond]
+    (id = 107)
+    @id: 107
+    @ZOrder: 0x6900
+    @Bond_Begin: 104
+    @Bond_End: 106
+    [Node]
+    (id = 108)
+    @id: 108
+    @ZOrder: 0x6a00
+    @2DPosition: (270.8984375, 406.44921875)
+    @Node_Element: 8
+     [Text]
+     (id = 115)
+     @id: 115
+     @ZOrder: 0x7100
+     @Text: [O] 
+     @2DPosition: (267.25, 410.44921875)
+     @BoundingBox: ((267.8984375, 402.8984375), (274.8984375, 410.3984375))
+    [Bond]
+    (id = 109)
+    @id: 109
+    @ZOrder: 0x6b00
+    @Bond_Order: 2
+    @Bond_Begin: 104
+    @Bond_End: 108
+    [Node]
+    (id = 111)
+    @id: 111
+    @ZOrder: 0x6d00
+    @2DPosition: (245, 393.55078125)
+    [Bond]
+    (id = 112)
+    @id: 112
+    @ZOrder: 0x6e00
+    @Bond_Begin: 106
+    @Bond_End: 111
+    [Node]
+    (id = 113)
+    @id: 113
+    @ZOrder: 0x6f00
+    @2DPosition: (232.05078125, 387.19921875)
+    [Bond]
+    (id = 114)
+    @id: 114
+    @ZOrder: 0x7000
+    @Bond_Begin: 111
+    @Bond_End: 113
+   [Graphic]
+   (id = 116)
+   @id: 116
+   @ZOrder: 0x7200
+   @Graphic_Type: 0x0500
+   @Unknown property 0x0a05: 0x0001
+   @BoundingBox: ((230.6015625, 395.8984375), (227.75, 387.80078125))
+  [Text]
+  (id = 117)
+  @id: 117
+  @ZOrder: 0x7300
+  @Text: [piperidine,DMF] 
+  @LineHeight: 0x0100
+  @LineStarts: 0x02000c000f00
+  @2DPosition: (234, 343)
+  @BoundingBox: ((234.5, 335.5), (278, 354.5))
+  [Fragment]
+  (id = 144)
+  @id: 144
+   [Node]
+   (id = 119)
+   @id: 119
+   @ZOrder: 0x7500
+   @2DPosition: (367.25, 304)
+   @Node_Element: 5
+    [Text]
+    (id = 118)
+    @id: 118
+    @ZOrder: 0x7400
+    @Text: [B] B: 
+    @LineHeight: 0x0100
+    @LabelAlignment: 0x01
+    @2DPosition: (362.25, 309.25)
+    @BoundingBox: ((363.5, 299.5), (371.5, 309.5))
+  [Fragment]
+  (id = 145)
+  @id: 145
+   [Node]
+   (id = 120)
+   @id: 120
+   @ZOrder: 0x7600
+   @2DPosition: (71.55078125, 366.3984375)
+   [Node]
+   (id = 121)
+   @id: 121
+   @ZOrder: 0x7700
+   @2DPosition: (91.3515625, 366.3984375)
+   [Bond]
+   (id = 122)
+   @id: 122
+   @ZOrder: 0x7800
+   @Bond_Begin: 120
+   @Bond_End: 121
+   [Node]
+   (id = 123)
+   @id: 123
+   @ZOrder: 0x7900
+   @2DPosition: (111.1015625, 366.3984375)
+   [Bond]
+   (id = 124)
+   @id: 124
+   @ZOrder: 0x7a00
+   @Bond_Begin: 121
+   @Bond_End: 123
+   [Node]
+   (id = 125)
+   @id: 125
+   @ZOrder: 0x7b00
+   @2DPosition: (130.8984375, 366.3984375)
+   [Bond]
+   (id = 126)
+   @id: 126
+   @ZOrder: 0x7c00
+   @Bond_Begin: 123
+   @Bond_End: 125
+   [Node]
+   (id = 127)
+   @id: 127
+   @ZOrder: 0x7d00
+   @2DPosition: (150.6015625, 366.3984375)
+   [Bond]
+   (id = 128)
+   @id: 128
+   @ZOrder: 0x7e00
+   @Bond_Begin: 125
+   @Bond_End: 127
+  [Graphic]
+  (id = 129)
+  @id: 129
+  @ZOrder: 0x7f00
+  @Graphic_Type: 0x0600
+  @Bracket_Type: 0x0100
+  @Bracket_LipSize: 0x3c00
+  @BoundingBox: ((159.44921875, 385.5), (61.30078125, 349.19921875))
+  [Fragment]
+  (id = 146)
+  @id: 146
+   [Node]
+   (id = 131)
+   @id: 131
+   @ZOrder: 0x8100
+   @2DPosition: (94.94921875, 267.5)
+   @Node_Type: 7
+    [Text]
+    (id = 130)
+    @id: 130
+    @ZOrder: 0x8000
+    @Text: [A] A: 
+    @LineHeight: 0x0100
+    @2DPosition: (90.30078125, 272.75)
+    @BoundingBox: ((90.5, 263), (100, 273))
+  [Text]
+  (id = 132)
+  @id: 132
+  @ZOrder: 0x8200
+  @Text: [a =] 
+  @LineHeight: 0x0100
+  @2DPosition: (31.80078125, 371.1015625)
+  @BoundingBox: ((32.5, 363.5), (50.5, 371))
+  [Text]
+  (id = 133)
+  @id: 133
+  @ZOrder: 0x8300
+  @Text: [b/1000] 
+  @LineHeight: 0x0100
+  @2DPosition: (90.80078125, 359.44921875)
+  @BoundingBox: ((91.5, 345.5), (124, 362.5))
+  [Text]
+  (id = 134)
+  @id: 134
+  @ZOrder: 0x8400
+  @Text: [[1-(DM.b/1000)]] 
+  @LineHeight: 0x0100
+  @2DPosition: (66.75, 384.8515625)
+  @BoundingBox: ((68, 371), (153, 388))
+  [Text]
+  (id = 135)
+  @id: 135
+  @ZOrder: 0x8500
+  @Text: [x 1000] 
+  @LineHeight: 0x0100
+  @2DPosition: (166.30078125, 371.1015625)
+  @BoundingBox: ((166.5, 361), (206, 371))
