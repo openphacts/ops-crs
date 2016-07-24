@@ -17,8 +17,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{FAD71A
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "__NuGetPublish", "__NuGetPublish\__NuGetPublish.csproj", "{57018714-712B-40FD-A491-23ED6FB2DBB7}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompoundsWeb", "CompoundsWeb\CompoundsWeb.csproj", "{0BAA2891-8280-429C-827F-399C5D4BFB26}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompoundsTests", "CSCTests\CompoundsTests.csproj", "{5FFA15B6-7323-4184-8CDE-15B1DA9BE885}"
@@ -49,8 +47,6 @@ Global
 		{4D880219-23DA-48CA-B96A-A6DCBFBDA9CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D880219-23DA-48CA-B96A-A6DCBFBDA9CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D880219-23DA-48CA-B96A-A6DCBFBDA9CA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{57018714-712B-40FD-A491-23ED6FB2DBB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{57018714-712B-40FD-A491-23ED6FB2DBB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BAA2891-8280-429C-827F-399C5D4BFB26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0BAA2891-8280-429C-827F-399C5D4BFB26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BAA2891-8280-429C-827F-399C5D4BFB26}.Release|Any CPU.ActiveCfg = Release|Any CPU
